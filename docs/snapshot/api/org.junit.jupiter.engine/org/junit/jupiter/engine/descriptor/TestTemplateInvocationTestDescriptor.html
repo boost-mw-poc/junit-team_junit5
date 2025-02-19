@@ -188,9 +188,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../extension/MutableExtensionRegistry.html" title="class in org.junit.jupiter.engine.extension">MutableExtensionRegistry</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#populateNewExtensionRegistry(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)" class="member-name-link">populateNewExtensionRegistry</a><wbr>(<a href="../execution/JupiterEngineExecutionContext.html" title="class in org.junit.jupiter.engine.execution">JupiterEngineExecutionContext</a>&nbsp;context)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="TestTemplateInvocationTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">TestTemplateInvocationTestDescriptor</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withUniqueId(java.util.function.UnaryOperator)" class="member-name-link">withUniqueId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepareExtensionContext(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">prepareExtensionContext</a><wbr>(<a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;extensionContext)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="TestTemplateInvocationTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">TestTemplateInvocationTestDescriptor</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withUniqueId(java.util.function.UnaryOperator)" class="member-name-link">withUniqueId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns shallow copy (without children) of this descriptor with the supplied unique ID.</div>
 </div>
 </div>
@@ -317,6 +320,16 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="TestMethodTestDescriptor.html#populateNewExtensionRegistry(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)">populateNewExtensionRegistry</a></code>&nbsp;in class&nbsp;<code><a href="TestMethodTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">TestMethodTestDescriptor</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="prepareExtensionContext(org.junit.jupiter.api.extension.ExtensionContext)">
+<h3>prepareExtensionContext</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">prepareExtensionContext</span><wbr><span class="parameters">(<a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;extensionContext)</span></div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="TestMethodTestDescriptor.html#prepareExtensionContext(org.junit.jupiter.api.extension.ExtensionContext)">prepareExtensionContext</a></code>&nbsp;in class&nbsp;<code><a href="TestMethodTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">TestMethodTestDescriptor</a></code></dd>
 </dl>
 </section>
 </li>

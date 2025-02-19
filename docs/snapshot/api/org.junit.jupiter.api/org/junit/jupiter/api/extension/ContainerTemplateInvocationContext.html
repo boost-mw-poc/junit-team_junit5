@@ -135,6 +135,11 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Get the display name for this invocation.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#prepareInvocation(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">prepareInvocation</a><wbr>(<a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Prepare the imminent invocation of the container template.</div>
+</div>
 </div>
 </div>
 </div>
@@ -186,6 +191,21 @@ loadScripts(document, 'script');</script>
 <dt>Returns:</dt>
 <dd>the additional extensions for this invocation; never <code>null</code>
  or containing <code>null</code> elements, but potentially empty</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="prepareInvocation(org.junit.jupiter.api.extension.ExtensionContext)">
+<h3>prepareInvocation</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">prepareInvocation</span><wbr><span class="parameters">(<a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</span></div>
+<div class="block">Prepare the imminent invocation of the container template.
+
+ <p>This may be used, for example, to store entries in the
+ <a href="ExtensionContext.Store.html" title="interface in org.junit.jupiter.api.extension"><code>Store</code></a> to benefit from its cleanup support
+ or for retrieval by other extensions.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>context</code> - The invocation-level extension context.</dd>
 </dl>
 </section>
 </li>
