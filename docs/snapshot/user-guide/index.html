@@ -704,41 +704,42 @@ pre.rouge .gs {
 <li><a href="#writing-tests-parameterized-tests-lifecycle-interop">2.17.8. Lifecycle and Interoperability</a></li>
 </ul>
 </li>
-<li><a href="#writing-tests-test-templates">2.18. Test Templates</a></li>
-<li><a href="#writing-tests-dynamic-tests">2.19. Dynamic Tests</a>
+<li><a href="#writing-tests-container-templates">2.18. Container Templates</a></li>
+<li><a href="#writing-tests-test-templates">2.19. Test Templates</a></li>
+<li><a href="#writing-tests-dynamic-tests">2.20. Dynamic Tests</a>
 <ul class="sectlevel3">
-<li><a href="#writing-tests-dynamic-tests-examples">2.19.1. Dynamic Test Examples</a></li>
-<li><a href="#writing-tests-dynamic-tests-named-support">2.19.2. Dynamic Tests and Named</a></li>
-<li><a href="#writing-tests-dynamic-tests-uri-test-source">2.19.3. URI Test Sources for Dynamic Tests</a></li>
+<li><a href="#writing-tests-dynamic-tests-examples">2.20.1. Dynamic Test Examples</a></li>
+<li><a href="#writing-tests-dynamic-tests-named-support">2.20.2. Dynamic Tests and Named</a></li>
+<li><a href="#writing-tests-dynamic-tests-uri-test-source">2.20.3. URI Test Sources for Dynamic Tests</a></li>
 </ul>
 </li>
-<li><a href="#writing-tests-declarative-timeouts">2.20. Timeouts</a>
+<li><a href="#writing-tests-declarative-timeouts">2.21. Timeouts</a>
 <ul class="sectlevel3">
-<li><a href="#writing-tests-declarative-timeouts-thread-mode">2.20.1. Thread mode</a></li>
-<li><a href="#writing-tests-declarative-timeouts-default-timeouts">2.20.2. Default Timeouts</a></li>
-<li><a href="#writing-tests-declarative-timeouts-polling">2.20.3. Using @Timeout for Polling Tests</a></li>
-<li><a href="#writing-tests-declarative-timeouts-debugging">2.20.4. Debugging Timeouts</a>
+<li><a href="#writing-tests-declarative-timeouts-thread-mode">2.21.1. Thread mode</a></li>
+<li><a href="#writing-tests-declarative-timeouts-default-timeouts">2.21.2. Default Timeouts</a></li>
+<li><a href="#writing-tests-declarative-timeouts-polling">2.21.3. Using @Timeout for Polling Tests</a></li>
+<li><a href="#writing-tests-declarative-timeouts-debugging">2.21.4. Debugging Timeouts</a>
 <ul class="sectlevel4">
 <li><a href="#writing-tests-declarative-timeouts-debugging-thread-dump">Thread Dump on Timeout</a></li>
 </ul>
 </li>
-<li><a href="#writing-tests-declarative-timeouts-mode">2.20.5. Disable @Timeout Globally</a></li>
+<li><a href="#writing-tests-declarative-timeouts-mode">2.21.5. Disable @Timeout Globally</a></li>
 </ul>
 </li>
-<li><a href="#writing-tests-parallel-execution">2.21. Parallel Execution</a>
+<li><a href="#writing-tests-parallel-execution">2.22. Parallel Execution</a>
 <ul class="sectlevel3">
-<li><a href="#writing-tests-parallel-execution-config">2.21.1. Configuration</a>
+<li><a href="#writing-tests-parallel-execution-config">2.22.1. Configuration</a>
 <ul class="sectlevel4">
 <li><a href="#writing-tests-parallel-execution-config-properties">Relevant properties</a></li>
 </ul>
 </li>
-<li><a href="#writing-tests-parallel-execution-synchronization">2.21.2. Synchronization</a></li>
+<li><a href="#writing-tests-parallel-execution-synchronization">2.22.2. Synchronization</a></li>
 </ul>
 </li>
-<li><a href="#writing-tests-built-in-extensions">2.22. Built-in Extensions</a>
+<li><a href="#writing-tests-built-in-extensions">2.23. Built-in Extensions</a>
 <ul class="sectlevel3">
-<li><a href="#writing-tests-built-in-extensions-TempDirectory">2.22.1. The @TempDir Extension</a></li>
-<li><a href="#writing-tests-built-in-extensions-AutoClose">2.22.2. The @AutoClose Extension</a></li>
+<li><a href="#writing-tests-built-in-extensions-TempDirectory">2.23.1. The @TempDir Extension</a></li>
+<li><a href="#writing-tests-built-in-extensions-AutoClose">2.23.2. The @AutoClose Extension</a></li>
 </ul>
 </li>
 </ul>
@@ -890,22 +891,23 @@ pre.rouge .gs {
 <li><a href="#extensions-exception-handling">5.11. Exception Handling</a></li>
 <li><a href="#extensions-preinterrupt-callback">5.12. Pre-Interrupt Callback</a></li>
 <li><a href="#extensions-intercepting-invocations">5.13. Intercepting Invocations</a></li>
-<li><a href="#extensions-test-templates">5.14. Providing Invocation Contexts for Test Templates</a></li>
-<li><a href="#extensions-keeping-state">5.15. Keeping State in Extensions</a></li>
-<li><a href="#extensions-supported-utilities">5.16. Supported Utilities in Extensions</a>
+<li><a href="#extensions-container-templates">5.14. Providing Invocation Contexts for Container Templates</a></li>
+<li><a href="#extensions-test-templates">5.15. Providing Invocation Contexts for Test Templates</a></li>
+<li><a href="#extensions-keeping-state">5.16. Keeping State in Extensions</a></li>
+<li><a href="#extensions-supported-utilities">5.17. Supported Utilities in Extensions</a>
 <ul class="sectlevel3">
-<li><a href="#extensions-supported-utilities-annotations">5.16.1. Annotation Support</a></li>
-<li><a href="#extensions-supported-utilities-classes">5.16.2. Class Support</a></li>
-<li><a href="#extensions-supported-utilities-reflection">5.16.3. Reflection Support</a></li>
-<li><a href="#extensions-supported-utilities-modifier">5.16.4. Modifier Support</a></li>
-<li><a href="#extensions-supported-utilities-conversion">5.16.5. Conversion Support</a></li>
-<li><a href="#extensions-supported-utilities-search-semantics">5.16.6. Field and Method Search Semantics</a></li>
+<li><a href="#extensions-supported-utilities-annotations">5.17.1. Annotation Support</a></li>
+<li><a href="#extensions-supported-utilities-classes">5.17.2. Class Support</a></li>
+<li><a href="#extensions-supported-utilities-reflection">5.17.3. Reflection Support</a></li>
+<li><a href="#extensions-supported-utilities-modifier">5.17.4. Modifier Support</a></li>
+<li><a href="#extensions-supported-utilities-conversion">5.17.5. Conversion Support</a></li>
+<li><a href="#extensions-supported-utilities-search-semantics">5.17.6. Field and Method Search Semantics</a></li>
 </ul>
 </li>
-<li><a href="#extensions-execution-order">5.17. Relative Execution Order of User Code and Extensions</a>
+<li><a href="#extensions-execution-order">5.18. Relative Execution Order of User Code and Extensions</a>
 <ul class="sectlevel3">
-<li><a href="#extensions-execution-order-overview">5.17.1. User and Extension Code</a></li>
-<li><a href="#extensions-execution-order-wrapping-behavior">5.17.2. Wrapping Behavior of Callbacks</a></li>
+<li><a href="#extensions-execution-order-overview">5.18.1. User and Extension Code</a></li>
+<li><a href="#extensions-execution-order-wrapping-behavior">5.18.2. Wrapping Behavior of Callbacks</a></li>
 </ul>
 </li>
 </ul>
@@ -1214,7 +1216,7 @@ in the <code>junit-jupiter-api</code> module.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@TestTemplate</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that a method is a <a href="#writing-tests-test-templates">template for test cases</a> designed to be invoked multiple times depending on the number of invocation contexts returned by the registered <a href="#extensions-test-templates">providers</a>. Such methods are inherited unless they are overridden.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that a method is a <a href="#writing-tests-test-templates">template for a test case</a> designed to be invoked multiple times depending on the number of invocation contexts returned by the registered <a href="#extensions-test-templates">providers</a>. Such methods are inherited unless they are overridden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@TestClassOrder</code></p></td>
@@ -1251,6 +1253,10 @@ in the <code>junit-jupiter-api</code> module.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@AfterAll</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed <em>after</em> <strong>all</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, and <code>@TestFactory</code> methods in the current class; analogous to JUnit 4&#8217;s <code>@AfterClass</code>. Such methods are inherited unless they are overridden and must be <code>static</code> unless the "per-class" <a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> is used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@ContainerTemplate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated class is a <a href="#writing-tests-container-templates">template for a set of test cases</a> designed to be executed multiple times depending on the number of invocation contexts returned by the registered <a href="#extensions-container-templates">providers</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Nested</code></p></td>
@@ -6261,10 +6267,22 @@ lifecycle methods (e.g. <code>@BeforeEach</code>) and test class constructors.</
 </div>
 </div>
 <div class="sect2">
-<h3 id="writing-tests-test-templates"><a class="anchor" href="#writing-tests-test-templates"></a>2.18. Test Templates</h3>
+<h3 id="writing-tests-container-templates"><a class="anchor" href="#writing-tests-container-templates"></a>2.18. Container Templates</h3>
 <div class="paragraph">
-<p>A <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/TestTemplate.html">@TestTemplate</a></code> method is not a regular test case but rather a template for test
-cases. As such, it is designed to be invoked multiple times depending on the number of
+<p>A <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/ContainerTemplate.html">@ContainerTemplate</a></code> class is not a regular test class but rather a template for the
+contained test cases. As such, it is designed to be invoked multiple times depending on
+invocation contexts returned by the registered providers. Thus, it must be used in
+conjunction with a registered <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContextProvider.html">ContainerTemplateInvocationContextProvider</a></code> extension.
+Each invocation of a container template class behaves like the execution of a regular test
+class with full support for the same lifecycle callbacks and extensions. Please refer to
+<a href="#extensions-container-templates">Providing Invocation Contexts for Container Templates</a> for usage examples.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="writing-tests-test-templates"><a class="anchor" href="#writing-tests-test-templates"></a>2.19. Test Templates</h3>
+<div class="paragraph">
+<p>A <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/TestTemplate.html">@TestTemplate</a></code> method is not a regular test case but rather a template for a test
+case. As such, it is designed to be invoked multiple times depending on the number of
 invocation contexts returned by the registered providers. Thus, it must be used in
 conjunction with a registered <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/TestTemplateInvocationContextProvider.html">TestTemplateInvocationContextProvider</a></code> extension. Each
 invocation of a test template method behaves like the execution of a regular <code>@Test</code>
@@ -6286,7 +6304,7 @@ built-in specializations of test templates.
 </div>
 </div>
 <div class="sect2">
-<h3 id="writing-tests-dynamic-tests"><a class="anchor" href="#writing-tests-dynamic-tests"></a>2.19. Dynamic Tests</h3>
+<h3 id="writing-tests-dynamic-tests"><a class="anchor" href="#writing-tests-dynamic-tests"></a>2.20. Dynamic Tests</h3>
 <div class="paragraph">
 <p>The standard <code>@Test</code> annotation in JUnit Jupiter described in
 <a href="#writing-tests-annotations">Annotations</a> is very similar to the <code>@Test</code> annotation in JUnit 4. Both
@@ -6346,7 +6364,7 @@ or extensions between the execution of individual dynamic tests generated by the
 </table>
 </div>
 <div class="sect3">
-<h4 id="writing-tests-dynamic-tests-examples"><a class="anchor" href="#writing-tests-dynamic-tests-examples"></a>2.19.1. Dynamic Test Examples</h4>
+<h4 id="writing-tests-dynamic-tests-examples"><a class="anchor" href="#writing-tests-dynamic-tests-examples"></a>2.20.1. Dynamic Test Examples</h4>
 <div class="paragraph">
 <p>The following <code>DynamicTestsDemo</code> class demonstrates several examples of test factories
 and dynamic tests.</p>
@@ -6538,7 +6556,7 @@ a nested hierarchy of dynamic tests utilizing <code>DynamicContainer</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="writing-tests-dynamic-tests-named-support"><a class="anchor" href="#writing-tests-dynamic-tests-named-support"></a>2.19.2. Dynamic Tests and Named</h4>
+<h4 id="writing-tests-dynamic-tests-named-support"><a class="anchor" href="#writing-tests-dynamic-tests-named-support"></a>2.20.2. Dynamic Tests and Named</h4>
 <div class="paragraph">
 <p>In some cases, it can be more natural to specify inputs together with a descriptive name
 using the <a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/Named.html">Named</a> API and the corresponding <code>stream()</code> factory methods on <code>DynamicTest</code> as
@@ -6601,7 +6619,7 @@ interface along with <code>Named</code> via the <code>NamedExecutable</code> bas
 </div>
 </div>
 <div class="sect3">
-<h4 id="writing-tests-dynamic-tests-uri-test-source"><a class="anchor" href="#writing-tests-dynamic-tests-uri-test-source"></a>2.19.3. URI Test Sources for Dynamic Tests</h4>
+<h4 id="writing-tests-dynamic-tests-uri-test-source"><a class="anchor" href="#writing-tests-dynamic-tests-uri-test-source"></a>2.20.3. URI Test Sources for Dynamic Tests</h4>
 <div class="paragraph">
 <p>The JUnit Platform provides <code>TestSource</code>, a representation of the source of a test or
 container used to navigate to its location by IDEs and build tools.</p>
@@ -6647,7 +6665,7 @@ supported formats for a FQMN.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="writing-tests-declarative-timeouts"><a class="anchor" href="#writing-tests-declarative-timeouts"></a>2.20. Timeouts</h3>
+<h3 id="writing-tests-declarative-timeouts"><a class="anchor" href="#writing-tests-declarative-timeouts"></a>2.21. Timeouts</h3>
 <div class="paragraph">
 <p>The <code>@Timeout</code> annotation allows one to declare that a test, test factory, test template,
 or lifecycle method should fail if its execution time exceeds a given duration. The time
@@ -6700,7 +6718,7 @@ within the specified duration but does not verify the execution time of each ind
 <code>@ParameterizedTest</code> — each invocation will have the given timeout applied to it.</p>
 </div>
 <div class="sect3">
-<h4 id="writing-tests-declarative-timeouts-thread-mode"><a class="anchor" href="#writing-tests-declarative-timeouts-thread-mode"></a>2.20.1. Thread mode</h4>
+<h4 id="writing-tests-declarative-timeouts-thread-mode"><a class="anchor" href="#writing-tests-declarative-timeouts-thread-mode"></a>2.21.1. Thread mode</h4>
 <div class="paragraph">
 <p>The timeout can be applied using one of the following three thread modes: <code>SAME_THREAD</code>,
 <code>SEPARATE_THREAD</code>, or <code>INFERRED</code>.</p>
@@ -6725,7 +6743,7 @@ fallback.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="writing-tests-declarative-timeouts-default-timeouts"><a class="anchor" href="#writing-tests-declarative-timeouts-default-timeouts"></a>2.20.2. Default Timeouts</h4>
+<h4 id="writing-tests-declarative-timeouts-default-timeouts"><a class="anchor" href="#writing-tests-declarative-timeouts-default-timeouts"></a>2.21.2. Default Timeouts</h4>
 <div class="paragraph">
 <p>The following <a href="#running-tests-config-params">configuration parameters</a> can be used to
 specify default timeouts for all methods of a certain category unless they or an enclosing
@@ -6835,7 +6853,7 @@ omitted. Specifying no unit is equivalent to using seconds.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="writing-tests-declarative-timeouts-polling"><a class="anchor" href="#writing-tests-declarative-timeouts-polling"></a>2.20.3. Using @Timeout for Polling Tests</h4>
+<h4 id="writing-tests-declarative-timeouts-polling"><a class="anchor" href="#writing-tests-declarative-timeouts-polling"></a>2.21.3. Using @Timeout for Polling Tests</h4>
 <div class="paragraph">
 <p>When dealing with asynchronous code, it is common to write tests that poll while waiting
 for something to happen before performing any assertions. In some cases you can rewrite
@@ -6880,7 +6898,7 @@ asynchronous tests, consider using a dedicated library such as
 </div>
 </div>
 <div class="sect3">
-<h4 id="writing-tests-declarative-timeouts-debugging"><a class="anchor" href="#writing-tests-declarative-timeouts-debugging"></a>2.20.4. Debugging Timeouts</h4>
+<h4 id="writing-tests-declarative-timeouts-debugging"><a class="anchor" href="#writing-tests-declarative-timeouts-debugging"></a>2.21.4. Debugging Timeouts</h4>
 <div class="paragraph">
 <p>Registered <a href="#extensions-preinterrupt-callback">Pre-Interrupt Callback</a> extensions are called prior to invoking
 <code>Thread.interrupt()</code> on the thread that is executing the timed out method. This allows to
@@ -6898,7 +6916,7 @@ the <code>junit.jupiter.execution.timeout.threaddump.enabled</code>
 </div>
 </div>
 <div class="sect3">
-<h4 id="writing-tests-declarative-timeouts-mode"><a class="anchor" href="#writing-tests-declarative-timeouts-mode"></a>2.20.5. Disable @Timeout Globally</h4>
+<h4 id="writing-tests-declarative-timeouts-mode"><a class="anchor" href="#writing-tests-declarative-timeouts-mode"></a>2.21.5. Disable @Timeout Globally</h4>
 <div class="paragraph">
 <p>When stepping through your code in a debug session, a fixed timeout limit may influence
 the result of the test, e.g. mark the test as failed although all assertions were met.</p>
@@ -6914,7 +6932,7 @@ This heuristic is queried by the <code>disabled_on_debug</code> mode.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="writing-tests-parallel-execution"><a class="anchor" href="#writing-tests-parallel-execution"></a>2.21. Parallel Execution</h3>
+<h3 id="writing-tests-parallel-execution"><a class="anchor" href="#writing-tests-parallel-execution"></a>2.22. Parallel Execution</h3>
 <div class="paragraph">
 <p>By default, JUnit Jupiter tests are run sequentially in a single thread. Running tests in
 parallel&#8201;&#8212;&#8201;for example, to speed up execution&#8201;&#8212;&#8201;is available as an opt-in feature since
@@ -7025,7 +7043,7 @@ not explicitly set, the value for <code>junit.jupiter.execution.parallel.mode.de
 used instead.</p>
 </div>
 <div class="sect3">
-<h4 id="writing-tests-parallel-execution-config"><a class="anchor" href="#writing-tests-parallel-execution-config"></a>2.21.1. Configuration</h4>
+<h4 id="writing-tests-parallel-execution-config"><a class="anchor" href="#writing-tests-parallel-execution-config"></a>2.22.1. Configuration</h4>
 <div class="paragraph">
 <p>Properties such as the desired parallelism and the maximum pool size can be configured
 using a <code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/ParallelExecutionConfigurationStrategy.html">ParallelExecutionConfigurationStrategy</a></code>. The JUnit Platform provides two
@@ -7254,7 +7272,7 @@ strategy</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="writing-tests-parallel-execution-synchronization"><a class="anchor" href="#writing-tests-parallel-execution-synchronization"></a>2.21.2. Synchronization</h4>
+<h4 id="writing-tests-parallel-execution-synchronization"><a class="anchor" href="#writing-tests-parallel-execution-synchronization"></a>2.22.2. Synchronization</h4>
 <div class="paragraph">
 <p>In addition to controlling the execution mode using the <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/parallel/Execution.html">@Execution</a></code> annotation, JUnit
 Jupiter provides another annotation-based declarative synchronization mechanism. The
@@ -7460,7 +7478,7 @@ which would force the <code>SAME_THREAD</code> execution mode for all the test m
 </div>
 </div>
 <div class="sect2">
-<h3 id="writing-tests-built-in-extensions"><a class="anchor" href="#writing-tests-built-in-extensions"></a>2.22. Built-in Extensions</h3>
+<h3 id="writing-tests-built-in-extensions"><a class="anchor" href="#writing-tests-built-in-extensions"></a>2.23. Built-in Extensions</h3>
 <div class="paragraph">
 <p>While the JUnit team encourages reusable extensions to be packaged and maintained in
 separate libraries, JUnit Jupiter includes a few user-facing extension implementations
@@ -7468,7 +7486,7 @@ that are considered so generally useful that users shouldn&#8217;t have to add a
 dependency.</p>
 </div>
 <div class="sect3">
-<h4 id="writing-tests-built-in-extensions-TempDirectory"><a class="anchor" href="#writing-tests-built-in-extensions-TempDirectory"></a>2.22.1. The @TempDir Extension</h4>
+<h4 id="writing-tests-built-in-extensions-TempDirectory"><a class="anchor" href="#writing-tests-built-in-extensions-TempDirectory"></a>2.23.1. The @TempDir Extension</h4>
 <div class="paragraph">
 <p>The built-in <code><a href="https://github.com/junit-team/junit5/tree/HEAD/junit-jupiter-engine/src/main/java/org/junit/jupiter/engine/extension/TempDirectory.java">TempDirectory</a></code> extension is used to create and clean up a temporary
 directory for an individual test or all tests in a test class. It is registered by
@@ -7727,7 +7745,7 @@ parameter, if present</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="writing-tests-built-in-extensions-AutoClose"><a class="anchor" href="#writing-tests-built-in-extensions-AutoClose"></a>2.22.2. The @AutoClose Extension</h4>
+<h4 id="writing-tests-built-in-extensions-AutoClose"><a class="anchor" href="#writing-tests-built-in-extensions-AutoClose"></a>2.23.2. The @AutoClose Extension</h4>
 <div class="paragraph">
 <p>The built-in <code><a href="https://github.com/junit-team/junit5/tree/HEAD/junit-jupiter-engine/src/main/java/org/junit/jupiter/engine/extension/AutoCloseExtension.java">AutoCloseExtension</a></code> automatically closes resources associated with fields.
 It is registered by default. To use it, annotate a field in a test class with
@@ -11750,7 +11768,106 @@ on the test method level.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="extensions-test-templates"><a class="anchor" href="#extensions-test-templates"></a>5.14. Providing Invocation Contexts for Test Templates</h3>
+<h3 id="extensions-container-templates"><a class="anchor" href="#extensions-container-templates"></a>5.14. Providing Invocation Contexts for Container Templates</h3>
+<div class="paragraph">
+<p>A <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/ContainerTemplate.html">@ContainerTemplate</a></code> class can only be executed when at least one
+<code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContextProvider.html">ContainerTemplateInvocationContextProvider</a></code> is registered. Each such provider is
+responsible for providing a <code>Stream</code> of <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContext.html">ContainerTemplateInvocationContext</a></code> instances.
+Each context may specify a custom display name and a list of additional extensions that
+will only be used for the next invocation of the <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/ContainerTemplate.html">@ContainerTemplate</a></code> class.</p>
+</div>
+<div class="paragraph">
+<p>The following example shows how to write a container template as well as how to register
+and implement a <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContextProvider.html">ContainerTemplateInvocationContextProvider</a></code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">A container template with accompanying extension</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@ContainerTemplate</span>
+<span class="nd">@ExtendWith</span><span class="o">(</span><span class="nc">MyContainerTemplateInvocationContextProvider</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="kd">class</span> <span class="nc">ContainerTemplateDemo</span> <span class="o">{</span>
+
+    <span class="kd">static</span> <span class="kd">final</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="no">WELL_KNOWN_FRUITS</span>
+        <span class="o">=</span> <span class="n">unmodifiableList</span><span class="o">(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">"apple"</span><span class="o">,</span> <span class="s">"banana"</span><span class="o">,</span> <span class="s">"lemon"</span><span class="o">));</span>
+
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">fruit</span><span class="o">;</span>
+
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">notNull</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">assertNotNull</span><span class="o">(</span><span class="n">fruit</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">wellKnown</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">assertTrue</span><span class="o">(</span><span class="no">WELL_KNOWN_FRUITS</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">fruit</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyContainerTemplateInvocationContextProvider</span>
+            <span class="kd">implements</span> <span class="nc">ContainerTemplateInvocationContextProvider</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">supportsContainerTemplate</span><span class="o">(</span><span class="nc">ExtensionContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">ContainerTemplateInvocationContext</span><span class="o">&gt;</span>
+                <span class="nf">provideContainerTemplateInvocationContexts</span><span class="o">(</span><span class="nc">ExtensionContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="k">return</span> <span class="nc">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">invocationContext</span><span class="o">(</span><span class="s">"apple"</span><span class="o">),</span> <span class="n">invocationContext</span><span class="o">(</span><span class="s">"banana"</span><span class="o">));</span>
+        <span class="o">}</span>
+
+        <span class="kd">private</span> <span class="nc">ContainerTemplateInvocationContext</span> <span class="nf">invocationContext</span><span class="o">(</span><span class="nc">String</span> <span class="n">parameter</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">ContainerTemplateInvocationContext</span><span class="o">()</span> <span class="o">{</span>
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getDisplayName</span><span class="o">(</span><span class="kt">int</span> <span class="n">invocationIndex</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">parameter</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Extension</span><span class="o">&gt;</span> <span class="nf">getAdditionalExtensions</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="nf">singletonList</span><span class="o">(</span><span class="k">new</span> <span class="nc">TestInstancePostProcessor</span><span class="o">()</span> <span class="o">{</span>
+                        <span class="nd">@Override</span>
+                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">postProcessTestInstance</span><span class="o">(</span>
+                                <span class="nc">Object</span> <span class="n">testInstance</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="o">((</span><span class="nc">ContainerTemplateDemo</span><span class="o">)</span> <span class="n">testInstance</span><span class="o">).</span><span class="na">fruit</span> <span class="o">=</span> <span class="n">parameter</span><span class="o">;</span>
+                        <span class="o">}</span>
+                    <span class="o">});</span>
+                <span class="o">}</span>
+            <span class="o">};</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, the container template will be invoked twice, meaning all test methods in
+the container template class will be executed twice. The display names of the container
+invocations will be <code>apple</code> and <code>banana</code> as specified by the invocation context. Each
+invocation registers a custom <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/TestInstancePostProcessor.html">TestInstancePostProcessor</a></code> which is used to inject a
+value into a field. The output when using the <code>ConsoleLauncher</code> is as follows.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>└─ ContainerTemplateDemo ✔
+   ├─ apple ✔
+   │  ├─ notNull() ✔
+   │  └─ wellKnown() ✔
+   └─ banana ✔
+      ├─ notNull() ✔
+      └─ wellKnown() ✔</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContextProvider.html">ContainerTemplateInvocationContextProvider</a></code> extension API is primarily intended for
+implementing different kinds of tests that rely on repetitive invocation of <em>all</em> test
+methods in a test class albeit in different contexts — for example, with different
+parameters, by preparing the test class instance differently, or multiple times without
+modifying the context.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="extensions-test-templates"><a class="anchor" href="#extensions-test-templates"></a>5.15. Providing Invocation Contexts for Test Templates</h3>
 <div class="paragraph">
 <p>A <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/TestTemplate.html">@TestTemplate</a></code> method can only be executed when at least one
 <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/TestTemplateInvocationContextProvider.html">TestTemplateInvocationContextProvider</a></code> is registered. Each such provider is responsible
@@ -11840,7 +11957,7 @@ functionality.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="extensions-keeping-state"><a class="anchor" href="#extensions-keeping-state"></a>5.15. Keeping State in Extensions</h3>
+<h3 id="extensions-keeping-state"><a class="anchor" href="#extensions-keeping-state"></a>5.16. Keeping State in Extensions</h3>
 <div class="paragraph">
 <p>Usually, an extension is instantiated only once. So the question becomes relevant: How do
 you keep the state from one invocation of an extension to the next? The
@@ -11979,7 +12096,7 @@ classes and methods.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="extensions-supported-utilities"><a class="anchor" href="#extensions-supported-utilities"></a>5.16. Supported Utilities in Extensions</h3>
+<h3 id="extensions-supported-utilities"><a class="anchor" href="#extensions-supported-utilities"></a>5.17. Supported Utilities in Extensions</h3>
 <div class="paragraph">
 <p>The <code>junit-platform-commons</code> artifact provides <em>maintained</em> utilities for working with
 annotations, classes, reflection, classpath scanning, and conversion tasks. These
@@ -11988,7 +12105,7 @@ utilities can be found in the <code><a href="../api/org.junit.platform.commons/o
 order to align with the behavior of the JUnit Platform and JUnit Jupiter.</p>
 </div>
 <div class="sect3">
-<h4 id="extensions-supported-utilities-annotations"><a class="anchor" href="#extensions-supported-utilities-annotations"></a>5.16.1. Annotation Support</h4>
+<h4 id="extensions-supported-utilities-annotations"><a class="anchor" href="#extensions-supported-utilities-annotations"></a>5.17.1. Annotation Support</h4>
 <div class="paragraph">
 <p><code>AnnotationSupport</code> provides static utility methods that operate on annotated elements
 (e.g., packages, annotations, classes, interfaces, constructors, methods, and fields).
@@ -12025,14 +12142,14 @@ See also: <a href="#extensions-supported-utilities-search-semantics">Field and M
 </div>
 </div>
 <div class="sect3">
-<h4 id="extensions-supported-utilities-classes"><a class="anchor" href="#extensions-supported-utilities-classes"></a>5.16.2. Class Support</h4>
+<h4 id="extensions-supported-utilities-classes"><a class="anchor" href="#extensions-supported-utilities-classes"></a>5.17.2. Class Support</h4>
 <div class="paragraph">
 <p><code>ClassSupport</code> provides static utility methods for working with classes (i.e., instances
 of <code>java.lang.Class</code>). Consult the Javadoc for <code><a href="../api/org.junit.platform.commons/org/junit/platform/commons/support/ClassSupport.html">ClassSupport</a></code> for further details.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="extensions-supported-utilities-reflection"><a class="anchor" href="#extensions-supported-utilities-reflection"></a>5.16.3. Reflection Support</h4>
+<h4 id="extensions-supported-utilities-reflection"><a class="anchor" href="#extensions-supported-utilities-reflection"></a>5.17.3. Reflection Support</h4>
 <div class="paragraph">
 <p><code>ReflectionSupport</code> provides static utility methods that augment the standard JDK
 reflection and class-loading mechanisms. These include methods to scan the classpath in
@@ -12055,7 +12172,7 @@ See also: <a href="#extensions-supported-utilities-search-semantics">Field and M
 </div>
 </div>
 <div class="sect3">
-<h4 id="extensions-supported-utilities-modifier"><a class="anchor" href="#extensions-supported-utilities-modifier"></a>5.16.4. Modifier Support</h4>
+<h4 id="extensions-supported-utilities-modifier"><a class="anchor" href="#extensions-supported-utilities-modifier"></a>5.17.4. Modifier Support</h4>
 <div class="paragraph">
 <p><code>ModifierSupport</code> provides static utility methods for working with member and class
 modifiers&#8201;&#8212;&#8201;for example, to determine if a member is declared as <code>public</code>, <code>private</code>,
@@ -12064,7 +12181,7 @@ details.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="extensions-supported-utilities-conversion"><a class="anchor" href="#extensions-supported-utilities-conversion"></a>5.16.5. Conversion Support</h4>
+<h4 id="extensions-supported-utilities-conversion"><a class="anchor" href="#extensions-supported-utilities-conversion"></a>5.17.5. Conversion Support</h4>
 <div class="paragraph">
 <p><code>ConversionSupport</code> (in the <code>org.junit.platform.commons.support.conversion</code> package)
 provides support for converting from strings to primitive types and their corresponding
@@ -12074,7 +12191,7 @@ common Java types such as <code>File</code>, <code>BigDecimal</code>, <code>BigI
 </div>
 </div>
 <div class="sect3">
-<h4 id="extensions-supported-utilities-search-semantics"><a class="anchor" href="#extensions-supported-utilities-search-semantics"></a>5.16.6. Field and Method Search Semantics</h4>
+<h4 id="extensions-supported-utilities-search-semantics"><a class="anchor" href="#extensions-supported-utilities-search-semantics"></a>5.17.6. Field and Method Search Semantics</h4>
 <div class="paragraph">
 <p>Various methods in <code>AnnotationSupport</code> and <code>ReflectionSupport</code> use search algorithms that
 traverse type hierarchies to locate matching fields and methods – for example,
@@ -12123,7 +12240,7 @@ parameter</a>.
 </div>
 </div>
 <div class="sect2">
-<h3 id="extensions-execution-order"><a class="anchor" href="#extensions-execution-order"></a>5.17. Relative Execution Order of User Code and Extensions</h3>
+<h3 id="extensions-execution-order"><a class="anchor" href="#extensions-execution-order"></a>5.18. Relative Execution Order of User Code and Extensions</h3>
 <div class="paragraph">
 <p>When executing a test class that contains one or more test methods, a number of extension
 callbacks are called in addition to the user-supplied test and lifecycle methods.</p>
@@ -12141,7 +12258,7 @@ See also: <a href="#writing-tests-test-execution-order">Test Execution Order</a>
 </table>
 </div>
 <div class="sect3">
-<h4 id="extensions-execution-order-overview"><a class="anchor" href="#extensions-execution-order-overview"></a>5.17.1. User and Extension Code</h4>
+<h4 id="extensions-execution-order-overview"><a class="anchor" href="#extensions-execution-order-overview"></a>5.18.1. User and Extension Code</h4>
 <div class="paragraph">
 <p>The following diagram illustrates the relative order of user-supplied code and extension
 code. User-supplied test and lifecycle methods are shown in orange, with callback code
@@ -12270,7 +12387,7 @@ by implementing <a href="#extensions-intercepting-invocations"><code>InvocationI
 </div>
 </div>
 <div class="sect3">
-<h4 id="extensions-execution-order-wrapping-behavior"><a class="anchor" href="#extensions-execution-order-wrapping-behavior"></a>5.17.2. Wrapping Behavior of Callbacks</h4>
+<h4 id="extensions-execution-order-wrapping-behavior"><a class="anchor" href="#extensions-execution-order-wrapping-behavior"></a>5.18.2. Wrapping Behavior of Callbacks</h4>
 <div class="paragraph">
 <p>JUnit Jupiter always guarantees <em>wrapping</em> behavior for multiple registered extensions
 that implement lifecycle callbacks such as <code>BeforeAllCallback</code>, <code>AfterAllCallback</code>,
@@ -14444,6 +14561,11 @@ value of lower stability.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.api</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ContainerTemplate</code> <em>(annotation)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.api</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>DisplayNameGenerator.generateDisplayNameForMethod(List&lt;Class&lt;?&gt;&gt;, Class&lt;?&gt;, Method)</code> <em>(method)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.12</code></p></td>
 </tr>
@@ -14551,6 +14673,16 @@ value of lower stability.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.api.extension</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>AnnotatedElementContext</code> <em>(interface)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.10</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.api.extension</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ContainerTemplateInvocationContext</code> <em>(interface)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.api.extension</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ContainerTemplateInvocationContextProvider</code> <em>(interface)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.api.extension</code></p></td>
@@ -15311,6 +15443,26 @@ value of lower stability.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.testkit.engine</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>EventConditions.fileEntry(Predicate&lt;FileEntry&gt;)</code> <em>(method)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.12</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.testkit.engine</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>EventConditions.legacyReportingName(String)</code> <em>(method)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.13</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.testkit.engine</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>EventConditions.uniqueId(Condition&lt;? super UniqueId&gt;)</code> <em>(method)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.13</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.testkit.engine</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>EventConditions.uniqueId(String)</code> <em>(method)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.13</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.testkit.engine</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>EventConditions.uniqueId(UniqueId)</code> <em>(method)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.13</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.testkit.engine</code></p></td>

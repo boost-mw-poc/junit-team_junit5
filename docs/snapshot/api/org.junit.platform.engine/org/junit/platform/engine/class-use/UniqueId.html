@@ -100,16 +100,21 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Core package for the JUnit Platform Suite test engine.</div>
 </div>
-<div class="col-first odd-row-color"><a href="#org.junit.vintage.engine">org.junit.vintage.engine</a></div>
+<div class="col-first odd-row-color"><a href="#org.junit.platform.testkit.engine">org.junit.platform.testkit.engine</a></div>
 <div class="col-last odd-row-color">
+<div class="block">Test Kit for testing the execution of a <a href="../TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a>
+ running on the JUnit Platform.</div>
+</div>
+<div class="col-first even-row-color"><a href="#org.junit.vintage.engine">org.junit.vintage.engine</a></div>
+<div class="col-last even-row-color">
 <div class="block">Core package for the JUnit Vintage test engine.</div>
 </div>
-<div class="col-first even-row-color"><a href="#org.junit.vintage.engine.descriptor">org.junit.vintage.engine.descriptor</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="#org.junit.vintage.engine.descriptor">org.junit.vintage.engine.descriptor</a></div>
+<div class="col-last odd-row-color">
 <div class="block">Test descriptors used within the JUnit Vintage test engine.</div>
 </div>
-<div class="col-first odd-row-color"><a href="#org.junit.vintage.engine.discovery">org.junit.vintage.engine.discovery</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="#org.junit.vintage.engine.discovery">org.junit.vintage.engine.discovery</a></div>
+<div class="col-last even-row-color">
 <div class="block">Internal classes for test discovery within the JUnit Vintage test engine.</div>
 </div>
 </div>
@@ -146,6 +151,56 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;index)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
+<div class="caption"><span>Method parameters in <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/package-summary.html">org.junit.jupiter.engine.descriptor</a> with type arguments of type <a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>protected <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/DynamicDescendantFilter.html" title="class in org.junit.jupiter.engine.descriptor">DynamicDescendantFilter</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">DynamicDescendantFilter.</span><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/DynamicDescendantFilter.html#configure(java.util.function.UnaryOperator,org.junit.jupiter.engine.descriptor.DynamicDescendantFilter)" class="member-name-link">configure</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer,
+ <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/DynamicDescendantFilter.html" title="class in org.junit.jupiter.engine.descriptor">DynamicDescendantFilter</a>&nbsp;copy)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/DynamicDescendantFilter.html" title="class in org.junit.jupiter.engine.descriptor">DynamicDescendantFilter</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DynamicDescendantFilter.</span><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/DynamicDescendantFilter.html#copy(java.util.function.UnaryOperator)" class="member-name-link">copy</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>protected <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/JupiterTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">JupiterTestDescriptor</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ContainerTemplateTestDescriptor.</span><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateTestDescriptor.html#copyIncludingDescendants(java.util.function.UnaryOperator)" class="member-name-link">copyIncludingDescendants</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/JupiterTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">JupiterTestDescriptor</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">JupiterTestDescriptor.</span><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/JupiterTestDescriptor.html#copyIncludingDescendants(java.util.function.UnaryOperator)" class="member-name-link">copyIncludingDescendants</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Returns a deep copy (with copies of children) of this descriptor with the supplied unique ID.</div>
+</div>
+<div class="col-first even-row-color"><code>protected <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassTestDescriptor</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ClassTestDescriptor.</span><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassTestDescriptor.html#withUniqueId(java.util.function.UnaryOperator)" class="member-name-link">withUniqueId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateInvocationTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ContainerTemplateInvocationTestDescriptor</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ContainerTemplateInvocationTestDescriptor.</span><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateInvocationTestDescriptor.html#withUniqueId(java.util.function.UnaryOperator)" class="member-name-link">withUniqueId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>protected <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ContainerTemplateTestDescriptor</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ContainerTemplateTestDescriptor.</span><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateTestDescriptor.html#withUniqueId(java.util.function.UnaryOperator)" class="member-name-link">withUniqueId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected abstract <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/JupiterTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">JupiterTestDescriptor</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">JupiterTestDescriptor.</span><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/JupiterTestDescriptor.html#withUniqueId(java.util.function.UnaryOperator)" class="member-name-link">withUniqueId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Returns shallow copy (without children) of this descriptor with the supplied unique ID.</div>
+</div>
+<div class="col-first even-row-color"><code>protected <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/NestedClassTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">NestedClassTestDescriptor</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">NestedClassTestDescriptor.</span><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/NestedClassTestDescriptor.html#withUniqueId(java.util.function.UnaryOperator)" class="member-name-link">withUniqueId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/TestFactoryTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">TestFactoryTestDescriptor</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">TestFactoryTestDescriptor.</span><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/TestFactoryTestDescriptor.html#withUniqueId(java.util.function.UnaryOperator)" class="member-name-link">withUniqueId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>protected <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/TestMethodTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">TestMethodTestDescriptor</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">TestMethodTestDescriptor.</span><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/TestMethodTestDescriptor.html#withUniqueId(java.util.function.UnaryOperator)" class="member-name-link">withUniqueId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/TestTemplateInvocationTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">TestTemplateInvocationTestDescriptor</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">TestTemplateInvocationTestDescriptor.</span><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/TestTemplateInvocationTestDescriptor.html#withUniqueId(java.util.function.UnaryOperator)" class="member-name-link">withUniqueId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>protected <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/TestTemplateTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">TestTemplateTestDescriptor</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">TestTemplateTestDescriptor.</span><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/TestTemplateTestDescriptor.html#withUniqueId(java.util.function.UnaryOperator)" class="member-name-link">withUniqueId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
 <div class="caption"><span>Constructors in <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/package-summary.html">org.junit.jupiter.engine.descriptor</a> with parameters of type <a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a></span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier</div>
@@ -155,6 +210,18 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassTestDescriptor.html#%3Cinit%3E(org.junit.platform.engine.UniqueId,java.lang.Class,org.junit.jupiter.engine.config.JupiterConfiguration)" class="member-name-link">ClassTestDescriptor</a><wbr>(<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;uniqueId,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;testClass,
  <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/config/JupiterConfiguration.html" title="interface in org.junit.jupiter.engine.config">JupiterConfiguration</a>&nbsp;configuration)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateInvocationTestDescriptor.html#%3Cinit%3E(org.junit.platform.engine.UniqueId,org.junit.jupiter.engine.descriptor.ContainerTemplateTestDescriptor,org.junit.jupiter.api.extension.ContainerTemplateInvocationContext,int,org.junit.platform.engine.TestSource,org.junit.jupiter.engine.config.JupiterConfiguration)" class="member-name-link">ContainerTemplateInvocationTestDescriptor</a><wbr>(<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;uniqueId,
+ <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ContainerTemplateTestDescriptor</a>&nbsp;parent,
+ <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">ContainerTemplateInvocationContext</a>&nbsp;invocationContext,
+ int&nbsp;index,
+ <a href="../TestSource.html" title="interface in org.junit.platform.engine">TestSource</a>&nbsp;source,
+ <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/config/JupiterConfiguration.html" title="interface in org.junit.jupiter.engine.config">JupiterConfiguration</a>&nbsp;configuration)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateTestDescriptor.html#%3Cinit%3E(org.junit.platform.engine.UniqueId,org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor)" class="member-name-link">ContainerTemplateTestDescriptor</a><wbr>(<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;uniqueId,
+ <a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassBasedTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassBasedTestDescriptor</a>&nbsp;delegate)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
 <div class="col-second odd-row-color"><code><a href="../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/JupiterEngineDescriptor.html#%3Cinit%3E(org.junit.platform.engine.UniqueId,org.junit.jupiter.engine.config.JupiterConfiguration)" class="member-name-link">JupiterEngineDescriptor</a><wbr>(<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;uniqueId,
@@ -465,6 +532,39 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><span class="type-name-label">SuiteTestEngine.</span><code><a href="../../../../../../org.junit.platform.suite.engine/org/junit/platform/suite/engine/SuiteTestEngine.html#discover(org.junit.platform.engine.EngineDiscoveryRequest,org.junit.platform.engine.UniqueId)" class="member-name-link">discover</a><wbr>(<a href="../EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine">EngineDiscoveryRequest</a>&nbsp;discoveryRequest,
  <a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;uniqueId)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.junit.platform.testkit.engine">
+<h2>Uses of <a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a> in <a href="../../../../../../org.junit.platform.testkit/org/junit/platform/testkit/engine/package-summary.html">org.junit.platform.testkit.engine</a></h2>
+<div class="caption"><span>Methods in <a href="../../../../../../org.junit.platform.testkit/org/junit/platform/testkit/engine/package-summary.html">org.junit.platform.testkit.engine</a> with parameters of type <a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static <a href="https://javadoc.io/doc/org.assertj/assertj-core/3.27.3/org/assertj/core/api/Condition.html" title="class or interface in org.assertj.core.api" class="external-link">Condition</a><wbr>&lt;<a href="../../../../../../org.junit.platform.testkit/org/junit/platform/testkit/engine/Event.html" title="class in org.junit.platform.testkit.engine">Event</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">EventConditions.</span><code><a href="../../../../../../org.junit.platform.testkit/org/junit/platform/testkit/engine/EventConditions.html#uniqueId(org.junit.platform.engine.UniqueId)" class="member-name-link">uniqueId</a><wbr>(<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;uniqueId)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Create a new <a href="https://javadoc.io/doc/org.assertj/assertj-core/3.27.3/org/assertj/core/api/Condition.html" title="class or interface in org.assertj.core.api" class="external-link"><code>Condition</code></a> that matches if and only if the
+ <a href="../TestDescriptor.html#getUniqueId()">unique id</a> of an <a href="../../../../../../org.junit.platform.testkit/org/junit/platform/testkit/engine/Event.html" title="class in org.junit.platform.testkit.engine"><code>Event</code></a>'s
+ <a href="../../../../../../org.junit.platform.testkit/org/junit/platform/testkit/engine/Event.html#getTestDescriptor()">test descriptor</a> is equal to the
+ supplied <a href="../UniqueId.html" title="class in org.junit.platform.engine"><code>UniqueId</code></a>.</div>
+</div>
+</div>
+<div class="caption"><span>Method parameters in <a href="../../../../../../org.junit.platform.testkit/org/junit/platform/testkit/engine/package-summary.html">org.junit.platform.testkit.engine</a> with type arguments of type <a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static <a href="https://javadoc.io/doc/org.assertj/assertj-core/3.27.3/org/assertj/core/api/Condition.html" title="class or interface in org.assertj.core.api" class="external-link">Condition</a><wbr>&lt;<a href="../../../../../../org.junit.platform.testkit/org/junit/platform/testkit/engine/Event.html" title="class in org.junit.platform.testkit.engine">Event</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">EventConditions.</span><code><a href="../../../../../../org.junit.platform.testkit/org/junit/platform/testkit/engine/EventConditions.html#uniqueId(org.assertj.core.api.Condition)" class="member-name-link">uniqueId</a><wbr>(<a href="https://javadoc.io/doc/org.assertj/assertj-core/3.27.3/org/assertj/core/api/Condition.html" title="class or interface in org.assertj.core.api" class="external-link">Condition</a>&lt;? super <a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;condition)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Create a new <a href="https://javadoc.io/doc/org.assertj/assertj-core/3.27.3/org/assertj/core/api/Condition.html" title="class or interface in org.assertj.core.api" class="external-link"><code>Condition</code></a> that matches if and only if the
+ <a href="../TestDescriptor.html#getUniqueId()">unique id</a> of an <a href="../../../../../../org.junit.platform.testkit/org/junit/platform/testkit/engine/Event.html" title="class in org.junit.platform.testkit.engine"><code>Event</code></a>'s
+ <a href="../../../../../../org.junit.platform.testkit/org/junit/platform/testkit/engine/Event.html#getTestDescriptor()">test descriptor</a> matches the
+ supplied <a href="https://javadoc.io/doc/org.assertj/assertj-core/3.27.3/org/assertj/core/api/Condition.html" title="class or interface in org.assertj.core.api" class="external-link"><code>Condition</code></a>.</div>
+</div>
 </div>
 </section>
 </li>

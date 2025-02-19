@@ -268,6 +268,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Clean up the supplied <code>context</code> after execution.</div>
 </dd>
+<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateInvocationTestDescriptor.html#cleanUp(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)" class="member-name-link">cleanUp(JupiterEngineExecutionContext)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateInvocationTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ContainerTemplateInvocationTestDescriptor</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateTestDescriptor.html#cleanUp(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)" class="member-name-link">cleanUp(JupiterEngineExecutionContext)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ContainerTemplateTestDescriptor</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/JupiterEngineDescriptor.html#cleanUp(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)" class="member-name-link">cleanUp(JupiterEngineExecutionContext)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/JupiterEngineDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">JupiterEngineDescriptor</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/JupiterTestDescriptor.html#cleanUp(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)" class="member-name-link">cleanUp(JupiterEngineExecutionContext)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/JupiterTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">JupiterTestDescriptor</a></dt>
@@ -523,6 +527,8 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>@ConfigurationParametersResources</code> is a container for one or more
  <a href="../org.junit.platform.suite.api/org/junit/platform/suite/api/ConfigurationParametersResource.html" title="annotation interface in org.junit.platform.suite.api"><code>@ConfigurationParametersResource</code></a> declarations.</div>
 </dd>
+<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/DynamicDescendantFilter.html#configure(java.util.function.UnaryOperator,org.junit.jupiter.engine.descriptor.DynamicDescendantFilter)" class="member-name-link">configure(UnaryOperator&lt;UniqueId&gt;, DynamicDescendantFilter)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/DynamicDescendantFilter.html" title="class in org.junit.jupiter.engine.descriptor">DynamicDescendantFilter</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org.junit.platform.console/org/junit/platform/console/ConsoleLauncher.html" class="type-name-link" title="class in org.junit.platform.console">ConsoleLauncher</a> - Class in <a href="../org.junit.platform.console/org/junit/platform/console/package-summary.html">org.junit.platform.console</a></dt>
 <dd>
 <div class="block">The <code>ConsoleLauncher</code> is a stand-alone application for launching the
@@ -568,6 +574,8 @@ loadScripts(document, 'script');</script>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeEachCallback.html#constructor-requirements-heading" class="search-tag-link">Constructor Requirements</a> - Search tag in interface org.junit.jupiter.api.extension.BeforeEachCallback</dt>
 <dd>Section</dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeTestExecutionCallback.html#constructor-requirements-heading" class="search-tag-link">Constructor Requirements</a> - Search tag in interface org.junit.jupiter.api.extension.BeforeTestExecutionCallback</dt>
+<dd>Section</dd>
+<dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContextProvider.html#constructor-requirements-heading" class="search-tag-link">Constructor Requirements</a> - Search tag in interface org.junit.jupiter.api.extension.ContainerTemplateInvocationContextProvider</dt>
 <dd>Section</dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExecutionCondition.html#constructor-requirements-heading" class="search-tag-link">Constructor Requirements</a> - Search tag in interface org.junit.jupiter.api.extension.ExecutionCondition</dt>
 <dd>Section</dd>
@@ -633,6 +641,31 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Get recorded events for containers.</div>
 </dd>
+<dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/ContainerTemplate.html" class="type-name-link" title="annotation interface in org.junit.jupiter.api">ContainerTemplate</a> - Annotation Interface in <a href="../org.junit.jupiter.api/org/junit/jupiter/api/package-summary.html">org.junit.jupiter.api</a></dt>
+<dd>
+<div class="block"><code>@ContainerTemplate</code> is used to signal that the annotated class is a
+ <em>container template</em>.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContext.html" class="type-name-link" title="interface in org.junit.jupiter.api.extension">ContainerTemplateInvocationContext</a> - Interface in <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/package-summary.html">org.junit.jupiter.api.extension</a></dt>
+<dd>
+<div class="block"><code>ContainerTemplateInvocationContext</code> represents the <em>context</em> of
+ a single invocation of a <a href="../org.junit.jupiter.api/org/junit/jupiter/api/ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api">container template</a>.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContextProvider.html" class="type-name-link" title="interface in org.junit.jupiter.api.extension">ContainerTemplateInvocationContextProvider</a> - Interface in <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/package-summary.html">org.junit.jupiter.api.extension</a></dt>
+<dd>
+<div class="block"><code>ContainerTemplateInvocationContextProvider</code> defines the API for
+ <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a> that wish to provide one or multiple contexts
+ for the invocation of a
+ <a href="../org.junit.jupiter.api/org/junit/jupiter/api/ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@ContainerTemplate</code></a> class.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateInvocationTestDescriptor.html" class="type-name-link" title="class in org.junit.jupiter.engine.descriptor">ContainerTemplateInvocationTestDescriptor</a> - Class in <a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/package-summary.html">org.junit.jupiter.engine.descriptor</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateInvocationTestDescriptor.html#%3Cinit%3E(org.junit.platform.engine.UniqueId,org.junit.jupiter.engine.descriptor.ContainerTemplateTestDescriptor,org.junit.jupiter.api.extension.ContainerTemplateInvocationContext,int,org.junit.platform.engine.TestSource,org.junit.jupiter.engine.config.JupiterConfiguration)" class="member-name-link">ContainerTemplateInvocationTestDescriptor(UniqueId, ContainerTemplateTestDescriptor, ContainerTemplateInvocationContext, int, TestSource, JupiterConfiguration)</a> - Constructor for class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateInvocationTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ContainerTemplateInvocationTestDescriptor</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateTestDescriptor.html" class="type-name-link" title="class in org.junit.jupiter.engine.descriptor">ContainerTemplateTestDescriptor</a> - Class in <a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/package-summary.html">org.junit.jupiter.engine.descriptor</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateTestDescriptor.html#%3Cinit%3E(org.junit.platform.engine.UniqueId,org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor)" class="member-name-link">ContainerTemplateTestDescriptor(UniqueId, ClassBasedTestDescriptor)</a> - Constructor for class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ContainerTemplateTestDescriptor</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org.junit.platform.commons/org/junit/platform/commons/util/StringUtils.html#containsIsoControlCharacter(java.lang.String)" class="member-name-link">containsIsoControlCharacter(String)</a> - Static method in class org.junit.platform.commons.util.<a href="../org.junit.platform.commons/org/junit/platform/commons/util/StringUtils.html" title="class in org.junit.platform.commons.util">StringUtils</a></dt>
 <dd>
 <div class="block">Determine if the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> contains any ISO control characters.</div>
@@ -723,6 +756,14 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block"><code>@ConvertWith</code> is an annotation that allows one to specify an explicit
  <a href="../org.junit.jupiter.params/org/junit/jupiter/params/converter/ArgumentConverter.html" title="interface in org.junit.jupiter.params.converter"><code>ArgumentConverter</code></a>.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/DynamicDescendantFilter.html#copy(java.util.function.UnaryOperator)" class="member-name-link">copy(UnaryOperator&lt;UniqueId&gt;)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/DynamicDescendantFilter.html" title="class in org.junit.jupiter.engine.descriptor">DynamicDescendantFilter</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateTestDescriptor.html#copyIncludingDescendants(java.util.function.UnaryOperator)" class="member-name-link">copyIncludingDescendants(UnaryOperator&lt;UniqueId&gt;)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ContainerTemplateTestDescriptor</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/JupiterTestDescriptor.html#copyIncludingDescendants(java.util.function.UnaryOperator)" class="member-name-link">copyIncludingDescendants(UnaryOperator&lt;UniqueId&gt;)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/JupiterTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">JupiterTestDescriptor</a></dt>
+<dd>
+<div class="block">Returns a deep copy (with copies of children) of this descriptor with the supplied unique ID.</div>
 </dd>
 <dt><a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/Events.html#count()" class="member-name-link">count()</a> - Method in class org.junit.platform.testkit.engine.<a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/Events.html" title="class in org.junit.platform.testkit.engine">Events</a></dt>
 <dd>

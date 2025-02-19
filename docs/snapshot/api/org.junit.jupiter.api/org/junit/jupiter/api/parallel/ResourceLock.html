@@ -140,7 +140,12 @@ loadScripts(document, 'script');</script>
  <code>target = CHILDREN</code> means that <a href="#value()"><code>value()</code></a> and <a href="#mode()"><code>mode()</code></a> no
  longer apply to a node declaring the annotation. However, the <a href="#providers()"><code>providers()</code></a>
  attribute remains applicable, and the target of "dynamic" shared resources added
- via implementations of <a href="ResourceLocksProvider.html" title="interface in org.junit.jupiter.api.parallel"><code>ResourceLocksProvider</code></a> is not changed.</div>
+ via implementations of <a href="ResourceLocksProvider.html" title="interface in org.junit.jupiter.api.parallel"><code>ResourceLocksProvider</code></a> is not changed.
+
+ <p>Shared resources declared on or provided for methods or nested test
+ classes in a <a href="../ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@ContainerTemplate</code></a> are propagated as
+ if they were declared on the outermost enclosing <code>@ContainerTemplate</code>
+ class itself.</div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>5.3</dd>

@@ -65,6 +65,27 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Unicode (extended ASCII) characters are used to display the test execution tree.</div>
 </dd>
+<dt><a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/EventConditions.html#uniqueId(java.lang.String)" class="member-name-link">uniqueId(String)</a> - Static method in class org.junit.platform.testkit.engine.<a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/EventConditions.html" title="class in org.junit.platform.testkit.engine">EventConditions</a></dt>
+<dd>
+<div class="block">Create a new <a href="https://javadoc.io/doc/org.assertj/assertj-core/3.27.3/org/assertj/core/api/Condition.html" title="class or interface in org.assertj.core.api" class="external-link"><code>Condition</code></a> that matches if and only if the
+ <a href="../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html#getUniqueId()">unique id</a> of an <a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/Event.html" title="class in org.junit.platform.testkit.engine"><code>Event</code></a>'s
+ <a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/Event.html#getTestDescriptor()">test descriptor</a> is equal to the
+ <a href="../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine"><code>UniqueId</code></a> parsed from the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>.</div>
+</dd>
+<dt><a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/EventConditions.html#uniqueId(org.assertj.core.api.Condition)" class="member-name-link">uniqueId(Condition&lt;? super UniqueId&gt;)</a> - Static method in class org.junit.platform.testkit.engine.<a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/EventConditions.html" title="class in org.junit.platform.testkit.engine">EventConditions</a></dt>
+<dd>
+<div class="block">Create a new <a href="https://javadoc.io/doc/org.assertj/assertj-core/3.27.3/org/assertj/core/api/Condition.html" title="class or interface in org.assertj.core.api" class="external-link"><code>Condition</code></a> that matches if and only if the
+ <a href="../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html#getUniqueId()">unique id</a> of an <a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/Event.html" title="class in org.junit.platform.testkit.engine"><code>Event</code></a>'s
+ <a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/Event.html#getTestDescriptor()">test descriptor</a> matches the
+ supplied <a href="https://javadoc.io/doc/org.assertj/assertj-core/3.27.3/org/assertj/core/api/Condition.html" title="class or interface in org.assertj.core.api" class="external-link"><code>Condition</code></a>.</div>
+</dd>
+<dt><a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/EventConditions.html#uniqueId(org.junit.platform.engine.UniqueId)" class="member-name-link">uniqueId(UniqueId)</a> - Static method in class org.junit.platform.testkit.engine.<a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/EventConditions.html" title="class in org.junit.platform.testkit.engine">EventConditions</a></dt>
+<dd>
+<div class="block">Create a new <a href="https://javadoc.io/doc/org.assertj/assertj-core/3.27.3/org/assertj/core/api/Condition.html" title="class or interface in org.assertj.core.api" class="external-link"><code>Condition</code></a> that matches if and only if the
+ <a href="../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html#getUniqueId()">unique id</a> of an <a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/Event.html" title="class in org.junit.platform.testkit.engine"><code>Event</code></a>'s
+ <a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/Event.html#getTestDescriptor()">test descriptor</a> is equal to the
+ supplied <a href="../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine"><code>UniqueId</code></a>.</div>
+</dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" class="type-name-link" title="class in org.junit.platform.engine">UniqueId</a> - Class in <a href="../org.junit.platform.engine/org/junit/platform/engine/package-summary.html">org.junit.platform.engine</a></dt>
 <dd>
 <div class="block"><code>UniqueId</code> encapsulates the creation, parsing, and display of unique IDs

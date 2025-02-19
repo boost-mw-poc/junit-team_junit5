@@ -147,18 +147,28 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#allowAll()" class="member-name-link">allowAll</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#allowIndex(java.util.Set)" class="member-name-link">allowIndex</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;&nbsp;indices)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#allowIndex(int)" class="member-name-link">allowIndex</a><wbr>(int&nbsp;index)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#allowUniqueIdPrefix(org.junit.platform.engine.UniqueId)" class="member-name-link">allowUniqueIdPrefix</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;uniqueId)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#allowIndex(java.util.Set)" class="member-name-link">allowIndex</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;&nbsp;indices)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#test(org.junit.platform.engine.UniqueId,java.lang.Integer)" class="member-name-link">test</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;uniqueId,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;index)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#allowUniqueIdPrefix(org.junit.platform.engine.UniqueId)" class="member-name-link">allowUniqueIdPrefix</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;uniqueId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DynamicDescendantFilter.html" title="class in org.junit.jupiter.engine.descriptor">DynamicDescendantFilter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withoutIndexFiltering()" class="member-name-link">withoutIndexFiltering</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="DynamicDescendantFilter.html" title="class in org.junit.jupiter.engine.descriptor">DynamicDescendantFilter</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#configure(java.util.function.UnaryOperator,org.junit.jupiter.engine.descriptor.DynamicDescendantFilter)" class="member-name-link">configure</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer,
+ <a href="DynamicDescendantFilter.html" title="class in org.junit.jupiter.engine.descriptor">DynamicDescendantFilter</a>&nbsp;copy)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DynamicDescendantFilter.html" title="class in org.junit.jupiter.engine.descriptor">DynamicDescendantFilter</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#copy(java.util.function.UnaryOperator)" class="member-name-link">copy</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#test(org.junit.platform.engine.UniqueId,java.lang.Integer)" class="member-name-link">test</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;uniqueId,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;index)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DynamicDescendantFilter.html" title="class in org.junit.jupiter.engine.descriptor">DynamicDescendantFilter</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withoutIndexFiltering()" class="member-name-link">withoutIndexFiltering</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -200,6 +210,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 </section>
 </li>
 <li>
+<section class="detail" id="allowIndex(int)">
+<h3>allowIndex</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">allowIndex</span><wbr><span class="parameters">(int&nbsp;index)</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="allowIndex(java.util.Set)">
 <h3>allowIndex</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">allowIndex</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;&nbsp;indices)</span></div>
@@ -226,6 +242,19 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <section class="detail" id="withoutIndexFiltering()">
 <h3>withoutIndexFiltering</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DynamicDescendantFilter.html" title="class in org.junit.jupiter.engine.descriptor">DynamicDescendantFilter</a></span>&nbsp;<span class="element-name">withoutIndexFiltering</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="copy(java.util.function.UnaryOperator)">
+<h3>copy</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DynamicDescendantFilter.html" title="class in org.junit.jupiter.engine.descriptor">DynamicDescendantFilter</a></span>&nbsp;<span class="element-name">copy</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="configure(java.util.function.UnaryOperator,org.junit.jupiter.engine.descriptor.DynamicDescendantFilter)">
+<h3>configure</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="DynamicDescendantFilter.html" title="class in org.junit.jupiter.engine.descriptor">DynamicDescendantFilter</a></span>&nbsp;<span class="element-name">configure</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer,
+ <a href="DynamicDescendantFilter.html" title="class in org.junit.jupiter.engine.descriptor">DynamicDescendantFilter</a>&nbsp;copy)</span></div>
 </section>
 </li>
 </ul>
