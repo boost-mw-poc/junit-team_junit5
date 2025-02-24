@@ -246,7 +246,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#orderChildren(java.util.function.UnaryOperator)" class="member-name-link">orderChildren</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="TestDescriptor.html" title="interface in org.junit.platform.engine">TestDescriptor</a>&gt;&gt;&nbsp;orderer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Order the children from this descriptor.</div>
+<div class="block">Order the children of this descriptor.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#prune()" class="member-name-link">prune</a>()</code></div>
@@ -486,17 +486,18 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.12",
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#EXPERIMENTAL" title="class or interface in org.apiguardian.api" class="external-link">EXPERIMENTAL</a>)
 </span><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">orderChildren</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="TestDescriptor.html" title="interface in org.junit.platform.engine">TestDescriptor</a>&gt;&gt;&nbsp;orderer)</span></div>
-<div class="block">Order the children from this descriptor.
+<div class="block">Order the children of this descriptor.
 
  <p>The <code>orderer</code> is provided a modifiable list of child test
- descriptors in this test descriptor; never <code>null</code>. The
+ descriptors of this test descriptor; never <code>null</code>. The
  <code>orderer</code> must return a list containing the same descriptors in any
  order; potentially the same list, but never <code>null</code>. If descriptors
- were added or removed, an exception is thrown.</div>
+ are added or removed, an exception is thrown.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>orderer</code> - a unary operator to order the children of this test
- descriptor.</dd>
+<dd><code>orderer</code> - a unary operator to order the children of this test descriptor</dd>
+<dt>Since:</dt>
+<dd>1.12</dd>
 </dl>
 </section>
 </li>
