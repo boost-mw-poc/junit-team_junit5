@@ -147,12 +147,12 @@ implements <a href="Resource.html" title="interface in org.junit.platform.common
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Get the resource name.</div>
+<div class="block">Get the name of this resource.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUri()" class="member-name-link">getUri</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Get URI to a resource.</div>
+<div class="block">Get the URI of this resource.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
@@ -200,10 +200,10 @@ implements <a href="Resource.html" title="interface in org.junit.platform.common
 <h3>getName</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getName</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Resource.html#getName()">Resource</a></code></span></div>
-<div class="block">Get the resource name.
- <p>
- The resource name is a <code>/</code>-separated path. The path is relative to
- the classpath root in which the resource is located.</div>
+<div class="block">Get the name of this resource.
+
+ <p>The resource name is a <code>/</code>-separated path. The path is relative
+ to the classpath root in which the resource is located.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Resource.html#getName()">getName</a></code>&nbsp;in interface&nbsp;<code><a href="Resource.html" title="interface in org.junit.platform.commons.support">Resource</a></code></dd>
@@ -217,7 +217,7 @@ implements <a href="Resource.html" title="interface in org.junit.platform.common
 <h3>getUri</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a></span>&nbsp;<span class="element-name">getUri</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Resource.html#getUri()">Resource</a></code></span></div>
-<div class="block">Get URI to a resource.</div>
+<div class="block">Get the URI of this resource.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Resource.html#getUri()">getUri</a></code>&nbsp;in interface&nbsp;<code><a href="Resource.html" title="interface in org.junit.platform.commons.support">Resource</a></code></dd>

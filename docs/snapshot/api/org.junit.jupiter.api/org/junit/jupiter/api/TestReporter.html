@@ -266,8 +266,8 @@ loadScripts(document, 'script');</script>
 </span><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">publishFile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;file,
  <a href="extension/MediaType.html" title="class in org.junit.jupiter.api.extension">MediaType</a>&nbsp;mediaType)</span></div>
 <div class="block">Publish the supplied file and attach it to the current test or container.
- <p>
- The file will be copied to the report output directory replacing any
+
+ <p>The file will be copied to the report output directory replacing any
  potentially existing file with the same name.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -287,8 +287,8 @@ loadScripts(document, 'script');</script>
 </span><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">publishDirectory</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;directory)</span></div>
 <div class="block">Publish the supplied directory and attach it to the current test or
  container.
- <p>
- The entire directory will be copied to the report output directory
+
+ <p>The entire directory will be copied to the report output directory
  replacing any potentially existing files with the same name.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -308,8 +308,8 @@ loadScripts(document, 'script');</script>
  <a href="function/ThrowingConsumer.html" title="interface in org.junit.jupiter.api.function">ThrowingConsumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&gt;&nbsp;action)</span></div>
 <div class="block">Publish a file or directory with the supplied name and media type written
  by the supplied action and attach it to the current test or container.
- <p>
- The <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link"><code>Path</code></a> passed to the supplied action will be relative to the
+
+ <p>The <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link"><code>Path</code></a> passed to the supplied action will be relative to the
  report output directory, but it's up to the action to write the file.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -332,8 +332,8 @@ loadScripts(document, 'script');</script>
  <a href="function/ThrowingConsumer.html" title="interface in org.junit.jupiter.api.function">ThrowingConsumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&gt;&nbsp;action)</span></div>
 <div class="block">Publish a directory with the supplied name written by the supplied action
  and attach it to the current test or container.
- <p>
- The <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link"><code>Path</code></a> passed to the supplied action will be relative to the
+
+ <p>The <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link"><code>Path</code></a> passed to the supplied action will be relative to the
  report output directory and point to an existing directory, but it's up
  to the action to write files to it.</div>
 <dl class="notes">
