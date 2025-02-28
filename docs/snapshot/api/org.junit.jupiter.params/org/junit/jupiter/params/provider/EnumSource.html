@@ -88,7 +88,7 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Target.html" title="class or interface in java.lang.annotation" class="external-link">@Target</a>({<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#ANNOTATION_TYPE" title="class or interface in java.lang.annotation" class="external-link">ANNOTATION_TYPE</a>,<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD" title="class or interface in java.lang.annotation" class="external-link">METHOD</a>})
+<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Target.html" title="class or interface in java.lang.annotation" class="external-link">@Target</a>({<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#ANNOTATION_TYPE" title="class or interface in java.lang.annotation" class="external-link">ANNOTATION_TYPE</a>,<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD" title="class or interface in java.lang.annotation" class="external-link">METHOD</a>,<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE" title="class or interface in java.lang.annotation" class="external-link">TYPE</a>})
 <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Retention.html" title="class or interface in java.lang.annotation" class="external-link">@Retention</a>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/RetentionPolicy.html#RUNTIME" title="class or interface in java.lang.annotation" class="external-link">RUNTIME</a>)
 <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Documented.html" title="class or interface in java.lang.annotation" class="external-link">@Documented</a>
 <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Repeatable.html" title="class or interface in java.lang.annotation" class="external-link">@Repeatable</a>(<a href="EnumSources.html" title="annotation interface in org.junit.jupiter.params.provider">EnumSources.class</a>)
@@ -100,11 +100,11 @@ loadScripts(document, 'script');</script>
  <a href="ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a> for constants of an <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link"><code>Enum</code></a>.
 
  <p>The enum constants will be provided as arguments to the annotated
- <code>@ParameterizedTest</code> method.
+ <code>@ParameterizedClass</code> or <code>@ParameterizedTest</code>.
 
  <p>The enum type can be specified explicitly using the <a href="#value()"><code>value()</code></a>
  attribute. Otherwise, the declared type of the first parameter of the
- <code>@ParameterizedTest</code> method is used.
+ <code>@ParameterizedClass</code> or <code>@ParameterizedTest</code> is used.
 
  <p>The set of enum constants can be restricted via the <a href="#names()"><code>names()</code></a>,
  <a href="#from()"><code>from()</code></a>, <a href="#to()"><code>to()</code></a> and <a href="#mode()"><code>mode()</code></a> attributes.</div>
@@ -115,6 +115,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a></li>
+<li><a href="../ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>ParameterizedClass</code></a></li>
 <li><a href="../ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>ParameterizedTest</code></a></li>
 </ul>
 </dd>

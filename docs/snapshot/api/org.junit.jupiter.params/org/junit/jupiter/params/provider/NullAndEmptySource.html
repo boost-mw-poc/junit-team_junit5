@@ -88,7 +88,7 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Target.html" title="class or interface in java.lang.annotation" class="external-link">@Target</a>({<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#ANNOTATION_TYPE" title="class or interface in java.lang.annotation" class="external-link">ANNOTATION_TYPE</a>,<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD" title="class or interface in java.lang.annotation" class="external-link">METHOD</a>})
+<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Target.html" title="class or interface in java.lang.annotation" class="external-link">@Target</a>({<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#ANNOTATION_TYPE" title="class or interface in java.lang.annotation" class="external-link">ANNOTATION_TYPE</a>,<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD" title="class or interface in java.lang.annotation" class="external-link">METHOD</a>,<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE" title="class or interface in java.lang.annotation" class="external-link">TYPE</a>})
 <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Retention.html" title="class or interface in java.lang.annotation" class="external-link">@Retention</a>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/RetentionPolicy.html#RUNTIME" title="class or interface in java.lang.annotation" class="external-link">RUNTIME</a>)
 <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Documented.html" title="class or interface in java.lang.annotation" class="external-link">@Documented</a>
 <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
@@ -100,15 +100,16 @@ loadScripts(document, 'script');</script>
  the functionality of <a href="NullSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>@NullSource</code></a> and
  <a href="EmptySource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>@EmptySource</code></a>.
 
- <p>Annotating a <code>@ParameterizedTest</code> method with
- <code>@NullAndEmptySource</code> is equivalent to annotating the method with
- <code>@NullSource</code> and <code>@EmptySource</code>.</div>
+ <p>Annotating a <code>@ParameterizedClass</code> or <code>@ParameterizedTest</code>
+ with <code>@NullAndEmptySource</code> is equivalent to annotating the method with
+ both <code>@NullSource</code> and <code>@EmptySource</code>.</div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>5.4</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
+<li><a href="../ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>ParameterizedClass</code></a></li>
 <li><a href="../ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>ParameterizedTest</code></a></li>
 <li><a href="NullSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>NullSource</code></a></li>
 <li><a href="EmptySource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>EmptySource</code></a></li>

@@ -317,11 +317,22 @@ loadScripts(document, 'script');</script>
  <a href="../org.junit.jupiter.api/org/junit/jupiter/api/AfterEach.html" title="annotation interface in org.junit.jupiter.api"><code>@AfterEach</code></a> methods) have been executed
  for that test.</div>
 </dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/SimpleArgumentsAggregator.html#aggregateArguments(org.junit.jupiter.params.aggregator.ArgumentsAccessor,java.lang.Class,org.junit.jupiter.api.extension.AnnotatedElementContext,int)" class="member-name-link">aggregateArguments(ArgumentsAccessor, Class&lt;?&gt;, AnnotatedElementContext, int)</a> - Method in class org.junit.jupiter.params.aggregator.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/SimpleArgumentsAggregator.html" title="class in org.junit.jupiter.params.aggregator">SimpleArgumentsAggregator</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAggregator.html#aggregateArguments(org.junit.jupiter.params.aggregator.ArgumentsAccessor,org.junit.jupiter.api.extension.ParameterContext)" class="member-name-link">aggregateArguments(ArgumentsAccessor, ParameterContext)</a> - Method in interface org.junit.jupiter.params.aggregator.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAggregator.html" title="interface in org.junit.jupiter.params.aggregator">ArgumentsAggregator</a></dt>
 <dd>
 <div class="block">Aggregate the arguments contained in the supplied <code>accessor</code> into a
  single object.</div>
 </dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/SimpleArgumentsAggregator.html#aggregateArguments(org.junit.jupiter.params.aggregator.ArgumentsAccessor,org.junit.jupiter.api.extension.ParameterContext)" class="member-name-link">aggregateArguments(ArgumentsAccessor, ParameterContext)</a> - Method in class org.junit.jupiter.params.aggregator.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/SimpleArgumentsAggregator.html" title="class in org.junit.jupiter.params.aggregator">SimpleArgumentsAggregator</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAggregator.html#aggregateArguments(org.junit.jupiter.params.aggregator.ArgumentsAccessor,org.junit.jupiter.params.support.FieldContext)" class="member-name-link">aggregateArguments(ArgumentsAccessor, FieldContext)</a> - Method in interface org.junit.jupiter.params.aggregator.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAggregator.html" title="interface in org.junit.jupiter.params.aggregator">ArgumentsAggregator</a></dt>
+<dd>
+<div class="block">Aggregate the arguments contained in the supplied <code>accessor</code> into a
+ single object.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/SimpleArgumentsAggregator.html#aggregateArguments(org.junit.jupiter.params.aggregator.ArgumentsAccessor,org.junit.jupiter.params.support.FieldContext)" class="member-name-link">aggregateArguments(ArgumentsAccessor, FieldContext)</a> - Method in class org.junit.jupiter.params.aggregator.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/SimpleArgumentsAggregator.html" title="class in org.junit.jupiter.params.aggregator">SimpleArgumentsAggregator</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/AggregateWith.html" class="type-name-link" title="annotation interface in org.junit.jupiter.params.aggregator">AggregateWith</a> - Annotation Interface in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/package-summary.html">org.junit.jupiter.params.aggregator</a></dt>
 <dd>
 <div class="block"><code>@AggregateWith</code> is an annotation that allows one to specify an
@@ -345,6 +356,11 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/DynamicDescendantFilter.html#allowUniqueIdPrefix(org.junit.platform.engine.UniqueId)" class="member-name-link">allowUniqueIdPrefix(UniqueId)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/DynamicDescendantFilter.html" title="class in org.junit.jupiter.engine.descriptor">DynamicDescendantFilter</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html#allowZeroInvocations()" class="member-name-link">allowZeroInvocations()</a> - Element in annotation interface org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params">ParameterizedClass</a></dt>
+<dd>
+<div class="block">Configure whether zero invocations are allowed for this
+ parameterized class.</div>
+</dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#allowZeroInvocations()" class="member-name-link">allowZeroInvocations()</a> - Element in annotation interface org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params">ParameterizedTest</a></dt>
 <dd>
 <div class="block">Configure whether zero invocations are allowed for this
@@ -489,17 +505,33 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Architectures on which the annotated class or method should be enabled.</div>
 </dd>
-<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#ARGUMENT_SET_NAME_OR_ARGUMENTS_WITH_NAMES_PLACEHOLDER" class="member-name-link">ARGUMENT_SET_NAME_OR_ARGUMENTS_WITH_NAMES_PLACEHOLDER</a> - Static variable in annotation interface org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params">ParameterizedTest</a></dt>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedInvocationConstants.html#ARGUMENT_SET_NAME_OR_ARGUMENTS_WITH_NAMES_PLACEHOLDER" class="member-name-link">ARGUMENT_SET_NAME_OR_ARGUMENTS_WITH_NAMES_PLACEHOLDER</a> - Static variable in class org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedInvocationConstants.html" title="class in org.junit.jupiter.params">ParameterizedInvocationConstants</a></dt>
 <dd>
-<div class="block">Placeholder for either <a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#ARGUMENT_SET_NAME_PLACEHOLDER"><code>ParameterizedTest.ARGUMENT_SET_NAME_PLACEHOLDER</code></a> or
- <a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#ARGUMENTS_WITH_NAMES_PLACEHOLDER"><code>ParameterizedTest.ARGUMENTS_WITH_NAMES_PLACEHOLDER</code></a>, depending on whether the
+<div class="block">Placeholder for either <a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedInvocationConstants.html#ARGUMENT_SET_NAME_PLACEHOLDER"><code>ParameterizedInvocationConstants.ARGUMENT_SET_NAME_PLACEHOLDER</code></a> or
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedInvocationConstants.html#ARGUMENTS_WITH_NAMES_PLACEHOLDER"><code>ParameterizedInvocationConstants.ARGUMENTS_WITH_NAMES_PLACEHOLDER</code></a>, depending on whether the
  current set of arguments was created via
  <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.html#argumentSet(java.lang.String,java.lang.Object...)"><code>argumentSet()</code></a>: <code>{argumentSetNameOrArgumentsWithNames}</code>.</div>
 </dd>
-<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#ARGUMENT_SET_NAME_PLACEHOLDER" class="member-name-link">ARGUMENT_SET_NAME_PLACEHOLDER</a> - Static variable in annotation interface org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params">ParameterizedTest</a></dt>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#ARGUMENT_SET_NAME_OR_ARGUMENTS_WITH_NAMES_PLACEHOLDER" class="member-name-link">ARGUMENT_SET_NAME_OR_ARGUMENTS_WITH_NAMES_PLACEHOLDER</a> - Static variable in annotation interface org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params">ParameterizedTest</a></dt>
+<dd>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Please reference
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedInvocationConstants.html#ARGUMENT_SET_NAME_OR_ARGUMENTS_WITH_NAMES_PLACEHOLDER"><code>ParameterizedInvocationConstants.ARGUMENT_SET_NAME_OR_ARGUMENTS_WITH_NAMES_PLACEHOLDER</code></a>
+ instead.</div>
+</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedInvocationConstants.html#ARGUMENT_SET_NAME_PLACEHOLDER" class="member-name-link">ARGUMENT_SET_NAME_PLACEHOLDER</a> - Static variable in class org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedInvocationConstants.html" title="class in org.junit.jupiter.params">ParameterizedInvocationConstants</a></dt>
 <dd>
 <div class="block">Placeholder for the name of the argument set for the current invocation
  of a <code>@ParameterizedTest</code> method: <code>{argumentSetName}</code>.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#ARGUMENT_SET_NAME_PLACEHOLDER" class="member-name-link">ARGUMENT_SET_NAME_PLACEHOLDER</a> - Static variable in annotation interface org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params">ParameterizedTest</a></dt>
+<dd>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Please reference
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedInvocationConstants.html#ARGUMENT_SET_NAME_PLACEHOLDER"><code>ParameterizedInvocationConstants.ARGUMENT_SET_NAME_PLACEHOLDER</code></a>
+ instead.</div>
+</div>
 </dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentAccessException.html" class="type-name-link" title="class in org.junit.jupiter.params.aggregator">ArgumentAccessException</a> - Exception Class in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/package-summary.html">org.junit.jupiter.params.aggregator</a></dt>
 <dd>
@@ -511,6 +543,8 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentAccessException.html#%3Cinit%3E(java.lang.String,java.lang.Throwable)" class="member-name-link">ArgumentAccessException(String, Throwable)</a> - Constructor for exception class org.junit.jupiter.params.aggregator.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentAccessException.html" title="class in org.junit.jupiter.params.aggregator">ArgumentAccessException</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html#argument-conversion-heading" class="search-tag-link">Argument Conversion</a> - Search tag in annotation interface org.junit.jupiter.params.ParameterizedClass</dt>
+<dd>Section</dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#argument-conversion-heading" class="search-tag-link">Argument Conversion</a> - Search tag in annotation interface org.junit.jupiter.params.ParameterizedTest</dt>
 <dd>Section</dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/converter/ArgumentConversionException.html" class="type-name-link" title="class in org.junit.jupiter.params.converter">ArgumentConversionException</a> - Exception Class in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/converter/package-summary.html">org.junit.jupiter.params.converter</a></dt>
@@ -528,13 +562,21 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>ArgumentConverter</code> is an abstraction that allows an input object to
  be converted to an instance of a different class.</div>
 </dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html#argumentCountValidation()" class="member-name-link">argumentCountValidation()</a> - Element in annotation interface org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params">ParameterizedClass</a></dt>
+<dd>
+<div class="block">Configure how the number of arguments provided by an
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a> are validated.</div>
+</dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#argumentCountValidation()" class="member-name-link">argumentCountValidation()</a> - Element in annotation interface org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params">ParameterizedTest</a></dt>
 <dd>
-<div class="block">Configure how the number of arguments provided by an <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a> are validated.</div>
+<div class="block">Configure how the number of arguments provided by an
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a> are validated.</div>
 </dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ArgumentCountValidationMode.html" class="type-name-link" title="enum class in org.junit.jupiter.params">ArgumentCountValidationMode</a> - Enum Class in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/package-summary.html">org.junit.jupiter.params</a></dt>
 <dd>
-<div class="block">Enumeration of argument count validation modes for <a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a>.</div>
+<div class="block">Enumeration of argument count validation modes for
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a> and
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a>.</div>
 </dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.html#arguments(java.lang.Object...)" class="member-name-link">arguments(Object...)</a> - Static method in interface org.junit.jupiter.params.provider.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.html" title="interface in org.junit.jupiter.params.provider">Arguments</a></dt>
 <dd>
@@ -546,17 +588,32 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>Arguments</code> is an abstraction that provides access to an array of
  objects to be used for invoking a <code>@ParameterizedTest</code> method.</div>
 </dd>
-<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#ARGUMENTS_PLACEHOLDER" class="member-name-link">ARGUMENTS_PLACEHOLDER</a> - Static variable in annotation interface org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params">ParameterizedTest</a></dt>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedInvocationConstants.html#ARGUMENTS_PLACEHOLDER" class="member-name-link">ARGUMENTS_PLACEHOLDER</a> - Static variable in class org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedInvocationConstants.html" title="class in org.junit.jupiter.params">ParameterizedInvocationConstants</a></dt>
 <dd>
 <div class="block">Placeholder for the complete, comma-separated arguments list of the
  current invocation of a <code>@ParameterizedTest</code> method:
  <code>{arguments}</code></div>
 </dd>
-<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#ARGUMENTS_WITH_NAMES_PLACEHOLDER" class="member-name-link">ARGUMENTS_WITH_NAMES_PLACEHOLDER</a> - Static variable in annotation interface org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params">ParameterizedTest</a></dt>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#ARGUMENTS_PLACEHOLDER" class="member-name-link">ARGUMENTS_PLACEHOLDER</a> - Static variable in annotation interface org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params">ParameterizedTest</a></dt>
+<dd>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Please reference
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedInvocationConstants.html#ARGUMENTS_PLACEHOLDER"><code>ParameterizedInvocationConstants.ARGUMENTS_PLACEHOLDER</code></a> instead.</div>
+</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedInvocationConstants.html#ARGUMENTS_WITH_NAMES_PLACEHOLDER" class="member-name-link">ARGUMENTS_WITH_NAMES_PLACEHOLDER</a> - Static variable in class org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedInvocationConstants.html" title="class in org.junit.jupiter.params">ParameterizedInvocationConstants</a></dt>
 <dd>
 <div class="block">Placeholder for the complete, comma-separated named arguments list
  of the current invocation of a <code>@ParameterizedTest</code> method:
  <code>{argumentsWithNames}</code></div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#ARGUMENTS_WITH_NAMES_PLACEHOLDER" class="member-name-link">ARGUMENTS_WITH_NAMES_PLACEHOLDER</a> - Static variable in annotation interface org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params">ParameterizedTest</a></dt>
+<dd>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Please reference
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedInvocationConstants.html#ARGUMENTS_WITH_NAMES_PLACEHOLDER"><code>ParameterizedInvocationConstants.ARGUMENTS_WITH_NAMES_PLACEHOLDER</code></a>
+ instead.</div>
+</div>
 </dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.ArgumentSet.html" class="type-name-link" title="class in org.junit.jupiter.params.provider">Arguments.ArgumentSet</a> - Class in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/package-summary.html">org.junit.jupiter.params.provider</a></dt>
 <dd>
@@ -594,16 +651,20 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html" class="type-name-link" title="interface in org.junit.jupiter.params.provider">ArgumentsProvider</a> - Interface in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/package-summary.html">org.junit.jupiter.params.provider</a></dt>
 <dd>
-<div class="block">An <code>ArgumentsProvider</code> is responsible for <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html#provideArguments(org.junit.jupiter.api.extension.ExtensionContext)">providing</a> a stream of arguments to be passed to a <code>@ParameterizedTest</code>
- method.</div>
+<div class="block">An <code>ArgumentsProvider</code> is responsible for
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html#provideArguments(org.junit.jupiter.params.support.ParameterDeclarations,org.junit.jupiter.api.extension.ExtensionContext)">providing</a>
+ a stream of arguments to be passed to a <code>@ParameterizedClass</code> or
+ <code>@ParameterizedTest</code>.</div>
 </dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html#arguments-providers-and-sources-heading" class="search-tag-link">Arguments Providers and Sources</a> - Search tag in annotation interface org.junit.jupiter.params.ParameterizedClass</dt>
+<dd>Section</dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#arguments-providers-and-sources-heading" class="search-tag-link">Arguments Providers and Sources</a> - Search tag in annotation interface org.junit.jupiter.params.ParameterizedTest</dt>
 <dd>Section</dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsSource.html" class="type-name-link" title="annotation interface in org.junit.jupiter.params.provider">ArgumentsSource</a> - Annotation Interface in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/package-summary.html">org.junit.jupiter.params.provider</a></dt>
 <dd>
 <div class="block"><code>@ArgumentsSource</code> is a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Repeatable.html" title="class or interface in java.lang.annotation" class="external-link">repeatable</a> annotation
  that is used to register <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html" title="interface in org.junit.jupiter.params.provider">arguments providers</a>
- for the annotated test method.</div>
+ for the annotated class or method.</div>
 </dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsSources.html" class="type-name-link" title="annotation interface in org.junit.jupiter.params.provider">ArgumentsSources</a> - Annotation Interface in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/package-summary.html">org.junit.jupiter.params.provider</a></dt>
 <dd>
@@ -1942,12 +2003,17 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>@AutoClose</code> is used to indicate that an annotated field will be
  automatically closed after test execution.</div>
 </dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html#autoCloseArguments()" class="member-name-link">autoCloseArguments()</a> - Element in annotation interface org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params">ParameterizedClass</a></dt>
+<dd>
+<div class="block">Configure whether all arguments of the parameterized class that implement
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link"><code>AutoCloseable</code></a> will be closed after their corresponding
+ invocation.</div>
+</dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#autoCloseArguments()" class="member-name-link">autoCloseArguments()</a> - Element in annotation interface org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params">ParameterizedTest</a></dt>
 <dd>
-<div class="block">Configure whether all arguments of the parameterized test that implement <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link"><code>AutoCloseable</code></a>
- will be closed after <a href="../org.junit.jupiter.api/org/junit/jupiter/api/AfterEach.html" title="annotation interface in org.junit.jupiter.api"><code>@AfterEach</code></a> methods
- and <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterEachCallback.html" title="interface in org.junit.jupiter.api.extension"><code>AfterEachCallback</code></a>
- extensions have been called for the current parameterized test invocation.</div>
+<div class="block">Configure whether all arguments of the parameterized test that implement
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link"><code>AutoCloseable</code></a> will be closed after their corresponding
+ invocation.</div>
 </dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.DynamicTestExecutor.html#awaitFinished()" class="member-name-link">awaitFinished()</a> - Method in interface org.junit.platform.engine.support.hierarchical.<a href="../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.DynamicTestExecutor.html" title="interface in org.junit.platform.engine.support.hierarchical">Node.DynamicTestExecutor</a></dt>
 <dd>

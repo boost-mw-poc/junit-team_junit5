@@ -58,22 +58,51 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Package</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><a href="#org.junit.jupiter.params.converter">org.junit.jupiter.params.converter</a></div>
+<div class="col-first even-row-color"><a href="#org.junit.jupiter.params.aggregator">org.junit.jupiter.params.aggregator</a></div>
 <div class="col-last even-row-color">
+<div class="block">The <a href="../aggregator/ArgumentsAggregator.html" title="interface in org.junit.jupiter.params.aggregator"><code>ArgumentsAggregator</code></a> and
+ <a href="../aggregator/ArgumentsAccessor.html" title="interface in org.junit.jupiter.params.aggregator"><code>ArgumentsAccessor</code></a> interfaces and the
+ <a href="../aggregator/AggregateWith.html" title="annotation interface in org.junit.jupiter.params.aggregator"><code>AggregateWith</code></a> annotation.</div>
+</div>
+<div class="col-first odd-row-color"><a href="#org.junit.jupiter.params.converter">org.junit.jupiter.params.converter</a></div>
+<div class="col-last odd-row-color">
 <div class="block"><a href="../converter/ArgumentConverter.html" title="interface in org.junit.jupiter.params.converter"><code>ArgumentConverter</code></a>
  implementations and the corresponding
  <a href="../converter/ConvertWith.html" title="annotation interface in org.junit.jupiter.params.converter"><code>@ConvertWith</code></a> annotation.</div>
 </div>
-<div class="col-first odd-row-color"><a href="#org.junit.jupiter.params.provider">org.junit.jupiter.params.provider</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="#org.junit.jupiter.params.provider">org.junit.jupiter.params.provider</a></div>
+<div class="col-last even-row-color">
 <div class="block"><a href="../provider/ArgumentsProvider.html" title="interface in org.junit.jupiter.params.provider"><code>ArgumentsProvider</code></a>
  implementations and their corresponding
  <a href="../provider/ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a>
  annotations.</div>
 </div>
+<div class="col-first odd-row-color"><a href="#org.junit.jupiter.params.support">org.junit.jupiter.params.support</a></div>
+<div class="col-last odd-row-color">
+<div class="block">Support classes for building
+ <a href="../provider/ArgumentsProvider.html" title="interface in org.junit.jupiter.params.provider">providers</a>
+ and
+ <a href="../converter/ArgumentConverter.html" title="interface in org.junit.jupiter.params.converter">converters</a>
+ for arguments.</div>
+</div>
 </div>
 <section class="package-uses">
 <ul class="block-list">
+<li>
+<section class="detail" id="org.junit.jupiter.params.aggregator">
+<div class="caption"><span>Classes in <a href="package-summary.html">org.junit.jupiter.params.support</a> used by <a href="../aggregator/package-summary.html">org.junit.jupiter.params.aggregator</a></span></div>
+<div class="summary-table two-column-summary">
+<div class="table-header col-first">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><a href="class-use/FieldContext.html#org.junit.jupiter.params.aggregator">FieldContext</a></div>
+<div class="col-last even-row-color">
+<div class="block"><code>FieldContext</code> encapsulates the <em>context</em> in which an
+ <a href="../Parameter.html" title="annotation interface in org.junit.jupiter.params"><code>@Parameter</code></a>-annotated <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Field.html" title="class or interface in java.lang.reflect" class="external-link"><code>Field</code></a> is declared in a
+ <a href="../ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a>.</div>
+</div>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="org.junit.jupiter.params.converter">
 <div class="caption"><span>Classes in <a href="package-summary.html">org.junit.jupiter.params.support</a> used by <a href="../converter/package-summary.html">org.junit.jupiter.params.converter</a></span></div>
@@ -84,6 +113,12 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block"><code>AnnotationConsumer</code> is a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">functional
  interface</a> for consuming annotations.</div>
+</div>
+<div class="col-first odd-row-color"><a href="class-use/FieldContext.html#org.junit.jupiter.params.converter">FieldContext</a></div>
+<div class="col-last odd-row-color">
+<div class="block"><code>FieldContext</code> encapsulates the <em>context</em> in which an
+ <a href="../Parameter.html" title="annotation interface in org.junit.jupiter.params"><code>@Parameter</code></a>-annotated <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Field.html" title="class or interface in java.lang.reflect" class="external-link"><code>Field</code></a> is declared in a
+ <a href="../ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a>.</div>
 </div>
 </div>
 </section>
@@ -98,6 +133,26 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block"><code>AnnotationConsumer</code> is a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">functional
  interface</a> for consuming annotations.</div>
+</div>
+<div class="col-first odd-row-color"><a href="class-use/ParameterDeclarations.html#org.junit.jupiter.params.provider">ParameterDeclarations</a></div>
+<div class="col-last odd-row-color">
+<div class="block"><code>ParameterDeclarations</code> encapsulates the combined <em>declarations</em>
+ of all <em>indexed</em> <code>@ParameterizedClass</code> or
+ <code>@ParameterizedTest</code> parameters.</div>
+</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.junit.jupiter.params.support">
+<div class="caption"><span>Classes in <a href="package-summary.html">org.junit.jupiter.params.support</a> used by <a href="package-summary.html">org.junit.jupiter.params.support</a></span></div>
+<div class="summary-table two-column-summary">
+<div class="table-header col-first">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><a href="class-use/ParameterDeclaration.html#org.junit.jupiter.params.support">ParameterDeclaration</a></div>
+<div class="col-last even-row-color">
+<div class="block"><code>ParameterDeclaration</code> encapsulates the <em>declaration</em> of an
+ indexed <code>@ParameterizedClass</code> or <code>@ParameterizedTest</code> parameter.</div>
 </div>
 </div>
 </section>

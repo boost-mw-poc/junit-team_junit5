@@ -162,8 +162,20 @@ implements <a href="ArgumentConverter.html" title="interface in org.junit.jupite
  <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/ParameterContext.html" title="interface in org.junit.jupiter.api.extension">ParameterContext</a>&nbsp;context)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#convert(java.lang.Object,org.junit.jupiter.api.extension.ParameterContext)" class="member-name-link">convert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;source,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#convert(java.lang.Object,java.lang.Class,org.junit.jupiter.params.support.FieldContext)" class="member-name-link">convert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;source,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;targetType,
+ <a href="../support/FieldContext.html" title="interface in org.junit.jupiter.params.support">FieldContext</a>&nbsp;context)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#convert(java.lang.Object,org.junit.jupiter.api.extension.ParameterContext)" class="member-name-link">convert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;source,
  <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/ParameterContext.html" title="interface in org.junit.jupiter.api.extension">ParameterContext</a>&nbsp;context)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Convert the supplied <code>source</code> object according to the supplied
+ <code>context</code>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#convert(java.lang.Object,org.junit.jupiter.params.support.FieldContext)" class="member-name-link">convert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;source,
+ <a href="../support/FieldContext.html" title="interface in org.junit.jupiter.params.support">FieldContext</a>&nbsp;context)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Convert the supplied <code>source</code> object according to the supplied
  <code>context</code>.</div>
@@ -213,10 +225,35 @@ implements <a href="ArgumentConverter.html" title="interface in org.junit.jupite
 <dt>Parameters:</dt>
 <dd><code>source</code> - the source object to convert; may be <code>null</code></dd>
 <dd><code>context</code> - the parameter context where the converted object will be
- used; never <code>null</code></dd>
+ supplied; never <code>null</code></dd>
 <dt>Returns:</dt>
 <dd>the converted object; may be <code>null</code> but only if the target
  type is a reference type</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="convert(java.lang.Object,org.junit.jupiter.params.support.FieldContext)">
+<h3>convert</h3>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">convert</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;source,
+ <a href="../support/FieldContext.html" title="interface in org.junit.jupiter.params.support">FieldContext</a>&nbsp;context)</span>
+                     throws <span class="exceptions"><a href="ArgumentConversionException.html" title="class in org.junit.jupiter.params.converter">ArgumentConversionException</a></span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="ArgumentConverter.html#convert(java.lang.Object,org.junit.jupiter.params.support.FieldContext)">ArgumentConverter</a></code></span></div>
+<div class="block">Convert the supplied <code>source</code> object according to the supplied
+ <code>context</code>.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="ArgumentConverter.html#convert(java.lang.Object,org.junit.jupiter.params.support.FieldContext)">convert</a></code>&nbsp;in interface&nbsp;<code><a href="ArgumentConverter.html" title="interface in org.junit.jupiter.params.converter">ArgumentConverter</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>source</code> - the source object to convert; may be <code>null</code></dd>
+<dd><code>context</code> - the field context where the converted object will be
+ injected; never <code>null</code></dd>
+<dt>Returns:</dt>
+<dd>the converted object; may be <code>null</code> but only if the target
+ type is a reference type</dd>
+<dt>Throws:</dt>
+<dd><code><a href="ArgumentConversionException.html" title="class in org.junit.jupiter.params.converter">ArgumentConversionException</a></code> - if an error occurs during the
+ conversion</dd>
 </dl>
 </section>
 </li>
@@ -226,6 +263,14 @@ implements <a href="ArgumentConverter.html" title="interface in org.junit.jupite
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">convert</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;source,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;targetType,
  <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/ParameterContext.html" title="interface in org.junit.jupiter.api.extension">ParameterContext</a>&nbsp;context)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="convert(java.lang.Object,java.lang.Class,org.junit.jupiter.params.support.FieldContext)">
+<h3>convert</h3>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">convert</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;source,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;targetType,
+ <a href="../support/FieldContext.html" title="interface in org.junit.jupiter.params.support">FieldContext</a>&nbsp;context)</span></div>
 </section>
 </li>
 </ul>

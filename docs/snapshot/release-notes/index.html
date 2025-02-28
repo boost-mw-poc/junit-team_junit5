@@ -584,7 +584,16 @@ failure happens prior to invoking the parameterized method.</p>
 allow declaring a top-level or <code>@Nested</code> test class as a template to be invoked multiple
 times. This may be used, for example, to inject different parameters to be used by all
 tests in the container template class or to set up each invocation of the container
-template differently.</p>
+template differently. Please refer to the
+<a href="../user-guide/index.html#writing-tests-container-templates">User Guide</a> for details.</p>
+</li>
+<li>
+<p>Introduce <code>@ParameterizedClass</code> concept that builds on <code>@ContainerTemplate</code> and allows
+declaring a top-level or <code>@Nested</code> test class as a parameterized test class to be
+invoked multiple times with different arguments. The same <code>@&#8230;&#8203;Source</code> annotations as
+for <code>@ParameterizedTest</code> may be used to provide arguments via constructor or field
+injection. Please refer to the
+<a href="../user-guide/index.html#writing-tests-parameterized-tests">User Guide</a> for details.</p>
 </li>
 <li>
 <p>New <code>TestTemplateInvocationContext.prepareInvocation(ExtensionContext)</code> callback method

@@ -88,7 +88,7 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Target.html" title="class or interface in java.lang.annotation" class="external-link">@Target</a>({<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#ANNOTATION_TYPE" title="class or interface in java.lang.annotation" class="external-link">ANNOTATION_TYPE</a>,<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD" title="class or interface in java.lang.annotation" class="external-link">METHOD</a>})
+<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Target.html" title="class or interface in java.lang.annotation" class="external-link">@Target</a>({<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#ANNOTATION_TYPE" title="class or interface in java.lang.annotation" class="external-link">ANNOTATION_TYPE</a>,<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD" title="class or interface in java.lang.annotation" class="external-link">METHOD</a>,<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE" title="class or interface in java.lang.annotation" class="external-link">TYPE</a>})
 <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Retention.html" title="class or interface in java.lang.annotation" class="external-link">@Retention</a>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/RetentionPolicy.html#RUNTIME" title="class or interface in java.lang.annotation" class="external-link">RUNTIME</a>)
 <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Documented.html" title="class or interface in java.lang.annotation" class="external-link">@Documented</a>
 <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Repeatable.html" title="class or interface in java.lang.annotation" class="external-link">@Repeatable</a>(<a href="FieldSources.html" title="annotation interface in org.junit.jupiter.params.provider">FieldSources.class</a>)
@@ -105,7 +105,8 @@ loadScripts(document, 'script');</script>
  <p>Each field must be able to supply a <em>stream</em> of <em>arguments</em>,
  and each set of "arguments" within the "stream" will be provided as the physical
  arguments for individual invocations of the annotated
- <a href="../ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a> method.
+ <a href="../ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a> or
+ <a href="../ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a>.
 
  <p>In this context, a "stream" is anything that JUnit can reliably convert to
  a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a>; however, the actual concrete field
@@ -119,8 +120,8 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link"><code>Iterator</code></a>, an array of objects, or an array of
  primitives. Each set of "arguments" within the "stream" can be supplied as an
  instance of <a href="Arguments.html" title="interface in org.junit.jupiter.params.provider"><code>Arguments</code></a>, an array of objects (for example, <code>Object[]</code>,
- <code>String[]</code>, etc.), or a single <em>value</em> if the parameterized test
- method accepts a single argument.
+ <code>String[]</code>, etc.), or a single <em>value</em> if the parameterized
+ class or test accepts a single argument.
 
  <p>In contrast to the supported return types for <a href="MethodSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>@MethodSource</code></a>
  factory methods, the value of a <code>@FieldSource</code> field cannot be an instance of
@@ -175,7 +176,11 @@ loadScripts(document, 'script');</script>
  <p>Fields within the test class must be <code>static</code> unless the
  <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/TestInstance.Lifecycle.html#PER_CLASS"><code>PER_CLASS</code></a>
  test instance lifecycle mode is used; whereas, fields in external classes must
- always be <code>static</code>.</div>
+ always be <code>static</code>.
+
+ <p>This behavior and the above examples also apply to parameters of a
+ <a href="../ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a>, regardless whether field or
+ constructor injection is used.</div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>5.11</dd>
@@ -185,6 +190,7 @@ loadScripts(document, 'script');</script>
 <li><a href="MethodSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>MethodSource</code></a></li>
 <li><a href="Arguments.html" title="interface in org.junit.jupiter.params.provider"><code>Arguments</code></a></li>
 <li><a href="ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a></li>
+<li><a href="../ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>ParameterizedClass</code></a></li>
 <li><a href="../ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>ParameterizedTest</code></a></li>
 <li><a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/TestInstance.html" title="annotation interface in org.junit.jupiter.api"><code>TestInstance</code></a></li>
 </ul>
@@ -234,7 +240,10 @@ loadScripts(document, 'script');</script>
  static nested class.
 
  <p>If no field names are declared, a field within the test class that has
- the same name as the test method will be used as the field by default.
+ the same name as the test method will be used as the field by default in
+ case this annotation is applied to a <code>@ParameterizedTest</code> method.
+ For a <code>@ParameterizedClass</code>, at least one field name must be
+ declared explicitly.
 
  <p>For further information, see the <a href="FieldSource.html" title="annotation interface in org.junit.jupiter.params.provider">class-level Javadoc</a>.</div>
 <dl class="notes">

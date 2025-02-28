@@ -66,6 +66,20 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">IO-related support in JUnit Jupiter.</div>
 </div>
+<div class="col-first even-row-color"><a href="#org.junit.jupiter.params.aggregator">org.junit.jupiter.params.aggregator</a></div>
+<div class="col-last even-row-color">
+<div class="block">The <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAggregator.html" title="interface in org.junit.jupiter.params.aggregator"><code>ArgumentsAggregator</code></a> and
+ <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAccessor.html" title="interface in org.junit.jupiter.params.aggregator"><code>ArgumentsAccessor</code></a> interfaces and the
+ <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/AggregateWith.html" title="annotation interface in org.junit.jupiter.params.aggregator"><code>AggregateWith</code></a> annotation.</div>
+</div>
+<div class="col-first odd-row-color"><a href="#org.junit.jupiter.params.support">org.junit.jupiter.params.support</a></div>
+<div class="col-last odd-row-color">
+<div class="block">Support classes for building
+ <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html" title="interface in org.junit.jupiter.params.provider">providers</a>
+ and
+ <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/converter/ArgumentConverter.html" title="interface in org.junit.jupiter.params.converter">converters</a>
+ for arguments.</div>
+</div>
 </div>
 <section class="class-uses">
 <ul class="block-list">
@@ -105,6 +119,41 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><span class="type-name-label">TempDirFactory.Standard.</span><code><a href="../../io/TempDirFactory.Standard.html#createTempDirectory(org.junit.jupiter.api.extension.AnnotatedElementContext,org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">createTempDirectory</a><wbr>(<a href="../AnnotatedElementContext.html" title="interface in org.junit.jupiter.api.extension">AnnotatedElementContext</a>&nbsp;elementContext,
  <a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;extensionContext)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.junit.jupiter.params.aggregator">
+<h2>Uses of <a href="../AnnotatedElementContext.html" title="interface in org.junit.jupiter.api.extension">AnnotatedElementContext</a> in <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/package-summary.html">org.junit.jupiter.params.aggregator</a></h2>
+<div class="caption"><span>Methods in <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/package-summary.html">org.junit.jupiter.params.aggregator</a> with parameters of type <a href="../AnnotatedElementContext.html" title="interface in org.junit.jupiter.api.extension">AnnotatedElementContext</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>protected abstract <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">SimpleArgumentsAggregator.</span><code><a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/SimpleArgumentsAggregator.html#aggregateArguments(org.junit.jupiter.params.aggregator.ArgumentsAccessor,java.lang.Class,org.junit.jupiter.api.extension.AnnotatedElementContext,int)" class="member-name-link">aggregateArguments</a><wbr>(<a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAccessor.html" title="interface in org.junit.jupiter.params.aggregator">ArgumentsAccessor</a>&nbsp;accessor,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;targetType,
+ <a href="../AnnotatedElementContext.html" title="interface in org.junit.jupiter.api.extension">AnnotatedElementContext</a>&nbsp;context,
+ int&nbsp;parameterIndex)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.junit.jupiter.params.support">
+<h2>Uses of <a href="../AnnotatedElementContext.html" title="interface in org.junit.jupiter.api.extension">AnnotatedElementContext</a> in <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/support/package-summary.html">org.junit.jupiter.params.support</a></h2>
+<div class="caption"><span>Subinterfaces of <a href="../AnnotatedElementContext.html" title="interface in org.junit.jupiter.api.extension">AnnotatedElementContext</a> in <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/support/package-summary.html">org.junit.jupiter.params.support</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Interface</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>interface&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/support/FieldContext.html" class="type-name-link" title="interface in org.junit.jupiter.params.support">FieldContext</a></code></div>
+<div class="col-last even-row-color">
+<div class="block"><code>FieldContext</code> encapsulates the <em>context</em> in which an
+ <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/Parameter.html" title="annotation interface in org.junit.jupiter.params"><code>@Parameter</code></a>-annotated <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Field.html" title="class or interface in java.lang.reflect" class="external-link"><code>Field</code></a> is declared in a
+ <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a>.</div>
+</div>
 </div>
 </section>
 </li>

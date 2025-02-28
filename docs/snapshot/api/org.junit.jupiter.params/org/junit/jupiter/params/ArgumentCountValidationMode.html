@@ -105,19 +105,23 @@ loadScripts(document, 'script');</script>
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="5.12")
 </span><span class="modifiers">public enum </span><span class="element-name type-name-label">ArgumentCountValidationMode</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;<a href="ArgumentCountValidationMode.html" title="enum class in org.junit.jupiter.params">ArgumentCountValidationMode</a>&gt;</span></div>
-<div class="block">Enumeration of argument count validation modes for <a href="ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a>.
+<div class="block">Enumeration of argument count validation modes for
+ <a href="ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a> and
+ <a href="ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a>.
 
- <p>When an <a href="provider/ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a> provides more arguments than declared by the test method,
- there might be a bug in the test method or the <a href="provider/ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a>.
- By default, the additional arguments are ignored.
- <a href="ArgumentCountValidationMode.html" title="enum class in org.junit.jupiter.params"><code>ArgumentCountValidationMode</code></a> allows you to control how additional arguments are handled.</div>
+ <p>When an <a href="provider/ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a> provides more arguments than declared by
+ the parameterized class or method, there might be a bug in the class/method
+ or the <a href="provider/ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a>. By default, the additional arguments are
+ ignored. <a href="ArgumentCountValidationMode.html" title="enum class in org.junit.jupiter.params"><code>ArgumentCountValidationMode</code></a> allows you to control how
+ additional arguments are handled.</div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>5.12</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="tag-list">
-<li><a href="ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>ParameterizedTest</code></a></li>
+<ul class="tag-list-long">
+<li><a href="ParameterizedClass.html#argumentCountValidation()"><code>ParameterizedClass.argumentCountValidation()</code></a></li>
+<li><a href="ParameterizedTest.html#argumentCountValidation()"><code>ParameterizedTest.argumentCountValidation()</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -205,8 +209,9 @@ the order they are declared.</div>
 <div class="block">Use the default validation mode.
 
  <p>The default validation mode may be changed via the
- "junit.jupiter.params.argumentCountValidation" configuration parameter
- (see the User Guide for details on configuration parameters).</div>
+ "junit.jupiter.params.argumentCountValidation"
+ configuration parameter (see the User Guide for details on configuration
+ parameters).</div>
 </section>
 </li>
 <li>
@@ -215,8 +220,8 @@ the order they are declared.</div>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="ArgumentCountValidationMode.html" title="enum class in org.junit.jupiter.params">ArgumentCountValidationMode</a></span>&nbsp;<span class="element-name">NONE</span></div>
 <div class="block">Use the "none" argument count validation mode.
 
- <p>When there are more arguments provided than declared by the test method,
- these additional arguments are ignored.</div>
+ <p>When there are more arguments provided than declared by the
+ parameterized class or method, these additional arguments are ignored.</div>
 </section>
 </li>
 <li>
@@ -225,7 +230,8 @@ the order they are declared.</div>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="ArgumentCountValidationMode.html" title="enum class in org.junit.jupiter.params">ArgumentCountValidationMode</a></span>&nbsp;<span class="element-name">STRICT</span></div>
 <div class="block">Use the strict argument count validation mode.
 
- <p>When there are more arguments provided than declared by the test method, this raises an error.</div>
+ <p>When there are more arguments provided than declared by the
+ parameterized class or method, this raises an error.</div>
 </section>
 </li>
 </ul>

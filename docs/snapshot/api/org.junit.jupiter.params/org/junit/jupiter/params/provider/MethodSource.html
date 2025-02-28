@@ -88,7 +88,7 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Target.html" title="class or interface in java.lang.annotation" class="external-link">@Target</a>({<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#ANNOTATION_TYPE" title="class or interface in java.lang.annotation" class="external-link">ANNOTATION_TYPE</a>,<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD" title="class or interface in java.lang.annotation" class="external-link">METHOD</a>})
+<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Target.html" title="class or interface in java.lang.annotation" class="external-link">@Target</a>({<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#ANNOTATION_TYPE" title="class or interface in java.lang.annotation" class="external-link">ANNOTATION_TYPE</a>,<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD" title="class or interface in java.lang.annotation" class="external-link">METHOD</a>,<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE" title="class or interface in java.lang.annotation" class="external-link">TYPE</a>})
 <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Retention.html" title="class or interface in java.lang.annotation" class="external-link">@Retention</a>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/RetentionPolicy.html#RUNTIME" title="class or interface in java.lang.annotation" class="external-link">RUNTIME</a>)
 <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Documented.html" title="class or interface in java.lang.annotation" class="external-link">@Documented</a>
 <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Repeatable.html" title="class or interface in java.lang.annotation" class="external-link">@Repeatable</a>(<a href="MethodSources.html" title="annotation interface in org.junit.jupiter.params.provider">MethodSources.class</a>)
@@ -103,9 +103,10 @@ loadScripts(document, 'script');</script>
  by <em>fully qualified method name</em>.
 
  <p>Each factory method must generate a <em>stream</em> of <em>arguments</em>,
- and each set of "arguments" within the "stream" will be provided as the physical
- arguments for individual invocations of the annotated
- <a href="../ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a> method. Generally speaking this
+ and each set of "arguments" within the "stream" will be provided as the
+ physical arguments for individual invocations of the annotated
+ <code>ParameterizedClass @ParameterizedClass</code> or
+ <a href="../ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a>. Generally speaking this
  translates to a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a> of <a href="Arguments.html" title="interface in org.junit.jupiter.params.provider"><code>Arguments</code></a>
  (i.e., <code>Stream&lt;Arguments&gt;</code>); however, the actual concrete return type
  can take on many forms. In this context, a "stream" is anything that JUnit
@@ -165,6 +166,10 @@ loadScripts(document, 'script');</script>
  test instance lifecycle mode is used; whereas, factory methods in external
  classes must always be <code>static</code>.
 
+ <p>This behavior and the above examples also apply to parameters of a
+ <a href="../ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a>, regardless whether field or
+ constructor injection is used.
+
  <p>Factory methods can declare parameters, which will be provided by registered
  implementations of <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/ParameterResolver.html" title="interface in org.junit.jupiter.api.extension"><code>ParameterResolver</code></a>.</div>
 <dl class="notes">
@@ -176,6 +181,7 @@ loadScripts(document, 'script');</script>
 <li><a href="FieldSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>FieldSource</code></a></li>
 <li><a href="Arguments.html" title="interface in org.junit.jupiter.params.provider"><code>Arguments</code></a></li>
 <li><a href="ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a></li>
+<li><a href="../ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>ParameterizedClass</code></a></li>
 <li><a href="../ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>ParameterizedTest</code></a></li>
 <li><a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/TestInstance.html" title="annotation interface in org.junit.jupiter.api"><code>TestInstance</code></a></li>
 </ul>
@@ -234,7 +240,9 @@ loadScripts(document, 'script');</script>
 
  <p>If no factory method names are declared, a method within the test class
  that has the same name as the test method will be used as the factory
- method by default.
+ method by default in case this annotation is applied to a
+ <code>@ParameterizedTest</code> method. For a <code>@ParameterizedClass</code>, at
+ least one method name must be declared explicitly.
 
  <p>For further information, see the <a href="MethodSource.html" title="annotation interface in org.junit.jupiter.params.provider">class-level Javadoc</a>.</div>
 <dl class="notes">

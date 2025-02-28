@@ -88,7 +88,7 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Target.html" title="class or interface in java.lang.annotation" class="external-link">@Target</a>({<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#ANNOTATION_TYPE" title="class or interface in java.lang.annotation" class="external-link">ANNOTATION_TYPE</a>,<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD" title="class or interface in java.lang.annotation" class="external-link">METHOD</a>})
+<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Target.html" title="class or interface in java.lang.annotation" class="external-link">@Target</a>({<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#ANNOTATION_TYPE" title="class or interface in java.lang.annotation" class="external-link">ANNOTATION_TYPE</a>,<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD" title="class or interface in java.lang.annotation" class="external-link">METHOD</a>,<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE" title="class or interface in java.lang.annotation" class="external-link">TYPE</a>})
 <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Retention.html" title="class or interface in java.lang.annotation" class="external-link">@Retention</a>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/RetentionPolicy.html#RUNTIME" title="class or interface in java.lang.annotation" class="external-link">RUNTIME</a>)
 <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Documented.html" title="class or interface in java.lang.annotation" class="external-link">@Documented</a>
 <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Repeatable.html" title="class or interface in java.lang.annotation" class="external-link">@Repeatable</a>(<a href="CsvFileSources.html" title="annotation interface in org.junit.jupiter.params.provider">CsvFileSources.class</a>)
@@ -101,9 +101,9 @@ loadScripts(document, 'script');</script>
  files from one or more classpath <a href="#resources()"><code>resources()</code></a> or <a href="#files()"><code>files()</code></a>.
 
  <p>The CSV records parsed from these resources and files will be provided as
- arguments to the annotated <code>@ParameterizedTest</code> method. Note that the
- first record may optionally be used to supply CSV headers (see
- <a href="#useHeadersInDisplayName()"><code>useHeadersInDisplayName()</code></a>).
+ arguments to the annotated <code>@ParameterizedClass</code> or
+ <code>@ParameterizedTest</code>. Note that the first record may optionally
+ be used to supply CSV headers (see <a href="#useHeadersInDisplayName()"><code>useHeadersInDisplayName()</code></a>).
 
  <p>Any line beginning with a <code>#</code> symbol will be interpreted as a comment
  and will be ignored.
@@ -136,6 +136,7 @@ loadScripts(document, 'script');</script>
 <ul class="tag-list">
 <li><a href="CsvSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>CsvSource</code></a></li>
 <li><a href="ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a></li>
+<li><a href="../ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>ParameterizedClass</code></a></li>
 <li><a href="../ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>ParameterizedTest</code></a></li>
 </ul>
 </dd>
@@ -303,15 +304,15 @@ loadScripts(document, 'script');</script>
  for columns.
 
  <p>When set to <code>true</code>, the header names will be used in the
- generated display name for each <code>@ParameterizedTest</code> method
- invocation. When using this feature, you must ensure that the display name
- pattern for <code>@ParameterizedTest</code> includes
- <a href="../ParameterizedTest.html#ARGUMENTS_PLACEHOLDER">"{arguments}"</a> instead of
- <a href="../ParameterizedTest.html#ARGUMENTS_WITH_NAMES_PLACEHOLDER">"{argumentsWithNames}"</a>
+ generated display name for each <code>@ParameterizedClass</code> or
+ <code>@ParameterizedTest</code> invocation. When using this feature, you must
+ ensure that the display name pattern for <code>@ParameterizedClass</code> or
+ <code>@ParameterizedTest</code> includes
+ <a href="../ParameterizedInvocationConstants.html#ARGUMENTS_PLACEHOLDER">"{arguments}"</a> instead of
+ <a href="../ParameterizedInvocationConstants.html#ARGUMENTS_WITH_NAMES_PLACEHOLDER">"{argumentsWithNames}"</a>
  as demonstrated in the example below.
 
  <p>Defaults to <code>false</code>.
-
 
  <h4 id="example-heading">Example</h4>
  <pre class="code">

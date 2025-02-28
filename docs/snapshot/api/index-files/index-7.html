@@ -130,6 +130,11 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/DefaultArgumentsAccessor.html#get(int)" class="member-name-link">get(int)</a> - Method in class org.junit.jupiter.params.aggregator.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/DefaultArgumentsAccessor.html" title="class in org.junit.jupiter.params.aggregator">DefaultArgumentsAccessor</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclarations.html#get(int)" class="member-name-link">get(int)</a> - Method in interface org.junit.jupiter.params.support.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclarations.html" title="interface in org.junit.jupiter.params.support">ParameterDeclarations</a></dt>
+<dd>
+<div class="block">Returns the <em>indexed</em> parameter declaration for the supplied
+ index, if available; never <code>null</code>.</div>
+</dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAccessor.html#get(int,java.lang.Class)" class="member-name-link">get(int, Class&lt;T&gt;)</a> - Method in interface org.junit.jupiter.params.aggregator.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAccessor.html" title="interface in org.junit.jupiter.params.aggregator">ArgumentsAccessor</a></dt>
 <dd>
 <div class="block">Get the value of the argument at the given index as an instance of the
@@ -218,6 +223,11 @@ loadScripts(document, 'script');</script>
 <div class="block">Get the collection of additional test execution listeners that should be
  added to the <a href="../org.junit.platform.launcher/org/junit/platform/launcher/Launcher.html" title="interface in org.junit.platform.launcher"><code>Launcher</code></a>.</div>
 </dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclarations.html#getAll()" class="member-name-link">getAll()</a> - Method in interface org.junit.jupiter.params.support.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclarations.html" title="interface in org.junit.jupiter.params.support">ParameterDeclarations</a></dt>
+<dd>
+<div class="block">Returns all <em>indexed</em> parameter declarations; never <code>null</code>,
+ sorted by index.</div>
+</dd>
 <dt><a href="../org.junit.platform.commons/org/junit/platform/commons/util/ReflectionUtils.html#getAllAssignmentCompatibleClasses(java.lang.Class)" class="member-name-link">getAllAssignmentCompatibleClasses(Class&lt;?&gt;)</a> - Static method in class org.junit.platform.commons.util.<a href="../org.junit.platform.commons/org/junit/platform/commons/util/ReflectionUtils.html" title="class in org.junit.platform.commons.util">ReflectionUtils</a></dt>
 <dd>
 <div class="block">Return all classes and interfaces that can be used as assignment types
@@ -242,6 +252,11 @@ loadScripts(document, 'script');</script>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ParameterContext.html#getAnnotatedElement()" class="member-name-link">getAnnotatedElement()</a> - Method in interface org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ParameterContext.html" title="interface in org.junit.jupiter.api.extension">ParameterContext</a></dt>
 <dd>
 <div class="block">Get the <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/AnnotatedElement.html" title="class or interface in java.lang.reflect" class="external-link"><code>AnnotatedElement</code></a> for this context.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclaration.html#getAnnotatedElement()" class="member-name-link">getAnnotatedElement()</a> - Method in interface org.junit.jupiter.params.support.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclaration.html" title="interface in org.junit.jupiter.params.support">ParameterDeclaration</a></dt>
+<dd>
+<div class="block">Returns the <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/AnnotatedElement.html" title="class or interface in java.lang.reflect" class="external-link"><code>AnnotatedElement</code></a> that declares the parameter; never
+ <code>null</code>.</div>
 </dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ReflectiveInvocationContext.html#getArguments()" class="member-name-link">getArguments()</a> - Method in interface org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ReflectiveInvocationContext.html" title="interface in org.junit.jupiter.api.extension">ReflectiveInvocationContext</a></dt>
 <dd>
@@ -846,6 +861,10 @@ loadScripts(document, 'script');</script>
 <div class="block">Get the configured failure threshold of the corresponding
  <a href="../org.junit.jupiter.api/org/junit/jupiter/api/RepeatedTest.html" title="annotation interface in org.junit.jupiter.api"><code>@RepeatedTest</code></a> method.</div>
 </dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/FieldContext.html#getField()" class="member-name-link">getField()</a> - Method in interface org.junit.jupiter.params.support.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/FieldContext.html" title="interface in org.junit.jupiter.params.support">FieldContext</a></dt>
+<dd>
+<div class="block">Returns the field for this context; never <code>null</code>.</div>
+</dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/FileSelector.html#getFile()" class="member-name-link">getFile()</a> - Method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/FileSelector.html" title="class in org.junit.platform.engine.discovery">FileSelector</a></dt>
 <dd>
 <div class="block">Get the selected file as a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link"><code>File</code></a>.</div>
@@ -874,6 +893,11 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Get the <a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryFilter.html" title="interface in org.junit.platform.engine"><code>DiscoveryFilters</code></a> for this request,
  filtered by a particular type.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclarations.html#getFirst()" class="member-name-link">getFirst()</a> - Method in interface org.junit.jupiter.params.support.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclarations.html" title="interface in org.junit.jupiter.params.support">ParameterDeclarations</a></dt>
+<dd>
+<div class="block">Returns the first <em>indexed</em> parameter declaration, if available;
+ never <code>null</code>.</div>
 </dd>
 <dt><a href="../org.junit.platform.commons/org/junit/platform/commons/util/CollectionUtils.html#getFirstElement(java.util.Collection)" class="member-name-link">getFirstElement(Collection&lt;T&gt;)</a> - Static method in class org.junit.platform.commons.util.<a href="../org.junit.platform.commons/org/junit/platform/commons/util/CollectionUtils.html" title="class in org.junit.platform.commons.util">CollectionUtils</a></dt>
 <dd>
@@ -1281,6 +1305,23 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Get the <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Parameter.html" title="class or interface in java.lang.reflect" class="external-link"><code>Parameter</code></a> for this context.</div>
 </dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/FieldContext.html#getParameterIndex()" class="member-name-link">getParameterIndex()</a> - Method in interface org.junit.jupiter.params.support.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/FieldContext.html" title="interface in org.junit.jupiter.params.support">FieldContext</a></dt>
+<dd>
+<div class="block">Returns the index of the parameter.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclaration.html#getParameterIndex()" class="member-name-link">getParameterIndex()</a> - Method in interface org.junit.jupiter.params.support.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclaration.html" title="interface in org.junit.jupiter.params.support">ParameterDeclaration</a></dt>
+<dd>
+<div class="block">Returns the index of the parameter.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclaration.html#getParameterName()" class="member-name-link">getParameterName()</a> - Method in interface org.junit.jupiter.params.support.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclaration.html" title="interface in org.junit.jupiter.params.support">ParameterDeclaration</a></dt>
+<dd>
+<div class="block">Returns the name of the parameter, if available; never <code>null</code> but
+ potentially empty.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclaration.html#getParameterType()" class="member-name-link">getParameterType()</a> - Method in interface org.junit.jupiter.params.support.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclaration.html" title="interface in org.junit.jupiter.params.support">ParameterDeclaration</a></dt>
+<dd>
+<div class="block">Returns the type of the parameter; never <code>null</code>.</div>
+</dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/MethodSelector.html#getParameterTypeNames()" class="member-name-link">getParameterTypeNames()</a> - Method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/MethodSelector.html" title="class in org.junit.platform.engine.discovery">MethodSelector</a></dt>
 <dd>
 <div class="block">Get the names of parameter types for the selected method as a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>,
@@ -1581,6 +1622,14 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Get the <a href="../org.junit.platform.engine/org/junit/platform/engine/TestSource.html" title="interface in org.junit.platform.engine">source</a> of the represented test
  or container, if available.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclarations.html#getSourceElement()" class="member-name-link">getSourceElement()</a> - Method in interface org.junit.jupiter.params.support.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclarations.html" title="interface in org.junit.jupiter.params.support">ParameterDeclarations</a></dt>
+<dd>
+<div class="block">Returns the source element of all parameter declarations.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclarations.html#getSourceElementDescription()" class="member-name-link">getSourceElementDescription()</a> - Method in interface org.junit.jupiter.params.support.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclarations.html" title="interface in org.junit.jupiter.params.support">ParameterDeclarations</a></dt>
+<dd>
+<div class="block">Returns a human-readable description of the source element.</div>
 </dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/descriptor/CompositeTestSource.html#getSources()" class="member-name-link">getSources()</a> - Method in class org.junit.platform.engine.support.descriptor.<a href="../org.junit.platform.engine/org/junit/platform/engine/support/descriptor/CompositeTestSource.html" title="class in org.junit.platform.engine.support.descriptor">CompositeTestSource</a></dt>
 <dd>

@@ -142,7 +142,7 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -152,6 +152,13 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#convert(java.lang.Object,org.junit.jupiter.api.extension.ParameterContext)" class="member-name-link">convert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;source,
  <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/ParameterContext.html" title="interface in org.junit.jupiter.api.extension">ParameterContext</a>&nbsp;context)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Convert the supplied <code>source</code> object according to the supplied
+ <code>context</code>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#convert(java.lang.Object,org.junit.jupiter.params.support.FieldContext)" class="member-name-link">convert</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;source,
+ <a href="../support/FieldContext.html" title="interface in org.junit.jupiter.params.support">FieldContext</a>&nbsp;context)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Convert the supplied <code>source</code> object according to the supplied
  <code>context</code>.</div>
 </div>
@@ -181,13 +188,39 @@ loadScripts(document, 'script');</script>
 <dt>Parameters:</dt>
 <dd><code>source</code> - the source object to convert; may be <code>null</code></dd>
 <dd><code>context</code> - the parameter context where the converted object will be
- used; never <code>null</code></dd>
+ supplied; never <code>null</code></dd>
 <dt>Returns:</dt>
 <dd>the converted object; may be <code>null</code> but only if the target
  type is a reference type</dd>
 <dt>Throws:</dt>
 <dd><code><a href="ArgumentConversionException.html" title="class in org.junit.jupiter.params.converter">ArgumentConversionException</a></code> - if an error occurs during the
  conversion</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="convert(java.lang.Object,org.junit.jupiter.params.support.FieldContext)">
+<h3>convert</h3>
+<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#EXPERIMENTAL" title="class or interface in org.apiguardian.api" class="external-link">EXPERIMENTAL</a>,
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="5.13")
+</span><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">convert</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;source,
+ <a href="../support/FieldContext.html" title="interface in org.junit.jupiter.params.support">FieldContext</a>&nbsp;context)</span>
+                throws <span class="exceptions"><a href="ArgumentConversionException.html" title="class in org.junit.jupiter.params.converter">ArgumentConversionException</a></span></div>
+<div class="block">Convert the supplied <code>source</code> object according to the supplied
+ <code>context</code>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>source</code> - the source object to convert; may be <code>null</code></dd>
+<dd><code>context</code> - the field context where the converted object will be
+ injected; never <code>null</code></dd>
+<dt>Returns:</dt>
+<dd>the converted object; may be <code>null</code> but only if the target
+ type is a reference type</dd>
+<dt>Throws:</dt>
+<dd><code><a href="ArgumentConversionException.html" title="class in org.junit.jupiter.params.converter">ArgumentConversionException</a></code> - if an error occurs during the
+ conversion</dd>
+<dt>Since:</dt>
+<dd>5.13</dd>
 </dl>
 </section>
 </li>

@@ -147,11 +147,39 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">A strategy to use for configuring parallel test execution.</div>
 </dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/Parameter.html" class="type-name-link" title="annotation interface in org.junit.jupiter.params">Parameter</a> - Annotation Interface in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/package-summary.html">org.junit.jupiter.params</a></dt>
+<dd>
+<div class="block"><code>@Parameter</code> is used to signal that a field in a
+ <code>@ParameterizedClass</code> constitutes a <em>parameter</em> and marks it for
+ field injection.</div>
+</dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ParameterContext.html" class="type-name-link" title="interface in org.junit.jupiter.api.extension">ParameterContext</a> - Interface in <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/package-summary.html">org.junit.jupiter.api.extension</a></dt>
 <dd>
 <div class="block"><code>ParameterContext</code> encapsulates the <em>context</em> in which an
  <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ParameterContext.html#getDeclaringExecutable()"><code>Executable</code></a> will be invoked for a given
  <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ParameterContext.html#getParameter()"><code>Parameter</code></a>.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclaration.html" class="type-name-link" title="interface in org.junit.jupiter.params.support">ParameterDeclaration</a> - Interface in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/package-summary.html">org.junit.jupiter.params.support</a></dt>
+<dd>
+<div class="block"><code>ParameterDeclaration</code> encapsulates the <em>declaration</em> of an
+ indexed <code>@ParameterizedClass</code> or <code>@ParameterizedTest</code> parameter.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterDeclarations.html" class="type-name-link" title="interface in org.junit.jupiter.params.support">ParameterDeclarations</a> - Interface in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/support/package-summary.html">org.junit.jupiter.params.support</a></dt>
+<dd>
+<div class="block"><code>ParameterDeclarations</code> encapsulates the combined <em>declarations</em>
+ of all <em>indexed</em> <code>@ParameterizedClass</code> or
+ <code>@ParameterizedTest</code> parameters.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html" class="type-name-link" title="annotation interface in org.junit.jupiter.params">ParameterizedClass</a> - Annotation Interface in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/package-summary.html">org.junit.jupiter.params</a></dt>
+<dd>
+<div class="block"><code>@ParameterizedClass</code> is used to signal that the annotated class is
+ a <em>parameterized test class</em>.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedInvocationConstants.html" class="type-name-link" title="class in org.junit.jupiter.params">ParameterizedInvocationConstants</a> - Class in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/package-summary.html">org.junit.jupiter.params</a></dt>
+<dd>
+<div class="block">Constants for the use with the
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a> and
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a> annotations.</div>
 </dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" class="type-name-link" title="annotation interface in org.junit.jupiter.params">ParameterizedTest</a> - Annotation Interface in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/package-summary.html">org.junit.jupiter.params</a></dt>
 <dd>
@@ -450,18 +478,30 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.junit.platform.launcher/org/junit/platform/launcher/LauncherInterceptor.Invocation.html#proceed()" class="member-name-link">proceed()</a> - Method in interface org.junit.platform.launcher.<a href="../org.junit.platform.launcher/org/junit/platform/launcher/LauncherInterceptor.Invocation.html" title="interface in org.junit.platform.launcher">LauncherInterceptor.Invocation</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/AnnotationBasedArgumentsProvider.html#provideArguments(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">provideArguments(ExtensionContext)</a> - Method in class org.junit.jupiter.params.provider.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/AnnotationBasedArgumentsProvider.html" title="class in org.junit.jupiter.params.provider">AnnotationBasedArgumentsProvider</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html#provideArguments(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">provideArguments(ExtensionContext)</a> - Method in interface org.junit.jupiter.params.provider.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html" title="interface in org.junit.jupiter.params.provider">ArgumentsProvider</a></dt>
 <dd>
-<div class="block">Provide a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a> of <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.html" title="interface in org.junit.jupiter.params.provider"><code>Arguments</code></a> to be passed to a
- <code>@ParameterizedTest</code> method.</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Please implement
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html#provideArguments(org.junit.jupiter.params.support.ParameterDeclarations,org.junit.jupiter.api.extension.ExtensionContext)"><code>ArgumentsProvider.provideArguments(ParameterDeclarations, ExtensionContext)</code></a> instead.</div>
+</div>
 </dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/AnnotationBasedArgumentsProvider.html#provideArguments(org.junit.jupiter.api.extension.ExtensionContext,A)" class="member-name-link">provideArguments(ExtensionContext, A)</a> - Method in class org.junit.jupiter.params.provider.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/AnnotationBasedArgumentsProvider.html" title="class in org.junit.jupiter.params.provider">AnnotationBasedArgumentsProvider</a></dt>
 <dd>
-<div class="block">Provide a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a> of <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.html" title="interface in org.junit.jupiter.params.provider"><code>Arguments</code></a> &mdash; based on metadata in the
- provided annotation &mdash; to be passed to a <code>@ParameterizedTest</code> method.</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Please implement
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/AnnotationBasedArgumentsProvider.html#provideArguments(org.junit.jupiter.params.support.ParameterDeclarations,org.junit.jupiter.api.extension.ExtensionContext,A)"><code>AnnotationBasedArgumentsProvider.provideArguments(ParameterDeclarations, ExtensionContext, Annotation)</code></a>
+ instead.</div>
+</div>
 </dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/AnnotationBasedArgumentsProvider.html#provideArguments(org.junit.jupiter.params.support.ParameterDeclarations,org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">provideArguments(ParameterDeclarations, ExtensionContext)</a> - Method in class org.junit.jupiter.params.provider.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/AnnotationBasedArgumentsProvider.html" title="class in org.junit.jupiter.params.provider">AnnotationBasedArgumentsProvider</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html#provideArguments(org.junit.jupiter.params.support.ParameterDeclarations,org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">provideArguments(ParameterDeclarations, ExtensionContext)</a> - Method in interface org.junit.jupiter.params.provider.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html" title="interface in org.junit.jupiter.params.provider">ArgumentsProvider</a></dt>
+<dd>
+<div class="block">Provide a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a> of <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.html" title="interface in org.junit.jupiter.params.provider"><code>Arguments</code></a> to be passed to a
+ <code>@ParameterizedClass</code> or <code>@ParameterizedTest</code>.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/AnnotationBasedArgumentsProvider.html#provideArguments(org.junit.jupiter.params.support.ParameterDeclarations,org.junit.jupiter.api.extension.ExtensionContext,A)" class="member-name-link">provideArguments(ParameterDeclarations, ExtensionContext, A)</a> - Method in class org.junit.jupiter.params.provider.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/AnnotationBasedArgumentsProvider.html" title="class in org.junit.jupiter.params.provider">AnnotationBasedArgumentsProvider</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContextProvider.html#provideContainerTemplateInvocationContexts(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">provideContainerTemplateInvocationContexts(ExtensionContext)</a> - Method in interface org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContextProvider.html" title="interface in org.junit.jupiter.api.extension">ContainerTemplateInvocationContextProvider</a></dt>
 <dd>
 <div class="block">Provide

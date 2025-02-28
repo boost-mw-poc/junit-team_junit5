@@ -662,7 +662,11 @@ pre.rouge .gs {
 <li><a href="#writing-tests-test-instance-lifecycle-changing-default">2.12.1. Changing the Default Test Instance Lifecycle</a></li>
 </ul>
 </li>
-<li><a href="#writing-tests-nested">2.13. Nested Tests</a></li>
+<li><a href="#writing-tests-nested">2.13. Nested Tests</a>
+<ul class="sectlevel3">
+<li><a href="#writing-tests-nested-interoperability">2.13.1. Interoperability</a></li>
+</ul>
+</li>
 <li><a href="#writing-tests-dependency-injection">2.14. Dependency Injection for Constructors and Methods</a></li>
 <li><a href="#writing-tests-test-interfaces-and-default-methods">2.15. Test Interfaces and Default Methods</a></li>
 <li><a href="#writing-tests-repeated-tests">2.16. Repeated Tests</a>
@@ -670,10 +674,15 @@ pre.rouge .gs {
 <li><a href="#writing-tests-repeated-tests-examples">2.16.1. Repeated Test Examples</a></li>
 </ul>
 </li>
-<li><a href="#writing-tests-parameterized-tests">2.17. Parameterized Tests</a>
+<li><a href="#writing-tests-parameterized-tests">2.17. Parameterized Classes and Tests</a>
 <ul class="sectlevel3">
 <li><a href="#writing-tests-parameterized-tests-setup">2.17.1. Required Setup</a></li>
-<li><a href="#writing-tests-parameterized-tests-consuming-arguments">2.17.2. Consuming Arguments</a></li>
+<li><a href="#writing-tests-parameterized-tests-consuming-arguments">2.17.2. Consuming Arguments</a>
+<ul class="sectlevel4">
+<li><a href="#writing-tests-parameterized-tests-consuming-arguments-methods">Parameterized Tests</a></li>
+<li><a href="#writing-tests-parameterized-tests-consuming-arguments-classes">Parameterized Classes</a></li>
+</ul>
+</li>
 <li><a href="#writing-tests-parameterized-tests-sources">2.17.3. Sources of Arguments</a>
 <ul class="sectlevel4">
 <li><a href="#writing-tests-parameterized-tests-sources-ValueSource">@ValueSource</a></li>
@@ -701,7 +710,12 @@ pre.rouge .gs {
 </ul>
 </li>
 <li><a href="#writing-tests-parameterized-tests-display-names">2.17.7. Customizing Display Names</a></li>
-<li><a href="#writing-tests-parameterized-tests-lifecycle-interop">2.17.8. Lifecycle and Interoperability</a></li>
+<li><a href="#writing-tests-parameterized-tests-lifecycle-interop">2.17.8. Lifecycle and Interoperability</a>
+<ul class="sectlevel4">
+<li><a href="#writing-tests-parameterized-tests-lifecycle-interop-methods">Parameterized Tests</a></li>
+<li><a href="#writing-tests-parameterized-tests-lifecycle-interop-classes">Parameterized Classes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#writing-tests-container-templates">2.18. Container Templates</a></li>
@@ -1253,6 +1267,10 @@ in the <code>junit-jupiter-api</code> module.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@AfterAll</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed <em>after</em> <strong>all</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, and <code>@TestFactory</code> methods in the current class; analogous to JUnit 4&#8217;s <code>@AfterClass</code>. Such methods are inherited unless they are overridden and must be <code>static</code> unless the "per-class" <a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> is used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@ParameterizedClass</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated class is a <a href="#writing-tests-parameterized-tests">parameterized class</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@ContainerTemplate</code></p></td>
@@ -3629,6 +3647,75 @@ classes, and this restriction no longer applies.
 </tr>
 </table>
 </div>
+<div class="sect3">
+<h4 id="writing-tests-nested-interoperability"><a class="anchor" href="#writing-tests-nested-interoperability"></a>2.13.1. Interoperability</h4>
+<div class="paragraph">
+<p><code>@Nested</code> may be combined with
+<a href="#writing-tests-parameterized-tests"><code>@ParameterizedClass</code></a> in which case the nested test
+class is parameterized.</p>
+</div>
+<div class="paragraph">
+<p>The following example illustrates how to combine <code>@Nested</code> with <code>@ParameterizedClass</code> and
+<code>@ParameterizedTest</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Execution</span><span class="o">(</span><span class="no">SAME_THREAD</span><span class="o">)</span>
+<span class="nd">@ParameterizedClass</span>
+<span class="nd">@ValueSource</span><span class="o">(</span><span class="n">strings</span> <span class="o">=</span> <span class="o">{</span> <span class="s">"apple"</span><span class="o">,</span> <span class="s">"banana"</span> <span class="o">})</span>
+<span class="kd">class</span> <span class="nc">FruitTests</span> <span class="o">{</span>
+
+    <span class="nd">@Parameter</span>
+    <span class="nc">String</span> <span class="n">fruit</span><span class="o">;</span>
+
+    <span class="nd">@Nested</span>
+    <span class="nd">@ParameterizedClass</span>
+    <span class="nd">@ValueSource</span><span class="o">(</span><span class="n">ints</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">23</span><span class="o">,</span> <span class="mi">42</span> <span class="o">})</span>
+    <span class="kd">class</span> <span class="nc">QuantityTests</span> <span class="o">{</span>
+
+        <span class="nd">@Parameter</span>
+        <span class="kt">int</span> <span class="n">quantity</span><span class="o">;</span>
+
+        <span class="nd">@ParameterizedTest</span>
+        <span class="nd">@ValueSource</span><span class="o">(</span><span class="n">strings</span> <span class="o">=</span> <span class="o">{</span> <span class="s">"PT1H"</span><span class="o">,</span> <span class="s">"PT2H"</span> <span class="o">})</span>
+        <span class="kt">void</span> <span class="nf">test</span><span class="o">(</span><span class="nc">Duration</span> <span class="n">duration</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">assertFruit</span><span class="o">(</span><span class="n">fruit</span><span class="o">);</span>
+            <span class="n">assertQuantity</span><span class="o">(</span><span class="n">quantity</span><span class="o">);</span>
+            <span class="n">assertFalse</span><span class="o">(</span><span class="n">duration</span><span class="o">.</span><span class="na">isNegative</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Executing the above test class yields the following output:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>FruitTests ✔
+├─ [1] fruit=apple ✔
+│  └─ QuantityTests ✔
+│     ├─ [1] quantity=23 ✔
+│     │  └─ test(Duration) ✔
+│     │     ├─ [1] duration=PT1H ✔
+│     │     └─ [2] duration=PT2H ✔
+│     └─ [2] quantity=42 ✔
+│        └─ test(Duration) ✔
+│           ├─ [1] duration=PT1H ✔
+│           └─ [2] duration=PT2H ✔
+└─ [2] fruit=banana ✔
+   └─ QuantityTests ✔
+      ├─ [1] quantity=23 ✔
+      │  └─ test(Duration) ✔
+      │     ├─ [1] duration=PT1H ✔
+      │     └─ [2] duration=PT2H ✔
+      └─ [2] quantity=42 ✔
+         └─ test(Duration) ✔
+            ├─ [1] duration=PT1H ✔
+            └─ [2] duration=PT2H ✔</pre>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="writing-tests-dependency-injection"><a class="anchor" href="#writing-tests-dependency-injection"></a>2.14. Dependency Injection for Constructors and Methods</h3>
@@ -4316,13 +4403,38 @@ INFO: About to execute repetition 5 of 5 for repeatedTestInGerman</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="writing-tests-parameterized-tests"><a class="anchor" href="#writing-tests-parameterized-tests"></a>2.17. Parameterized Tests</h3>
+<h3 id="writing-tests-parameterized-tests"><a class="anchor" href="#writing-tests-parameterized-tests"></a>2.17. Parameterized Classes and Tests</h3>
 <div class="paragraph">
-<p>Parameterized tests make it possible to run a test multiple times with different
+<p><em>Parameterized tests</em> make it possible to run a test method multiple times with different
 arguments. They are declared just like regular <code>@Test</code> methods but use the
-<code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html">@ParameterizedTest</a></code> annotation instead. In addition, you must declare at least one
-<em>source</em> that will provide the arguments for each invocation and then <em>consume</em> the
-arguments in the test method.</p>
+<code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html">@ParameterizedTest</a></code> annotation instead.</p>
+</div>
+<div class="paragraph">
+<p><em>Parameterized classes</em> make it possible to run <em>all</em> tests in test class, including
+<a href="#writing-tests-nested">Nested Tests</a>, multiple times with different arguments. They are declared just
+like regular test classes and may contain any supported test method type (including
+<code>@ParameterizedTest</code>) but annotated with the <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html">@ParameterizedClass</a></code> annotation.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<em>Parameterized classes</em> are currently an <em>experimental</em> feature. You&#8217;re invited
+to give it a try and provide feedback to the JUnit team so they can improve and eventually
+<a href="#api-evolution">promote</a> this feature.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Regardless of whether you are parameterizing a test method or a test class, you must
+declare at least one <a href="#writing-tests-parameterized-tests-sources">source</a> that will
+provide the arguments for each invocation and then
+<a href="#writing-tests-parameterized-tests-consuming-arguments">consume</a> the arguments in the
+parameterized method or class, respectively.</p>
 </div>
 <div class="paragraph">
 <p>The following example demonstrates a parameterized test that uses the <code>@ValueSource</code>
@@ -4350,19 +4462,66 @@ following.</p>
 └─ [3] candidate=able was I ere I saw elba ✔</pre>
 </div>
 </div>
+<div class="paragraph">
+<p>The same <code>@ValueSource</code> annotation can be used to specify the source of arguments for a
+<code>@ParameterizedClass</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@ParameterizedClass</span>
+<span class="nd">@ValueSource</span><span class="o">(</span><span class="n">strings</span> <span class="o">=</span> <span class="o">{</span> <span class="s">"racecar"</span><span class="o">,</span> <span class="s">"radar"</span><span class="o">,</span> <span class="s">"able was I ere I saw elba"</span> <span class="o">})</span>
+<span class="kd">class</span> <span class="nc">PalindromeTests</span> <span class="o">{</span>
+
+    <span class="nd">@Parameter</span>
+    <span class="nc">String</span> <span class="n">candidate</span><span class="o">;</span>
+
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">palindrome</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">assertTrue</span><span class="o">(</span><span class="nc">StringUtils</span><span class="o">.</span><span class="na">isPalindrome</span><span class="o">(</span><span class="n">candidate</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">reversePalindrome</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">reverseCandidate</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">(</span><span class="n">candidate</span><span class="o">).</span><span class="na">reverse</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
+        <span class="n">assertTrue</span><span class="o">(</span><span class="nc">StringUtils</span><span class="o">.</span><span class="na">isPalindrome</span><span class="o">(</span><span class="n">reverseCandidate</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When executing the above parameterized test class, each invocation will be reported
+separately. For instance, the <code>ConsoleLauncher</code> will print output similar to the
+following.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>PalindromeTests ✔
+├─ [1] candidate=racecar ✔
+│  ├─ palindrome() ✔
+│  └─ reversePalindrome() ✔
+├─ [2] candidate=radar ✔
+│  ├─ palindrome() ✔
+│  └─ reversePalindrome() ✔
+└─ [3] candidate=able was I ere I saw elba ✔
+   ├─ palindrome() ✔
+   └─ reversePalindrome() ✔</pre>
+</div>
+</div>
 <div class="sect3">
 <h4 id="writing-tests-parameterized-tests-setup"><a class="anchor" href="#writing-tests-parameterized-tests-setup"></a>2.17.1. Required Setup</h4>
 <div class="paragraph">
-<p>In order to use parameterized tests you need to add a dependency on the
+<p>In order to use parameterized classes or tests you need to add a dependency on the
 <code>junit-jupiter-params</code> artifact. Please refer to <a href="#dependency-metadata">Dependency Metadata</a> for details.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="writing-tests-parameterized-tests-consuming-arguments"><a class="anchor" href="#writing-tests-parameterized-tests-consuming-arguments"></a>2.17.2. Consuming Arguments</h4>
+<div class="sect4">
+<h5 id="writing-tests-parameterized-tests-consuming-arguments-methods"><a class="anchor" href="#writing-tests-parameterized-tests-consuming-arguments-methods"></a>Parameterized Tests</h5>
 <div class="paragraph">
-<p>Parameterized test methods typically <em>consume</em> arguments directly from the configured
-source (see <a href="#writing-tests-parameterized-tests-sources">Sources of Arguments</a>) following a one-to-one
-correlation between argument source index and method parameter index (see examples in
+<p>Parameterized test methods <em>consume</em> arguments directly from the configured source (see
+<a href="#writing-tests-parameterized-tests-sources">Sources of Arguments</a>) following a one-to-one correlation between
+argument source index and method parameter index (see examples in
 <a href="#writing-tests-parameterized-tests-sources-CsvSource">@CsvSource</a>). However, a parameterized test
 method may also choose to <em>aggregate</em> arguments from the source into a single object
 passed to the method (see <a href="#writing-tests-parameterized-tests-argument-aggregation">Argument Aggregation</a>).
@@ -4373,7 +4532,7 @@ must declare formal parameters according to the following rules.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Zero or more <em>indexed arguments</em> must be declared first.</p>
+<p>Zero or more <em>indexed parameters</em> must be declared first.</p>
 </li>
 <li>
 <p>Zero or more <em>aggregators</em> must be declared next.</p>
@@ -4384,11 +4543,159 @@ must declare formal parameters according to the following rules.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>In this context, an <em>indexed argument</em> is an argument for a given index in the
-<code>Arguments</code> provided by an <code>ArgumentsProvider</code> that is passed as an argument to the
+<p>In this context, an <em>indexed parameter</em> is an argument for a given index in the
+<code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.html">Arguments</a></code> provided by an <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html">ArgumentsProvider</a></code> that is passed as an argument to the
 parameterized method at the same index in the method&#8217;s formal parameter list. An
-<em>aggregator</em> is any parameter of type <code>ArgumentsAccessor</code> or any parameter annotated with
-<code>@AggregateWith</code>.</p>
+<em>aggregator</em> is any parameter of type <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAccessor.html">ArgumentsAccessor</a></code> or any parameter annotated
+with <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/aggregator/AggregateWith.html">@AggregateWith</a></code>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="writing-tests-parameterized-tests-consuming-arguments-classes"><a class="anchor" href="#writing-tests-parameterized-tests-consuming-arguments-classes"></a>Parameterized Classes</h5>
+<div class="paragraph">
+<p>Parameterized classes <em>consume</em> arguments directly from the configured source (see
+<a href="#writing-tests-parameterized-tests-sources">Sources of Arguments</a>); either via their unique constructor or via
+field injection. If a <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/Parameter.html">@Parameter</a></code>-annotated field is declared in the parameterized class
+or one of its superclasses, field injection will be used. Otherwise, constructor injection
+will be used.</p>
+</div>
+<div class="sect5">
+<h6 id="writing-tests-parameterized-tests-consuming-arguments-constructor-injection"><a class="anchor" href="#writing-tests-parameterized-tests-consuming-arguments-constructor-injection"></a>Constructor Injection</h6>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Constructor injection can only be used with the (default) <code>PER_METHOD</code>
+<a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> mode. Please use
+<a href="#writing-tests-parameterized-tests-consuming-arguments-field-injection">field injection</a>
+with the <code>PER_CLASS</code> mode instead.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For constructor injection, the same rules apply as defined for
+<a href="#writing-tests-parameterized-tests-consuming-arguments-methods">parameterized tests</a>
+above. In the following example, two arguments are injected into the constructor of the
+test class.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@ParameterizedClass</span>
+<span class="nd">@CsvSource</span><span class="o">({</span> <span class="s">"apple, 23"</span><span class="o">,</span> <span class="s">"banana, 42"</span> <span class="o">})</span>
+<span class="kd">class</span> <span class="nc">FruitTests</span> <span class="o">{</span>
+
+    <span class="kd">final</span> <span class="nc">String</span> <span class="n">fruit</span><span class="o">;</span>
+    <span class="kd">final</span> <span class="kt">int</span> <span class="n">quantity</span><span class="o">;</span>
+
+    <span class="nc">FruitTests</span><span class="o">(</span><span class="nc">String</span> <span class="n">fruit</span><span class="o">,</span> <span class="kt">int</span> <span class="n">quantity</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">fruit</span> <span class="o">=</span> <span class="n">fruit</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">quantity</span> <span class="o">=</span> <span class="n">quantity</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">test</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">assertFruit</span><span class="o">(</span><span class="n">fruit</span><span class="o">);</span>
+        <span class="n">assertQuantity</span><span class="o">(</span><span class="n">quantity</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">anotherTest</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// ...</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If your programming language level you are using supports <em>records</em>&#8201;&#8212;&#8201;for example, Java
+16 or higher&#8201;&#8212;&#8201;you may use them to implement parameterized classes that avoid the
+boilerplate code of declaring a test class constructor.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@ParameterizedClass</span>
+<span class="nd">@CsvSource</span><span class="o">({</span> <span class="s">"apple, 23"</span><span class="o">,</span> <span class="s">"banana, 42"</span> <span class="o">})</span>
+<span class="n">record</span> <span class="nf">FruitTests</span><span class="o">(</span><span class="nc">String</span> <span class="n">fruit</span><span class="o">,</span> <span class="kt">int</span> <span class="n">quantity</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">test</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">assertFruit</span><span class="o">(</span><span class="n">fruit</span><span class="o">);</span>
+        <span class="n">assertQuantity</span><span class="o">(</span><span class="n">quantity</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">anotherTest</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// ...</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="writing-tests-parameterized-tests-consuming-arguments-field-injection"><a class="anchor" href="#writing-tests-parameterized-tests-consuming-arguments-field-injection"></a>Field Injection</h6>
+<div class="paragraph">
+<p>For field injection, the following rules apply for fields annotated with <code>@Parameter</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Zero or more <em>indexed parameters</em> may be declared; each must have a unique index
+specified in its <code>@Parameter(index)</code> annotation. The index may be omitted if there is
+only one indexed parameter. If there are at least two indexed parameter declarations,
+there must be declarations for all indexes from 0 to the largest declared index.</p>
+</li>
+<li>
+<p>Zero or more <em>aggregators</em> may be declared; each without specifying an index in its
+<code>@Parameter</code> annotation.</p>
+</li>
+<li>
+<p>Zero or more other fields may be declared as usual as long as they&#8217;re not annotated with
+<code>@Parameter</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In this context, an <em>indexed parameter</em> is an argument for a given index in the
+<code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.html">Arguments</a></code> provided by an <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html">ArgumentsProvider</a></code> that is injected into a field annotated
+with <code>@Parameter(index)</code>. An <em>aggregator</em> is any <code>@Parameter</code>-annotated field of type
+<a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAccessor.html">ArgumentsAccessor</a> or any field annotated with <a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/aggregator/AggregateWith.html">@AggregateWith</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following example demonstrates how to use field injection to consume multiple
+arguments in a parameterized class.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@ParameterizedClass</span>
+<span class="nd">@CsvSource</span><span class="o">({</span> <span class="s">"apple, 23"</span><span class="o">,</span> <span class="s">"banana, 42"</span> <span class="o">})</span>
+<span class="kd">class</span> <span class="nc">FruitTests</span> <span class="o">{</span>
+
+    <span class="nd">@Parameter</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span>
+    <span class="nc">String</span> <span class="n">fruit</span><span class="o">;</span>
+
+    <span class="nd">@Parameter</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+    <span class="kt">int</span> <span class="n">quantity</span><span class="o">;</span>
+
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">test</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">assertFruit</span><span class="o">(</span><span class="n">fruit</span><span class="o">);</span>
+        <span class="n">assertQuantity</span><span class="o">(</span><span class="n">quantity</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">anotherTest</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// ...</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If field injection is used, no constructor parameters will be resolved with arguments from
+the source. Other <a href="#writing-tests-dependency-injection"><code>ParameterResolver</code> extensions</a>
+may resolve constructor parameters as usual, though.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -4400,20 +4707,22 @@ parameterized method at the same index in the method&#8217;s formal parameter li
 <div class="title">AutoCloseable arguments</div>
 <div class="paragraph">
 <p>Arguments that implement <code>java.lang.AutoCloseable</code> (or <code>java.io.Closeable</code> which extends
-<code>java.lang.AutoCloseable</code>) will be automatically closed after <code>@AfterEach</code> methods and
-<code>AfterEachCallback</code> extensions have been called for the current parameterized test
-invocation.</p>
+<code>java.lang.AutoCloseable</code>) will be automatically closed after the parameterized class or
+test invocation.</p>
 </div>
 <div class="paragraph">
 <p>To prevent this from happening, set the <code>autoCloseArguments</code> attribute in
 <code>@ParameterizedTest</code> to <code>false</code>. Specifically, if an argument that implements
-<code>AutoCloseable</code> is reused for multiple invocations of the same parameterized test method,
-you must annotate the method with <code>@ParameterizedTest(autoCloseArguments = false)</code> to
-ensure that the argument is not closed between invocations.</p>
+<code>AutoCloseable</code> is reused for multiple invocations of the same parameterized class or test
+method, you must specify the <code>autoCloseArguments = false</code> on the <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html">@ParameterizedClass</a></code> or
+<code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html">@ParameterizedTest</a></code> annotation to ensure that the argument is not closed between
+invocations.</p>
 </div>
 </td>
 </tr>
 </table>
+</div>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -4423,6 +4732,20 @@ ensure that the argument is not closed between invocations.</p>
 following subsections provides a brief overview and an example for each of them. Please
 refer to the Javadoc in the <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/provider/package-summary.html">org.junit.jupiter.params.provider</a></code> package for additional
 information.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+All source annotations in this section are applicable to both <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html">@ParameterizedClass</a></code>
+and <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html">@ParameterizedTest</a></code>. For the sake of brevity, the examples in this section will only
+show how to use them with <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html">@ParameterizedTest</a></code> methods.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect4">
 <h5 id="writing-tests-parameterized-tests-sources-ValueSource"><a class="anchor" href="#writing-tests-parameterized-tests-sources-ValueSource"></a>@ValueSource</h5>
@@ -4493,8 +4816,8 @@ for parameterized tests that accept a single argument.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/provider/NullSource.html">@NullSource</a></code>: provides a single <code>null</code> argument to the annotated <code>@ParameterizedTest</code>
-method.</p>
+<p><code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/provider/NullSource.html">@NullSource</a></code>: provides a single <code>null</code> argument to the annotated <code>@ParameterizedClass</code>
+or <code>@ParameterizedTest</code>.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -4505,12 +4828,12 @@ method.</p>
 </li>
 <li>
 <p><code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/provider/EmptySource.html">@EmptySource</a></code>: provides a single <em>empty</em> argument to the annotated
-<code>@ParameterizedTest</code> method for parameters of the following types: <code>java.lang.String</code>,
-<code>java.util.Collection</code> (and concrete subtypes with a <code>public</code> no-arg constructor),
-<code>java.util.List</code>, <code>java.util.Set</code>, <code>java.util.SortedSet</code>, <code>java.util.NavigableSet</code>,
-<code>java.util.Map</code> (and concrete subtypes with a <code>public</code> no-arg constructor),
-<code>java.util.SortedMap</code>, <code>java.util.NavigableMap</code>, primitive arrays (e.g., <code>int[]</code>,
-<code>char[][]</code>, etc.), object arrays (e.g., <code>String[]</code>, <code>Integer[][]</code>, etc.).</p>
+<code>@ParameterizedClass</code> or <code>@ParameterizedTest</code> for parameters of the following types:
+<code>java.lang.String</code>, <code>java.util.Collection</code> (and concrete subtypes with a <code>public</code> no-arg
+constructor), <code>java.util.List</code>, <code>java.util.Set</code>, <code>java.util.SortedSet</code>,
+<code>java.util.NavigableSet</code>, <code>java.util.Map</code> (and concrete subtypes with a <code>public</code> no-arg
+constructor), <code>java.util.SortedMap</code>, <code>java.util.NavigableMap</code>, primitive arrays (e.g.,
+<code>int[]</code>, <code>char[][]</code>, etc.), object arrays (e.g., <code>String[]</code>, <code>Integer[][]</code>, etc.).</p>
 </li>
 <li>
 <p><code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/provider/NullAndEmptySource.html">@NullAndEmptySource</a></code>: a <em>composed annotation</em> that combines the functionality of
@@ -4519,8 +4842,10 @@ method.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>If you need to supply multiple varying types of <em>blank</em> strings to a parameterized test,
-you can achieve that using <a href="#writing-tests-parameterized-tests-sources-ValueSource">@ValueSource</a>&#8201;&#8212;&#8201;for example, <code>@ValueSource(strings = {"&#160;", "&#160;&#160;&#160;", "\t", "\n"})</code>.</p>
+<p>If you need to supply multiple varying types of <em>blank</em> strings to a parameterized
+class or test, you can achieve that using
+<a href="#writing-tests-parameterized-tests-sources-ValueSource">@ValueSource</a>&#8201;&#8212;&#8201;for example,
+<code>@ValueSource(strings = {"&#160;", "&#160;&#160;&#160;", "\t", "\n"})</code>.</p>
 </div>
 <div class="paragraph">
 <p>You can also combine <code>@NullSource</code>, <code>@EmptySource</code>, and <code>@ValueSource</code> to test a wider
@@ -4583,7 +4908,7 @@ blank strings supplied via <code>@ValueSource</code>.
 </div>
 <div class="paragraph">
 <p>The annotation&#8217;s <code>value</code> attribute is optional. When omitted, the declared type of the
-first method parameter is used. The test will fail if it does not reference an enum type.
+first parameter is used. The test will fail if it does not reference an enum type.
 Thus, the <code>value</code> attribute is required in the above example because the method parameter
 is declared as <code>TemporalUnit</code>, i.e. the interface implemented by <code>ChronoUnit</code>, which isn&#8217;t
 an enum type. Changing the method parameter type to <code>ChronoUnit</code> allows you to omit the
@@ -4685,14 +5010,14 @@ must always be <code>static</code>.</p>
 <div class="paragraph">
 <p>Each factory method must generate a <em>stream</em> of <em>arguments</em>, and each set of arguments
 within the stream will be provided as the physical arguments for individual invocations
-of the annotated <code>@ParameterizedTest</code> method. Generally speaking this translates to a
-<code>Stream</code> of <code>Arguments</code> (i.e., <code>Stream&lt;Arguments&gt;</code>); however, the actual concrete return
-type can take on many forms. In this context, a "stream" is anything that JUnit can
-reliably convert into a <code>Stream</code>, such as <code>Stream</code>, <code>DoubleStream</code>, <code>LongStream</code>,
-<code>IntStream</code>, <code>Collection</code>, <code>Iterator</code>, <code>Iterable</code>, an array of objects, or an array of
-primitives. The "arguments" within the stream can be supplied as an instance of
-<code>Arguments</code>, an array of objects (e.g., <code>Object[]</code>), or a single value if the
-parameterized test method accepts a single argument.</p>
+of the annotated <code>@ParameterizedClass</code> or <code>@ParameterizedTest</code>. Generally speaking this
+translates to a <code>Stream</code> of <code>Arguments</code> (i.e., <code>Stream&lt;Arguments&gt;</code>); however, the actual
+concrete return type can take on many forms. In this context, a "stream" is anything that
+JUnit can reliably convert into a <code>Stream</code>, such as <code>Stream</code>, <code>DoubleStream</code>,
+<code>LongStream</code>, <code>IntStream</code>, <code>Collection</code>, <code>Iterator</code>, <code>Iterable</code>, an array of objects, or
+an array of primitives. The "arguments" within the stream can be supplied as an instance
+of <code>Arguments</code>, an array of objects (e.g., <code>Object[]</code>), or a single value if the
+parameterized class or test method accepts a single argument.</p>
 </div>
 <div class="paragraph">
 <p>If you only need a single parameter, you can return a <code>Stream</code> of instances of the
@@ -4712,8 +5037,9 @@ parameter type as demonstrated in the following example.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>If you do not explicitly provide a factory method name via <code>@MethodSource</code>, JUnit Jupiter
-will search for a <em>factory</em> method that has the same name as the current
+<p>For a <code>@ParameterizedClass</code>, providing a factory method name via <code>@MethodSource</code> is
+mandatory. For a <code>@ParameterizedTest</code>, if you do not explicitly provide a factory method
+name, JUnit Jupiter will search for a <em>factory</em> method with the same name as the current
 <code>@ParameterizedTest</code> method by convention. This is demonstrated in the following example.</p>
 </div>
 <div class="listingblock">
@@ -4747,11 +5073,11 @@ supported as demonstrated by the following example.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>If a parameterized test method declares multiple parameters, you need to return a
-collection, stream, or array of <code>Arguments</code> instances or object arrays as shown below
-(see the Javadoc for <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/provider/MethodSource.html">@MethodSource</a></code> for further details on supported return types).
-Note that <code>arguments(Object&#8230;&#8203;)</code> is a static factory method defined in the <code>Arguments</code>
-interface. In addition, <code>Arguments.of(Object&#8230;&#8203;)</code> may be used as an alternative to
+<p>If a parameterized class or test method declares multiple parameters, you need to return a
+collection, stream, or array of <code>Arguments</code> instances or object arrays as shown below (see
+the Javadoc for <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/provider/MethodSource.html">@MethodSource</a></code> for further details on supported return types). Note that
+<code>arguments(Object&#8230;&#8203;)</code> is a static factory method defined in the <code>Arguments</code> interface. In
+addition, <code>Arguments.of(Object&#8230;&#8203;)</code> may be used as an alternative to
 <code>arguments(Object&#8230;&#8203;)</code>.</p>
 </div>
 <div class="listingblock">
@@ -4864,7 +5190,7 @@ classes.</p>
 <div class="paragraph">
 <p>Each field must be able to supply a <em>stream</em> of arguments, and each set of "arguments"
 within the "stream" will be provided as the physical arguments for individual invocations
-of the annotated <code>@ParameterizedTest</code> method.</p>
+of the annotated <code>@ParameterizedClass</code> or <code>@ParameterizedTest</code>.</p>
 </div>
 <div class="paragraph">
 <p>In this context, a "stream" is anything that JUnit can reliably convert to a <code>Stream</code>;
@@ -4873,8 +5199,8 @@ translates to a <code>Collection</code>, an <code>Iterable</code>, a <code>Suppl
 <code>DoubleStream</code>, <code>LongStream</code>, or <code>IntStream</code>), a <code>Supplier</code> of an <code>Iterator</code>, an array of
 objects, or an array of primitives. Each set of "arguments" within the "stream" can be
 supplied as an instance of <code>Arguments</code>, an array of objects (for example, <code>Object[]</code>,
-<code>String[]</code>, etc.), or a single value if the parameterized test method accepts a single
-argument.</p>
+<code>String[]</code>, etc.), or a single value if the parameterized class or test method accepts a
+single argument.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -4897,12 +5223,14 @@ these types, you can wrap it in a <code>Supplier</code> — for example, <code>S
 </div>
 <div class="paragraph">
 <p>Please note that a one-dimensional array of objects supplied as a set of "arguments" will
-be handled differently than other types of arguments. Specifically, all of the elements
-of a one-dimensional array of objects will be passed as individual physical arguments to
-the <code>@ParameterizedTest</code> method. See the Javadoc for <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/provider/FieldSource.html">@FieldSource</a></code> for further details.</p>
+be handled differently than other types of arguments. Specifically, all the elements of a
+one-dimensional array of objects will be passed as individual physical arguments to the
+<code>@ParameterizedClass</code> or <code>@ParameterizedTest</code>. See the Javadoc for <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/provider/FieldSource.html">@FieldSource</a></code> for
+further details.</p>
 </div>
 <div class="paragraph">
-<p>If you do not explicitly provide a field name via <code>@FieldSource</code>, JUnit Jupiter will
+<p>For a <code>@ParameterizedClass</code>, providing a field name via <code>@FieldSource</code> is mandatory. For a
+<code>@ParameterizedTest</code>, if you do not explicitly provide a field name, JUnit Jupiter will
 search in the test class for a field that has the same name as the current
 <code>@ParameterizedTest</code> method by convention. This is demonstrated in the following example.
 This parameterized test method will be invoked twice: with the values <code>"apple"</code> and
@@ -4995,10 +5323,10 @@ names <code>Apple</code> and <code>Banana</code>, respectively.</p>
 </table>
 </div>
 <div class="paragraph">
-<p>If a parameterized test method declares multiple parameters, the corresponding
+<p>If a parameterized class or test method declares multiple parameters, the corresponding
 <code>@FieldSource</code> field must be able to provide a collection, stream supplier, or array of
-<code>Arguments</code> instances or object arrays as shown below (see the Javadoc for
-<code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/provider/FieldSource.html">@FieldSource</a></code> for further details on supported types).</p>
+<code>Arguments</code> instances or object arrays as shown below (see the Javadoc for <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/provider/FieldSource.html">@FieldSource</a></code>
+for further details on supported types).</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -5050,9 +5378,9 @@ names <code>Apple</code> and <code>Banana</code>, respectively.</p>
 <div class="paragraph">
 <p><code>@CsvSource</code> allows you to express argument lists as comma-separated values (i.e., CSV
 <code>String</code> literals). Each string provided via the <code>value</code> attribute in <code>@CsvSource</code>
-represents a CSV record and results in one invocation of the parameterized test. The first
-record may optionally be used to supply CSV headers (see the Javadoc for the
-<code>useHeadersInDisplayName</code> attribute for details and an example).</p>
+represents a CSV record and results in one invocation of the parameterized class or
+test. The first record may optionally be used to supply CSV headers (see the Javadoc for
+the <code>useHeadersInDisplayName</code> attribute for details and an example).</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -5145,8 +5473,8 @@ by default. This behavior can be changed by setting the
 <p>If the programming language you are using supports <em>text blocks</em>&#8201;&#8212;&#8201;for example, Java SE
 15 or higher&#8201;&#8212;&#8201;you can alternatively use the <code>textBlock</code> attribute of <code>@CsvSource</code>. Each
 record within a text block represents a CSV record and results in one invocation of the
-parameterized test. The first record may optionally be used to supply CSV headers by
-setting the <code>useHeadersInDisplayName</code> attribute to <code>true</code> as in the example below.</p>
+parameterized class or test. The first record may optionally be used to supply CSV headers
+by setting the <code>useHeadersInDisplayName</code> attribute to <code>true</code> as in the example below.</p>
 </div>
 <div class="paragraph">
 <p>Using a text block, the previous example can be implemented as follows.</p>
@@ -5232,11 +5560,11 @@ your text block.</p>
 <div class="paragraph">
 <p><code>@CsvFileSource</code> lets you use comma-separated value (CSV) files from the classpath or the
 local file system. Each record from a CSV file results in one invocation of the
-parameterized test. The first record may optionally be used to supply CSV headers. You can
-instruct JUnit to ignore the headers via the <code>numLinesToSkip</code> attribute. If you would like
-for the headers to be used in the display names, you can set the <code>useHeadersInDisplayName</code>
-attribute to <code>true</code>. The examples below demonstrate the use of <code>numLinesToSkip</code> and
-<code>useHeadersInDisplayName</code>.</p>
+parameterized class or test. The first record may optionally be used to supply CSV
+headers. You can instruct JUnit to ignore the headers via the <code>numLinesToSkip</code> attribute.
+If you would like for the headers to be used in the display names, you can set the
+<code>useHeadersInDisplayName</code> attribute to <code>true</code>. The examples below demonstrate the use of
+<code>numLinesToSkip</code> and <code>useHeadersInDisplayName</code>.</p>
 </div>
 <div class="paragraph">
 <p>The default delimiter is a comma (<code>,</code>), but you can use another character by setting the
@@ -5366,7 +5694,8 @@ class or as a <code>static</code> nested class.</p>
 <pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyArgumentsProvider</span> <span class="kd">implements</span> <span class="nc">ArgumentsProvider</span> <span class="o">{</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="nc">Stream</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="nc">Arguments</span><span class="o">&gt;</span> <span class="nf">provideArguments</span><span class="o">(</span><span class="nc">ExtensionContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">Stream</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="nc">Arguments</span><span class="o">&gt;</span> <span class="nf">provideArguments</span><span class="o">(</span><span class="nc">ParameterDeclarations</span> <span class="n">parameters</span><span class="o">,</span>
+            <span class="nc">ExtensionContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="nc">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"apple"</span><span class="o">,</span> <span class="s">"banana"</span><span class="o">).</span><span class="na">map</span><span class="o">(</span><span class="nl">Arguments:</span><span class="o">:</span><span class="n">of</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span></code></pre>
@@ -5393,7 +5722,8 @@ following example.</p>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="nc">Stream</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="nc">Arguments</span><span class="o">&gt;</span> <span class="nf">provideArguments</span><span class="o">(</span><span class="nc">ExtensionContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">Stream</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="nc">Arguments</span><span class="o">&gt;</span> <span class="nf">provideArguments</span><span class="o">(</span><span class="nc">ParameterDeclarations</span> <span class="n">parameters</span><span class="o">,</span>
+            <span class="nc">ExtensionContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="nc">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="nc">Arguments</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">testInfo</span><span class="o">.</span><span class="na">getDisplayName</span><span class="o">()));</span>
     <span class="o">}</span>
 <span class="o">}</span></code></pre>
@@ -5483,17 +5813,20 @@ give it a try and provide feedback to the JUnit team so they can improve and eve
 <div class="paragraph">
 <p>By default, when an arguments source provides more arguments than the test method needs,
 those additional arguments are ignored and the test executes as usual.
-This can lead to bugs where arguments are never passed to the parameterized test method.</p>
+This can lead to bugs where arguments are never passed to the parameterized class or
+method.</p>
 </div>
 <div class="paragraph">
 <p>To prevent this, you can set argument count validation to 'strict'.
 Then, any additional arguments will cause an error instead.</p>
 </div>
 <div class="paragraph">
-<p>To change this behavior for all tests, set the <code>junit.jupiter.params.argumentCountValidation</code>
+<p>To change this behavior for all tests, set the
+<code>junit.jupiter.params.argumentCountValidation</code>
 <a href="#running-tests-config-params">configuration parameter</a> to <code>strict</code>.
-To change this behavior for a single test,
-use the <code>argumentCountValidation</code> attribute of the <code>@ParameterizedTest</code> annotation:</p>
+To change this behavior for a single parameterized class or test method,
+use the <code>argumentCountValidation</code> attribute of the <code>@ParameterizedClass</code> or
+<code>@ParameterizedTest</code> annotation:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -5512,10 +5845,10 @@ use the <code>argumentCountValidation</code> attribute of the <code>@Parameteriz
 <div class="paragraph">
 <p>JUnit Jupiter supports
 <a href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-5.html#jls-5.1.2">Widening Primitive
-Conversion</a> for arguments supplied to a <code>@ParameterizedTest</code>. For example, a
-parameterized test annotated with <code>@ValueSource(ints = { 1, 2, 3 })</code> can be declared to
-accept not only an argument of type <code>int</code> but also an argument of type <code>long</code>, <code>float</code>,
-or <code>double</code>.</p>
+Conversion</a> for arguments supplied to a <code>@ParameterizedClass</code> or <code>@ParameterizedTest</code>.
+For example, a parameterized class or test method annotated with
+<code>@ValueSource(ints = { 1, 2, 3 })</code> can be declared to accept not only an argument of type
+<code>int</code> but also an argument of type <code>long</code>, <code>float</code>, or <code>double</code>.</p>
 </div>
 </div>
 <div class="sect4">
@@ -5526,9 +5859,9 @@ implicit type converters. The conversion process depends on the declared type of
 method parameter.</p>
 </div>
 <div class="paragraph">
-<p>For example, if a <code>@ParameterizedTest</code> declares a parameter of type <code>TimeUnit</code> and the
-actual type supplied by the declared source is a <code>String</code>, the string will be
-automatically converted into the corresponding <code>TimeUnit</code> enum constant.</p>
+<p>For example, if a <code>@ParameterizedClass</code> or <code>@ParameterizedTest</code> declares a parameter
+of type <code>TimeUnit</code> and the actual type supplied by the declared source is a <code>String</code>, the
+string will be automatically converted into the corresponding <code>TimeUnit</code> enum constant.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -5866,9 +6199,10 @@ composed annotation <code>JavaTimeConversionPattern</code>.</p>
 <div class="sect3">
 <h4 id="writing-tests-parameterized-tests-argument-aggregation"><a class="anchor" href="#writing-tests-parameterized-tests-argument-aggregation"></a>2.17.6. Argument Aggregation</h4>
 <div class="paragraph">
-<p>By default, each <em>argument</em> provided to a <code>@ParameterizedTest</code> method corresponds to a
-single method parameter. Consequently, argument sources which are expected to supply a
-large number of arguments can lead to large method signatures.</p>
+<p>By default, each <em>argument</em> provided to a <code>@ParameterizedClass</code> or <code>@ParameterizedTest</code>
+corresponds to a single method parameter. Consequently, argument sources which are
+expected to supply a large number of arguments can lead to large constructor or method
+signatures, respectively.</p>
 </div>
 <div class="paragraph">
 <p>In such cases, an <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAccessor.html">ArgumentsAccessor</a></code> can be used instead of multiple parameters. Using
@@ -5912,17 +6246,17 @@ test method. In addition, type conversion is supported as discussed in
 <div class="sect4">
 <h5 id="writing-tests-parameterized-tests-argument-aggregation-custom"><a class="anchor" href="#writing-tests-parameterized-tests-argument-aggregation-custom"></a>Custom Aggregators</h5>
 <div class="paragraph">
-<p>Apart from direct access to a <code>@ParameterizedTest</code> method&#8217;s arguments using an
-<code>ArgumentsAccessor</code>, JUnit Jupiter also supports the usage of custom, reusable
-<em>aggregators</em>.</p>
+<p>Apart from direct access to the arguments of a <code>@ParameterizedClass</code> or
+<code>@ParameterizedTest</code> using an <code>ArgumentsAccessor</code>, JUnit Jupiter also supports the usage
+of custom, reusable <em>aggregators</em>.</p>
 </div>
 <div class="paragraph">
 <p>To use a custom aggregator, implement the <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAggregator.html">ArgumentsAggregator</a></code> interface and register
-it via the <code>@AggregateWith</code> annotation on a compatible parameter in the
-<code>@ParameterizedTest</code> method. The result of the aggregation will then be provided as an
-argument for the corresponding parameter when the parameterized test is invoked. Note
-that an implementation of <code>ArgumentsAggregator</code> must be declared as either a top-level
-class or as a <code>static</code> nested class.</p>
+it via the <code>@AggregateWith</code> annotation on a compatible parameter of the
+<code>@ParameterizedClass</code> or <code>@ParameterizedTest</code>. The result of the aggregation will then be
+provided as an argument for the corresponding parameter when the parameterized test is
+invoked. Note that an implementation of <code>ArgumentsAggregator</code> must be declared as either a
+top-level class or as a <code>static</code> nested class.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -5938,9 +6272,10 @@ class or as a <code>static</code> nested class.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonAggregator</span> <span class="kd">implements</span> <span class="nc">ArgumentsAggregator</span> <span class="o">{</span>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonAggregator</span> <span class="kd">extends</span> <span class="nc">SimpleArgumentsAggregator</span> <span class="o">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="nc">Person</span> <span class="nf">aggregateArguments</span><span class="o">(</span><span class="nc">ArgumentsAccessor</span> <span class="n">arguments</span><span class="o">,</span> <span class="nc">ParameterContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">protected</span> <span class="nc">Person</span> <span class="nf">aggregateArguments</span><span class="o">(</span><span class="nc">ArgumentsAccessor</span> <span class="n">arguments</span><span class="o">,</span> <span class="nc">Class</span><span class="o">&lt;?&gt;</span> <span class="n">targetType</span><span class="o">,</span>
+            <span class="nc">AnnotatedElementContext</span> <span class="n">context</span><span class="o">,</span> <span class="kt">int</span> <span class="n">parameterIndex</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="k">new</span> <span class="nf">Person</span><span class="o">(</span>
                             <span class="n">arguments</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span>
                             <span class="n">arguments</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span>
@@ -5952,8 +6287,8 @@ class or as a <code>static</code> nested class.</p>
 </div>
 <div class="paragraph">
 <p>If you find yourself repeatedly declaring <code>@AggregateWith(MyTypeAggregator.class)</code> for
-multiple parameterized test methods across your codebase, you may wish to create a custom
-<em>composed annotation</em> such as <code>@CsvToMyType</code> that is meta-annotated with
+multiple parameterized classes or methods across your codebase, you may wish to create a
+custom <em>composed annotation</em> such as <code>@CsvToMyType</code> that is meta-annotated with
 <code>@AggregateWith(MyTypeAggregator.class)</code>. The following example demonstrates this in
 action with a custom <code>@CsvToPerson</code> annotation.</p>
 </div>
@@ -5983,15 +6318,16 @@ action with a custom <code>@CsvToPerson</code> annotation.</p>
 <div class="sect3">
 <h4 id="writing-tests-parameterized-tests-display-names"><a class="anchor" href="#writing-tests-parameterized-tests-display-names"></a>2.17.7. Customizing Display Names</h4>
 <div class="paragraph">
-<p>By default, the display name of a parameterized test invocation contains the invocation
-index and the <code>String</code> representation of all arguments for that specific invocation. Each
-argument is preceded by its parameter name (unless the argument is only available via an
-<code>ArgumentsAccessor</code> or <code>ArgumentAggregator</code>), if the parameter name is present in the
-bytecode (for Java, test code must be compiled with the <code>-parameters</code> compiler flag).</p>
+<p>By default, the display name of a parameterized class or test invocation contains the
+invocation index and the <code>String</code> representation of all arguments for that specific
+invocation. Each argument is preceded by its parameter name (unless the argument is only
+available via an <code>ArgumentsAccessor</code> or <code>ArgumentAggregator</code>), if the parameter name is
+present in the bytecode (for Java, test code must be compiled with the <code>-parameters</code>
+compiler flag; for Kotlin, with <code>-java-parameters</code>).</p>
 </div>
 <div class="paragraph">
 <p>However, you can customize invocation display names via the <code>name</code> attribute of the
-<code>@ParameterizedTest</code> annotation like in the following example.</p>
+<code>@ParameterizedClass</code> or <code>@ParameterizedTest</code> annotation as in the following example.</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -6201,9 +6537,9 @@ the following.</p>
 </table>
 </div>
 <div class="paragraph">
-<p>If you&#8217;d like to set a default name pattern for all parameterized tests in your project,
-you can declare the <code>junit.jupiter.params.displayname.default</code> configuration parameter in
-the <code>junit-platform.properties</code> file as demonstrated in the following example (see
+<p>If you&#8217;d like to set a default name pattern for all parameterized classes and tests in
+your project, you can declare the <code>junit.jupiter.params.displayname.default</code> configuration
+parameter in the <code>junit-platform.properties</code> file as demonstrated in the following example (see
 <a href="#running-tests-config-params">Configuration Parameters</a> for other options).</p>
 </div>
 <div class="listingblock">
@@ -6212,25 +6548,28 @@ the <code>junit-platform.properties</code> file as demonstrated in the following
 </div>
 </div>
 <div class="paragraph">
-<p>The display name for a parameterized test is determined according to the following
-precedence rules:</p>
+<p>The display name for a parameterized class or test is determined according to the
+following precedence rules:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>name</code> attribute in <code>@ParameterizedTest</code>, if present</p>
+<p><code>name</code> attribute in <code>@ParameterizedClass</code> or <code>@ParameterizedTest</code>, if present</p>
 </li>
 <li>
 <p>value of the <code>junit.jupiter.params.displayname.default</code> configuration parameter, if present</p>
 </li>
 <li>
-<p><code>DEFAULT_DISPLAY_NAME</code> constant defined in <code>@ParameterizedTest</code></p>
+<p><code>DEFAULT_DISPLAY_NAME</code> constant defined in
+<code>org.junit.jupiter.params.ParameterizedInvocationConstants</code></p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="writing-tests-parameterized-tests-lifecycle-interop"><a class="anchor" href="#writing-tests-parameterized-tests-lifecycle-interop"></a>2.17.8. Lifecycle and Interoperability</h4>
+<div class="sect4">
+<h5 id="writing-tests-parameterized-tests-lifecycle-interop-methods"><a class="anchor" href="#writing-tests-parameterized-tests-lifecycle-interop-methods"></a>Parameterized Tests</h5>
 <div class="paragraph">
 <p>Each invocation of a parameterized test has the same lifecycle as a regular <code>@Test</code>
 method. For example, <code>@BeforeEach</code> methods will be executed before each invocation.
@@ -6241,7 +6580,7 @@ methods within the same test class.</p>
 <div class="paragraph">
 <p>You may use <code>ParameterResolver</code> extensions with <code>@ParameterizedTest</code> methods. However,
 method parameters that are resolved by argument sources need to come first in the
-argument list. Since a test class may contain regular tests as well as parameterized
+parameter list. Since a test class may contain regular tests as well as parameterized
 tests with different parameter lists, values from argument sources are not resolved for
 lifecycle methods (e.g. <code>@BeforeEach</code>) and test class constructors.</p>
 </div>
@@ -6265,6 +6604,23 @@ lifecycle methods (e.g. <code>@BeforeEach</code>) and test class constructors.</
 </div>
 </div>
 </div>
+<div class="sect4">
+<h5 id="writing-tests-parameterized-tests-lifecycle-interop-classes"><a class="anchor" href="#writing-tests-parameterized-tests-lifecycle-interop-classes"></a>Parameterized Classes</h5>
+<div class="paragraph">
+<p>Each invocation of a parameterized class has the same lifecycle as a regular test class.
+For example, <code>@BeforeAll</code> methods will be executed <em>once</em> before all invocations and
+<code>@BeforeEach</code> methods will be executed before each <em>test method</em> invocation. Similar to
+<a href="#writing-tests-dynamic-tests">Dynamic Tests</a>, invocations will appear one by one in the test tree of an
+IDE.</p>
+</div>
+<div class="paragraph">
+<p>You may use <code>ParameterResolver</code> extensions with <code>@ParameterizedClass</code> constructors.
+However, if constructor injection is used, constructor parameters that are resolved by
+argument sources need to come first in the parameter list. Values from argument sources
+are not resolved for lifecycle methods (e.g. <code>@BeforeEach</code>).</p>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="writing-tests-container-templates"><a class="anchor" href="#writing-tests-container-templates"></a>2.18. Container Templates</h3>
@@ -6276,6 +6632,19 @@ conjunction with a registered <code><a href="../api/org.junit.jupiter.api/org/ju
 Each invocation of a container template class behaves like the execution of a regular test
 class with full support for the same lifecycle callbacks and extensions. Please refer to
 <a href="#extensions-container-templates">Providing Invocation Contexts for Container Templates</a> for usage examples.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<a href="#writing-tests-parameterized-tests">Parameterized Classes</a> are a built-in
+specialization of container templates.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -6296,8 +6665,9 @@ method with full support for the same lifecycle callbacks and extensions. Please
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<a href="#writing-tests-repeated-tests">Repeated Tests</a> and <a href="#writing-tests-parameterized-tests">Parameterized Tests</a> are
-built-in specializations of test templates.
+<a href="#writing-tests-repeated-tests">Repeated Tests</a> and
+<a href="#writing-tests-parameterized-tests">Parameterized Tests</a> are built-in specializations of
+test templates.
 </td>
 </tr>
 </table>
@@ -11863,7 +12233,10 @@ value into a field. The output when using the <code>ConsoleLauncher</code> is as
 implementing different kinds of tests that rely on repetitive invocation of <em>all</em> test
 methods in a test class albeit in different contexts — for example, with different
 parameters, by preparing the test class instance differently, or multiple times without
-modifying the context.</p>
+modifying the context.
+Please refer to the implementations of
+<a href="#writing-tests-parameterized-tests">Parameterized Classes</a> which uses this extension
+point to provide its functionality.</p>
 </div>
 </div>
 <div class="sect2">
@@ -11952,8 +12325,8 @@ implementing different kinds of tests that rely on repetitive invocation of a te
 method albeit in different contexts — for example, with different parameters, by preparing
 the test class instance differently, or multiple times without modifying the context.
 Please refer to the implementations of <a href="#writing-tests-repeated-tests">Repeated Tests</a> or
-<a href="#writing-tests-parameterized-tests">Parameterized Tests</a> which use this extension point to provide their
-functionality.</p>
+<a href="#writing-tests-parameterized-tests">Parameterized Tests</a> which use this extension point
+to provide their functionality.</p>
 </div>
 </div>
 <div class="sect2">
@@ -14776,6 +15149,16 @@ value of lower stability.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Parameter</code> <em>(annotation)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ParameterizedClass</code> <em>(annotation)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ParameterizedTest.allowZeroInvocations()</code> <em>(annotation attribute)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.12</code></p></td>
 </tr>
@@ -14785,9 +15168,24 @@ value of lower stability.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.12</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params.aggregator</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ArgumentsAggregator.aggregateArguments(ArgumentsAccessor, FieldContext)</code> <em>(method)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params.aggregator</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SimpleArgumentsAggregator</code> <em>(class)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params.converter</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>AnnotationBasedArgumentConverter</code> <em>(class)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.10</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params.converter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ArgumentConverter.convert(Object, FieldContext)</code> <em>(method)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params.converter</code></p></td>
@@ -14811,6 +15209,11 @@ value of lower stability.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params.provider</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ArgumentsProvider.provideArguments(ParameterDeclarations, ExtensionContext)</code> <em>(method)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params.provider</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>EnumSource.from()</code> <em>(annotation attribute)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.12</code></p></td>
 </tr>
@@ -14828,6 +15231,21 @@ value of lower stability.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params.provider</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>FieldSources</code> <em>(annotation)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.11</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params.support</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FieldContext</code> <em>(interface)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params.support</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ParameterDeclaration</code> <em>(interface)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params.support</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ParameterDeclarations</code> <em>(interface)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.commons.support</code></p></td>
@@ -15539,6 +15957,11 @@ since such APIs will likely be removed in an upcoming release.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.8</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params.provider</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ArgumentsProvider.provideArguments(ExtensionContext)</code> <em>(method)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.commons.support</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>AnnotationSupport.findAnnotation(Class&lt;?&gt;, Class&lt;A&gt;, SearchOption)</code> <em>(method)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.12</code></p></td>
@@ -15882,7 +16305,7 @@ simplified dependency management in build tools such as Gradle and Maven.</p>
 </dd>
 <dt class="hdlist1"><code>junit-jupiter-params</code></dt>
 <dd>
-<p>Support for <a href="#writing-tests-parameterized-tests">parameterized tests</a> in JUnit Jupiter.</p>
+<p>Support for <a href="#writing-tests-parameterized-tests">Parameterized Classes and Tests</a> in JUnit Jupiter.</p>
 </dd>
 <dt class="hdlist1"><code>junit-jupiter-migrationsupport</code></dt>
 <dd>

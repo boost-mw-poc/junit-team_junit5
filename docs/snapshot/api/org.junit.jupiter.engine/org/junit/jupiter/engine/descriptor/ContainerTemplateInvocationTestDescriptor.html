@@ -397,23 +397,6 @@ implements <a href="TestClassAware.html" title="interface in org.junit.jupiter.e
 </section>
 </li>
 <li>
-<section class="detail" id="shouldBeSkipped(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)">
-<h3>shouldBeSkipped</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.SkipResult.html" title="class in org.junit.platform.engine.support.hierarchical">Node.SkipResult</a></span>&nbsp;<span class="element-name">shouldBeSkipped</span><wbr><span class="parameters">(<a href="../execution/JupiterEngineExecutionContext.html" title="class in org.junit.jupiter.engine.execution">JupiterEngineExecutionContext</a>&nbsp;context)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.html#shouldBeSkipped(C)">Node</a></code></span></div>
-<div class="block">Determine if the execution of the supplied <code>context</code> should be
- <em>skipped</em>.
-
- <p>The default implementation returns <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.SkipResult.html#doNotSkip()"><code>Node.SkipResult.doNotSkip()</code></a>.</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.html#shouldBeSkipped(C)">shouldBeSkipped</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.html" title="interface in org.junit.platform.engine.support.hierarchical">Node</a>&lt;<a href="../execution/JupiterEngineExecutionContext.html" title="class in org.junit.jupiter.engine.execution">JupiterEngineExecutionContext</a>&gt;</code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="JupiterTestDescriptor.html#shouldBeSkipped(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)">shouldBeSkipped</a></code>&nbsp;in class&nbsp;<code><a href="JupiterTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">JupiterTestDescriptor</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
 <section class="detail" id="prepare(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)">
 <h3>prepare</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../execution/JupiterEngineExecutionContext.html" title="class in org.junit.jupiter.engine.execution">JupiterEngineExecutionContext</a></span>&nbsp;<span class="element-name">prepare</span><wbr><span class="parameters">(<a href="../execution/JupiterEngineExecutionContext.html" title="class in org.junit.jupiter.engine.execution">JupiterEngineExecutionContext</a>&nbsp;context)</span></div>
@@ -431,6 +414,23 @@ implements <a href="TestClassAware.html" title="interface in org.junit.jupiter.e
 <li><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.html#cleanUp(C)"><code>Node.cleanUp(EngineExecutionContext)</code></a></li>
 </ul>
 </dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="shouldBeSkipped(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)">
+<h3>shouldBeSkipped</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.SkipResult.html" title="class in org.junit.platform.engine.support.hierarchical">Node.SkipResult</a></span>&nbsp;<span class="element-name">shouldBeSkipped</span><wbr><span class="parameters">(<a href="../execution/JupiterEngineExecutionContext.html" title="class in org.junit.jupiter.engine.execution">JupiterEngineExecutionContext</a>&nbsp;context)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.html#shouldBeSkipped(C)">Node</a></code></span></div>
+<div class="block">Determine if the execution of the supplied <code>context</code> should be
+ <em>skipped</em>.
+
+ <p>The default implementation returns <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.SkipResult.html#doNotSkip()"><code>Node.SkipResult.doNotSkip()</code></a>.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.html#shouldBeSkipped(C)">shouldBeSkipped</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.html" title="interface in org.junit.platform.engine.support.hierarchical">Node</a>&lt;<a href="../execution/JupiterEngineExecutionContext.html" title="class in org.junit.jupiter.engine.execution">JupiterEngineExecutionContext</a>&gt;</code></dd>
+<dt>Overrides:</dt>
+<dd><code><a href="JupiterTestDescriptor.html#shouldBeSkipped(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)">shouldBeSkipped</a></code>&nbsp;in class&nbsp;<code><a href="JupiterTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">JupiterTestDescriptor</a></code></dd>
 </dl>
 </section>
 </li>
