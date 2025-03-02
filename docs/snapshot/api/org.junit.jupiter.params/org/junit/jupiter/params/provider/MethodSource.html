@@ -105,12 +105,12 @@ loadScripts(document, 'script');</script>
  <p>Each factory method must generate a <em>stream</em> of <em>arguments</em>,
  and each set of "arguments" within the "stream" will be provided as the
  physical arguments for individual invocations of the annotated
- <code>ParameterizedClass @ParameterizedClass</code> or
- <a href="../ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a>. Generally speaking this
- translates to a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a> of <a href="Arguments.html" title="interface in org.junit.jupiter.params.provider"><code>Arguments</code></a>
- (i.e., <code>Stream&lt;Arguments&gt;</code>); however, the actual concrete return type
- can take on many forms. In this context, a "stream" is anything that JUnit
- can reliably convert into a <code>Stream</code>, such as
+ <code>org.junit.jupiter.params.ParameterizedClass @ParameterizedClass</code> or
+ <a href="../ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a>.
+ Generally speaking this translates to a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a>
+ of <a href="Arguments.html" title="interface in org.junit.jupiter.params.provider"><code>Arguments</code></a> (i.e., <code>Stream&lt;Arguments&gt;</code>); however, the actual
+ concrete return type can take on many forms. In this context, a "stream" is
+ anything that JUnit can reliably convert into a <code>Stream</code>, such as
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a>,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/DoubleStream.html" title="class or interface in java.util.stream" class="external-link"><code>DoubleStream</code></a>,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/LongStream.html" title="class or interface in java.util.stream" class="external-link"><code>LongStream</code></a>,
@@ -167,8 +167,8 @@ loadScripts(document, 'script');</script>
  classes must always be <code>static</code>.
 
  <p>This behavior and the above examples also apply to parameters of a
- <a href="../ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a>, regardless whether field or
- constructor injection is used.
+ <a href="../ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a>,
+ regardless whether field or constructor injection is used.
 
  <p>Factory methods can declare parameters, which will be provided by registered
  implementations of <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/ParameterResolver.html" title="interface in org.junit.jupiter.api.extension"><code>ParameterResolver</code></a>.</div>

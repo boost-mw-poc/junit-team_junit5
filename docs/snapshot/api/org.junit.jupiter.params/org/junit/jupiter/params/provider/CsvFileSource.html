@@ -101,9 +101,11 @@ loadScripts(document, 'script');</script>
  files from one or more classpath <a href="#resources()"><code>resources()</code></a> or <a href="#files()"><code>files()</code></a>.
 
  <p>The CSV records parsed from these resources and files will be provided as
- arguments to the annotated <code>@ParameterizedClass</code> or
- <code>@ParameterizedTest</code>. Note that the first record may optionally
- be used to supply CSV headers (see <a href="#useHeadersInDisplayName()"><code>useHeadersInDisplayName()</code></a>).
+ arguments to the annotated
+ <a href="../ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a> or
+ <a href="../ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a>. Note
+ that the first record may optionally be used to supply CSV headers (see
+ <a href="#useHeadersInDisplayName()"><code>useHeadersInDisplayName()</code></a>).
 
  <p>Any line beginning with a <code>#</code> symbol will be interpreted as a comment
  and will be ignored.
