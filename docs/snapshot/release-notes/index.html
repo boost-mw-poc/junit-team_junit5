@@ -550,9 +550,9 @@ repository on GitHub.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>If <code>@ParameterizedTest(autoCloseArguments = true)</code>, all arguments returned by the used
-<code>ArgumentsProvider</code> implementations are now closed even if the test method declares
-fewer parameters.</p>
+<p>If the <code>autoCloseArguments</code> attribute in <code>@ParameterizedTest</code> is set to <code>true</code>, all
+arguments returned by registered <code>ArgumentsProvider</code> implementations are now closed even
+if the test method declares fewer parameters.</p>
 </li>
 <li>
 <p><code>AutoCloseable</code> arguments returned by an <code>ArgumentsProvider</code> are now closed even if they
