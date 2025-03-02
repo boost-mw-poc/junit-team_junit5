@@ -1666,10 +1666,11 @@ ones available in Jupiter:</p>
 </tr>
 </tbody>
 </table>
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
-<p>Note that for <code>IndicativeSentences</code>, you can customize the separator and the
-underlying generator by using <code>@IndicativeSentencesGeneration</code> as shown in the
-following example.</p>
+<p>Note that for <code>IndicativeSentences</code>, you can customize the separator and the underlying
+generator by using <code>@IndicativeSentencesGeneration</code> as shown in the following example.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1719,20 +1720,25 @@ following example.</p>
 <span class="o">}</span></code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Running the above <code>DisplayNameGeneratorDemo</code> test class results in the following display names.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code>+-- DisplayNameGeneratorDemo [OK]
   +-- A year is not supported [OK]
+  | '-- if it is zero [OK]
   | +-- A negative value for year is not supported by the leap year computation. [OK]
   | | +-- For example, year -1 is not supported. [OK]
   | | '-- For example, year -4 is not supported. [OK]
-  | '-- if it is zero() [OK]
   '-- A year is a leap year [OK]
-    +-- A year is a leap year -&gt; if it is divisible by 4 but not by 100. [OK]
-    '-- A year is a leap year -&gt; if it is one of the following years. [OK]
+    +-- A year is a leap year -&gt; if it is divisible by 4 but not by 100 [OK]
+    '-- A year is a leap year -&gt; if it is one of the following years [OK]
       +-- Year 2016 is a leap year. [OK]
       +-- Year 2020 is a leap year. [OK]
       '-- Year 2048 is a leap year. [OK]</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
