@@ -124,8 +124,10 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
  <p>JUnit Jupiter guarantees <em>wrapping behavior</em> for multiple
  registered extensions that implement lifecycle callbacks such as
  <a href="BeforeAllCallback.html" title="interface in org.junit.jupiter.api.extension"><code>BeforeAllCallback</code></a>, <a href="AfterAllCallback.html" title="interface in org.junit.jupiter.api.extension"><code>AfterAllCallback</code></a>,
- <a href="BeforeEachCallback.html" title="interface in org.junit.jupiter.api.extension"><code>BeforeEachCallback</code></a>, <a href="AfterEachCallback.html" title="interface in org.junit.jupiter.api.extension"><code>AfterEachCallback</code></a>,
- <a href="BeforeTestExecutionCallback.html" title="interface in org.junit.jupiter.api.extension"><code>BeforeTestExecutionCallback</code></a>, and <a href="AfterTestExecutionCallback.html" title="interface in org.junit.jupiter.api.extension"><code>AfterTestExecutionCallback</code></a>.
+ <a href="BeforeContainerTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension"><code>BeforeContainerTemplateInvocationCallback</code></a>,
+ <a href="AfterContainerTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension"><code>AfterContainerTemplateInvocationCallback</code></a>, <a href="BeforeEachCallback.html" title="interface in org.junit.jupiter.api.extension"><code>BeforeEachCallback</code></a>,
+ <a href="AfterEachCallback.html" title="interface in org.junit.jupiter.api.extension"><code>AfterEachCallback</code></a>, <a href="BeforeTestExecutionCallback.html" title="interface in org.junit.jupiter.api.extension"><code>BeforeTestExecutionCallback</code></a>, and
+ <a href="AfterTestExecutionCallback.html" title="interface in org.junit.jupiter.api.extension"><code>AfterTestExecutionCallback</code></a>.
 
  <p>That means that, given two extensions <code>Extension1</code> and
  <code>Extension2</code> with <code>Extension1</code> registered before
@@ -141,13 +143,15 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
 <dd>5.0</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="tag-list">
+<ul class="tag-list-long">
 <li><a href="../BeforeAll.html" title="annotation interface in org.junit.jupiter.api"><code>BeforeAll</code></a></li>
 <li><a href="AfterAllCallback.html" title="interface in org.junit.jupiter.api.extension"><code>AfterAllCallback</code></a></li>
 <li><a href="BeforeEachCallback.html" title="interface in org.junit.jupiter.api.extension"><code>BeforeEachCallback</code></a></li>
 <li><a href="AfterEachCallback.html" title="interface in org.junit.jupiter.api.extension"><code>AfterEachCallback</code></a></li>
 <li><a href="BeforeTestExecutionCallback.html" title="interface in org.junit.jupiter.api.extension"><code>BeforeTestExecutionCallback</code></a></li>
 <li><a href="AfterTestExecutionCallback.html" title="interface in org.junit.jupiter.api.extension"><code>AfterTestExecutionCallback</code></a></li>
+<li><a href="BeforeContainerTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension"><code>BeforeContainerTemplateInvocationCallback</code></a></li>
+<li><a href="AfterContainerTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension"><code>AfterContainerTemplateInvocationCallback</code></a></li>
 </ul>
 </dd>
 </dl>

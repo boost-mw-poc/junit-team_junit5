@@ -67,6 +67,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassBasedTestDescriptor.html#before(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)" class="member-name-link">before(JupiterEngineExecutionContext)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassBasedTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassBasedTestDescriptor</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateInvocationTestDescriptor.html#before(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)" class="member-name-link">before(JupiterEngineExecutionContext)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateInvocationTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ContainerTemplateInvocationTestDescriptor</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeAllCallback.html#beforeAll(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">beforeAll(ExtensionContext)</a> - Method in interface org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeAllCallback.html" title="interface in org.junit.jupiter.api.extension">BeforeAllCallback</a></dt>
 <dd>
 <div class="block">Callback that is invoked once <em>before</em> all tests in the current
@@ -94,6 +96,18 @@ loadScripts(document, 'script');</script>
 <dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/execution/JupiterEngineExecutionContext.html#beforeAllMethodsExecuted(boolean)" class="member-name-link">beforeAllMethodsExecuted(boolean)</a> - Method in class org.junit.jupiter.engine.execution.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/execution/JupiterEngineExecutionContext.html" title="class in org.junit.jupiter.engine.execution">JupiterEngineExecutionContext</a></dt>
 <dd>
 <div class="block">Track that an attempt was made to execute <code>@BeforeAll</code> methods.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeContainerTemplateInvocationCallback.html#beforeContainerTemplateInvocation(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">beforeContainerTemplateInvocation(ExtensionContext)</a> - Method in interface org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeContainerTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension">BeforeContainerTemplateInvocationCallback</a></dt>
+<dd>
+<div class="block">Callback that is invoked <em>before</em> each invocation of a container
+ template.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeContainerTemplateInvocationCallback.html" class="type-name-link" title="interface in org.junit.jupiter.api.extension">BeforeContainerTemplateInvocationCallback</a> - Interface in <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/package-summary.html">org.junit.jupiter.api.extension</a></dt>
+<dd>
+<div class="block"><code>BeforeContainerTemplateInvocationCallback</code> defines the API for
+ <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a> that wish to provide additional behavior
+ <strong>once</strong> before each invocation of a
+ <a href="../org.junit.jupiter.api/org/junit/jupiter/api/ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api">container template</a>.</div>
 </dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeEachCallback.html#beforeEach(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">beforeEach(ExtensionContext)</a> - Method in interface org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeEachCallback.html" title="interface in org.junit.jupiter.api.extension">BeforeEachCallback</a></dt>
 <dd>

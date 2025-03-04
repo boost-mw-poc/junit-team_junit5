@@ -603,6 +603,12 @@ updated documentation in the
 example.</p>
 </li>
 <li>
+<p>New <code>BeforeContainerTemplateInvocationCallback</code> and
+<code>AfterContainerTemplateInvocationCallback</code> extension callback interfaces allow
+implementing extensions that are invoked before and after each invocation of a container
+template.</p>
+</li>
+<li>
 <p>New <code>TestTemplateInvocationContext.prepareInvocation(ExtensionContext)</code> callback method
 which allows extensions to prepare the <code>ExtensionContext</code> before the test template
 method is invoked. This may be used, for example, to store entries in the

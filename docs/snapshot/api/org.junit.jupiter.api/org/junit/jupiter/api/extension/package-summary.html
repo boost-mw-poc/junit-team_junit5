@@ -125,32 +125,46 @@ loadScripts(document, 'script');</script>
  that wish to provide additional behavior to test containers <strong>once</strong>
  after all tests in the container have been executed.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AfterEachCallback.html" title="interface in org.junit.jupiter.api.extension">AfterEachCallback</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AfterContainerTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension">AfterContainerTemplateInvocationCallback</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="block"><code>AfterContainerTemplateInvocationCallback</code> defines the API for
+ <a href="Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a> that wish to provide additional behavior
+ <strong>once</strong> before each invocation of a
+ <a href="../ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api">container template</a>.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AfterEachCallback.html" title="interface in org.junit.jupiter.api.extension">AfterEachCallback</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block"><code>AfterEachCallback</code> defines the API for <a href="Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a>
  that wish to provide additional behavior to tests after an individual test
  and any user-defined teardown methods (e.g.,
  <a href="../AfterEach.html" title="annotation interface in org.junit.jupiter.api"><code>@AfterEach</code></a> methods) for that test
  have been executed.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AfterTestExecutionCallback.html" title="interface in org.junit.jupiter.api.extension">AfterTestExecutionCallback</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AfterTestExecutionCallback.html" title="interface in org.junit.jupiter.api.extension">AfterTestExecutionCallback</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block"><code>AfterTestExecutionCallback</code> defines the API for <a href="Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a> that wish to provide additional behavior to tests
  <strong>immediately</strong> after an individual test has been executed but
  before any user-defined teardown methods (e.g.,
  <a href="../AfterEach.html" title="annotation interface in org.junit.jupiter.api"><code>@AfterEach</code></a> methods) have been executed
  for that test.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AnnotatedElementContext.html" title="interface in org.junit.jupiter.api.extension">AnnotatedElementContext</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotatedElementContext.html" title="interface in org.junit.jupiter.api.extension">AnnotatedElementContext</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block"><code>AnnotatedElementContext</code> encapsulates the <em>context</em> in which an
  <a href="AnnotatedElementContext.html#getAnnotatedElement()"><code>AnnotatedElement</code></a> is declared.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="BeforeAllCallback.html" title="interface in org.junit.jupiter.api.extension">BeforeAllCallback</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="BeforeAllCallback.html" title="interface in org.junit.jupiter.api.extension">BeforeAllCallback</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block"><code>BeforeAllCallback</code> defines the API for <a href="Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a>
  that wish to provide additional behavior to test containers <strong>once</strong>
  before all tests in the container have been executed.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="BeforeContainerTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension">BeforeContainerTemplateInvocationCallback</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="block"><code>BeforeContainerTemplateInvocationCallback</code> defines the API for
+ <a href="Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a> that wish to provide additional behavior
+ <strong>once</strong> before each invocation of a
+ <a href="../ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api">container template</a>.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab1"><a href="BeforeEachCallback.html" title="interface in org.junit.jupiter.api.extension">BeforeEachCallback</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">

@@ -249,6 +249,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassBasedTestDescriptor.html#after(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)" class="member-name-link">after(JupiterEngineExecutionContext)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassBasedTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassBasedTestDescriptor</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateInvocationTestDescriptor.html#after(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)" class="member-name-link">after(JupiterEngineExecutionContext)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateInvocationTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ContainerTemplateInvocationTestDescriptor</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/TestTemplateInvocationTestDescriptor.html#after(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)" class="member-name-link">after(JupiterEngineExecutionContext)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/TestTemplateInvocationTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">TestTemplateInvocationTestDescriptor</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterAllCallback.html#afterAll(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">afterAll(ExtensionContext)</a> - Method in interface org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterAllCallback.html" title="interface in org.junit.jupiter.api.extension">AfterAllCallback</a></dt>
@@ -266,6 +268,18 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>AfterAllCallback</code> defines the API for <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a>
  that wish to provide additional behavior to test containers <strong>once</strong>
  after all tests in the container have been executed.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterContainerTemplateInvocationCallback.html#afterContainerTemplateInvocation(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">afterContainerTemplateInvocation(ExtensionContext)</a> - Method in interface org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterContainerTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension">AfterContainerTemplateInvocationCallback</a></dt>
+<dd>
+<div class="block">Callback that is invoked <em>after</em> each invocation of a container
+ template.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterContainerTemplateInvocationCallback.html" class="type-name-link" title="interface in org.junit.jupiter.api.extension">AfterContainerTemplateInvocationCallback</a> - Interface in <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/package-summary.html">org.junit.jupiter.api.extension</a></dt>
+<dd>
+<div class="block"><code>AfterContainerTemplateInvocationCallback</code> defines the API for
+ <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a> that wish to provide additional behavior
+ <strong>once</strong> before each invocation of a
+ <a href="../org.junit.jupiter.api/org/junit/jupiter/api/ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api">container template</a>.</div>
 </dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterEachCallback.html#afterEach(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">afterEach(ExtensionContext)</a> - Method in interface org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterEachCallback.html" title="interface in org.junit.jupiter.api.extension">AfterEachCallback</a></dt>
 <dd>

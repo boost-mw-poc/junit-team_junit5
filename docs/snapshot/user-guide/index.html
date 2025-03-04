@@ -11969,6 +11969,11 @@ each of these interfaces in the <code><a href="../api/org.junit.jupiter.api/org/
 <div class="ulist">
 <ul>
 <li>
+<p><code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeContainerTemplateInvocationCallback.html">BeforeContainerTemplateInvocationCallback</a></code> (only applicable for
+<a href="#writing-tests-container-templates">container templates</a>)</p>
+<div class="ulist">
+<ul>
+<li>
 <p><code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeEachCallback.html">BeforeEachCallback</a></code></p>
 <div class="ulist">
 <ul>
@@ -11983,6 +11988,13 @@ each of these interfaces in the <code><a href="../api/org.junit.jupiter.api/org/
 </li>
 <li>
 <p><code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterEachCallback.html">AfterEachCallback</a></code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterContainerTemplateInvocationCallback.html">AfterContainerTemplateInvocationCallback</a></code> (only applicable for
+<a href="#writing-tests-container-templates">container templates</a>)</p>
 </li>
 </ul>
 </div>
@@ -12778,108 +12790,88 @@ test method and will be repeated for every test method in the test class.</p>
 <p>The following table further explains the sixteen steps in the
 <a href="#extensions-execution-order-diagram">User code and extension code</a> diagram.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 5%;">
-<col style="width: 15%;">
-<col style="width: 80%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Step</th>
-<th class="tableblock halign-left valign-top">Interface/Annotation</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">interface <code>org.junit.jupiter.api.extension.BeforeAllCallback</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">extension code executed before all tests of the container are executed</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">annotation <code>org.junit.jupiter.api.BeforeAll</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user code executed before all tests of the container are executed</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">interface <code>org.junit.jupiter.api.extension.LifecycleMethodExecutionExceptionHandler
-#handleBeforeAllMethodExecutionException</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">extension code for handling exceptions thrown from <code>@BeforeAll</code> methods</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">interface <code>org.junit.jupiter.api.extension.BeforeEachCallback</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">extension code executed before each test is executed</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">annotation <code>org.junit.jupiter.api.BeforeEach</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user code executed before each test is executed</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">interface <code>org.junit.jupiter.api.extension.LifecycleMethodExecutionExceptionHandler
-#handleBeforeEachMethodExecutionException</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">extension code for handling exceptions thrown from <code>@BeforeEach</code> methods</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">interface <code>org.junit.jupiter.api.extension.BeforeTestExecutionCallback</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">extension code executed immediately before a test is executed</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">annotation <code>org.junit.jupiter.api.Test</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user code of the actual test method</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">interface <code>org.junit.jupiter.api.extension.TestExecutionExceptionHandler</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">extension code for handling exceptions thrown during a test</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">interface <code>org.junit.jupiter.api.extension.AfterTestExecutionCallback</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">extension code executed immediately after test execution and its corresponding exception handlers</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">annotation <code>org.junit.jupiter.api.AfterEach</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user code executed after each test is executed</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">interface <code>org.junit.jupiter.api.extension.LifecycleMethodExecutionExceptionHandler
-#handleAfterEachMethodExecutionException</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">extension code for handling exceptions thrown from <code>@AfterEach</code> methods</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">interface <code>org.junit.jupiter.api.extension.AfterEachCallback</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">extension code executed after each test is executed</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">14</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">annotation <code>org.junit.jupiter.api.AfterAll</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user code executed after all tests of the container are executed</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">interface <code>org.junit.jupiter.api.extension.LifecycleMethodExecutionExceptionHandler
-#handleAfterAllMethodExecutionException</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">extension code for handling exceptions thrown from <code>@AfterAll</code> methods</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">interface <code>org.junit.jupiter.api.extension.AfterAllCallback</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">extension code executed after all tests of the container are executed</p></td>
-</tr>
-</tbody>
-</table>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.BeforeAllCallback</strong></code><br>
+extension code executed before all tests of the container are executed</p>
+</li>
+<li>
+<p><strong>annotation</strong> <code><strong>org.junit.jupiter.api.BeforeAll</strong></code><br>
+user code executed before all tests of the container are executed</p>
+</li>
+<li>
+<p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.LifecycleMethodExecutionExceptionHandler
+#handleBeforeAllMethodExecutionException</strong></code><br>
+extension code for handling exceptions thrown from <code>@BeforeAll</code> methods</p>
+</li>
+<li>
+<p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.BeforeContainerTemplateInvocationCallback</strong></code><br>
+extension code executed before each container template invocation is executed (only applicable if the test class is a <a href="#writing-tests-container-templates">container template</a>)</p>
+</li>
+<li>
+<p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.BeforeEachCallback</strong></code><br>
+extension code executed before each test is executed</p>
+</li>
+<li>
+<p><strong>annotation</strong> <code><strong>org.junit.jupiter.api.BeforeEach</strong></code><br>
+user code executed before each test is executed</p>
+</li>
+<li>
+<p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.LifecycleMethodExecutionExceptionHandler
+#handleBeforeEachMethodExecutionException</strong></code><br>
+extension code for handling exceptions thrown from <code>@BeforeEach</code> methods</p>
+</li>
+<li>
+<p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.BeforeTestExecutionCallback</strong></code><br>
+extension code executed immediately before a test is executed</p>
+</li>
+<li>
+<p><strong>annotation</strong> <code><strong>org.junit.jupiter.api.Test</strong></code><br>
+user code of the actual test method</p>
+</li>
+<li>
+<p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.TestExecutionExceptionHandler</strong></code><br>
+extension code for handling exceptions thrown during a test</p>
+</li>
+<li>
+<p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.AfterTestExecutionCallback</strong></code><br>
+extension code executed immediately after test execution and its corresponding exception handlers</p>
+</li>
+<li>
+<p><strong>annotation</strong> <code><strong>org.junit.jupiter.api.AfterEach</strong></code><br>
+user code executed after each test is executed</p>
+</li>
+<li>
+<p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.LifecycleMethodExecutionExceptionHandler
+#handleAfterEachMethodExecutionException</strong></code><br>
+extension code for handling exceptions thrown from <code>@AfterEach</code> methods</p>
+</li>
+<li>
+<p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.AfterEachCallback</strong></code><br>
+extension code executed after each test is executed</p>
+</li>
+<li>
+<p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.AfterContainerTemplateInvocationCallback</strong></code><br>
+extension code executed after each container template invocation is executed (only applicable if the test class is a <a href="#writing-tests-container-templates">container template</a>)</p>
+</li>
+<li>
+<p><strong>annotation</strong> <code><strong>org.junit.jupiter.api.AfterAll</strong></code><br>
+user code executed after all tests of the container are executed</p>
+</li>
+<li>
+<p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.LifecycleMethodExecutionExceptionHandler
+#handleAfterAllMethodExecutionException</strong></code><br>
+extension code for handling exceptions thrown from <code>@AfterAll</code> methods</p>
+</li>
+<li>
+<p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.AfterAllCallback</strong></code><br>
+extension code executed after all tests of the container are executed</p>
+</li>
+</ol>
+</div>
 <div class="paragraph">
-<p>In the simplest case only the actual test method will be executed (step 8); all other
+<p>In the simplest case only the actual test method will be executed (step 9); all other
 steps are optional depending on the presence of user code or extension support for the
 corresponding lifecycle callback. For further details on the various lifecycle callbacks
 please consult the respective Javadoc for each annotation and extension.</p>
@@ -12894,6 +12886,7 @@ by implementing <a href="#extensions-intercepting-invocations"><code>InvocationI
 <div class="paragraph">
 <p>JUnit Jupiter always guarantees <em>wrapping</em> behavior for multiple registered extensions
 that implement lifecycle callbacks such as <code>BeforeAllCallback</code>, <code>AfterAllCallback</code>,
+<code>BeforeContainerTemplateInvocationCallback</code>, <code>AfterContainerTemplateInvocationCallback</code>,
 <code>BeforeEachCallback</code>, <code>AfterEachCallback</code>, <code>BeforeTestExecutionCallback</code>, and
 <code>AfterTestExecutionCallback</code>.</p>
 </div>
@@ -15179,8 +15172,18 @@ value of lower stability.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.api.extension</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AfterContainerTemplateInvocationCallback</code> <em>(interface)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.api.extension</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>AnnotatedElementContext</code> <em>(interface)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.10</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.api.extension</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BeforeContainerTemplateInvocationCallback</code> <em>(interface)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.api.extension</code></p></td>
