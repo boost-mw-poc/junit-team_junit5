@@ -78,195 +78,207 @@ loadScripts(document, 'script');</script>
  that wish to provide additional behavior to test containers <strong>once</strong>
  after all tests in the container have been executed.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterContainerTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension">AfterContainerTemplateInvocationCallback</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.params/org/junit/jupiter/params/AfterArgumentSet.html" title="annotation interface in org.junit.jupiter.params">AfterArgumentSet</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
+<div class="block"><code>@AfterArgumentSet</code> is used to signal that the annotated method should
+ be executed <em>before</em> <strong>each</strong> set of arguments of the
+ current <a href="org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a>.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterContainerTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension">AfterContainerTemplateInvocationCallback</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block"><code>AfterContainerTemplateInvocationCallback</code> defines the API for
  <a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a> that wish to provide additional behavior
  <strong>once</strong> before each invocation of a
  <a href="org.junit.jupiter.api/org/junit/jupiter/api/ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api">container template</a>.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.api/org/junit/jupiter/api/AfterEach.html" title="annotation interface in org.junit.jupiter.api">AfterEach</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.api/org/junit/jupiter/api/AfterEach.html" title="annotation interface in org.junit.jupiter.api">AfterEach</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
 <div class="block"><code>@AfterEach</code> is used to signal that the annotated method should be
  executed <em>after</em> <strong>each</strong> <code>@Test</code>,
  <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, <code>@TestFactory</code>,
  and <code>@TestTemplate</code> method in the current test class.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterEachCallback.html" title="interface in org.junit.jupiter.api.extension">AfterEachCallback</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterEachCallback.html" title="interface in org.junit.jupiter.api.extension">AfterEachCallback</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block"><code>AfterEachCallback</code> defines the API for <a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a>
  that wish to provide additional behavior to tests after an individual test
  and any user-defined teardown methods (e.g.,
  <a href="org.junit.jupiter.api/org/junit/jupiter/api/AfterEach.html" title="annotation interface in org.junit.jupiter.api"><code>@AfterEach</code></a> methods) for that test
  have been executed.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.engine/org/junit/jupiter/engine/execution/AfterEachMethodAdapter.html" title="interface in org.junit.jupiter.engine.execution">AfterEachMethodAdapter</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.engine/org/junit/jupiter/engine/execution/AfterEachMethodAdapter.html" title="interface in org.junit.jupiter.engine.execution">AfterEachMethodAdapter</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Functional interface for registering an <a href="org.junit.jupiter.api/org/junit/jupiter/api/AfterEach.html" title="annotation interface in org.junit.jupiter.api"><code>@AfterEach</code></a> method
  as a pseudo-extension.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.platform.suite.api/org/junit/platform/suite/api/AfterSuite.html" title="annotation interface in org.junit.platform.suite.api">AfterSuite</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.platform.suite.api/org/junit/platform/suite/api/AfterSuite.html" title="annotation interface in org.junit.platform.suite.api">AfterSuite</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
 <div class="block"><code>@AfterSuite</code> is used to signal that the annotated method should be
  executed <em>after</em> <strong>all</strong> tests in the current test suite.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterTestExecutionCallback.html" title="interface in org.junit.jupiter.api.extension">AfterTestExecutionCallback</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterTestExecutionCallback.html" title="interface in org.junit.jupiter.api.extension">AfterTestExecutionCallback</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block"><code>AfterTestExecutionCallback</code> defines the API for <a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a> that wish to provide additional behavior to tests
  <strong>immediately</strong> after an individual test has been executed but
  before any user-defined teardown methods (e.g.,
  <a href="org.junit.jupiter.api/org/junit/jupiter/api/AfterEach.html" title="annotation interface in org.junit.jupiter.api"><code>@AfterEach</code></a> methods) have been executed
  for that test.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.params/org/junit/jupiter/params/aggregator/AggregateWith.html" title="annotation interface in org.junit.jupiter.params.aggregator">AggregateWith</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.params/org/junit/jupiter/params/aggregator/AggregateWith.html" title="annotation interface in org.junit.jupiter.params.aggregator">AggregateWith</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
 <div class="block"><code>@AggregateWith</code> is an annotation that allows one to specify an
  <a href="org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAggregator.html" title="interface in org.junit.jupiter.params.aggregator"><code>ArgumentsAggregator</code></a>.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/AnnotatedElementContext.html" title="interface in org.junit.jupiter.api.extension">AnnotatedElementContext</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/AnnotatedElementContext.html" title="interface in org.junit.jupiter.api.extension">AnnotatedElementContext</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block"><code>AnnotatedElementContext</code> encapsulates the <em>context</em> in which an
  <a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/AnnotatedElementContext.html#getAnnotatedElement()"><code>AnnotatedElement</code></a> is declared.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.params/org/junit/jupiter/params/converter/AnnotationBasedArgumentConverter.html" title="class in org.junit.jupiter.params.converter">AnnotationBasedArgumentConverter&lt;A&gt;</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.params/org/junit/jupiter/params/converter/AnnotationBasedArgumentConverter.html" title="class in org.junit.jupiter.params.converter">AnnotationBasedArgumentConverter&lt;A&gt;</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block"><code>AnnotationBasedArgumentConverter</code> is an abstract base class for
  <a href="org.junit.jupiter.params/org/junit/jupiter/params/converter/ArgumentConverter.html" title="interface in org.junit.jupiter.params.converter"><code>ArgumentConverter</code></a> implementations that also need to consume an
  annotation in order to perform the conversion.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/AnnotationBasedArgumentsProvider.html" title="class in org.junit.jupiter.params.provider">AnnotationBasedArgumentsProvider&lt;A&gt;</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/AnnotationBasedArgumentsProvider.html" title="class in org.junit.jupiter.params.provider">AnnotationBasedArgumentsProvider&lt;A&gt;</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block"><code>AnnotationBasedArgumentsProvider</code> is an abstract base class for
  <a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html" title="interface in org.junit.jupiter.params.provider"><code>ArgumentsProvider</code></a> implementations that also need to consume an
  annotation in order to provide the arguments.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.params/org/junit/jupiter/params/support/AnnotationConsumer.html" title="interface in org.junit.jupiter.params.support">AnnotationConsumer&lt;A&gt;</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.params/org/junit/jupiter/params/support/AnnotationConsumer.html" title="interface in org.junit.jupiter.params.support">AnnotationConsumer&lt;A&gt;</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block"><code>AnnotationConsumer</code> is a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">functional
  interface</a> for consuming annotations.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.params/org/junit/jupiter/params/support/AnnotationConsumerInitializer.html" title="class in org.junit.jupiter.params.support">AnnotationConsumerInitializer</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.params/org/junit/jupiter/params/support/AnnotationConsumerInitializer.html" title="class in org.junit.jupiter.params.support">AnnotationConsumerInitializer</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block"><code>AnnotationConsumerInitializer</code> is an internal helper class for
  initializing <a href="org.junit.jupiter.params/org/junit/jupiter/params/support/AnnotationConsumer.html" title="interface in org.junit.jupiter.params.support"><code>AnnotationConsumers</code></a>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.commons/org/junit/platform/commons/support/AnnotationSupport.html" title="class in org.junit.platform.commons.support">AnnotationSupport</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.commons/org/junit/platform/commons/support/AnnotationSupport.html" title="class in org.junit.platform.commons.support">AnnotationSupport</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block"><code>AnnotationSupport</code> provides static utility methods for common tasks
  regarding annotations &mdash; for example, checking if a class, method, or
  field is annotated with a particular annotation; finding annotations on a
  given class, method, or field; finding fields or methods annotated with
  a particular annotation, etc.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.commons/org/junit/platform/commons/util/AnnotationUtils.html" title="class in org.junit.platform.commons.util">AnnotationUtils</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.commons/org/junit/platform/commons/util/AnnotationUtils.html" title="class in org.junit.platform.commons.util">AnnotationUtils</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Collection of utilities for working with <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Annotation.html" title="class or interface in java.lang.annotation" class="external-link">annotations</a>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentAccessException.html" title="class in org.junit.jupiter.params.aggregator">ArgumentAccessException</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab5">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab5"><a href="org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentAccessException.html" title="class in org.junit.jupiter.params.aggregator">ArgumentAccessException</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab5">
 <div class="block"><code>ArgumentAccessException</code> is an exception thrown by an
  <a href="org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAccessor.html" title="interface in org.junit.jupiter.params.aggregator"><code>ArgumentsAccessor</code></a> if an error occurs while accessing
  or converting an argument.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab5"><a href="org.junit.jupiter.params/org/junit/jupiter/params/converter/ArgumentConversionException.html" title="class in org.junit.jupiter.params.converter">ArgumentConversionException</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab5">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="org.junit.jupiter.params/org/junit/jupiter/params/converter/ArgumentConversionException.html" title="class in org.junit.jupiter.params.converter">ArgumentConversionException</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab5">
 <div class="block"><code>ArgumentConversionException</code> is an exception that can occur when an
  object is converted to another object by an implementation of an
  <a href="org.junit.jupiter.params/org/junit/jupiter/params/converter/ArgumentConverter.html" title="interface in org.junit.jupiter.params.converter"><code>ArgumentConverter</code></a>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.params/org/junit/jupiter/params/converter/ArgumentConverter.html" title="interface in org.junit.jupiter.params.converter">ArgumentConverter</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.params/org/junit/jupiter/params/converter/ArgumentConverter.html" title="interface in org.junit.jupiter.params.converter">ArgumentConverter</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block"><code>ArgumentConverter</code> is an abstraction that allows an input object to
  be converted to an instance of a different class.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab3"><a href="org.junit.jupiter.params/org/junit/jupiter/params/ArgumentCountValidationMode.html" title="enum class in org.junit.jupiter.params">ArgumentCountValidationMode</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab3">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="org.junit.jupiter.params/org/junit/jupiter/params/ArgumentCountValidationMode.html" title="enum class in org.junit.jupiter.params">ArgumentCountValidationMode</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab3">
 <div class="block">Enumeration of argument count validation modes for
  <a href="org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a> and
  <a href="org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.html" title="interface in org.junit.jupiter.params.provider">Arguments</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.html" title="interface in org.junit.jupiter.params.provider">Arguments</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block"><code>Arguments</code> is an abstraction that provides access to an array of
  objects to be used for invoking a <code>@ParameterizedTest</code> method.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.ArgumentSet.html" title="class in org.junit.jupiter.params.provider">Arguments.ArgumentSet</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.ArgumentSet.html" title="class in org.junit.jupiter.params.provider">Arguments.ArgumentSet</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Specialization of <a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.html" title="interface in org.junit.jupiter.params.provider"><code>Arguments</code></a> that associates a <a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.ArgumentSet.html#getName()"><code>name</code></a>
  with a set of <a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.ArgumentSet.html#get()"><code>arguments</code></a>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAccessor.html" title="interface in org.junit.jupiter.params.aggregator">ArgumentsAccessor</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAccessor.html" title="interface in org.junit.jupiter.params.aggregator">ArgumentsAccessor</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block"><code>ArgumentsAccessor</code> defines the public API for accessing arguments provided
  by an <a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html" title="interface in org.junit.jupiter.params.provider"><code>ArgumentsProvider</code></a>
  for a single invocation of a
  <a href="org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a> method.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab5"><a href="org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAggregationException.html" title="class in org.junit.jupiter.params.aggregator">ArgumentsAggregationException</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab5">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAggregationException.html" title="class in org.junit.jupiter.params.aggregator">ArgumentsAggregationException</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab5">
 <div class="block"><code>ArgumentsAggregationException</code> is an exception thrown by an
  <a href="org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAggregator.html" title="interface in org.junit.jupiter.params.aggregator"><code>ArgumentsAggregator</code></a> when an error occurs while aggregating
  arguments.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAggregator.html" title="interface in org.junit.jupiter.params.aggregator">ArgumentsAggregator</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAggregator.html" title="interface in org.junit.jupiter.params.aggregator">ArgumentsAggregator</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block"><code>ArgumentsAggregator</code> is an abstraction for the aggregation of arguments
  provided by an <a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html" title="interface in org.junit.jupiter.params.provider"><code>ArgumentsProvider</code></a> for a single invocation of a
  <a href="org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a> method
  into a single object.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html" title="interface in org.junit.jupiter.params.provider">ArgumentsProvider</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html" title="interface in org.junit.jupiter.params.provider">ArgumentsProvider</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">An <code>ArgumentsProvider</code> is responsible for
  <a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html#provideArguments(org.junit.jupiter.params.support.ParameterDeclarations,org.junit.jupiter.api.extension.ExtensionContext)">providing</a>
  a stream of arguments to be passed to a
  <a href="org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a> or
  <a href="org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider">ArgumentsSource</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider">ArgumentsSource</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
 <div class="block"><code>@ArgumentsSource</code> is a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Repeatable.html" title="class or interface in java.lang.annotation" class="external-link">repeatable</a> annotation
  that is used to register <a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html" title="interface in org.junit.jupiter.params.provider">arguments providers</a>
  for the annotated class or method.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsSources.html" title="annotation interface in org.junit.jupiter.params.provider">ArgumentsSources</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsSources.html" title="annotation interface in org.junit.jupiter.params.provider">ArgumentsSources</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
 <div class="block"><code>@ArgumentsSources</code> is a simple container for one or more
  <a href="org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a> annotations.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.api/org/junit/jupiter/api/AssertionFailureBuilder.html" title="class in org.junit.jupiter.api">AssertionFailureBuilder</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.api/org/junit/jupiter/api/AssertionFailureBuilder.html" title="class in org.junit.jupiter.api">AssertionFailureBuilder</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Builder for <a href="https://ota4j-team.github.io/opentest4j/docs/1.3.0/api/org/opentest4j/AssertionFailedError.html" title="class or interface in org.opentest4j" class="external-link"><code>AssertionFailedErrors</code></a>.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html" title="class in org.junit.jupiter.api">Assertions</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html" title="class in org.junit.jupiter.api">Assertions</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block"><code>Assertions</code> is a collection of utility methods that support asserting
  conditions in tests.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/Assertions.TimeoutFailureFactory.html" title="interface in org.junit.jupiter.api">Assertions.TimeoutFailureFactory&lt;T&gt;</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/Assertions.TimeoutFailureFactory.html" title="interface in org.junit.jupiter.api">Assertions.TimeoutFailureFactory&lt;T&gt;</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Factory for timeout failures.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.api/org/junit/jupiter/api/Assumptions.html" title="class in org.junit.jupiter.api">Assumptions</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.api/org/junit/jupiter/api/Assumptions.html" title="class in org.junit.jupiter.api">Assumptions</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block"><code>Assumptions</code> is a collection of utility methods that support
  conditional test execution based on <em>assumptions</em>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.api/org/junit/jupiter/api/AutoClose.html" title="annotation interface in org.junit.jupiter.api">AutoClose</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.api/org/junit/jupiter/api/AutoClose.html" title="annotation interface in org.junit.jupiter.api">AutoClose</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
 <div class="block"><code>@AutoClose</code> is used to indicate that an annotated field will be
  automatically closed after test execution.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.api/org/junit/jupiter/api/BeforeAll.html" title="annotation interface in org.junit.jupiter.api">BeforeAll</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.api/org/junit/jupiter/api/BeforeAll.html" title="annotation interface in org.junit.jupiter.api">BeforeAll</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
 <div class="block"><code>@BeforeAll</code> is used to signal that the annotated method should be
  executed <em>before</em> <strong>all</strong> tests in the current test class.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeAllCallback.html" title="interface in org.junit.jupiter.api.extension">BeforeAllCallback</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeAllCallback.html" title="interface in org.junit.jupiter.api.extension">BeforeAllCallback</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block"><code>BeforeAllCallback</code> defines the API for <a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a>
  that wish to provide additional behavior to test containers <strong>once</strong>
  before all tests in the container have been executed.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.params/org/junit/jupiter/params/BeforeArgumentSet.html" title="annotation interface in org.junit.jupiter.params">BeforeArgumentSet</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
+<div class="block"><code>@BeforeArgumentSet</code> is used to signal that the annotated method should
+ be executed <em>before</em> <strong>each</strong> set of arguments of the
+ current <a href="org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a>.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeContainerTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension">BeforeContainerTemplateInvocationCallback</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab1">

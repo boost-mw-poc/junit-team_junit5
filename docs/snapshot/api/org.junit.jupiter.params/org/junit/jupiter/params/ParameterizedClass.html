@@ -178,6 +178,14 @@ loadScripts(document, 'script');</script>
  conversion to the target type automatically (see the User Guide for further
  details).
 
+ <h2 id="lifecycle-methods-heading">Lifecycle Methods</h2>
+
+ <p>If you wish to execute custom code before or after each set of arguments
+ is used to invoke the parameterized class, you may declare methods annotated
+ with <a href="BeforeArgumentSet.html" title="annotation interface in org.junit.jupiter.params"><code>@BeforeArgumentSet</code></a> or
+ <a href="AfterArgumentSet.html" title="annotation interface in org.junit.jupiter.params"><code>@AfterArgumentSet</code></a>. This can, for example, be useful
+ to initialize the arguments before they are used.
+
  <h2 id="composed-annotations-heading">Composed Annotations</h2>
 
  <p><code>@ParameterizedClass</code> may also be used as a meta-annotation in
@@ -198,6 +206,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="Parameter.html" title="annotation interface in org.junit.jupiter.params"><code>Parameter</code></a></li>
+<li><a href="BeforeArgumentSet.html" title="annotation interface in org.junit.jupiter.params"><code>BeforeArgumentSet</code></a></li>
+<li><a href="AfterArgumentSet.html" title="annotation interface in org.junit.jupiter.params"><code>AfterArgumentSet</code></a></li>
 <li><a href="ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>ParameterizedTest</code></a></li>
 <li><a href="provider/Arguments.html" title="interface in org.junit.jupiter.params.provider"><code>Arguments</code></a></li>
 <li><a href="provider/ArgumentsProvider.html" title="interface in org.junit.jupiter.params.provider"><code>ArgumentsProvider</code></a></li>
@@ -270,7 +280,8 @@ loadScripts(document, 'script');</script>
 <div class="block">The display name to be used for individual invocations of the
  parameterized class; never blank or consisting solely of whitespace.
 
- <p>Defaults to <code>"{default_display_name}"</code>.
+ <p>Defaults to
+ <code>"{default_display_name}"</code>.
 
  <p>If the default display name flag
  (<code>"{default_display_name}"</code>)
@@ -282,7 +293,9 @@ loadScripts(document, 'script');</script>
  Gradle and Maven), a JVM system property, or the JUnit Platform configuration
  file (i.e., a file named <code>junit-platform.properties</code> in the root of
  the class path). Consult the User Guide for further information.</li>
- <li>Otherwise, <code><a href="ParameterizedInvocationConstants.html#DEFAULT_DISPLAY_NAME">"[{index}] {argumentSetNameOrArgumentsWithNames}"</a></code> will be used.</li>
+ <li>Otherwise,
+ <code><a href="ParameterizedInvocationConstants.html#DEFAULT_DISPLAY_NAME">"[{index}] {argumentSetNameOrArgumentsWithNames}"</a></code>
+ will be used.</li>
  </ul>
 
  <h4 id="supported-placeholders-heading">Supported placeholders</h4>
