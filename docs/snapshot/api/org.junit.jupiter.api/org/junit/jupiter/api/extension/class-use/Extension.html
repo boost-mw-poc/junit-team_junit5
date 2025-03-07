@@ -107,12 +107,12 @@ loadScripts(document, 'script');</script>
  after all tests in the container have been executed.</div>
 </div>
 <div class="col-first odd-row-color"><code>interface&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../AfterContainerTemplateInvocationCallback.html" class="type-name-link" title="interface in org.junit.jupiter.api.extension">AfterContainerTemplateInvocationCallback</a></code></div>
+<div class="col-second odd-row-color"><code><a href="../AfterClassTemplateInvocationCallback.html" class="type-name-link" title="interface in org.junit.jupiter.api.extension">AfterClassTemplateInvocationCallback</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block"><code>AfterContainerTemplateInvocationCallback</code> defines the API for
+<div class="block"><code>AfterClassTemplateInvocationCallback</code> defines the API for
  <a href="../Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a> that wish to provide additional behavior
  <strong>once</strong> before each invocation of a
- <a href="../../ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api">container template</a>.</div>
+ <a href="../../ClassTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@ClassTemplate</code></a>.</div>
 </div>
 <div class="col-first even-row-color"><code>interface&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="../AfterEachCallback.html" class="type-name-link" title="interface in org.junit.jupiter.api.extension">AfterEachCallback</a></code></div>
@@ -140,12 +140,12 @@ loadScripts(document, 'script');</script>
  before all tests in the container have been executed.</div>
 </div>
 <div class="col-first odd-row-color"><code>interface&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="../BeforeContainerTemplateInvocationCallback.html" class="type-name-link" title="interface in org.junit.jupiter.api.extension">BeforeContainerTemplateInvocationCallback</a></code></div>
+<div class="col-second odd-row-color"><code><a href="../BeforeClassTemplateInvocationCallback.html" class="type-name-link" title="interface in org.junit.jupiter.api.extension">BeforeClassTemplateInvocationCallback</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block"><code>BeforeContainerTemplateInvocationCallback</code> defines the API for
+<div class="block"><code>BeforeClassTemplateInvocationCallback</code> defines the API for
  <a href="../Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a> that wish to provide additional behavior
  <strong>once</strong> before each invocation of a
- <a href="../../ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api">container template</a>.</div>
+ <a href="../../ClassTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@ClassTemplate</code></a>.</div>
 </div>
 <div class="col-first even-row-color"><code>interface&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="../BeforeEachCallback.html" class="type-name-link" title="interface in org.junit.jupiter.api.extension">BeforeEachCallback</a></code></div>
@@ -166,12 +166,11 @@ loadScripts(document, 'script');</script>
  executed for that test.</div>
 </div>
 <div class="col-first even-row-color"><code>interface&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../ContainerTemplateInvocationContextProvider.html" class="type-name-link" title="interface in org.junit.jupiter.api.extension">ContainerTemplateInvocationContextProvider</a></code></div>
+<div class="col-second even-row-color"><code><a href="../ClassTemplateInvocationContextProvider.html" class="type-name-link" title="interface in org.junit.jupiter.api.extension">ClassTemplateInvocationContextProvider</a></code></div>
 <div class="col-last even-row-color">
-<div class="block"><code>ContainerTemplateInvocationContextProvider</code> defines the API for
+<div class="block"><code>ClassTemplateInvocationContextProvider</code> defines the API for
  <a href="../Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a> that wish to provide one or multiple contexts
- for the invocation of a
- <a href="../../ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@ContainerTemplate</code></a> class.</div>
+ for the invocation of a <a href="../../ClassTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@ClassTemplate</code></a>.</div>
 </div>
 <div class="col-first odd-row-color"><code>interface&nbsp;</code></div>
 <div class="col-second odd-row-color"><code><a href="../ExecutionCondition.html" class="type-name-link" title="interface in org.junit.jupiter.api.extension">ExecutionCondition</a></code></div>
@@ -259,7 +258,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>default <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../Extension.html" title="interface in org.junit.jupiter.api.extension">Extension</a>&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ContainerTemplateInvocationContext.</span><code><a href="../ContainerTemplateInvocationContext.html#getAdditionalExtensions()" class="member-name-link">getAdditionalExtensions</a>()</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ClassTemplateInvocationContext.</span><code><a href="../ClassTemplateInvocationContext.html#getAdditionalExtensions()" class="member-name-link">getAdditionalExtensions</a>()</code></div>
 <div class="col-last even-row-color">
 <div class="block">Get the additional <a href="../Extension.html" title="interface in org.junit.jupiter.api.extension">extensions</a> for this invocation.</div>
 </div>

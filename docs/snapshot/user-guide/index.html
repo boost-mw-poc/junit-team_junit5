@@ -718,7 +718,7 @@ pre.rouge .gs {
 </li>
 </ul>
 </li>
-<li><a href="#writing-tests-container-templates">2.18. Container Templates</a></li>
+<li><a href="#writing-tests-class-templates">2.18. Class Templates</a></li>
 <li><a href="#writing-tests-test-templates">2.19. Test Templates</a></li>
 <li><a href="#writing-tests-dynamic-tests">2.20. Dynamic Tests</a>
 <ul class="sectlevel3">
@@ -909,7 +909,7 @@ pre.rouge .gs {
 <li><a href="#extensions-exception-handling">5.11. Exception Handling</a></li>
 <li><a href="#extensions-preinterrupt-callback">5.12. Pre-Interrupt Callback</a></li>
 <li><a href="#extensions-intercepting-invocations">5.13. Intercepting Invocations</a></li>
-<li><a href="#extensions-container-templates">5.14. Providing Invocation Contexts for Container Templates</a></li>
+<li><a href="#extensions-class-templates">5.14. Providing Invocation Contexts for Class Templates</a></li>
 <li><a href="#extensions-test-templates">5.15. Providing Invocation Contexts for Test Templates</a></li>
 <li><a href="#extensions-keeping-state">5.16. Keeping State in Extensions</a></li>
 <li><a href="#extensions-supported-utilities">5.17. Supported Utilities in Extensions</a>
@@ -1285,8 +1285,8 @@ in the <code>junit-jupiter-api</code> module.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed once <em>after</em> each set of arguments a <code>@ParameterizedClass</code> is invoked with.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@ContainerTemplate</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated class is a <a href="#writing-tests-container-templates">template for a set of test cases</a> designed to be executed multiple times depending on the number of invocation contexts returned by the registered <a href="#extensions-container-templates">providers</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@ClassTemplate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated class is a <a href="#writing-tests-class-templates">template for a test class</a> designed to be executed multiple times depending on the number of invocation contexts returned by the registered <a href="#extensions-class-templates">providers</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Nested</code></p></td>
@@ -6803,15 +6803,15 @@ class</td>
 </div>
 </div>
 <div class="sect2">
-<h3 id="writing-tests-container-templates"><a class="anchor" href="#writing-tests-container-templates"></a>2.18. Container Templates</h3>
+<h3 id="writing-tests-class-templates"><a class="anchor" href="#writing-tests-class-templates"></a>2.18. Class Templates</h3>
 <div class="paragraph">
-<p>A <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/ContainerTemplate.html">@ContainerTemplate</a></code> class is not a regular test class but rather a template for the
-contained test cases. As such, it is designed to be invoked multiple times depending on
-invocation contexts returned by the registered providers. Thus, it must be used in
-conjunction with a registered <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContextProvider.html">ContainerTemplateInvocationContextProvider</a></code> extension.
-Each invocation of a container template class behaves like the execution of a regular test
-class with full support for the same lifecycle callbacks and extensions. Please refer to
-<a href="#extensions-container-templates">Providing Invocation Contexts for Container Templates</a> for usage examples.</p>
+<p>A <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/ClassTemplate.html">@ClassTemplate</a></code> is not a regular test class but rather a template for the contained
+test cases. As such, it is designed to be invoked multiple times depending on invocation
+contexts returned by the registered providers. Thus, it must be used in conjunction with a
+registered <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ClassTemplateInvocationContextProvider.html">ClassTemplateInvocationContextProvider</a></code> extension.
+Each invocation of a class template behaves like the execution of a regular test class
+with full support for the same lifecycle callbacks and extensions. Please refer to
+<a href="#extensions-class-templates">Providing Invocation Contexts for Class Templates</a> for usage examples.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -6821,7 +6821,7 @@ class with full support for the same lifecycle callbacks and extensions. Please 
 </td>
 <td class="content">
 <a href="#writing-tests-parameterized-tests">Parameterized Classes</a> are a built-in
-specialization of container templates.
+specialization of class templates.
 </td>
 </tr>
 </table>
@@ -12207,8 +12207,8 @@ each of these interfaces in the <code><a href="../api/org.junit.jupiter.api/org/
 <div class="ulist">
 <ul>
 <li>
-<p><code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeContainerTemplateInvocationCallback.html">BeforeContainerTemplateInvocationCallback</a></code> (only applicable for
-<a href="#writing-tests-container-templates">container templates</a>)</p>
+<p><code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeClassTemplateInvocationCallback.html">BeforeClassTemplateInvocationCallback</a></code> (only applicable for
+<a href="#writing-tests-class-templates">class templates</a>)</p>
 <div class="ulist">
 <ul>
 <li>
@@ -12231,8 +12231,8 @@ each of these interfaces in the <code><a href="../api/org.junit.jupiter.api/org/
 </div>
 </li>
 <li>
-<p><code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterContainerTemplateInvocationCallback.html">AfterContainerTemplateInvocationCallback</a></code> (only applicable for
-<a href="#writing-tests-container-templates">container templates</a>)</p>
+<p><code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterClassTemplateInvocationCallback.html">AfterClassTemplateInvocationCallback</a></code> (only applicable for
+<a href="#writing-tests-class-templates">class templates</a>)</p>
 </li>
 </ul>
 </div>
@@ -12518,24 +12518,24 @@ on the test method level.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="extensions-container-templates"><a class="anchor" href="#extensions-container-templates"></a>5.14. Providing Invocation Contexts for Container Templates</h3>
+<h3 id="extensions-class-templates"><a class="anchor" href="#extensions-class-templates"></a>5.14. Providing Invocation Contexts for Class Templates</h3>
 <div class="paragraph">
-<p>A <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/ContainerTemplate.html">@ContainerTemplate</a></code> class can only be executed when at least one
-<code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContextProvider.html">ContainerTemplateInvocationContextProvider</a></code> is registered. Each such provider is
-responsible for providing a <code>Stream</code> of <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContext.html">ContainerTemplateInvocationContext</a></code> instances.
+<p>A <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/ClassTemplate.html">@ClassTemplate</a></code> class can only be executed when at least one
+<code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ClassTemplateInvocationContextProvider.html">ClassTemplateInvocationContextProvider</a></code> is registered. Each such provider is
+responsible for providing a <code>Stream</code> of <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ClassTemplateInvocationContext.html">ClassTemplateInvocationContext</a></code> instances.
 Each context may specify a custom display name and a list of additional extensions that
-will only be used for the next invocation of the <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/ContainerTemplate.html">@ContainerTemplate</a></code> class.</p>
+will only be used for the next invocation of the <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/ClassTemplate.html">@ClassTemplate</a></code>.</p>
 </div>
 <div class="paragraph">
-<p>The following example shows how to write a container template as well as how to register
-and implement a <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContextProvider.html">ContainerTemplateInvocationContextProvider</a></code>.</p>
+<p>The following example shows how to write a class template as well as how to register
+and implement a <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ClassTemplateInvocationContextProvider.html">ClassTemplateInvocationContextProvider</a></code>.</p>
 </div>
 <div class="listingblock">
-<div class="title">A container template with accompanying extension</div>
+<div class="title">A class template with accompanying extension</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="java"><span class="nd">@ContainerTemplate</span>
-<span class="nd">@ExtendWith</span><span class="o">(</span><span class="nc">MyContainerTemplateInvocationContextProvider</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
-<span class="kd">class</span> <span class="nc">ContainerTemplateDemo</span> <span class="o">{</span>
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@ClassTemplate</span>
+<span class="nd">@ExtendWith</span><span class="o">(</span><span class="nc">ClassTemplateDemo</span><span class="o">.</span><span class="na">MyClassTemplateInvocationContextProvider</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="kd">class</span> <span class="nc">ClassTemplateDemo</span> <span class="o">{</span>
 
     <span class="kd">static</span> <span class="kd">final</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="no">WELL_KNOWN_FRUITS</span>
         <span class="o">=</span> <span class="n">unmodifiableList</span><span class="o">(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">"apple"</span><span class="o">,</span> <span class="s">"banana"</span><span class="o">,</span> <span class="s">"lemon"</span><span class="o">));</span>
@@ -12552,23 +12552,23 @@ and implement a <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/ap
         <span class="n">assertTrue</span><span class="o">(</span><span class="no">WELL_KNOWN_FRUITS</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">fruit</span><span class="o">));</span>
     <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyContainerTemplateInvocationContextProvider</span>
-            <span class="kd">implements</span> <span class="nc">ContainerTemplateInvocationContextProvider</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyClassTemplateInvocationContextProvider</span>
+            <span class="kd">implements</span> <span class="nc">ClassTemplateInvocationContextProvider</span> <span class="o">{</span>
 
         <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">supportsContainerTemplate</span><span class="o">(</span><span class="nc">ExtensionContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">supportsClassTemplate</span><span class="o">(</span><span class="nc">ExtensionContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
             <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
         <span class="o">}</span>
 
         <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">ContainerTemplateInvocationContext</span><span class="o">&gt;</span>
-                <span class="nf">provideContainerTemplateInvocationContexts</span><span class="o">(</span><span class="nc">ExtensionContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">ClassTemplateInvocationContext</span><span class="o">&gt;</span>
+                <span class="nf">provideClassTemplateInvocationContexts</span><span class="o">(</span><span class="nc">ExtensionContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
 
             <span class="k">return</span> <span class="nc">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">invocationContext</span><span class="o">(</span><span class="s">"apple"</span><span class="o">),</span> <span class="n">invocationContext</span><span class="o">(</span><span class="s">"banana"</span><span class="o">));</span>
         <span class="o">}</span>
 
-        <span class="kd">private</span> <span class="nc">ContainerTemplateInvocationContext</span> <span class="nf">invocationContext</span><span class="o">(</span><span class="nc">String</span> <span class="n">parameter</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="k">new</span> <span class="nf">ContainerTemplateInvocationContext</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="nc">ClassTemplateInvocationContext</span> <span class="nf">invocationContext</span><span class="o">(</span><span class="nc">String</span> <span class="n">parameter</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">ClassTemplateInvocationContext</span><span class="o">()</span> <span class="o">{</span>
                 <span class="nd">@Override</span>
                 <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getDisplayName</span><span class="o">(</span><span class="kt">int</span> <span class="n">invocationIndex</span><span class="o">)</span> <span class="o">{</span>
                     <span class="k">return</span> <span class="n">parameter</span><span class="o">;</span>
@@ -12580,7 +12580,7 @@ and implement a <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/ap
                         <span class="nd">@Override</span>
                         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">postProcessTestInstance</span><span class="o">(</span>
                                 <span class="nc">Object</span> <span class="n">testInstance</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
-                            <span class="o">((</span><span class="nc">ContainerTemplateDemo</span><span class="o">)</span> <span class="n">testInstance</span><span class="o">).</span><span class="na">fruit</span> <span class="o">=</span> <span class="n">parameter</span><span class="o">;</span>
+                            <span class="o">((</span><span class="nc">ClassTemplateDemo</span><span class="o">)</span> <span class="n">testInstance</span><span class="o">).</span><span class="na">fruit</span> <span class="o">=</span> <span class="n">parameter</span><span class="o">;</span>
                         <span class="o">}</span>
                     <span class="o">});</span>
                 <span class="o">}</span>
@@ -12591,15 +12591,15 @@ and implement a <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/ap
 </div>
 </div>
 <div class="paragraph">
-<p>In this example, the container template will be invoked twice, meaning all test methods in
-the container template class will be executed twice. The display names of the container
-invocations will be <code>apple</code> and <code>banana</code> as specified by the invocation context. Each
-invocation registers a custom <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/TestInstancePostProcessor.html">TestInstancePostProcessor</a></code> which is used to inject a
-value into a field. The output when using the <code>ConsoleLauncher</code> is as follows.</p>
+<p>In this example, the class template will be invoked twice, meaning all test methods in
+the class template will be executed twice. The display names of the invocations will be
+<code>apple</code> and <code>banana</code> as specified by the invocation context. Each invocation registers a
+custom <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/TestInstancePostProcessor.html">TestInstancePostProcessor</a></code> which is used to inject a value into a field. The
+output when using the <code>ConsoleLauncher</code> is as follows.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>└─ ContainerTemplateDemo ✔
+<pre>└─ ClassTemplateDemo ✔
    ├─ apple ✔
    │  ├─ notNull() ✔
    │  └─ wellKnown() ✔
@@ -12609,7 +12609,7 @@ value into a field. The output when using the <code>ConsoleLauncher</code> is as
 </div>
 </div>
 <div class="paragraph">
-<p>The <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContextProvider.html">ContainerTemplateInvocationContextProvider</a></code> extension API is primarily intended for
+<p>The <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ClassTemplateInvocationContextProvider.html">ClassTemplateInvocationContextProvider</a></code> extension API is primarily intended for
 implementing different kinds of tests that rely on repetitive invocation of <em>all</em> test
 methods in a test class albeit in different contexts — for example, with different
 parameters, by preparing the test class instance differently, or multiple times without
@@ -13044,8 +13044,9 @@ user code executed before all tests of the container are executed</p>
 extension code for handling exceptions thrown from <code>@BeforeAll</code> methods</p>
 </li>
 <li>
-<p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.BeforeContainerTemplateInvocationCallback</strong></code><br>
-extension code executed before each container template invocation is executed (only applicable if the test class is a <a href="#writing-tests-container-templates">container template</a>)</p>
+<p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.BeforeClassTemplateInvocationCallback</strong></code><br>
+extension code executed before each class template invocation is executed (only applicable
+if the test class is a <a href="#writing-tests-class-templates">class template</a>)</p>
 </li>
 <li>
 <p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.BeforeEachCallback</strong></code><br>
@@ -13090,8 +13091,9 @@ extension code for handling exceptions thrown from <code>@AfterEach</code> metho
 extension code executed after each test is executed</p>
 </li>
 <li>
-<p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.AfterContainerTemplateInvocationCallback</strong></code><br>
-extension code executed after each container template invocation is executed (only applicable if the test class is a <a href="#writing-tests-container-templates">container template</a>)</p>
+<p><strong>interface</strong> <code><strong>org.junit.jupiter.api.extension.AfterClassTemplateInvocationCallback</strong></code><br>
+extension code executed after each class template invocation is executed (only applicable
+if the test class is a <a href="#writing-tests-class-templates">class template</a>)</p>
 </li>
 <li>
 <p><strong>annotation</strong> <code><strong>org.junit.jupiter.api.AfterAll</strong></code><br>
@@ -13124,7 +13126,7 @@ by implementing <a href="#extensions-intercepting-invocations"><code>InvocationI
 <div class="paragraph">
 <p>JUnit Jupiter always guarantees <em>wrapping</em> behavior for multiple registered extensions
 that implement lifecycle callbacks such as <code>BeforeAllCallback</code>, <code>AfterAllCallback</code>,
-<code>BeforeContainerTemplateInvocationCallback</code>, <code>AfterContainerTemplateInvocationCallback</code>,
+<code>BeforeClassTemplateInvocationCallback</code>, <code>AfterClassTemplateInvocationCallback</code>,
 <code>BeforeEachCallback</code>, <code>AfterEachCallback</code>, <code>BeforeTestExecutionCallback</code>, and
 <code>AfterTestExecutionCallback</code>.</p>
 </div>
@@ -15295,7 +15297,7 @@ value of lower stability.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.api</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ContainerTemplate</code> <em>(annotation)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ClassTemplate</code> <em>(annotation)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
 </tr>
 <tr>
@@ -15410,7 +15412,7 @@ value of lower stability.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.api.extension</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AfterContainerTemplateInvocationCallback</code> <em>(interface)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AfterClassTemplateInvocationCallback</code> <em>(interface)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
 </tr>
 <tr>
@@ -15420,17 +15422,17 @@ value of lower stability.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.api.extension</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BeforeContainerTemplateInvocationCallback</code> <em>(interface)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BeforeClassTemplateInvocationCallback</code> <em>(interface)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.api.extension</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ContainerTemplateInvocationContext</code> <em>(interface)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ClassTemplateInvocationContext</code> <em>(interface)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.api.extension</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ContainerTemplateInvocationContextProvider</code> <em>(interface)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ClassTemplateInvocationContextProvider</code> <em>(interface)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
 </tr>
 <tr>

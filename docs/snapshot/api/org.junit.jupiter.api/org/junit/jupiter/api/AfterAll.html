@@ -99,12 +99,12 @@ loadScripts(document, 'script');</script>
 
  <p>In contrast to <a href="AfterEach.html" title="annotation interface in org.junit.jupiter.api"><code>@AfterEach</code></a> methods, <code>@AfterAll</code>
  methods are only executed once per execution of a given test class. If the
- test class is annotated with <a href="ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@ContainerTemplate</code></a>,
- the <code>@AfterAll</code> methods are executed once after the last invocation of
- the container template. If a <a href="Nested.html" title="annotation interface in org.junit.jupiter.api"><code>@Nested</code></a> test class is declared in
- a <a href="ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@ContainerTemplate</code></a> class, its <code>@AfterAll</code>
- methods are called once per execution of the nested test class, namely, once
- per invocation of the outer container template.
+ test class is annotated with <a href="ClassTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@ClassTemplate</code></a>, the
+ <code>@AfterAll</code> methods are executed once after the last invocation of the
+ class template. If a <a href="Nested.html" title="annotation interface in org.junit.jupiter.api"><code>@Nested</code></a> test class is declared in a
+ <a href="ClassTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@ClassTemplate</code></a>, its <code>@AfterAll</code> methods are
+ called once per execution of the nested test class, namely, once per
+ invocation of the outer class template.
 
  <h2 id="method-signatures-heading">Method Signatures</h2>
 

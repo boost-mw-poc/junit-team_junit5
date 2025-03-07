@@ -333,7 +333,7 @@ loadScripts(document, 'script');</script>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/TestInstance.Lifecycle.html#PER_CLASS" class="member-name-link">PER_CLASS</a> - Enum constant in enum class org.junit.jupiter.api.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/TestInstance.Lifecycle.html" title="enum class in org.junit.jupiter.api">TestInstance.Lifecycle</a></dt>
 <dd>
 <div class="block">When using this mode, a new test instance will be created once per
- test or container template class.</div>
+ test class or class template.</div>
 </dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/TestInstance.Lifecycle.html#PER_METHOD" class="member-name-link">PER_METHOD</a> - Enum constant in enum class org.junit.jupiter.api.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/TestInstance.Lifecycle.html" title="enum class in org.junit.jupiter.api">TestInstance.Lifecycle</a></dt>
 <dd>
@@ -429,7 +429,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassBasedTestDescriptor.html#prepare(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)" class="member-name-link">prepare(JupiterEngineExecutionContext)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassBasedTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassBasedTestDescriptor</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateInvocationTestDescriptor.html#prepare(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)" class="member-name-link">prepare(JupiterEngineExecutionContext)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateInvocationTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ContainerTemplateInvocationTestDescriptor</a></dt>
+<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassTemplateInvocationTestDescriptor.html#prepare(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)" class="member-name-link">prepare(JupiterEngineExecutionContext)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassTemplateInvocationTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassTemplateInvocationTestDescriptor</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/JupiterEngineDescriptor.html#prepare(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)" class="member-name-link">prepare(JupiterEngineExecutionContext)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/JupiterEngineDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">JupiterEngineDescriptor</a></dt>
 <dd>&nbsp;</dd>
@@ -446,9 +446,9 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/TestTemplateInvocationTestDescriptor.html#prepareExtensionContext(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">prepareExtensionContext(ExtensionContext)</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/TestTemplateInvocationTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">TestTemplateInvocationTestDescriptor</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContext.html#prepareInvocation(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">prepareInvocation(ExtensionContext)</a> - Method in interface org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">ContainerTemplateInvocationContext</a></dt>
+<dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ClassTemplateInvocationContext.html#prepareInvocation(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">prepareInvocation(ExtensionContext)</a> - Method in interface org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ClassTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">ClassTemplateInvocationContext</a></dt>
 <dd>
-<div class="block">Prepare the imminent invocation of the container template.</div>
+<div class="block">Prepare the imminent invocation of the class template.</div>
 </dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/TestTemplateInvocationContext.html#prepareInvocation(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">prepareInvocation(ExtensionContext)</a> - Method in interface org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/TestTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">TestTemplateInvocationContext</a></dt>
 <dd>
@@ -502,12 +502,10 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/AnnotationBasedArgumentsProvider.html#provideArguments(org.junit.jupiter.params.support.ParameterDeclarations,org.junit.jupiter.api.extension.ExtensionContext,A)" class="member-name-link">provideArguments(ParameterDeclarations, ExtensionContext, A)</a> - Method in class org.junit.jupiter.params.provider.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/AnnotationBasedArgumentsProvider.html" title="class in org.junit.jupiter.params.provider">AnnotationBasedArgumentsProvider</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContextProvider.html#provideContainerTemplateInvocationContexts(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">provideContainerTemplateInvocationContexts(ExtensionContext)</a> - Method in interface org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContextProvider.html" title="interface in org.junit.jupiter.api.extension">ContainerTemplateInvocationContextProvider</a></dt>
+<dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ClassTemplateInvocationContextProvider.html#provideClassTemplateInvocationContexts(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">provideClassTemplateInvocationContexts(ExtensionContext)</a> - Method in interface org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ClassTemplateInvocationContextProvider.html" title="interface in org.junit.jupiter.api.extension">ClassTemplateInvocationContextProvider</a></dt>
 <dd>
-<div class="block">Provide
- <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">invocation contexts</a> for
- the container template class represented by the supplied
- <code>context</code>.</div>
+<div class="block">Provide <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ClassTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">invocation contexts</a>
+ for the class template represented by the supplied <code>context</code>.</div>
 </dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/parallel/ResourceLocksProvider.html#provideForClass(java.lang.Class)" class="member-name-link">provideForClass(Class&lt;?&gt;)</a> - Method in interface org.junit.jupiter.api.parallel.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/parallel/ResourceLocksProvider.html" title="interface in org.junit.jupiter.api.parallel">ResourceLocksProvider</a></dt>
 <dd>
@@ -531,7 +529,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Provide <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/TestTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">invocation contexts</a>
  for the test template method represented by the supplied <code>context</code>.</div>
 </dd>
-<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateTestDescriptor.html#prune()" class="member-name-link">prune()</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ContainerTemplateTestDescriptor</a></dt>
+<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassTemplateTestDescriptor.html#prune()" class="member-name-link">prune()</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassTemplateTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassTemplateTestDescriptor</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html#prune()" class="member-name-link">prune()</a> - Method in interface org.junit.platform.engine.<a href="../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html" title="interface in org.junit.platform.engine">TestDescriptor</a></dt>
 <dd>
@@ -540,7 +538,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.junit.vintage.engine/org/junit/vintage/engine/descriptor/RunnerTestDescriptor.html#prune()" class="member-name-link">prune()</a> - Method in class org.junit.vintage.engine.descriptor.<a href="../org.junit.vintage.engine/org/junit/vintage/engine/descriptor/RunnerTestDescriptor.html" title="class in org.junit.vintage.engine.descriptor">RunnerTestDescriptor</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateTestDescriptor.html#prunePriorToFiltering()" class="member-name-link">prunePriorToFiltering()</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ContainerTemplateTestDescriptor</a></dt>
+<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassTemplateTestDescriptor.html#prunePriorToFiltering()" class="member-name-link">prunePriorToFiltering()</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassTemplateTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassTemplateTestDescriptor</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/JupiterTestDescriptor.html#prunePriorToFiltering()" class="member-name-link">prunePriorToFiltering()</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/JupiterTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">JupiterTestDescriptor</a></dt>
 <dd>&nbsp;</dd>

@@ -139,7 +139,7 @@ loadScripts(document, 'script');</script>
  container.</div>
 </div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AfterContainerTemplateInvocationCallback.</span><code><a href="../AfterContainerTemplateInvocationCallback.html#afterContainerTemplateInvocation(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">afterContainerTemplateInvocation</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">AfterClassTemplateInvocationCallback.</span><code><a href="../AfterClassTemplateInvocationCallback.html#afterClassTemplateInvocation(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">afterClassTemplateInvocation</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Callback that is invoked <em>after</em> each invocation of a container
  template.</div>
@@ -164,7 +164,7 @@ loadScripts(document, 'script');</script>
  container.</div>
 </div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">BeforeContainerTemplateInvocationCallback.</span><code><a href="../BeforeContainerTemplateInvocationCallback.html#beforeContainerTemplateInvocation(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">beforeContainerTemplateInvocation</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">BeforeClassTemplateInvocationCallback.</span><code><a href="../BeforeClassTemplateInvocationCallback.html#beforeClassTemplateInvocation(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">beforeClassTemplateInvocation</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Callback that is invoked <em>before</em> each invocation of a container
  template.</div>
@@ -314,11 +314,11 @@ loadScripts(document, 'script');</script>
 <div class="block">Intercept the invocation of a <a href="../../TestTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@TestTemplate</code></a> method.</div>
 </div>
 <div class="col-first odd-row-color"><code>default boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ContainerTemplateInvocationContextProvider.</span><code><a href="../ContainerTemplateInvocationContextProvider.html#mayReturnZeroContainerTemplateInvocationContexts(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">mayReturnZeroContainerTemplateInvocationContexts</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ClassTemplateInvocationContextProvider.</span><code><a href="../ClassTemplateInvocationContextProvider.html#mayReturnZeroClassTemplateInvocationContexts(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">mayReturnZeroClassTemplateInvocationContexts</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Signal that this provider may provide zero
- <a href="../ContainerTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">invocation contexts</a> for
- the container template class represented by the supplied <code>context</code>.</div>
+ <a href="../ClassTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">invocation contexts</a> for
+ the class template represented by the supplied <code>context</code>.</div>
 </div>
 <div class="col-first even-row-color"><code>default boolean</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">TestTemplateInvocationContextProvider.</span><code><a href="../TestTemplateInvocationContextProvider.html#mayReturnZeroTestTemplateInvocationContexts(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">mayReturnZeroTestTemplateInvocationContexts</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
@@ -353,22 +353,20 @@ loadScripts(document, 'script');</script>
  contexts.</div>
 </div>
 <div class="col-first odd-row-color"><code>default void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ContainerTemplateInvocationContext.</span><code><a href="../ContainerTemplateInvocationContext.html#prepareInvocation(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">prepareInvocation</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ClassTemplateInvocationContext.</span><code><a href="../ClassTemplateInvocationContext.html#prepareInvocation(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">prepareInvocation</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Prepare the imminent invocation of the container template.</div>
+<div class="block">Prepare the imminent invocation of the class template.</div>
 </div>
 <div class="col-first even-row-color"><code>default void</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">TestTemplateInvocationContext.</span><code><a href="../TestTemplateInvocationContext.html#prepareInvocation(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">prepareInvocation</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Prepare the imminent invocation of the test template.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;? extends <a href="../ContainerTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">ContainerTemplateInvocationContext</a>&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ContainerTemplateInvocationContextProvider.</span><code><a href="../ContainerTemplateInvocationContextProvider.html#provideContainerTemplateInvocationContexts(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">provideContainerTemplateInvocationContexts</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;? extends <a href="../ClassTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">ClassTemplateInvocationContext</a>&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ClassTemplateInvocationContextProvider.</span><code><a href="../ClassTemplateInvocationContextProvider.html#provideClassTemplateInvocationContexts(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">provideClassTemplateInvocationContexts</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Provide
- <a href="../ContainerTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">invocation contexts</a> for
- the container template class represented by the supplied
- <code>context</code>.</div>
+<div class="block">Provide <a href="../ClassTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">invocation contexts</a>
+ for the class template represented by the supplied <code>context</code>.</div>
 </div>
 <div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;<a href="../TestTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">TestTemplateInvocationContext</a>&gt;</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">TestTemplateInvocationContextProvider.</span><code><a href="../TestTemplateInvocationContextProvider.html#provideTestTemplateInvocationContexts(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">provideTestTemplateInvocationContexts</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
@@ -384,10 +382,10 @@ loadScripts(document, 'script');</script>
  for the supplied <a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension"><code>ExtensionContext</code></a>.</div>
 </div>
 <div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ContainerTemplateInvocationContextProvider.</span><code><a href="../ContainerTemplateInvocationContextProvider.html#supportsContainerTemplate(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">supportsContainerTemplate</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ClassTemplateInvocationContextProvider.</span><code><a href="../ClassTemplateInvocationContextProvider.html#supportsClassTemplate(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">supportsClassTemplate</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Determine if this provider supports providing invocation contexts for the
- container template class represented by the supplied <code>context</code>.</div>
+ class template represented by the supplied <code>context</code>.</div>
 </div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">ParameterResolver.</span><code><a href="../ParameterResolver.html#supportsParameter(org.junit.jupiter.api.extension.ParameterContext,org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">supportsParameter</a><wbr>(<a href="../ParameterContext.html" title="interface in org.junit.jupiter.api.extension">ParameterContext</a>&nbsp;parameterContext,

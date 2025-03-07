@@ -84,12 +84,12 @@ loadScripts(document, 'script');</script>
  be executed <em>before</em> <strong>each</strong> set of arguments of the
  current <a href="org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a>.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterContainerTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension">AfterContainerTemplateInvocationCallback</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterClassTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension">AfterClassTemplateInvocationCallback</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
-<div class="block"><code>AfterContainerTemplateInvocationCallback</code> defines the API for
+<div class="block"><code>AfterClassTemplateInvocationCallback</code> defines the API for
  <a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a> that wish to provide additional behavior
  <strong>once</strong> before each invocation of a
- <a href="org.junit.jupiter.api/org/junit/jupiter/api/ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api">container template</a>.</div>
+ <a href="org.junit.jupiter.api/org/junit/jupiter/api/ClassTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@ClassTemplate</code></a>.</div>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.api/org/junit/jupiter/api/AfterEach.html" title="annotation interface in org.junit.jupiter.api">AfterEach</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab6">
@@ -280,12 +280,12 @@ loadScripts(document, 'script');</script>
  be executed <em>before</em> <strong>each</strong> set of arguments of the
  current <a href="org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a>.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeContainerTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension">BeforeContainerTemplateInvocationCallback</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeClassTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension">BeforeClassTemplateInvocationCallback</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
-<div class="block"><code>BeforeContainerTemplateInvocationCallback</code> defines the API for
+<div class="block"><code>BeforeClassTemplateInvocationCallback</code> defines the API for
  <a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a> that wish to provide additional behavior
  <strong>once</strong> before each invocation of a
- <a href="org.junit.jupiter.api/org/junit/jupiter/api/ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api">container template</a>.</div>
+ <a href="org.junit.jupiter.api/org/junit/jupiter/api/ClassTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@ClassTemplate</code></a>.</div>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.api/org/junit/jupiter/api/BeforeEach.html" title="annotation interface in org.junit.jupiter.api">BeforeEach</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab6">
@@ -441,117 +441,116 @@ loadScripts(document, 'script');</script>
  comma-separated list of fully qualified class names for a set of supplied
  classes.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassTestDescriptor</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.api/org/junit/jupiter/api/ClassTemplate.html" title="annotation interface in org.junit.jupiter.api">ClassTemplate</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
+<div class="block"><code>@ClassTemplate</code> is used to signal that the annotated class is a
+ <em>class template</em>.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/ClassTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">ClassTemplateInvocationContext</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block"><code>ClassTemplateInvocationContext</code> represents the <em>context</em> of
+ a single invocation of a <a href="org.junit.jupiter.api/org/junit/jupiter/api/ClassTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@ClassTemplate</code></a>.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/ClassTemplateInvocationContextProvider.html" title="interface in org.junit.jupiter.api.extension">ClassTemplateInvocationContextProvider</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block"><code>ClassTemplateInvocationContextProvider</code> defines the API for
+ <a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a> that wish to provide one or multiple contexts
+ for the invocation of a <a href="org.junit.jupiter.api/org/junit/jupiter/api/ClassTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@ClassTemplate</code></a>.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassTemplateInvocationTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassTemplateInvocationTestDescriptor</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassTemplateTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassTemplateTestDescriptor</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassTestDescriptor</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block"><a href="org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a> for tests based on Java classes.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.commons/org/junit/platform/commons/util/ClassUtils.html" title="class in org.junit.platform.commons.util">ClassUtils</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.commons/org/junit/platform/commons/util/ClassUtils.html" title="class in org.junit.platform.commons.util">ClassUtils</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Collection of utilities for working with <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link"><code>classes</code></a>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="org.junit.jupiter.api/org/junit/jupiter/api/io/CleanupMode.html" title="enum class in org.junit.jupiter.api.io">CleanupMode</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab3">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab3"><a href="org.junit.jupiter.api/org/junit/jupiter/api/io/CleanupMode.html" title="enum class in org.junit.jupiter.api.io">CleanupMode</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab3">
 <div class="block">Enumeration of cleanup modes for <a href="org.junit.jupiter.api/org/junit/jupiter/api/io/TempDir.html" title="annotation interface in org.junit.jupiter.api.io"><code>@TempDir</code></a>.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.commons/org/junit/platform/commons/util/CollectionUtils.html" title="class in org.junit.platform.commons.util">CollectionUtils</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.commons/org/junit/platform/commons/util/CollectionUtils.html" title="class in org.junit.platform.commons.util">CollectionUtils</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Collection of utilities for working with <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link"><code>Collections</code></a>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.console/org/junit/platform/console/options/CommandFacade.html" title="class in org.junit.platform.console.options">CommandFacade</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.console/org/junit/platform/console/options/CommandFacade.html" title="class in org.junit.platform.console.options">CommandFacade</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Internal facade to run a CLI command that exists to hide implementation
  details such as the used library.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.console/org/junit/platform/console/options/CommandResult.html" title="class in org.junit.platform.console.options">CommandResult&lt;T&gt;</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.engine/org/junit/platform/engine/support/descriptor/CompositeTestSource.html" title="class in org.junit.platform.engine.support.descriptor">CompositeTestSource</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.console/org/junit/platform/console/options/CommandResult.html" title="class in org.junit.platform.console.options">CommandResult&lt;T&gt;</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.engine/org/junit/platform/engine/support/descriptor/CompositeTestSource.html" title="class in org.junit.platform.engine.support.descriptor">CompositeTestSource</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">A <code>CompositeTestSource</code> contains one or more <a href="org.junit.platform.engine/org/junit/platform/engine/TestSource.html" title="interface in org.junit.platform.engine"><code>TestSources</code></a>.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/ConditionEvaluationResult.html" title="class in org.junit.jupiter.api.extension">ConditionEvaluationResult</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/ConditionEvaluationResult.html" title="class in org.junit.jupiter.api.extension">ConditionEvaluationResult</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">The result of evaluating an <a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/ExecutionCondition.html" title="interface in org.junit.jupiter.api.extension"><code>ExecutionCondition</code></a>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.engine/org/junit/jupiter/engine/execution/ConditionEvaluator.html" title="class in org.junit.jupiter.engine.execution">ConditionEvaluator</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.engine/org/junit/jupiter/engine/execution/ConditionEvaluator.html" title="class in org.junit.jupiter.engine.execution">ConditionEvaluator</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block"><code>ConditionEvaluator</code> evaluates <a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/ExecutionCondition.html" title="interface in org.junit.jupiter.api.extension"><code>ExecutionCondition</code></a> extensions.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.platform.suite.api/org/junit/platform/suite/api/ConfigurationParameter.html" title="annotation interface in org.junit.platform.suite.api">ConfigurationParameter</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.platform.suite.api/org/junit/platform/suite/api/ConfigurationParameter.html" title="annotation interface in org.junit.platform.suite.api">ConfigurationParameter</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
 <div class="block"><code>@ConfigurationParameter</code> is a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Repeatable.html" title="class or interface in java.lang.annotation" class="external-link">repeatable</a>
  annotation that specifies a configuration <a href="org.junit.platform.suite.api/org/junit/platform/suite/api/ConfigurationParameter.html#key()"><code>key</code></a> and
  <a href="org.junit.platform.suite.api/org/junit/platform/suite/api/ConfigurationParameter.html#value()"><code>value</code></a> pair to be added to the discovery request when running
  a test suite on the JUnit Platform.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.platform.engine/org/junit/platform/engine/ConfigurationParameters.html" title="interface in org.junit.platform.engine">ConfigurationParameters</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.platform.engine/org/junit/platform/engine/ConfigurationParameters.html" title="interface in org.junit.platform.engine">ConfigurationParameters</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Configuration parameters that <a href="org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngines</code></a> may use to
  influence test discovery and execution.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.platform.suite.api/org/junit/platform/suite/api/ConfigurationParameters.html" title="annotation interface in org.junit.platform.suite.api">ConfigurationParameters</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.platform.suite.api/org/junit/platform/suite/api/ConfigurationParameters.html" title="annotation interface in org.junit.platform.suite.api">ConfigurationParameters</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
 <div class="block"><code>@ConfigurationParameters</code> is a container for one or more
  <a href="org.junit.platform.suite.api/org/junit/platform/suite/api/ConfigurationParameter.html" title="annotation interface in org.junit.platform.suite.api"><code>@ConfigurationParameter</code></a> declarations.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.platform.suite.api/org/junit/platform/suite/api/ConfigurationParametersResource.html" title="annotation interface in org.junit.platform.suite.api">ConfigurationParametersResource</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.platform.suite.api/org/junit/platform/suite/api/ConfigurationParametersResource.html" title="annotation interface in org.junit.platform.suite.api">ConfigurationParametersResource</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
 <div class="block"><code>@ConfigurationParametersResource</code> is a
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Repeatable.html" title="class or interface in java.lang.annotation" class="external-link">repeatable</a> annotation that specifies a configuration
  file in Java's properties format on the classpath to be added to the
  discovery request when running a test suite on the JUnit Platform.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.platform.suite.api/org/junit/platform/suite/api/ConfigurationParametersResources.html" title="annotation interface in org.junit.platform.suite.api">ConfigurationParametersResources</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.platform.suite.api/org/junit/platform/suite/api/ConfigurationParametersResources.html" title="annotation interface in org.junit.platform.suite.api">ConfigurationParametersResources</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
 <div class="block"><code>@ConfigurationParametersResources</code> is a container for one or more
  <a href="org.junit.platform.suite.api/org/junit/platform/suite/api/ConfigurationParametersResource.html" title="annotation interface in org.junit.platform.suite.api"><code>@ConfigurationParametersResource</code></a> declarations.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.console/org/junit/platform/console/ConsoleLauncher.html" title="class in org.junit.platform.console">ConsoleLauncher</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.console/org/junit/platform/console/ConsoleLauncher.html" title="class in org.junit.platform.console">ConsoleLauncher</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">The <code>ConsoleLauncher</code> is a stand-alone application for launching the
  JUnit Platform from the console.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.console/org/junit/platform/console/ConsoleLauncherToolProvider.html" title="class in org.junit.platform.console">ConsoleLauncherToolProvider</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.console/org/junit/platform/console/ConsoleLauncherToolProvider.html" title="class in org.junit.platform.console">ConsoleLauncherToolProvider</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Run the JUnit Platform Console Launcher as a service.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.console/org/junit/platform/console/tasks/ConsoleTestExecutor.html" title="class in org.junit.platform.console.tasks">ConsoleTestExecutor</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.platform.console/org/junit/platform/console/tasks/ConsoleTestExecutor.Factory.html" title="interface in org.junit.platform.console.tasks">ConsoleTestExecutor.Factory</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.console/org/junit/platform/console/options/ConsoleUtils.html" title="class in org.junit.platform.console.options">ConsoleUtils</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.console/org/junit/platform/console/tasks/ConsoleTestExecutor.html" title="class in org.junit.platform.console.tasks">ConsoleTestExecutor</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.platform.console/org/junit/platform/console/tasks/ConsoleTestExecutor.Factory.html" title="interface in org.junit.platform.console.tasks">ConsoleTestExecutor.Factory</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">&nbsp;</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.platform.console/org/junit/platform/console/options/ConsoleUtils.html" title="class in org.junit.platform.console.options">ConsoleUtils</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Collection of utilities for working with <code>java.io.Console</code>
  and friends.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.engine/org/junit/jupiter/engine/Constants.html" title="class in org.junit.jupiter.engine">Constants</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.engine/org/junit/jupiter/engine/Constants.html" title="class in org.junit.jupiter.engine">Constants</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Collection of constants related to the <a href="org.junit.jupiter.engine/org/junit/jupiter/engine/JupiterTestEngine.html" title="class in org.junit.jupiter.engine"><code>JupiterTestEngine</code></a>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.vintage.engine/org/junit/vintage/engine/Constants.html" title="class in org.junit.vintage.engine">Constants</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.vintage.engine/org/junit/vintage/engine/Constants.html" title="class in org.junit.vintage.engine">Constants</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Collection of constants related to the <a href="org.junit.vintage.engine/org/junit/vintage/engine/VintageTestEngine.html" title="class in org.junit.vintage.engine"><code>VintageTestEngine</code></a>.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.api/org/junit/jupiter/api/ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api">ContainerTemplate</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
-<div class="block"><code>@ContainerTemplate</code> is used to signal that the annotated class is a
- <em>container template</em>.</div>
-</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">ContainerTemplateInvocationContext</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
-<div class="block"><code>ContainerTemplateInvocationContext</code> represents the <em>context</em> of
- a single invocation of a <a href="org.junit.jupiter.api/org/junit/jupiter/api/ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api">container template</a>.</div>
-</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/ContainerTemplateInvocationContextProvider.html" title="interface in org.junit.jupiter.api.extension">ContainerTemplateInvocationContextProvider</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
-<div class="block"><code>ContainerTemplateInvocationContextProvider</code> defines the API for
- <a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a> that wish to provide one or multiple contexts
- for the invocation of a
- <a href="org.junit.jupiter.api/org/junit/jupiter/api/ContainerTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@ContainerTemplate</code></a> class.</div>
-</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateInvocationTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ContainerTemplateInvocationTestDescriptor</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ContainerTemplateTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ContainerTemplateTestDescriptor</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="org.junit.platform.commons/org/junit/platform/commons/support/conversion/ConversionException.html" title="class in org.junit.platform.commons.support.conversion">ConversionException</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab5">
 <div class="block"><code>ConversionException</code> is an exception that can occur when an
