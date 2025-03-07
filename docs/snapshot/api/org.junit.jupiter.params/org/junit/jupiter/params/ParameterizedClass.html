@@ -181,11 +181,13 @@ loadScripts(document, 'script');</script>
 
  <h2 id="lifecycle-methods-heading">Lifecycle Methods</h2>
 
- <p>If you wish to execute custom code before or after each set of arguments
- is used to invoke the parameterized class, you may declare methods annotated
- with <a href="BeforeArgumentSet.html" title="annotation interface in org.junit.jupiter.params"><code>@BeforeArgumentSet</code></a> or
- <a href="AfterArgumentSet.html" title="annotation interface in org.junit.jupiter.params"><code>@AfterArgumentSet</code></a>. This can, for example, be useful
- to initialize the arguments before they are used.
+ <p>If you wish to execute custom code before or after each invocation of the
+ parameterized class, you may declare methods annotated with
+ <a href="BeforeParameterizedClassInvocation.html" title="annotation interface in org.junit.jupiter.params"><code>@BeforeParameterizedClassInvocation</code></a>
+ or
+ <a href="AfterParameterizedClassInvocation.html" title="annotation interface in org.junit.jupiter.params"><code>@AfterParameterizedClassInvocation</code></a>.
+ This can, for example, be useful to initialize the arguments before they are
+ used.
 
  <h2 id="composed-annotations-heading">Composed Annotations</h2>
 
@@ -201,10 +203,10 @@ loadScripts(document, 'script');</script>
 <dd>5.13</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="tag-list">
+<ul class="tag-list-long">
 <li><a href="Parameter.html" title="annotation interface in org.junit.jupiter.params"><code>Parameter</code></a></li>
-<li><a href="BeforeArgumentSet.html" title="annotation interface in org.junit.jupiter.params"><code>BeforeArgumentSet</code></a></li>
-<li><a href="AfterArgumentSet.html" title="annotation interface in org.junit.jupiter.params"><code>AfterArgumentSet</code></a></li>
+<li><a href="BeforeParameterizedClassInvocation.html" title="annotation interface in org.junit.jupiter.params"><code>BeforeParameterizedClassInvocation</code></a></li>
+<li><a href="AfterParameterizedClassInvocation.html" title="annotation interface in org.junit.jupiter.params"><code>AfterParameterizedClassInvocation</code></a></li>
 <li><a href="ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>ParameterizedTest</code></a></li>
 <li><a href="provider/Arguments.html" title="interface in org.junit.jupiter.params.provider"><code>Arguments</code></a></li>
 <li><a href="provider/ArgumentsProvider.html" title="interface in org.junit.jupiter.params.provider"><code>ArgumentsProvider</code></a></li>

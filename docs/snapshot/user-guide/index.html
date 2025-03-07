@@ -1277,12 +1277,12 @@ in the <code>junit-jupiter-api</code> module.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated class is a <a href="#writing-tests-parameterized-tests">parameterized class</a>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@BeforeArgumentSet</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed once <em>before</em> each set of arguments a <code>@ParameterizedClass</code> is invoked with.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@BeforeParameterizedClassInvocation</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed once <em>before</em> each invocation of a <code>@ParameterizedClass</code>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@AfterArgumentSet</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed once <em>after</em> each set of arguments a <code>@ParameterizedClass</code> is invoked with.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@AfterParameterizedClassInvocation</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed once <em>after</em> each invocation of a <code>@ParameterizedClass</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@ClassTemplate</code></p></td>
@@ -4774,13 +4774,13 @@ may resolve constructor parameters as usual, though.</p>
 <div class="sect5">
 <h6 id="writing-tests-parameterized-tests-consuming-arguments-lifecycle-method"><a class="anchor" href="#writing-tests-parameterized-tests-consuming-arguments-lifecycle-method"></a>Lifecycle Methods</h6>
 <div class="paragraph">
-<p><code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/BeforeArgumentSet.html">@BeforeArgumentSet</a></code> and <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/AfterArgumentSet.html">@AfterArgumentSet</a></code> can also be used to consume arguments if
-their <code>injectArguments</code> attribute is set to <code>true</code> (the default). If so, their method
-signatures must follow the same rules apply as defined for
+<p><code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/BeforeParameterizedClassInvocation.html">@BeforeParameterizedClassInvocation</a></code> and <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/AfterParameterizedClassInvocation.html">@AfterParameterizedClassInvocation</a></code> can also
+be used to consume arguments if their <code>injectArguments</code> attribute is set to <code>true</code> (the
+default). If so, their method signatures must follow the same rules apply as defined for
 <a href="#writing-tests-parameterized-tests-consuming-arguments-methods">parameterized tests</a> and
 additionally use the same parameter types as the <em>indexed parameters</em> of the parameterized
-test class. Please refer to the Javadoc of <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/BeforeArgumentSet.html">@BeforeArgumentSet</a></code> and <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/AfterArgumentSet.html">@AfterArgumentSet</a></code>
-for details and to the
+test class. Please refer to the Javadoc of <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/BeforeParameterizedClassInvocation.html">@BeforeParameterizedClassInvocation</a></code> and
+<code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/AfterParameterizedClassInvocation.html">@AfterParameterizedClassInvocation</a></code> for details and to the
 <a href="#writing-tests-parameterized-tests-lifecycle-interop-classes">Lifecycle</a> section for an
 example.</p>
 </div>
@@ -6708,19 +6708,20 @@ are not resolved for regular lifecycle methods (e.g. <code>@BeforeEach</code>).<
 </div>
 <div class="paragraph">
 <p>In addition to regular lifecycle methods, parameterized classes may declare
-<code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/BeforeArgumentSet.html">@BeforeArgumentSet</a></code> and <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/AfterArgumentSet.html">@AfterArgumentSet</a></code> lifecycle methods that are called once
-before/after each invocation of the parameterized class. These methods must be <code>static</code>
-unless the parameterized class is configured to use <code>@TestInstance(Lifecycle.PER_CLASS)</code>
-(see <a href="#writing-tests-test-instance-lifecycle">Test Instance Lifecycle</a>).</p>
+<code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/BeforeParameterizedClassInvocation.html">@BeforeParameterizedClassInvocation</a></code> and <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/AfterParameterizedClassInvocation.html">@AfterParameterizedClassInvocation</a></code> lifecycle
+methods that are called once before/after each invocation of the parameterized class.
+These methods must be <code>static</code> unless the parameterized class is configured to use
+<code>@TestInstance(Lifecycle.PER_CLASS)</code> (see <a href="#writing-tests-test-instance-lifecycle">Test Instance Lifecycle</a>).</p>
 </div>
 <div class="paragraph">
 <p>These lifecycle methods may optionally declare parameters that are resolved depending on
 the setting of the <code>injectArguments</code> annotation attribute. If it is set to <code>false</code>, the
 parameters must be resolved by other registered <a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ParameterResolver.html">ParameterResolver</a> extensions. If the
 attribute is set to <code>true</code> (the default), the method may declare parameters that match the
-arguments of the parameterized class (see the Javadoc of <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/BeforeArgumentSet.html">@BeforeArgumentSet</a></code> and
-<code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/AfterArgumentSet.html">@AfterArgumentSet</a></code> for details). This may, for example, be used to initialize the used
-arguments as demonstrated by the following example.</p>
+arguments of the parameterized class (see the Javadoc of
+<code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/BeforeParameterizedClassInvocation.html">@BeforeParameterizedClassInvocation</a></code> and <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/AfterParameterizedClassInvocation.html">@AfterParameterizedClassInvocation</a></code> for
+details). This may, for example, be used to initialize the used arguments as demonstrated
+by the following example.</p>
 </div>
 <div class="listingblock">
 <div class="title">Using parameterized class lifecycle methods</div>
@@ -6739,14 +6740,14 @@ arguments as demonstrated by the following example.</p>
     <span class="nd">@Parameter</span>
     <span class="nc">TextFile</span> <span class="n">textFile</span><span class="o">;</span>
 
-    <span class="nd">@BeforeArgumentSet</span>
-    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">beforeArgumentSet</span><span class="o">(</span><span class="nc">TextFile</span> <span class="n">textFile</span><span class="o">,</span> <span class="nd">@TempDir</span> <span class="nc">Path</span> <span class="n">tempDir</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+    <span class="nd">@BeforeParameterizedClassInvocation</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">beforeInvocation</span><span class="o">(</span><span class="nc">TextFile</span> <span class="n">textFile</span><span class="o">,</span> <span class="nd">@TempDir</span> <span class="nc">Path</span> <span class="n">tempDir</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
         <span class="kt">var</span> <span class="n">filePath</span> <span class="o">=</span> <span class="n">tempDir</span><span class="o">.</span><span class="na">resolve</span><span class="o">(</span><span class="n">textFile</span><span class="o">.</span><span class="na">fileName</span><span class="o">);</span> <i class="conum" data-value="1"></i><b>(1)</b>
         <span class="n">textFile</span><span class="o">.</span><span class="na">path</span> <span class="o">=</span> <span class="nc">Files</span><span class="o">.</span><span class="na">writeString</span><span class="o">(</span><span class="n">filePath</span><span class="o">,</span> <span class="n">textFile</span><span class="o">.</span><span class="na">content</span><span class="o">);</span>
     <span class="o">}</span>
 
-    <span class="nd">@AfterArgumentSet</span>
-    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">afterArgumentSet</span><span class="o">(</span><span class="nc">TextFile</span> <span class="n">textFile</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+    <span class="nd">@AfterParameterizedClassInvocation</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">afterInvocation</span><span class="o">(</span><span class="nc">TextFile</span> <span class="n">textFile</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
         <span class="kt">var</span> <span class="n">actualContent</span> <span class="o">=</span> <span class="nc">Files</span><span class="o">.</span><span class="na">readString</span><span class="o">(</span><span class="n">textFile</span><span class="o">.</span><span class="na">path</span><span class="o">);</span> <i class="conum" data-value="3"></i><b>(3)</b>
         <span class="n">assertEquals</span><span class="o">(</span><span class="n">textFile</span><span class="o">.</span><span class="na">content</span><span class="o">,</span> <span class="n">actualContent</span><span class="o">,</span> <span class="s">"Content must not have changed"</span><span class="o">);</span>
         <span class="c1">// Custom cleanup logic, if necessary</span>
@@ -8587,9 +8588,9 @@ name of the method annotated with <code>@Parameters</code> and remove the <code>
 from the method.</p>
 </li>
 <li>
-<p>Replace <code>@BeforeParam</code>/<code>@AfterParam</code> with <code>@BeforeArgumentSet</code>/<code>@AfterArgumentSet</code>, if
-there are any methods with such annotation. Moreover, if they declare parameters, set
-the <code>injectArguments</code> annotation attribute to <code>true</code>.</p>
+<p>Replace <code>@BeforeParam</code> and <code>@AfterParam</code> with <code>@BeforeParameterizedClassInvocation</code> and
+<code>@AfterParameterizedClassInvocation</code>, respectively, if there are any methods with such
+annotations.</p>
 </li>
 <li>
 <p>Change the imports of the <code>@Test</code> and <code>@Parameter</code> annotations to use the
@@ -8657,11 +8658,11 @@ the <code>injectArguments</code> annotation attribute to <code>true</code>.</p>
     <span class="nd">@org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">jupiter</span><span class="o">.</span><span class="na">params</span><span class="o">.</span><span class="na">Parameter</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
     <span class="nc">String</span> <span class="n">text</span><span class="o">;</span>
 
-    <span class="nd">@BeforeArgumentSet</span>
+    <span class="nd">@BeforeParameterizedClassInvocation</span>
     <span class="kd">static</span> <span class="kt">void</span> <span class="nf">before</span><span class="o">(</span><span class="kt">int</span> <span class="n">number</span><span class="o">,</span> <span class="nc">String</span> <span class="n">text</span><span class="o">)</span> <span class="o">{</span>
     <span class="o">}</span>
 
-    <span class="nd">@AfterArgumentSet</span>
+    <span class="nd">@AfterParameterizedClassInvocation</span>
     <span class="kd">static</span> <span class="kt">void</span> <span class="nf">after</span><span class="o">()</span> <span class="o">{</span>
     <span class="o">}</span>
 
@@ -15522,7 +15523,7 @@ value of lower stability.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AfterArgumentSet</code> <em>(annotation)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AfterParameterizedClassInvocation</code> <em>(annotation)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
 </tr>
 <tr>
@@ -15532,7 +15533,7 @@ value of lower stability.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BeforeArgumentSet</code> <em>(annotation)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BeforeParameterizedClassInvocation</code> <em>(annotation)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
 </tr>
 <tr>

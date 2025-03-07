@@ -78,38 +78,38 @@ loadScripts(document, 'script');</script>
  that wish to provide additional behavior to test containers <strong>once</strong>
  after all tests in the container have been executed.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.params/org/junit/jupiter/params/AfterArgumentSet.html" title="annotation interface in org.junit.jupiter.params">AfterArgumentSet</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
-<div class="block"><code>@AfterArgumentSet</code> is used to signal that the annotated method should
- be executed <em>before</em> <strong>each</strong> set of arguments of the
- current <a href="org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a>.</div>
-</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterClassTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension">AfterClassTemplateInvocationCallback</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterClassTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension">AfterClassTemplateInvocationCallback</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block"><code>AfterClassTemplateInvocationCallback</code> defines the API for
  <a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a> that wish to provide additional behavior
  <strong>once</strong> before each invocation of a
  <a href="org.junit.jupiter.api/org/junit/jupiter/api/ClassTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@ClassTemplate</code></a>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.api/org/junit/jupiter/api/AfterEach.html" title="annotation interface in org.junit.jupiter.api">AfterEach</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.api/org/junit/jupiter/api/AfterEach.html" title="annotation interface in org.junit.jupiter.api">AfterEach</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
 <div class="block"><code>@AfterEach</code> is used to signal that the annotated method should be
  executed <em>after</em> <strong>each</strong> <code>@Test</code>,
  <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, <code>@TestFactory</code>,
  and <code>@TestTemplate</code> method in the current test class.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterEachCallback.html" title="interface in org.junit.jupiter.api.extension">AfterEachCallback</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/AfterEachCallback.html" title="interface in org.junit.jupiter.api.extension">AfterEachCallback</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block"><code>AfterEachCallback</code> defines the API for <a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a>
  that wish to provide additional behavior to tests after an individual test
  and any user-defined teardown methods (e.g.,
  <a href="org.junit.jupiter.api/org/junit/jupiter/api/AfterEach.html" title="annotation interface in org.junit.jupiter.api"><code>@AfterEach</code></a> methods) for that test
  have been executed.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.engine/org/junit/jupiter/engine/execution/AfterEachMethodAdapter.html" title="interface in org.junit.jupiter.engine.execution">AfterEachMethodAdapter</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.engine/org/junit/jupiter/engine/execution/AfterEachMethodAdapter.html" title="interface in org.junit.jupiter.engine.execution">AfterEachMethodAdapter</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Functional interface for registering an <a href="org.junit.jupiter.api/org/junit/jupiter/api/AfterEach.html" title="annotation interface in org.junit.jupiter.api"><code>@AfterEach</code></a> method
  as a pseudo-extension.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.params/org/junit/jupiter/params/AfterParameterizedClassInvocation.html" title="annotation interface in org.junit.jupiter.params">AfterParameterizedClassInvocation</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
+<div class="block"><code>@AfterParameterizedClassInvocation</code> is used to signal that the
+ annotated method should be executed <em>before</em> <strong>each</strong>
+ invocation of the current <a href="org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a>.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.platform.suite.api/org/junit/platform/suite/api/AfterSuite.html" title="annotation interface in org.junit.platform.suite.api">AfterSuite</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
@@ -274,38 +274,38 @@ loadScripts(document, 'script');</script>
  that wish to provide additional behavior to test containers <strong>once</strong>
  before all tests in the container have been executed.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.params/org/junit/jupiter/params/BeforeArgumentSet.html" title="annotation interface in org.junit.jupiter.params">BeforeArgumentSet</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
-<div class="block"><code>@BeforeArgumentSet</code> is used to signal that the annotated method should
- be executed <em>before</em> <strong>each</strong> set of arguments of the
- current <a href="org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a>.</div>
-</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeClassTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension">BeforeClassTemplateInvocationCallback</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeClassTemplateInvocationCallback.html" title="interface in org.junit.jupiter.api.extension">BeforeClassTemplateInvocationCallback</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block"><code>BeforeClassTemplateInvocationCallback</code> defines the API for
  <a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a> that wish to provide additional behavior
  <strong>once</strong> before each invocation of a
  <a href="org.junit.jupiter.api/org/junit/jupiter/api/ClassTemplate.html" title="annotation interface in org.junit.jupiter.api"><code>@ClassTemplate</code></a>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.api/org/junit/jupiter/api/BeforeEach.html" title="annotation interface in org.junit.jupiter.api">BeforeEach</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.api/org/junit/jupiter/api/BeforeEach.html" title="annotation interface in org.junit.jupiter.api">BeforeEach</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
 <div class="block"><code>@BeforeEach</code> is used to signal that the annotated method should be
  executed <em>before</em> <strong>each</strong> <code>@Test</code>,
  <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, <code>@TestFactory</code>,
  and <code>@TestTemplate</code> method in the current test class.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeEachCallback.html" title="interface in org.junit.jupiter.api.extension">BeforeEachCallback</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/BeforeEachCallback.html" title="interface in org.junit.jupiter.api.extension">BeforeEachCallback</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block"><code>BeforeEachCallback</code> defines the API for <a href="org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a>
  that wish to provide additional behavior to tests before an individual test
  and any user-defined setup methods (e.g.,
  <a href="org.junit.jupiter.api/org/junit/jupiter/api/BeforeEach.html" title="annotation interface in org.junit.jupiter.api"><code>@BeforeEach</code></a> methods) for that test
  have been executed.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.engine/org/junit/jupiter/engine/execution/BeforeEachMethodAdapter.html" title="interface in org.junit.jupiter.engine.execution">BeforeEachMethodAdapter</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="org.junit.jupiter.engine/org/junit/jupiter/engine/execution/BeforeEachMethodAdapter.html" title="interface in org.junit.jupiter.engine.execution">BeforeEachMethodAdapter</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Functional interface for registering a <a href="org.junit.jupiter.api/org/junit/jupiter/api/BeforeEach.html" title="annotation interface in org.junit.jupiter.api"><code>@BeforeEach</code></a> method
  as a pseudo-extension.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.jupiter.params/org/junit/jupiter/params/BeforeParameterizedClassInvocation.html" title="annotation interface in org.junit.jupiter.params">BeforeParameterizedClassInvocation</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
+<div class="block"><code>@BeforeParameterizedClassInvocation</code> is used to signal that the
+ annotated method should be executed <em>before</em> <strong>each</strong>
+ invocation of the current <a href="org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedClass.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedClass</code></a>.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="org.junit.platform.suite.api/org/junit/platform/suite/api/BeforeSuite.html" title="annotation interface in org.junit.platform.suite.api">BeforeSuite</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
