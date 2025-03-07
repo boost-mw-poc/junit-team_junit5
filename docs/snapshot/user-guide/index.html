@@ -4775,8 +4775,8 @@ may resolve constructor parameters as usual, though.</p>
 <h6 id="writing-tests-parameterized-tests-consuming-arguments-lifecycle-method"><a class="anchor" href="#writing-tests-parameterized-tests-consuming-arguments-lifecycle-method"></a>Lifecycle Methods</h6>
 <div class="paragraph">
 <p><code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/BeforeArgumentSet.html">@BeforeArgumentSet</a></code> and <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/AfterArgumentSet.html">@AfterArgumentSet</a></code> can also be used to consume arguments if
-their <code>injectArguments</code> attribute is set to <code>true</code>. If so, their method signatures must
-follow the same rules apply as defined for
+their <code>injectArguments</code> attribute is set to <code>true</code> (the default). If so, their method
+signatures must follow the same rules apply as defined for
 <a href="#writing-tests-parameterized-tests-consuming-arguments-methods">parameterized tests</a> and
 additionally use the same parameter types as the <em>indexed parameters</em> of the parameterized
 test class. Please refer to the Javadoc of <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/BeforeArgumentSet.html">@BeforeArgumentSet</a></code> and <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/AfterArgumentSet.html">@AfterArgumentSet</a></code>
@@ -6715,12 +6715,12 @@ unless the parameterized class is configured to use <code>@TestInstance(Lifecycl
 </div>
 <div class="paragraph">
 <p>These lifecycle methods may optionally declare parameters that are resolved depending on
-the setting of the <code>injectArguments</code> annotation attribute. If it is set to <code>false</code> (the
-default), the parameters must be resolved by other registered <a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ParameterResolver.html">ParameterResolver</a>
-extensions. If the attribute is set to <code>true</code>, the method may declare parameters that
-match the arguments of the parameterized class (see the Javadoc of <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/BeforeArgumentSet.html">@BeforeArgumentSet</a></code>
-and <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/AfterArgumentSet.html">@AfterArgumentSet</a></code> for details). This may, for example, be used to initialize the
-used arguments as demonstrated by the following example.</p>
+the setting of the <code>injectArguments</code> annotation attribute. If it is set to <code>false</code>, the
+parameters must be resolved by other registered <a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ParameterResolver.html">ParameterResolver</a> extensions. If the
+attribute is set to <code>true</code> (the default), the method may declare parameters that match the
+arguments of the parameterized class (see the Javadoc of <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/BeforeArgumentSet.html">@BeforeArgumentSet</a></code> and
+<code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/AfterArgumentSet.html">@AfterArgumentSet</a></code> for details). This may, for example, be used to initialize the used
+arguments as demonstrated by the following example.</p>
 </div>
 <div class="listingblock">
 <div class="title">Using parameterized class lifecycle methods</div>
@@ -6739,13 +6739,13 @@ used arguments as demonstrated by the following example.</p>
     <span class="nd">@Parameter</span>
     <span class="nc">TextFile</span> <span class="n">textFile</span><span class="o">;</span>
 
-    <span class="nd">@BeforeArgumentSet</span><span class="o">(</span><span class="n">injectArguments</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+    <span class="nd">@BeforeArgumentSet</span>
     <span class="kd">static</span> <span class="kt">void</span> <span class="nf">beforeArgumentSet</span><span class="o">(</span><span class="nc">TextFile</span> <span class="n">textFile</span><span class="o">,</span> <span class="nd">@TempDir</span> <span class="nc">Path</span> <span class="n">tempDir</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
         <span class="kt">var</span> <span class="n">filePath</span> <span class="o">=</span> <span class="n">tempDir</span><span class="o">.</span><span class="na">resolve</span><span class="o">(</span><span class="n">textFile</span><span class="o">.</span><span class="na">fileName</span><span class="o">);</span> <i class="conum" data-value="1"></i><b>(1)</b>
         <span class="n">textFile</span><span class="o">.</span><span class="na">path</span> <span class="o">=</span> <span class="nc">Files</span><span class="o">.</span><span class="na">writeString</span><span class="o">(</span><span class="n">filePath</span><span class="o">,</span> <span class="n">textFile</span><span class="o">.</span><span class="na">content</span><span class="o">);</span>
     <span class="o">}</span>
 
-    <span class="nd">@AfterArgumentSet</span><span class="o">(</span><span class="n">injectArguments</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+    <span class="nd">@AfterArgumentSet</span>
     <span class="kd">static</span> <span class="kt">void</span> <span class="nf">afterArgumentSet</span><span class="o">(</span><span class="nc">TextFile</span> <span class="n">textFile</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
         <span class="kt">var</span> <span class="n">actualContent</span> <span class="o">=</span> <span class="nc">Files</span><span class="o">.</span><span class="na">readString</span><span class="o">(</span><span class="n">textFile</span><span class="o">.</span><span class="na">path</span><span class="o">);</span> <i class="conum" data-value="3"></i><b>(3)</b>
         <span class="n">assertEquals</span><span class="o">(</span><span class="n">textFile</span><span class="o">.</span><span class="na">content</span><span class="o">,</span> <span class="n">actualContent</span><span class="o">,</span> <span class="s">"Content must not have changed"</span><span class="o">);</span>
@@ -8657,7 +8657,7 @@ the <code>injectArguments</code> annotation attribute to <code>true</code>.</p>
     <span class="nd">@org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">jupiter</span><span class="o">.</span><span class="na">params</span><span class="o">.</span><span class="na">Parameter</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
     <span class="nc">String</span> <span class="n">text</span><span class="o">;</span>
 
-    <span class="nd">@BeforeArgumentSet</span><span class="o">(</span><span class="n">injectArguments</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+    <span class="nd">@BeforeArgumentSet</span>
     <span class="kd">static</span> <span class="kt">void</span> <span class="nf">before</span><span class="o">(</span><span class="kt">int</span> <span class="n">number</span><span class="o">,</span> <span class="nc">String</span> <span class="n">text</span><span class="o">)</span> <span class="o">{</span>
     <span class="o">}</span>
 
