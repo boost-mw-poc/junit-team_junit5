@@ -1204,124 +1204,182 @@ framework.</p>
 <p>Unless otherwise stated, all core annotations are located in the <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/package-summary.html">org.junit.jupiter.api</a></code> package
 in the <code>junit-jupiter-api</code> module.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Annotation</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Test</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that a method is a test method. Unlike JUnit 4&#8217;s <code>@Test</code> annotation, this annotation does not declare any attributes, since test extensions in JUnit Jupiter operate based on their own dedicated annotations. Such methods are inherited unless they are overridden.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@ParameterizedTest</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that a method is a <a href="#writing-tests-parameterized-tests">parameterized test</a>. Such methods are inherited unless they are overridden.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@RepeatedTest</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that a method is a test template for a <a href="#writing-tests-repeated-tests">repeated test</a>. Such methods are inherited unless they are overridden.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@TestFactory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that a method is a test factory for <a href="#writing-tests-dynamic-tests">dynamic tests</a>. Such methods are inherited unless they are overridden.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@TestTemplate</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that a method is a <a href="#writing-tests-test-templates">template for a test case</a> designed to be invoked multiple times depending on the number of invocation contexts returned by the registered <a href="#extensions-test-templates">providers</a>. Such methods are inherited unless they are overridden.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@TestClassOrder</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to configure the <a href="#writing-tests-test-execution-order-classes">test class execution order</a> for <code>@Nested</code> test classes in the annotated test class. Such annotations are inherited.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@TestMethodOrder</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to configure the <a href="#writing-tests-test-execution-order-methods">test method execution order</a> for the annotated test class; similar to JUnit 4&#8217;s <code>@FixMethodOrder</code>. Such annotations are inherited.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@TestInstance</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to configure the <a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> for the annotated test class. Such annotations are inherited.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@DisplayName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Declares a custom <a href="#writing-tests-display-names">display name</a> for the test class or test method. Such annotations are not inherited.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@DisplayNameGeneration</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Declares a custom <a href="#writing-tests-display-name-generator">display name generator</a> for the test class. Such annotations are inherited.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@BeforeEach</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed <em>before</em> <strong>each</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, or <code>@TestFactory</code> method in the current class; analogous to JUnit 4&#8217;s <code>@Before</code>. Such methods are inherited unless they are overridden.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@AfterEach</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed <em>after</em> <strong>each</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, or <code>@TestFactory</code> method in the current class; analogous to JUnit 4&#8217;s <code>@After</code>. Such methods are inherited unless they are overridden.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@BeforeAll</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed <em>before</em> <strong>all</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, and <code>@TestFactory</code> methods in the current class; analogous to JUnit 4&#8217;s <code>@BeforeClass</code>. Such methods are inherited unless they are overridden and must be <code>static</code> unless the "per-class" <a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> is used.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@AfterAll</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed <em>after</em> <strong>all</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, and <code>@TestFactory</code> methods in the current class; analogous to JUnit 4&#8217;s <code>@AfterClass</code>. Such methods are inherited unless they are overridden and must be <code>static</code> unless the "per-class" <a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> is used.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@ParameterizedClass</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated class is a <a href="#writing-tests-parameterized-tests">parameterized class</a>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@BeforeParameterizedClassInvocation</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed once <em>before</em> each invocation of a <code>@ParameterizedClass</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@AfterParameterizedClassInvocation</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed once <em>after</em> each invocation of a <code>@ParameterizedClass</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@ClassTemplate</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated class is a <a href="#writing-tests-class-templates">template for a test class</a> designed to be executed multiple times depending on the number of invocation contexts returned by the registered <a href="#extensions-class-templates">providers</a>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Nested</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated class is a non-static <a href="#writing-tests-nested">nested test class</a>. On Java 8 through Java 15, <code>@BeforeAll</code> and <code>@AfterAll</code> methods cannot be used directly in a <code>@Nested</code> test class unless the "per-class" <a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> is used. Beginning with Java 16, <code>@BeforeAll</code> and <code>@AfterAll</code> methods can be declared as <code>static</code> in a <code>@Nested</code> test class with either test instance lifecycle mode. Such annotations are not inherited.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Tag</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to declare <a href="#writing-tests-tagging-and-filtering">tags for filtering tests</a>, either at the class or method level; analogous to test groups in TestNG or Categories in JUnit 4. Such annotations are inherited at the class level but not at the method level.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Disabled</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to <a href="#writing-tests-disabling">disable</a> a test class or test method; analogous to JUnit 4&#8217;s <code>@Ignore</code>. Such annotations are not inherited.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@AutoClose</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated field represents a resource that will be <a href="#writing-tests-built-in-extensions-AutoClose">automatically closed</a> after test execution.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Timeout</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to fail a test, test factory, test template, or lifecycle method if its execution exceeds a given duration. Such annotations are inherited.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@TempDir</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to supply a <a href="#writing-tests-built-in-extensions-TempDirectory">temporary directory</a> via field injection or parameter injection in a test class constructor, lifecycle method, or test method; located in the <code>org.junit.jupiter.api.io</code> package. Such fields are inherited.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@ExtendWith</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to <a href="#extensions-registration-declarative">register extensions declaratively</a>. Such annotations are inherited.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@RegisterExtension</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to <a href="#extensions-registration-programmatic">register extensions programmatically</a> via fields. Such fields are inherited.</p></td>
-</tr>
-</tbody>
-</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code><strong>@Test</strong></code></dt>
+<dd>
+<p>Denotes that a method is a test method. Unlike JUnit 4&#8217;s <code>@Test</code> annotation,
+this annotation does not declare any attributes, since test extensions in JUnit Jupiter
+operate based on their own dedicated annotations. Such methods are inherited unless they
+are overridden.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@ParameterizedTest</strong></code></dt>
+<dd>
+<p>Denotes that a method is a
+<a href="#writing-tests-parameterized-tests">parameterized test</a>. Such methods are inherited
+unless they are overridden.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@RepeatedTest</strong></code></dt>
+<dd>
+<p>Denotes that a method is a test template for a
+<a href="#writing-tests-repeated-tests">repeated test</a>. Such methods are inherited unless they
+are overridden.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@TestFactory</strong></code></dt>
+<dd>
+<p>Denotes that a method is a test factory for
+<a href="#writing-tests-dynamic-tests">dynamic tests</a>. Such methods are inherited unless they are
+overridden.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@TestTemplate</strong></code></dt>
+<dd>
+<p>Denotes that a method is a
+<a href="#writing-tests-test-templates">template for a test case</a> designed to be invoked multiple
+times depending on the number of invocation contexts returned by the registered
+<a href="#extensions-test-templates">providers</a>. Such methods are inherited unless they are
+overridden.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@TestClassOrder</strong></code></dt>
+<dd>
+<p>Used to configure the
+<a href="#writing-tests-test-execution-order-classes">test class execution order</a> for <code>@Nested</code>
+test classes in the annotated test class. Such annotations are inherited.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@TestMethodOrder</strong></code></dt>
+<dd>
+<p>Used to configure the
+<a href="#writing-tests-test-execution-order-methods">test method execution order</a> for the
+annotated test class; similar to JUnit 4&#8217;s <code>@FixMethodOrder</code>. Such annotations are
+inherited.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@TestInstance</strong></code></dt>
+<dd>
+<p>Used to configure the
+<a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> for the annotated test
+class. Such annotations are inherited.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@DisplayName</strong></code></dt>
+<dd>
+<p>Declares a custom <a href="#writing-tests-display-names">display name</a> for the
+test class or test method. Such annotations are not inherited.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@DisplayNameGeneration</strong></code></dt>
+<dd>
+<p>Declares a custom
+<a href="#writing-tests-display-name-generator">display name generator</a> for the test class. Such
+annotations are inherited.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@BeforeEach</strong></code></dt>
+<dd>
+<p>Denotes that the annotated method should be executed <em>before</em> <strong>each</strong>
+<code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, or <code>@TestFactory</code> method in the current
+class; analogous to JUnit 4&#8217;s <code>@Before</code>. Such methods are inherited unless they are
+overridden.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@AfterEach</strong></code></dt>
+<dd>
+<p>Denotes that the annotated method should be executed <em>after</em> <strong>each</strong>
+<code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, or <code>@TestFactory</code> method in the current
+class; analogous to JUnit 4&#8217;s <code>@After</code>. Such methods are inherited unless they are
+overridden.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@BeforeAll</strong></code></dt>
+<dd>
+<p>Denotes that the annotated method should be executed <em>before</em> <strong>all</strong>
+<code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, and <code>@TestFactory</code> methods in the current
+class; analogous to JUnit 4&#8217;s <code>@BeforeClass</code>. Such methods are inherited unless they are
+overridden and must be <code>static</code> unless the "per-class"
+<a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> is used.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@AfterAll</strong></code></dt>
+<dd>
+<p>Denotes that the annotated method should be executed <em>after</em> <strong>all</strong>
+<code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, and <code>@TestFactory</code> methods in the current
+class; analogous to JUnit 4&#8217;s <code>@AfterClass</code>. Such methods are inherited unless they are
+overridden and must be <code>static</code> unless the "per-class"
+<a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> is used.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@ParameterizedClass</strong></code></dt>
+<dd>
+<p>Denotes that the annotated class is a
+<a href="#writing-tests-parameterized-tests">parameterized class</a>. Such annotations are
+inherited.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@BeforeParameterizedClassInvocation</strong></code></dt>
+<dd>
+<p>Denotes that the annotated method should be
+executed once <em>before</em> each invocation of a
+<a href="#writing-tests-parameterized-tests">parameterized class</a>. Such methods are inherited
+unless they are overridden.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@AfterParameterizedClassInvocation</strong></code></dt>
+<dd>
+<p>Denotes that the annotated method should be
+executed once <em>after</em> each invocation of a
+<a href="#writing-tests-parameterized-tests">parameterized class</a>. Such methods are inherited
+unless they are overridden.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@ClassTemplate</strong></code></dt>
+<dd>
+<p>Denotes that the annotated class is a
+<a href="#writing-tests-class-templates">template for a test class</a> designed to be executed
+multiple times depending on the number of invocation contexts returned by the registered
+<a href="#extensions-class-templates">providers</a>. Such annotations are inherited.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@Nested</strong></code></dt>
+<dd>
+<p>Denotes that the annotated class is a non-static
+<a href="#writing-tests-nested">nested test class</a>. On Java 8 through Java 15, <code>@BeforeAll</code> and
+<code>@AfterAll</code> methods cannot be used directly in a <code>@Nested</code> test class unless the
+"per-class" <a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> is used.
+Beginning with Java 16, <code>@BeforeAll</code> and <code>@AfterAll</code> methods can be declared as <code>static</code>
+in a <code>@Nested</code> test class with either test instance lifecycle mode. Such annotations are
+not inherited.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@Tag</strong></code></dt>
+<dd>
+<p>Used to declare
+<a href="#writing-tests-tagging-and-filtering">tags for filtering tests</a>, either at the class or
+method level; analogous to test groups in TestNG or Categories in JUnit 4. Such
+annotations are inherited at the class level but not at the method level.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@Disabled</strong></code></dt>
+<dd>
+<p>Used to <a href="#writing-tests-disabling">disable</a> a test class or test method;
+analogous to JUnit 4&#8217;s <code>@Ignore</code>. Such annotations are not inherited.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@AutoClose</strong></code></dt>
+<dd>
+<p>Denotes that the annotated field represents a resource that will be
+<a href="#writing-tests-built-in-extensions-AutoClose">automatically closed</a> after test
+execution. Such fields are inherited.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@Timeout</strong></code></dt>
+<dd>
+<p>Used to fail a test, test factory, test template, or lifecycle method if
+its execution exceeds a given duration. Such annotations are inherited.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@TempDir</strong></code></dt>
+<dd>
+<p>Used to supply a
+<a href="#writing-tests-built-in-extensions-TempDirectory">temporary directory</a> via field
+injection or parameter injection in a test class constructor, lifecycle method, or test
+method; located in the <code>org.junit.jupiter.api.io</code> package. Such fields are inherited.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@ExtendWith</strong></code></dt>
+<dd>
+<p>Used to
+<a href="#extensions-registration-declarative">register extensions declaratively</a>. Such
+annotations are inherited.</p>
+</dd>
+<dt class="hdlist1"><code><strong>@RegisterExtension</strong></code></dt>
+<dd>
+<p>Used to
+<a href="#extensions-registration-programmatic">register extensions programmatically</a> via fields.
+Such fields are inherited.</p>
+</dd>
+</dl>
+</div>
 <div class="admonitionblock warning">
 <table>
 <tr>
