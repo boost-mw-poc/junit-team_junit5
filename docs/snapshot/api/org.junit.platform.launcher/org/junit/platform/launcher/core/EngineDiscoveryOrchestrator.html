@@ -221,8 +221,8 @@ loadScripts(document, 'script');</script>
  filters</a> and <a href="../PostDiscoveryFilter.html" title="interface in org.junit.platform.launcher">post-discovery filters</a> and
  <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html#prune()">prunes</a> the resulting test tree.
 
- Note: The test descriptors in the discovery result can safely be used as
- non-root descriptors. Engine-test descriptor entries are pruned from
+ <p>Note: The test descriptors in the discovery result can safely be used
+ as non-root descriptors. Engine-test descriptor entries are pruned from
  the returned result. As such execution by
  <a href="EngineExecutionOrchestrator.html#execute(org.junit.platform.launcher.core.LauncherDiscoveryResult,org.junit.platform.engine.EngineExecutionListener)"><code>EngineExecutionOrchestrator.execute(LauncherDiscoveryResult, EngineExecutionListener)</code></a>
  will not emit start or emit events for engines without tests.</div>
