@@ -766,7 +766,15 @@ pre.rouge .gs {
 <li><a href="#migrating-from-junit4-categories-support">3.1.1. Categories Support</a></li>
 </ul>
 </li>
-<li><a href="#migrating-from-junit4-parallel-execution">3.2. Parallel Execution</a></li>
+<li><a href="#migrating-from-junit4-parallel-execution">3.2. Parallel Execution</a>
+<ul class="sectlevel3">
+<li><a href="#migrating-from-junit4-parallel-execution-class-level">3.2.1. Parallelization at Class Level</a></li>
+<li><a href="#migrating-from-junit4-parallel-execution-method-level">3.2.2. Parallelization at Method Level</a></li>
+<li><a href="#migrating-from-junit4-parallel-execution-class-and-method-level">3.2.3. Full Parallelization</a></li>
+<li><a href="#migrating-from-junit4-parallel-execution-pool-size">3.2.4. Configuring the Pool Size</a></li>
+<li><a href="#migrating-from-junit4-parallel-execution-disabled">3.2.5. Sequential Execution</a></li>
+</ul>
+</li>
 <li><a href="#migrating-from-junit4-tips">3.3. Migration Tips</a>
 <ul class="sectlevel3">
 <li><a href="#migrating-from-junit4-tips-parameterized">3.3.1. Parameterized test classes</a></li>
@@ -8517,8 +8525,93 @@ number of available processors is used.</p>
 </dd>
 </dl>
 </div>
+<div class="sect3">
+<h4 id="migrating-from-junit4-parallel-execution-class-level"><a class="anchor" href="#migrating-from-junit4-parallel-execution-class-level"></a>3.2.1. Parallelization at Class Level</h4>
 <div class="paragraph">
-<p>Example configuration in <code>junit-platform.properties</code>:</p>
+<p>Let&#8217;s assume we have two test classes <code>FooTest</code> and <code>BarTest</code> with each class containing
+three unit tests. Now, let&#8217;s enable parallel execution of test classes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="properties"><span class="py">junit.vintage.execution.parallel.enabled</span><span class="p">=</span><span class="s">true</span>
+<span class="py">junit.vintage.execution.parallel.classes</span><span class="p">=</span><span class="s">true</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With this setup, the <code>VintageTestEngine</code> will use two different threads,
+one for each test class:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="plaintext">ForkJoinPool-1-worker-1 - BarTest::test1
+ForkJoinPool-1-worker-2 - FooTest::test1
+ForkJoinPool-1-worker-1 - BarTest::test2
+ForkJoinPool-1-worker-2 - FooTest::test2
+ForkJoinPool-1-worker-1 - BarTest::test3
+ForkJoinPool-1-worker-2 - FooTest::test3</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="migrating-from-junit4-parallel-execution-method-level"><a class="anchor" href="#migrating-from-junit4-parallel-execution-method-level"></a>3.2.2. Parallelization at Method Level</h4>
+<div class="paragraph">
+<p>Alternatively, we can enable parallel test execution at a method level,
+rather than the class level:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="properties"><span class="py">junit.vintage.execution.parallel.enabled</span><span class="p">=</span><span class="s">true</span>
+<span class="py">junit.vintage.execution.parallel.methods</span><span class="p">=</span><span class="s">true</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Therefore, the test methods within each class will be executed in parallel, while
+different test classes will be executed sequentially:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="plaintext">ForkJoinPool-1-worker-1 - BarTest::test1
+ForkJoinPool-1-worker-2 - BarTest::test2
+ForkJoinPool-1-worker-3 - BarTest::test3
+
+ForkJoinPool-1-worker-3 - FooTest::test1
+ForkJoinPool-1-worker-2 - FooTest::test2
+ForkJoinPool-1-worker-1 - FooTest::test3</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="migrating-from-junit4-parallel-execution-class-and-method-level"><a class="anchor" href="#migrating-from-junit4-parallel-execution-class-and-method-level"></a>3.2.3. Full Parallelization</h4>
+<div class="paragraph">
+<p>Finally, we can also enable parallelization at both class and method level:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="properties"><span class="py">junit.vintage.execution.parallel.enabled</span><span class="p">=</span><span class="s">true</span>
+<span class="py">junit.vintage.execution.parallel.classes</span><span class="p">=</span><span class="s">true</span>
+<span class="py">junit.vintage.execution.parallel.methods</span><span class="p">=</span><span class="s">true</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With these properties set, the <code>VintageTestEngine</code> will execute all tests classes and
+methods in parallel, potentially significantly reducing the overall test suite execution time:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="plaintext">ForkJoinPool-1-worker-6 - FooTest::test2
+ForkJoinPool-1-worker-7 - BarTest::test3
+ForkJoinPool-1-worker-3 - FooTest::test1
+ForkJoinPool-1-worker-8 - FooTest::test3
+ForkJoinPool-1-worker-5 - BarTest::test2
+ForkJoinPool-1-worker-4 - BarTest::test1</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="migrating-from-junit4-parallel-execution-pool-size"><a class="anchor" href="#migrating-from-junit4-parallel-execution-pool-size"></a>3.2.4. Configuring the Pool Size</h4>
+<div class="paragraph">
+<p>The default thread pool size is equal to the number of available processors. However, we
+can also configure the pool size explicitly:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -8529,8 +8622,43 @@ number of available processors is used.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>With these properties set, the <code>VintageTestEngine</code> will execute tests in parallel,
-potentially significantly reducing the overall test suite execution time.</p>
+<p>For instance, if we update our previous example that uses full parallelization and
+configure the pool size to four, we can expect to see our six test methods executed with
+a parallelism of four:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="plaintext">ForkJoinPool-1-worker-2 - FooTest::test1
+ForkJoinPool-1-worker-4 - BarTest::test2
+ForkJoinPool-1-worker-3 - BarTest::test1
+ForkJoinPool-1-worker-4 - BarTest::test3
+ForkJoinPool-1-worker-2 - FooTest::test2
+ForkJoinPool-1-worker-3 - FooTest::test3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As we can see, even though we set the thread pool size was four, only three threads were
+used in this case. This happens because the pool adjusts the number of active threads
+based on workload and system needs.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="migrating-from-junit4-parallel-execution-disabled"><a class="anchor" href="#migrating-from-junit4-parallel-execution-disabled"></a>3.2.5. Sequential Execution</h4>
+<div class="paragraph">
+<p>On the other hand, if we disable parallel execution, the <code>VintageTestEngine</code>
+will execute all tests sequentially, regardless of the other properties:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="properties"><span class="py">junit.vintage.execution.parallel.enabled</span><span class="p">=</span><span class="s">false</span>
+<span class="py">junit.vintage.execution.parallel.classes</span><span class="p">=</span><span class="s">true</span>
+<span class="py">junit.vintage.execution.parallel.methods</span><span class="p">=</span><span class="s">true</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Similarly, tests will be executed sequentially if you enable parallel execution in general
+but enable neither class-level nor method-level parallelization.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
