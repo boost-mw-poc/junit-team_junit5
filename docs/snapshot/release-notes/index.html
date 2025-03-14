@@ -597,6 +597,11 @@ differently. Please refer to the
 <a href="../user-guide/index.html#writing-tests-class-templates">User Guide</a> for details.</p>
 </li>
 <li>
+<p>New <code>BeforeClassTemplateInvocationCallback</code> and <code>AfterClassTemplateInvocationCallback</code>
+extension callback interfaces allow implementing extensions that are invoked before and
+after each invocation of a class template.</p>
+</li>
+<li>
 <p>New <code>@ParameterizedClass</code> support that builds on <code>@ClassTemplate</code> and allows declaring a
 top-level or <code>@Nested</code> test class as a parameterized test class to be invoked multiple
 times with different arguments. The same <code>@&#8230;&#8203;Source</code> annotations supported with
@@ -610,16 +615,18 @@ injection. Please refer to the
 methods that are invoked once before/after each invocation of the parameterized class.</p>
 </li>
 <li>
+<p>Provide access to the parameters and resolved arguments of a <code>@ParameterizedTest</code> or
+<code>@ParameterizedClass</code> by storing <code>ParameterInfo</code> in the <code>ExtensionContext.Store</code> for
+retrieval by other extensions. Please refer to the
+<a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterInfo.html">Javadoc</a>
+for details.</p>
+</li>
+<li>
 <p>New <code>@SentenceFragment</code> annotation which allows one to supply custom text for individual
 sentence fragments when using the <code>IndicativeSentences</code> <code>DisplayNameGenerator</code>. See the
 updated documentation in the
 <a href="../user-guide/index.html#writing-tests-display-name-generator">User Guide</a> for an
 example.</p>
-</li>
-<li>
-<p>New <code>BeforeClassTemplateInvocationCallback</code> and <code>AfterClassTemplateInvocationCallback</code>
-extension callback interfaces allow implementing extensions that are invoked before and
-after each invocation of a class template.</p>
 </li>
 <li>
 <p>New <code>TestTemplateInvocationContext.prepareInvocation(ExtensionContext)</code> callback method
