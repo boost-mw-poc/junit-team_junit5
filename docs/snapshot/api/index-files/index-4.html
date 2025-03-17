@@ -438,6 +438,11 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">The column delimiter string to use when reading the <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/CsvSource.html#value()">records</a>.</div>
 </dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.Severity.html#DEPRECATION" class="member-name-link">DEPRECATION</a> - Enum constant in enum class org.junit.platform.engine.<a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.Severity.html" title="enum class in org.junit.platform.engine">DiscoveryIssue.Severity</a></dt>
+<dd>
+<div class="block">Indicates that a deprecated feature was used that might be removed
+ or change behavior in a future release.</div>
+</dd>
 <dt><a href="../org.junit.vintage.engine/org/junit/vintage/engine/descriptor/VintageTestDescriptor.html#description" class="member-name-link">description</a> - Variable in class org.junit.vintage.engine.descriptor.<a href="../org.junit.vintage.engine/org/junit/vintage/engine/descriptor/VintageTestDescriptor.html" title="class in org.junit.vintage.engine.descriptor">VintageTestDescriptor</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.vintage.engine/org/junit/vintage/engine/descriptor/DescriptionUtils.html" class="type-name-link" title="class in org.junit.vintage.engine.descriptor">DescriptionUtils</a> - Class in <a href="../org.junit.vintage.engine/org/junit/vintage/engine/descriptor/package-summary.html">org.junit.vintage.engine.descriptor</a></dt>
@@ -707,6 +712,29 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">A <a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryFilter.html" title="interface in org.junit.platform.engine"><code>DiscoveryFilter</code></a> is applied during test discovery to determine if
  a given container or test should be included in the test plan.</div>
+</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.html" class="type-name-link" title="interface in org.junit.platform.engine">DiscoveryIssue</a> - Interface in <a href="../org.junit.platform.engine/org/junit/platform/engine/package-summary.html">org.junit.platform.engine</a></dt>
+<dd>
+<div class="block"><code>DiscoveryIssue</code> represents an issue that was encountered during test
+ discovery by a <a href="../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a>.</div>
+</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.Builder.html" class="type-name-link" title="interface in org.junit.platform.engine">DiscoveryIssue.Builder</a> - Interface in <a href="../org.junit.platform.engine/org/junit/platform/engine/package-summary.html">org.junit.platform.engine</a></dt>
+<dd>
+<div class="block">Builder for creating a <code>DiscoveryIssue</code>.</div>
+</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.Severity.html" class="type-name-link" title="enum class in org.junit.platform.engine">DiscoveryIssue.Severity</a> - Enum Class in <a href="../org.junit.platform.engine/org/junit/platform/engine/package-summary.html">org.junit.platform.engine</a></dt>
+<dd>
+<div class="block">The severity of a <code>DiscoveryIssue</code>.</div>
+</dd>
+<dt><a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/DiscoveryIssueException.html" class="type-name-link" title="class in org.junit.platform.launcher.core">DiscoveryIssueException</a> - Exception Class in <a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/package-summary.html">org.junit.platform.launcher.core</a></dt>
+<dd>
+<div class="block"><code>DiscoveryIssueException</code> is an exception that is thrown if an engine
+ reports critical issues during test discovery.</div>
+</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.html" class="type-name-link" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a> - Interface in <a href="../org.junit.platform.engine/org/junit/platform/engine/support/discovery/package-summary.html">org.junit.platform.engine.support.discovery</a></dt>
+<dd>
+<div class="block"><code>DiscoveryIssueReporter</code> defines the API for reporting
+ <a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssues</code></a>.</div>
 </dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelector.html" class="type-name-link" title="interface in org.junit.platform.engine">DiscoverySelector</a> - Interface in <a href="../org.junit.platform.engine/org/junit/platform/engine/package-summary.html">org.junit.platform.engine</a></dt>
 <dd>

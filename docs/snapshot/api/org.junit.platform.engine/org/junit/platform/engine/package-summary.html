@@ -116,98 +116,111 @@ loadScripts(document, 'script');</script>
 <div class="block">A <a href="DiscoveryFilter.html" title="interface in org.junit.platform.engine"><code>DiscoveryFilter</code></a> is applied during test discovery to determine if
  a given container or test should be included in the test plan.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="DiscoverySelector.html" title="interface in org.junit.platform.engine">DiscoverySelector</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="block"><code>DiscoveryIssue</code> represents an issue that was encountered during test
+ discovery by a <a href="TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a>.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="DiscoveryIssue.Builder.html" title="interface in org.junit.platform.engine">DiscoveryIssue.Builder</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="block">Builder for creating a <code>DiscoveryIssue</code>.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="DiscoveryIssue.Severity.html" title="enum class in org.junit.platform.engine">DiscoveryIssue.Severity</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab3">
+<div class="block">The severity of a <code>DiscoveryIssue</code>.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="DiscoverySelector.html" title="interface in org.junit.platform.engine">DiscoverySelector</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A selector defines what a <a href="TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> can use to discover tests
  &mdash; for example, the name of a Java class, the path to a file or
  directory, etc.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="DiscoverySelectorIdentifier.html" title="class in org.junit.platform.engine">DiscoverySelectorIdentifier</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="DiscoverySelectorIdentifier.html" title="class in org.junit.platform.engine">DiscoverySelectorIdentifier</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Identifier for a <a href="DiscoverySelector.html" title="interface in org.junit.platform.engine"><code>DiscoverySelector</code></a> with a specific prefix.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="EngineDiscoveryListener.html" title="interface in org.junit.platform.engine">EngineDiscoveryListener</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="EngineDiscoveryListener.html" title="interface in org.junit.platform.engine">EngineDiscoveryListener</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block"><code>EngineDiscoveryListener</code> contains <a href="TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> access to the
  information necessary to discover tests and containers.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine">EngineDiscoveryRequest</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine">EngineDiscoveryRequest</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block"><code>EngineDiscoveryRequest</code> provides a <a href="TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> access to the
  information necessary to discover tests and containers.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="EngineExecutionListener.html" title="interface in org.junit.platform.engine">EngineExecutionListener</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="EngineExecutionListener.html" title="interface in org.junit.platform.engine">EngineExecutionListener</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Listener to be notified of test execution events by
  <a href="TestEngine.html" title="interface in org.junit.platform.engine">test engines</a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ExecutionRequest.html" title="class in org.junit.platform.engine">ExecutionRequest</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ExecutionRequest.html" title="class in org.junit.platform.engine">ExecutionRequest</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Provides a single <a href="TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> access to the information necessary to
  execute its tests.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Filter.html" title="interface in org.junit.platform.engine">Filter</a>&lt;T&gt;</div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Filter.html" title="interface in org.junit.platform.engine">Filter</a>&lt;T&gt;</div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A <a href="Filter.html" title="interface in org.junit.platform.engine"><code>Filter</code></a> can be applied to determine if an object should be
  <em>included</em> or <em>excluded</em> in a result set.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="FilterResult.html" title="class in org.junit.platform.engine">FilterResult</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="FilterResult.html" title="class in org.junit.platform.engine">FilterResult</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">The result of applying a <a href="Filter.html" title="interface in org.junit.platform.engine"><code>Filter</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="SelectorResolutionResult.html" title="class in org.junit.platform.engine">SelectorResolutionResult</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="SelectorResolutionResult.html" title="class in org.junit.platform.engine">SelectorResolutionResult</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block"><code>SelectorResolutionResult</code> encapsulates the result of resolving a
  <a href="DiscoverySelector.html" title="interface in org.junit.platform.engine"><code>DiscoverySelector</code></a> by a <a href="TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="SelectorResolutionResult.Status.html" title="enum class in org.junit.platform.engine">SelectorResolutionResult.Status</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab3">
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="SelectorResolutionResult.Status.html" title="enum class in org.junit.platform.engine">SelectorResolutionResult.Status</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">Status of resolving a <a href="DiscoverySelector.html" title="interface in org.junit.platform.engine"><code>DiscoverySelector</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TestDescriptor.html" title="interface in org.junit.platform.engine">TestDescriptor</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TestDescriptor.html" title="interface in org.junit.platform.engine">TestDescriptor</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Mutable descriptor for a test or container that has been discovered by a
  <a href="TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="TestDescriptor.Type.html" title="enum class in org.junit.platform.engine">TestDescriptor.Type</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab3">
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="TestDescriptor.Type.html" title="enum class in org.junit.platform.engine">TestDescriptor.Type</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">Supported types for <a href="TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptors</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TestDescriptor.Visitor.html" title="interface in org.junit.platform.engine">TestDescriptor.Visitor</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TestDescriptor.Visitor.html" title="interface in org.junit.platform.engine">TestDescriptor.Visitor</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Visitor for the tree-like <a href="TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a> structure.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TestEngine.html" title="interface in org.junit.platform.engine">TestEngine</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TestEngine.html" title="interface in org.junit.platform.engine">TestEngine</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">A <code>TestEngine</code> facilitates <em>discovery</em> and <em>execution</em> of
  tests for a particular programming model.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="TestExecutionResult.html" title="class in org.junit.platform.engine">TestExecutionResult</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="TestExecutionResult.html" title="class in org.junit.platform.engine">TestExecutionResult</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block"><code>TestExecutionResult</code> encapsulates the result of executing a single test
  or container.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="TestExecutionResult.Status.html" title="enum class in org.junit.platform.engine">TestExecutionResult.Status</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab3">
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="TestExecutionResult.Status.html" title="enum class in org.junit.platform.engine">TestExecutionResult.Status</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">Status of executing a single test or container.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TestSource.html" title="interface in org.junit.platform.engine">TestSource</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TestSource.html" title="interface in org.junit.platform.engine">TestSource</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Representation of the source of a test or container used to navigate to
  its location by IDEs and build tools.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="TestTag.html" title="class in org.junit.platform.engine">TestTag</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="TestTag.html" title="class in org.junit.platform.engine">TestTag</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Immutable value object for a <em>tag</em> that is assigned to a test or
  container.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block"><code>UniqueId</code> encapsulates the creation, parsing, and display of unique IDs
  for <a href="TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptors</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="UniqueId.Segment.html" title="class in org.junit.platform.engine">UniqueId.Segment</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="UniqueId.Segment.html" title="class in org.junit.platform.engine">UniqueId.Segment</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A segment of a <a href="UniqueId.html" title="class in org.junit.platform.engine"><code>UniqueId</code></a> comprises a <em>type</em> and a
  <em>value</em>.</div>
 </div>

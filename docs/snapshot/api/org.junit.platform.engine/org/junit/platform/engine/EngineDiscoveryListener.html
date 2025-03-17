@@ -155,10 +155,17 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#selectorProcessed(org.junit.platform.engine.UniqueId,org.junit.platform.engine.DiscoverySelector,org.junit.platform.engine.SelectorResolutionResult)" class="member-name-link">selectorProcessed</a><wbr>(<a href="UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;engineId,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#issueEncountered(org.junit.platform.engine.UniqueId,org.junit.platform.engine.DiscoveryIssue)" class="member-name-link">issueEncountered</a><wbr>(<a href="UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;engineId,
+ <a href="DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&nbsp;issue)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Called when the engine with the supplied <code>engineId</code> encountered an
+ issue during test discovery.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#selectorProcessed(org.junit.platform.engine.UniqueId,org.junit.platform.engine.DiscoverySelector,org.junit.platform.engine.SelectorResolutionResult)" class="member-name-link">selectorProcessed</a><wbr>(<a href="UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;engineId,
  <a href="DiscoverySelector.html" title="interface in org.junit.platform.engine">DiscoverySelector</a>&nbsp;selector,
  <a href="SelectorResolutionResult.html" title="class in org.junit.platform.engine">SelectorResolutionResult</a>&nbsp;result)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Must be called after a discovery selector has been processed by a test
  engine.</div>
 </div>
@@ -211,6 +218,30 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="SelectorResolutionResult.html" title="class in org.junit.platform.engine"><code>SelectorResolutionResult</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="issueEncountered(org.junit.platform.engine.UniqueId,org.junit.platform.engine.DiscoveryIssue)">
+<h3>issueEncountered</h3>
+<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#EXPERIMENTAL" title="class or interface in org.apiguardian.api" class="external-link">EXPERIMENTAL</a>,
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.13")
+</span><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">issueEncountered</span><wbr><span class="parameters">(<a href="UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;engineId,
+ <a href="DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&nbsp;issue)</span></div>
+<div class="block">Called when the engine with the supplied <code>engineId</code> encountered an
+ issue during test discovery.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>engineId</code> - the unique ID of the engine descriptor</dd>
+<dd><code>issue</code> - the encountered issue</dd>
+<dt>Since:</dt>
+<dd>1.13</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssue</code></a></li>
 </ul>
 </dd>
 </dl>

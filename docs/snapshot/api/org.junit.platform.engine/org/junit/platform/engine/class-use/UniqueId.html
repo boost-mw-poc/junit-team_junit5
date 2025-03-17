@@ -339,10 +339,17 @@ loadScripts(document, 'script');</script>
  <code>UniqueId</code>.</div>
 </div>
 <div class="col-first odd-row-color"><code>default void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">EngineDiscoveryListener.</span><code><a href="../EngineDiscoveryListener.html#selectorProcessed(org.junit.platform.engine.UniqueId,org.junit.platform.engine.DiscoverySelector,org.junit.platform.engine.SelectorResolutionResult)" class="member-name-link">selectorProcessed</a><wbr>(<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;engineId,
+<div class="col-second odd-row-color"><span class="type-name-label">EngineDiscoveryListener.</span><code><a href="../EngineDiscoveryListener.html#issueEncountered(org.junit.platform.engine.UniqueId,org.junit.platform.engine.DiscoveryIssue)" class="member-name-link">issueEncountered</a><wbr>(<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;engineId,
+ <a href="../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&nbsp;issue)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Called when the engine with the supplied <code>engineId</code> encountered an
+ issue during test discovery.</div>
+</div>
+<div class="col-first even-row-color"><code>default void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">EngineDiscoveryListener.</span><code><a href="../EngineDiscoveryListener.html#selectorProcessed(org.junit.platform.engine.UniqueId,org.junit.platform.engine.DiscoverySelector,org.junit.platform.engine.SelectorResolutionResult)" class="member-name-link">selectorProcessed</a><wbr>(<a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;engineId,
  <a href="../DiscoverySelector.html" title="interface in org.junit.platform.engine">DiscoverySelector</a>&nbsp;selector,
  <a href="../SelectorResolutionResult.html" title="class in org.junit.platform.engine">SelectorResolutionResult</a>&nbsp;result)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-last even-row-color">
 <div class="block">Must be called after a discovery selector has been processed by a test
  engine.</div>
 </div>

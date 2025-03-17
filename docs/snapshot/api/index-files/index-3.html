@@ -94,9 +94,21 @@ loadScripts(document, 'script');</script>
 <div class="block">Property name used to enable capturing output to <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html#out" title="class or interface in java.lang" class="external-link"><code>System.out</code></a>:
  "junit.platform.output.capture.stdout"</div>
 </dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.html#cause()" class="member-name-link">cause()</a> - Method in interface org.junit.platform.engine.<a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a></dt>
+<dd>
+<div class="block">Returns the cause of this issue.</div>
+</dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/AssertionFailureBuilder.html#cause(java.lang.Throwable)" class="member-name-link">cause(Throwable)</a> - Method in class org.junit.jupiter.api.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/AssertionFailureBuilder.html" title="class in org.junit.jupiter.api">AssertionFailureBuilder</a></dt>
 <dd>
 <div class="block">Set the cause of the assertion failure.</div>
+</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.Builder.html#cause(java.lang.Throwable)" class="member-name-link">cause(Throwable)</a> - Method in interface org.junit.platform.engine.<a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.Builder.html" title="interface in org.junit.platform.engine">DiscoveryIssue.Builder</a></dt>
+<dd>
+<div class="block">Set the <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that caused the <code>DiscoveryIssue</code>.</div>
+</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.Builder.html#cause(java.util.Optional)" class="member-name-link">cause(Optional&lt;Throwable&gt;)</a> - Method in interface org.junit.platform.engine.<a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.Builder.html" title="interface in org.junit.platform.engine">DiscoveryIssue.Builder</a></dt>
+<dd>
+<div class="block">Set the <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that caused the <code>DiscoveryIssue</code>.</div>
 </dd>
 <dt><a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/TestExecutionResultConditions.html#cause(org.assertj.core.api.Condition...)" class="member-name-link">cause(Condition&lt;Throwable&gt;...)</a> - Static method in class org.junit.platform.testkit.engine.<a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/TestExecutionResultConditions.html" title="class in org.junit.platform.testkit.engine">TestExecutionResultConditions</a></dt>
 <dd>
@@ -845,6 +857,11 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.platform.console/org/junit/platform/console/tasks/ConsoleTestExecutor.Factory.html#create(org.junit.platform.console.options.TestDiscoveryOptions,org.junit.platform.console.options.TestConsoleOutputOptions)" class="member-name-link">create(TestDiscoveryOptions, TestConsoleOutputOptions)</a> - Method in interface org.junit.platform.console.tasks.<a href="../org.junit.platform.console/org/junit/platform/console/tasks/ConsoleTestExecutor.Factory.html" title="interface in org.junit.platform.console.tasks">ConsoleTestExecutor.Factory</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.html#create(org.junit.platform.engine.DiscoveryIssue.Severity,java.lang.String)" class="member-name-link">create(DiscoveryIssue.Severity, String)</a> - Static method in interface org.junit.platform.engine.<a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a></dt>
+<dd>
+<div class="block">Create a new <code>DiscoveryIssue</code> with the supplied <a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.Severity.html" title="enum class in org.junit.platform.engine"><code>DiscoveryIssue.Severity</code></a> and
+ message.</div>
+</dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/ExecutionRequest.html#create(org.junit.platform.engine.TestDescriptor,org.junit.platform.engine.EngineExecutionListener,org.junit.platform.engine.ConfigurationParameters)" class="member-name-link">create(TestDescriptor, EngineExecutionListener, ConfigurationParameters)</a> - Static method in class org.junit.platform.engine.<a href="../org.junit.platform.engine/org/junit/platform/engine/ExecutionRequest.html" title="class in org.junit.platform.engine">ExecutionRequest</a></dt>
 <dd>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
