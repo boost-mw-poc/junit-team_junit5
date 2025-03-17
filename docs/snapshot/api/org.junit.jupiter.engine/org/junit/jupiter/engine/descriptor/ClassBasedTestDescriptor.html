@@ -124,6 +124,15 @@ implements <a href="TestClassAware.html" title="interface in org.junit.jupiter.e
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
 <h2>Nested Class Summary</h2>
+<div class="caption"><span>Nested Classes</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>protected static class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="ClassBasedTestDescriptor.ClassInfo.html" class="type-name-link" title="class in org.junit.jupiter.engine.descriptor">ClassBasedTestDescriptor.ClassInfo</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
 <div class="inherited-list">
 <h2 id="nested-classes-inherited-from-class-org.junit.platform.engine.support.hierarchical.Node">Nested classes/interfaces inherited from interface&nbsp;org.junit.platform.engine.support.hierarchical.<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.html" title="interface in org.junit.platform.engine.support.hierarchical">Node</a></h2>
 <code><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.DynamicTestExecutor.html" title="interface in org.junit.platform.engine.support.hierarchical">Node.DynamicTestExecutor</a>, <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.ExecutionMode.html" title="enum class in org.junit.platform.engine.support.hierarchical">Node.ExecutionMode</a>, <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.Invocation.html" title="interface in org.junit.platform.engine.support.hierarchical">Node.Invocation</a>&lt;<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.Invocation.html" title="type parameter in Node.Invocation">C</a> extends <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/EngineExecutionContext.html" title="interface in org.junit.platform.engine.support.hierarchical">EngineExecutionContext</a>&gt;, <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.SkipResult.html" title="class in org.junit.platform.engine.support.hierarchical">Node.SkipResult</a></code></div>
@@ -141,12 +150,9 @@ implements <a href="TestClassAware.html" title="interface in org.junit.jupiter.e
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected final <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/TestInstance.Lifecycle.html" title="enum class in org.junit.jupiter.api">TestInstance.Lifecycle</a></code></div>
-<div class="col-second even-row-color"><code><a href="#lifecycle" class="member-name-link">lifecycle</a></code></div>
+<div class="col-first even-row-color"><code>protected final <a href="ClassBasedTestDescriptor.ClassInfo.html" title="class in org.junit.jupiter.engine.descriptor">ClassBasedTestDescriptor.ClassInfo</a></code></div>
+<div class="col-second even-row-color"><code><a href="#classInfo" class="member-name-link">classInfo</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestTag.html" title="class in org.junit.platform.engine">TestTag</a>&gt;</code></div>
-<div class="col-second odd-row-color"><code><a href="#tags" class="member-name-link">tags</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-org.junit.platform.engine.support.descriptor.AbstractTestDescriptor">Fields inherited from class&nbsp;org.junit.platform.engine.support.descriptor.<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/descriptor/AbstractTestDescriptor.html" title="class in org.junit.platform.engine.support.descriptor">AbstractTestDescriptor</a></h3>
@@ -260,15 +266,9 @@ implements <a href="TestClassAware.html" title="interface in org.junit.jupiter.e
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="tags">
-<h3>tags</h3>
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestTag.html" title="class in org.junit.platform.engine">TestTag</a>&gt;</span>&nbsp;<span class="element-name">tags</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="lifecycle">
-<h3>lifecycle</h3>
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/TestInstance.Lifecycle.html" title="enum class in org.junit.jupiter.api">TestInstance.Lifecycle</a></span>&nbsp;<span class="element-name">lifecycle</span></div>
+<section class="detail" id="classInfo">
+<h3>classInfo</h3>
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="ClassBasedTestDescriptor.ClassInfo.html" title="class in org.junit.jupiter.engine.descriptor">ClassBasedTestDescriptor.ClassInfo</a></span>&nbsp;<span class="element-name">classInfo</span></div>
 </section>
 </li>
 </ul>
