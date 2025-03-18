@@ -119,15 +119,20 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#visit(org.junit.platform.engine.TestDescriptor)" class="member-name-link">visit</a><wbr>(<a href="TestDescriptor.html" title="interface in org.junit.platform.engine">TestDescriptor</a>&nbsp;descriptor)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="TestDescriptor.Visitor.html" title="interface in org.junit.platform.engine">TestDescriptor.Visitor</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#composite(org.junit.platform.engine.TestDescriptor.Visitor...)" class="member-name-link">composite</a><wbr>(<a href="TestDescriptor.Visitor.html" title="interface in org.junit.platform.engine">TestDescriptor.Visitor</a>...&nbsp;visitors)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1">
+<div class="block">Combine the supplied <code>visitors</code> into a single <code>Visitor</code>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#visit(org.junit.platform.engine.TestDescriptor)" class="member-name-link">visit</a><wbr>(<a href="TestDescriptor.html" title="interface in org.junit.platform.engine">TestDescriptor</a>&nbsp;descriptor)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Visit a <a href="TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a>.</div>
 </div>
 </div>
@@ -144,6 +149,31 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="composite(org.junit.platform.engine.TestDescriptor.Visitor...)">
+<h3>composite</h3>
+<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#EXPERIMENTAL" title="class or interface in org.apiguardian.api" class="external-link">EXPERIMENTAL</a>,
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.13")
+</span><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="TestDescriptor.Visitor.html" title="interface in org.junit.platform.engine">TestDescriptor.Visitor</a></span>&nbsp;<span class="element-name">composite</span><wbr><span class="parameters">(<a href="TestDescriptor.Visitor.html" title="interface in org.junit.platform.engine">TestDescriptor.Visitor</a>...&nbsp;visitors)</span></div>
+<div class="block">Combine the supplied <code>visitors</code> into a single <code>Visitor</code>.
+
+ <p>If the supplied array contains only a single <code>Visitor</code>, that
+ <code>Visitor</code> is returned as is.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>visitors</code> - the <code>Visitor</code>s to combine; never <code>null</code>
+ or empty</dd>
+<dt>Returns:</dt>
+<dd>the combined <code>Visitor</code></dd>
+<dt>Throws:</dt>
+<dd><code><a href="../../../../../org.junit.platform.commons/org/junit/platform/commons/PreconditionViolationException.html" title="class in org.junit.platform.commons">PreconditionViolationException</a></code> - if
+ <code>visitors</code> is <code>null</code>, contains <code>null</code> elements, or
+ is empty</dd>
+<dt>Since:</dt>
+<dd>1.13</dd>
+</dl>
+</section>
+</li>
 <li>
 <section class="detail" id="visit(org.junit.platform.engine.TestDescriptor)">
 <h3>visit</h3>

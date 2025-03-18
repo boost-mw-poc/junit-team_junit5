@@ -253,7 +253,13 @@ loadScripts(document, 'script');</script>
 <h3>addTestDescriptorVisitor</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="EngineDiscoveryRequestResolver.Builder.html" title="class in org.junit.platform.engine.support.discovery">EngineDiscoveryRequestResolver.Builder</a>&lt;<a href="EngineDiscoveryRequestResolver.Builder.html" title="type parameter in EngineDiscoveryRequestResolver.Builder">T</a>&gt;</span>&nbsp;<span class="element-name">addTestDescriptorVisitor</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="EngineDiscoveryRequestResolver.InitializationContext.html" title="interface in org.junit.platform.engine.support.discovery">EngineDiscoveryRequestResolver.InitializationContext</a>&lt;<a href="EngineDiscoveryRequestResolver.Builder.html" title="type parameter in EngineDiscoveryRequestResolver.Builder">T</a>&gt;,<wbr><a href="../../TestDescriptor.Visitor.html" title="interface in org.junit.platform.engine">TestDescriptor.Visitor</a>&gt;&nbsp;visitorCreator)</span></div>
 <div class="block">Add a context sensitive <a href="../../TestDescriptor.Visitor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor.Visitor</code></a> to this
- builder.</div>
+ builder.
+
+ <p>If multiple <a href="../../TestDescriptor.Visitor.html" title="interface in org.junit.platform.engine">visitors</a> are registered,
+ they will iterate over the test tree separately. To avoid the overhead of
+ multiple iterations, consider combining multiple visitors into a single
+ visitor using
+ <a href="../../TestDescriptor.Visitor.html#composite(org.junit.platform.engine.TestDescriptor.Visitor...)"><code>TestDescriptor.Visitor.composite(TestDescriptor.Visitor...)</code></a>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>visitorCreator</code> - the function that will be called to create the
