@@ -265,6 +265,13 @@ loadScripts(document, 'script');</script>
 <div class="block">Status of test discovery by a
  <a href="../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a>.</div>
 </dd>
+<dt><a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/EngineDiscoveryResults.html" class="type-name-link" title="class in org.junit.platform.testkit.engine">EngineDiscoveryResults</a> - Class in <a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/package-summary.html">org.junit.platform.testkit.engine</a></dt>
+<dd>
+<div class="block"><code>EngineDiscoveryResults</code> represents the results of test discovery
+ by a <a href="../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> on the JUnit
+ Platform and provides access to the <a href="../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a> of the engine
+ and any <a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssues</code></a> that were encountered.</div>
+</dd>
 <dt><a href="../org.junit.platform.jfr/org/junit/platform/jfr/FlightRecordingDiscoveryListener.html#engineDiscoveryStarted(org.junit.platform.engine.UniqueId)" class="member-name-link">engineDiscoveryStarted(UniqueId)</a> - Method in class org.junit.platform.jfr.<a href="../org.junit.platform.jfr/org/junit/platform/jfr/FlightRecordingDiscoveryListener.html" title="class in org.junit.platform.jfr">FlightRecordingDiscoveryListener</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryListener.html#engineDiscoveryStarted(org.junit.platform.engine.UniqueId)" class="member-name-link">engineDiscoveryStarted(UniqueId)</a> - Method in interface org.junit.platform.launcher.<a href="../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryListener.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryListener</a></dt>
@@ -300,9 +307,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/EngineTestKit.html" class="type-name-link" title="class in org.junit.platform.testkit.engine">EngineTestKit</a> - Class in <a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/package-summary.html">org.junit.platform.testkit.engine</a></dt>
 <dd>
-<div class="block"><code>EngineTestKit</code> provides support for executing a test plan for a given
- <a href="../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> and then accessing the results via
- <a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/EngineExecutionResults.html" title="class in org.junit.platform.testkit.engine">a fluent API</a> to verify the expected results.</div>
+<div class="block"><code>EngineTestKit</code> provides support for discovering and executing tests
+ for a given <a href="../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> and provides convenient access to the results.</div>
 </dd>
 <dt><a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/EngineTestKit.Builder.html" class="type-name-link" title="class in org.junit.platform.testkit.engine">EngineTestKit.Builder</a> - Class in <a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/package-summary.html">org.junit.platform.testkit.engine</a></dt>
 <dd>

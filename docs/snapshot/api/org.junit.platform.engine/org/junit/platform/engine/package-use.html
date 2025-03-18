@@ -737,34 +737,39 @@ loadScripts(document, 'script');</script>
 <div class="block">Configuration parameters that <a href="TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngines</code></a> may use to
  influence test discovery and execution.</div>
 </div>
-<div class="col-first odd-row-color"><a href="class-use/DiscoverySelector.html#org.junit.platform.launcher.core">DiscoverySelector</a></div>
+<div class="col-first odd-row-color"><a href="class-use/DiscoveryIssue.html#org.junit.platform.launcher.core">DiscoveryIssue</a></div>
 <div class="col-last odd-row-color">
+<div class="block"><code>DiscoveryIssue</code> represents an issue that was encountered during test
+ discovery by a <a href="TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a>.</div>
+</div>
+<div class="col-first even-row-color"><a href="class-use/DiscoverySelector.html#org.junit.platform.launcher.core">DiscoverySelector</a></div>
+<div class="col-last even-row-color">
 <div class="block">A selector defines what a <a href="TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> can use to discover tests
  &mdash; for example, the name of a Java class, the path to a file or
  directory, etc.</div>
 </div>
-<div class="col-first even-row-color"><a href="class-use/EngineExecutionListener.html#org.junit.platform.launcher.core">EngineExecutionListener</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="class-use/EngineExecutionListener.html#org.junit.platform.launcher.core">EngineExecutionListener</a></div>
+<div class="col-last odd-row-color">
 <div class="block">Listener to be notified of test execution events by
  <a href="TestEngine.html" title="interface in org.junit.platform.engine">test engines</a>.</div>
 </div>
-<div class="col-first odd-row-color"><a href="class-use/Filter.html#org.junit.platform.launcher.core">Filter</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="class-use/Filter.html#org.junit.platform.launcher.core">Filter</a></div>
+<div class="col-last even-row-color">
 <div class="block">A <a href="Filter.html" title="interface in org.junit.platform.engine"><code>Filter</code></a> can be applied to determine if an object should be
  <em>included</em> or <em>excluded</em> in a result set.</div>
 </div>
-<div class="col-first even-row-color"><a href="class-use/TestDescriptor.html#org.junit.platform.launcher.core">TestDescriptor</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="class-use/TestDescriptor.html#org.junit.platform.launcher.core">TestDescriptor</a></div>
+<div class="col-last odd-row-color">
 <div class="block">Mutable descriptor for a test or container that has been discovered by a
  <a href="TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a>.</div>
 </div>
-<div class="col-first odd-row-color"><a href="class-use/TestEngine.html#org.junit.platform.launcher.core">TestEngine</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="class-use/TestEngine.html#org.junit.platform.launcher.core">TestEngine</a></div>
+<div class="col-last even-row-color">
 <div class="block">A <code>TestEngine</code> facilitates <em>discovery</em> and <em>execution</em> of
  tests for a particular programming model.</div>
 </div>
-<div class="col-first even-row-color"><a href="class-use/UniqueId.html#org.junit.platform.launcher.core">UniqueId</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="class-use/UniqueId.html#org.junit.platform.launcher.core">UniqueId</a></div>
+<div class="col-last odd-row-color">
 <div class="block"><code>UniqueId</code> encapsulates the creation, parsing, and display of unique IDs
  for <a href="TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptors</code></a>.</div>
 </div>
@@ -897,48 +902,53 @@ loadScripts(document, 'script');</script>
 <div class="block">A <a href="DiscoveryFilter.html" title="interface in org.junit.platform.engine"><code>DiscoveryFilter</code></a> is applied during test discovery to determine if
  a given container or test should be included in the test plan.</div>
 </div>
-<div class="col-first odd-row-color"><a href="class-use/DiscoverySelector.html#org.junit.platform.testkit.engine">DiscoverySelector</a></div>
+<div class="col-first odd-row-color"><a href="class-use/DiscoveryIssue.html#org.junit.platform.testkit.engine">DiscoveryIssue</a></div>
 <div class="col-last odd-row-color">
+<div class="block"><code>DiscoveryIssue</code> represents an issue that was encountered during test
+ discovery by a <a href="TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a>.</div>
+</div>
+<div class="col-first even-row-color"><a href="class-use/DiscoverySelector.html#org.junit.platform.testkit.engine">DiscoverySelector</a></div>
+<div class="col-last even-row-color">
 <div class="block">A selector defines what a <a href="TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> can use to discover tests
  &mdash; for example, the name of a Java class, the path to a file or
  directory, etc.</div>
 </div>
-<div class="col-first even-row-color"><a href="class-use/EngineDiscoveryRequest.html#org.junit.platform.testkit.engine">EngineDiscoveryRequest</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="class-use/EngineDiscoveryRequest.html#org.junit.platform.testkit.engine">EngineDiscoveryRequest</a></div>
+<div class="col-last odd-row-color">
 <div class="block"><code>EngineDiscoveryRequest</code> provides a <a href="TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> access to the
  information necessary to discover tests and containers.</div>
 </div>
-<div class="col-first odd-row-color"><a href="class-use/EngineExecutionListener.html#org.junit.platform.testkit.engine">EngineExecutionListener</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="class-use/EngineExecutionListener.html#org.junit.platform.testkit.engine">EngineExecutionListener</a></div>
+<div class="col-last even-row-color">
 <div class="block">Listener to be notified of test execution events by
  <a href="TestEngine.html" title="interface in org.junit.platform.engine">test engines</a>.</div>
 </div>
-<div class="col-first even-row-color"><a href="class-use/Filter.html#org.junit.platform.testkit.engine">Filter</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="class-use/Filter.html#org.junit.platform.testkit.engine">Filter</a></div>
+<div class="col-last odd-row-color">
 <div class="block">A <a href="Filter.html" title="interface in org.junit.platform.engine"><code>Filter</code></a> can be applied to determine if an object should be
  <em>included</em> or <em>excluded</em> in a result set.</div>
 </div>
-<div class="col-first odd-row-color"><a href="class-use/TestDescriptor.html#org.junit.platform.testkit.engine">TestDescriptor</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="class-use/TestDescriptor.html#org.junit.platform.testkit.engine">TestDescriptor</a></div>
+<div class="col-last even-row-color">
 <div class="block">Mutable descriptor for a test or container that has been discovered by a
  <a href="TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a>.</div>
 </div>
-<div class="col-first even-row-color"><a href="class-use/TestEngine.html#org.junit.platform.testkit.engine">TestEngine</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="class-use/TestEngine.html#org.junit.platform.testkit.engine">TestEngine</a></div>
+<div class="col-last odd-row-color">
 <div class="block">A <code>TestEngine</code> facilitates <em>discovery</em> and <em>execution</em> of
  tests for a particular programming model.</div>
 </div>
-<div class="col-first odd-row-color"><a href="class-use/TestExecutionResult.html#org.junit.platform.testkit.engine">TestExecutionResult</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="class-use/TestExecutionResult.html#org.junit.platform.testkit.engine">TestExecutionResult</a></div>
+<div class="col-last even-row-color">
 <div class="block"><code>TestExecutionResult</code> encapsulates the result of executing a single test
  or container.</div>
 </div>
-<div class="col-first even-row-color"><a href="class-use/TestExecutionResult.Status.html#org.junit.platform.testkit.engine">TestExecutionResult.Status</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="class-use/TestExecutionResult.Status.html#org.junit.platform.testkit.engine">TestExecutionResult.Status</a></div>
+<div class="col-last odd-row-color">
 <div class="block">Status of executing a single test or container.</div>
 </div>
-<div class="col-first odd-row-color"><a href="class-use/UniqueId.html#org.junit.platform.testkit.engine">UniqueId</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="class-use/UniqueId.html#org.junit.platform.testkit.engine">UniqueId</a></div>
+<div class="col-last even-row-color">
 <div class="block"><code>UniqueId</code> encapsulates the creation, parsing, and display of unique IDs
  for <a href="TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptors</code></a>.</div>
 </div>

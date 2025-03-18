@@ -66,6 +66,17 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">Configurable test discovery implementation that can be reused by different test engines.</div>
 </div>
+<div class="col-first even-row-color"><a href="#org.junit.platform.launcher.core">org.junit.platform.launcher.core</a></div>
+<div class="col-last even-row-color">
+<div class="block">Core support classes for the <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/Launcher.html" title="interface in org.junit.platform.launcher"><code>Launcher</code></a>
+ including the <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/core/LauncherFactory.html" title="class in org.junit.platform.launcher.core"><code>LauncherFactory</code></a>
+ and the <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/core/LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core"><code>LauncherDiscoveryRequestBuilder</code></a>.</div>
+</div>
+<div class="col-first odd-row-color"><a href="#org.junit.platform.testkit.engine">org.junit.platform.testkit.engine</a></div>
+<div class="col-last odd-row-color">
+<div class="block">Test Kit for testing the execution of a <a href="../TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a>
+ running on the JUnit Platform.</div>
+</div>
 </div>
 <section class="class-uses">
 <ul class="block-list">
@@ -117,6 +128,36 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><span class="type-name-label">DiscoveryIssueReporter.</span><code><a href="../support/discovery/DiscoveryIssueReporter.html#reportIssue(org.junit.platform.engine.DiscoveryIssue)" class="member-name-link">reportIssue</a><wbr>(<a href="../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&nbsp;issue)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Report the supplied <a href="../DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssue</code></a>.</div>
+</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.junit.platform.launcher.core">
+<h2>Uses of <a href="../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a> in <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/core/package-summary.html">org.junit.platform.launcher.core</a></h2>
+<div class="caption"><span>Methods in <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/core/package-summary.html">org.junit.platform.launcher.core</a> that return types with arguments of type <a href="../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LauncherDiscoveryResult.</span><code><a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/core/LauncherDiscoveryResult.html#getDiscoveryIssues(org.junit.platform.engine.TestEngine)" class="member-name-link">getDiscoveryIssues</a><wbr>(<a href="../TestEngine.html" title="interface in org.junit.platform.engine">TestEngine</a>&nbsp;testEngine)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.junit.platform.testkit.engine">
+<h2>Uses of <a href="../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a> in <a href="../../../../../../org.junit.platform.testkit/org/junit/platform/testkit/engine/package-summary.html">org.junit.platform.testkit.engine</a></h2>
+<div class="caption"><span>Methods in <a href="../../../../../../org.junit.platform.testkit/org/junit/platform/testkit/engine/package-summary.html">org.junit.platform.testkit.engine</a> that return types with arguments of type <a href="../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">EngineDiscoveryResults.</span><code><a href="../../../../../../org.junit.platform.testkit/org/junit/platform/testkit/engine/EngineDiscoveryResults.html#getDiscoveryIssues()" class="member-name-link">getDiscoveryIssues</a>()</code></div>
+<div class="col-last even-row-color">
+<div class="block">Returns the issues that were encountered during discovery.</div>
 </div>
 </div>
 </section>

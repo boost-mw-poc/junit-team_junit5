@@ -99,9 +99,14 @@ loadScripts(document, 'script');</script>
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.7")
 </span><span class="modifiers">public final class </span><span class="element-name type-name-label">EngineTestKit</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block"><code>EngineTestKit</code> provides support for executing a test plan for a given
- <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> and then accessing the results via
- <a href="EngineExecutionResults.html" title="class in org.junit.platform.testkit.engine">a fluent API</a> to verify the expected results.</div>
+<div class="block"><code>EngineTestKit</code> provides support for discovering and executing tests
+ for a given <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> and provides convenient access to the results.
+
+ <p>For <em>discovery</em>, <a href="EngineDiscoveryResults.html" title="class in org.junit.platform.testkit.engine"><code>EngineDiscoveryResults</code></a> provides access to
+ the <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a> of the engine and any <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssues</code></a> that were encountered.
+
+ <p>For <em>execution</em>, <a href="EngineExecutionResults.html" title="class in org.junit.platform.testkit.engine"><code>EngineExecutionResults</code></a> provides a fluent
+ API to verify the expected results.</div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>1.4</dd>
@@ -110,8 +115,11 @@ loadScripts(document, 'script');</script>
 <ul class="tag-list-long">
 <li><a href="#engine(java.lang.String)"><code>engine(String)</code></a></li>
 <li><a href="#engine(org.junit.platform.engine.TestEngine)"><code>engine(TestEngine)</code></a></li>
+<li><a href="#discover(java.lang.String,org.junit.platform.launcher.LauncherDiscoveryRequest)"><code>discover(String, LauncherDiscoveryRequest)</code></a></li>
+<li><a href="#discover(org.junit.platform.engine.TestEngine,org.junit.platform.launcher.LauncherDiscoveryRequest)"><code>discover(TestEngine, LauncherDiscoveryRequest)</code></a></li>
 <li><a href="#execute(java.lang.String,org.junit.platform.launcher.LauncherDiscoveryRequest)"><code>execute(String, LauncherDiscoveryRequest)</code></a></li>
 <li><a href="#execute(org.junit.platform.engine.TestEngine,org.junit.platform.launcher.LauncherDiscoveryRequest)"><code>execute(TestEngine, LauncherDiscoveryRequest)</code></a></li>
+<li><a href="EngineDiscoveryResults.html" title="class in org.junit.platform.testkit.engine"><code>EngineDiscoveryResults</code></a></li>
 <li><a href="EngineExecutionResults.html" title="class in org.junit.platform.testkit.engine"><code>EngineExecutionResults</code></a></li>
 </ul>
 </dd>
@@ -147,6 +155,20 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="EngineDiscoveryResults.html" title="class in org.junit.platform.testkit.engine">EngineDiscoveryResults</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#discover(java.lang.String,org.junit.platform.launcher.LauncherDiscoveryRequest)" class="member-name-link">discover</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;engineId,
+ <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a>&nbsp;discoveryRequest)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Discover tests for the given <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher"><code>LauncherDiscoveryRequest</code></a> using the
+ <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> with the supplied ID.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="EngineDiscoveryResults.html" title="class in org.junit.platform.testkit.engine">EngineDiscoveryResults</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#discover(org.junit.platform.engine.TestEngine,org.junit.platform.launcher.LauncherDiscoveryRequest)" class="member-name-link">discover</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine">TestEngine</a>&nbsp;testEngine,
+ <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a>&nbsp;discoveryRequest)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Discover tests for the given <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher"><code>LauncherDiscoveryRequest</code></a> using the
+ supplied <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a>.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="EngineTestKit.Builder.html" title="class in org.junit.platform.testkit.engine">EngineTestKit.Builder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#engine(java.lang.String)" class="member-name-link">engine</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;engineId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -279,6 +301,83 @@ loadScripts(document, 'script');</script>
 <li><a href="#engine(java.lang.String)"><code>engine(String)</code></a></li>
 <li><a href="#execute(java.lang.String,org.junit.platform.launcher.LauncherDiscoveryRequest)"><code>execute(String, LauncherDiscoveryRequest)</code></a></li>
 <li><a href="#execute(org.junit.platform.engine.TestEngine,org.junit.platform.launcher.LauncherDiscoveryRequest)"><code>execute(TestEngine, LauncherDiscoveryRequest)</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="discover(java.lang.String,org.junit.platform.launcher.LauncherDiscoveryRequest)">
+<h3>discover</h3>
+<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#EXPERIMENTAL" title="class or interface in org.apiguardian.api" class="external-link">EXPERIMENTAL</a>,
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.13")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="EngineDiscoveryResults.html" title="class in org.junit.platform.testkit.engine">EngineDiscoveryResults</a></span>&nbsp;<span class="element-name">discover</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;engineId,
+ <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a>&nbsp;discoveryRequest)</span></div>
+<div class="block">Discover tests for the given <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher"><code>LauncherDiscoveryRequest</code></a> using the
+ <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> with the supplied ID.
+
+ <p>The <code>TestEngine</code> will be loaded via Java's <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a>
+ mechanism, analogous to the manner in which test engines are loaded in
+ the JUnit Platform Launcher API.
+
+ <p><a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/core/LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core"><code>LauncherDiscoveryRequestBuilder</code></a>
+ provides a convenient way to build an appropriate discovery request to
+ supply to this method. As an alternative, consider using
+ <a href="#engine(org.junit.platform.engine.TestEngine)"><code>engine(TestEngine)</code></a> for a more fluent API.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>engineId</code> - the ID of the <code>TestEngine</code> to use; must not be
+ <code>null</code> or <em>blank</em></dd>
+<dd><code>discoveryRequest</code> - the <code>LauncherDiscoveryRequest</code> to use</dd>
+<dt>Returns:</dt>
+<dd>the results of the discovery</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../../../../../../org.junit.platform.commons/org/junit/platform/commons/PreconditionViolationException.html" title="class in org.junit.platform.commons">PreconditionViolationException</a></code> - for invalid arguments or if the
+ <code>TestEngine</code> with the supplied ID cannot be loaded</dd>
+<dt>Since:</dt>
+<dd>1.13</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="#discover(org.junit.platform.engine.TestEngine,org.junit.platform.launcher.LauncherDiscoveryRequest)"><code>discover(TestEngine, LauncherDiscoveryRequest)</code></a></li>
+<li><a href="#engine(java.lang.String)"><code>engine(String)</code></a></li>
+<li><a href="#engine(org.junit.platform.engine.TestEngine)"><code>engine(TestEngine)</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="discover(org.junit.platform.engine.TestEngine,org.junit.platform.launcher.LauncherDiscoveryRequest)">
+<h3>discover</h3>
+<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#EXPERIMENTAL" title="class or interface in org.apiguardian.api" class="external-link">EXPERIMENTAL</a>,
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.13")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="EngineDiscoveryResults.html" title="class in org.junit.platform.testkit.engine">EngineDiscoveryResults</a></span>&nbsp;<span class="element-name">discover</span><wbr><span class="parameters">(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine">TestEngine</a>&nbsp;testEngine,
+ <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a>&nbsp;discoveryRequest)</span></div>
+<div class="block">Discover tests for the given <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher"><code>LauncherDiscoveryRequest</code></a> using the
+ supplied <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a>.
+
+ <p><a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/core/LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core"><code>LauncherDiscoveryRequestBuilder</code></a>
+ provides a convenient way to build an appropriate discovery request to
+ supply to this method. As an alternative, consider using
+ <a href="#engine(org.junit.platform.engine.TestEngine)"><code>engine(TestEngine)</code></a> for a more fluent API.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>testEngine</code> - the <code>TestEngine</code> to use; must not be <code>null</code></dd>
+<dd><code>discoveryRequest</code> - the <code>EngineDiscoveryResults</code> to use; must
+ not be <code>null</code></dd>
+<dt>Returns:</dt>
+<dd>the recorded <code>EngineExecutionResults</code></dd>
+<dt>Throws:</dt>
+<dd><code><a href="../../../../../../org.junit.platform.commons/org/junit/platform/commons/PreconditionViolationException.html" title="class in org.junit.platform.commons">PreconditionViolationException</a></code> - for invalid arguments</dd>
+<dt>Since:</dt>
+<dd>1.13</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="#discover(java.lang.String,org.junit.platform.launcher.LauncherDiscoveryRequest)"><code>discover(String, LauncherDiscoveryRequest)</code></a></li>
+<li><a href="#engine(java.lang.String)"><code>engine(String)</code></a></li>
+<li><a href="#engine(org.junit.platform.engine.TestEngine)"><code>engine(TestEngine)</code></a></li>
 </ul>
 </dd>
 </dl>

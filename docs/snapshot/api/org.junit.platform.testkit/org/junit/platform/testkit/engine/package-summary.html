@@ -87,70 +87,76 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Class</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="EngineExecutionResults.html" title="class in org.junit.platform.testkit.engine">EngineExecutionResults</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="EngineDiscoveryResults.html" title="class in org.junit.platform.testkit.engine">EngineDiscoveryResults</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block"><code>EngineDiscoveryResults</code> represents the results of test discovery
+ by a <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> on the JUnit
+ Platform and provides access to the <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a> of the engine
+ and any <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssues</code></a> that were encountered.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="EngineExecutionResults.html" title="class in org.junit.platform.testkit.engine">EngineExecutionResults</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block"><code>EngineExecutionResults</code> provides a fluent API for processing the
  results of executing a test plan on the JUnit Platform for a given
  <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="EngineTestKit.html" title="class in org.junit.platform.testkit.engine">EngineTestKit</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block"><code>EngineTestKit</code> provides support for executing a test plan for a given
- <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> and then accessing the results via
- <a href="EngineExecutionResults.html" title="class in org.junit.platform.testkit.engine">a fluent API</a> to verify the expected results.</div>
-</div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="EngineTestKit.Builder.html" title="class in org.junit.platform.testkit.engine">EngineTestKit.Builder</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="EngineTestKit.html" title="class in org.junit.platform.testkit.engine">EngineTestKit</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block"><code>EngineTestKit</code> provides support for discovering and executing tests
+ for a given <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> and provides convenient access to the results.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="EngineTestKit.Builder.html" title="class in org.junit.platform.testkit.engine">EngineTestKit.Builder</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block"><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a> execution builder.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Event.html" title="class in org.junit.platform.testkit.engine">Event</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Event.html" title="class in org.junit.platform.testkit.engine">Event</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block"><code>Event</code> represents a single event fired during execution of
  a test plan on the JUnit Platform.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="EventConditions.html" title="class in org.junit.platform.testkit.engine">EventConditions</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="EventConditions.html" title="class in org.junit.platform.testkit.engine">EventConditions</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Collection of AssertJ <a href="https://javadoc.io/doc/org.assertj/assertj-core/3.27.3/org/assertj/core/api/Condition.html" title="class or interface in org.assertj.core.api" class="external-link">conditions</a> for <a href="Event.html" title="class in org.junit.platform.testkit.engine"><code>Event</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Events.html" title="class in org.junit.platform.testkit.engine">Events</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Events.html" title="class in org.junit.platform.testkit.engine">Events</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block"><code>Events</code> is a facade that provides a fluent API for working with
  <a href="Event.html" title="class in org.junit.platform.testkit.engine">events</a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="EventStatistics.html" title="class in org.junit.platform.testkit.engine">EventStatistics</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="EventStatistics.html" title="class in org.junit.platform.testkit.engine">EventStatistics</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block"><code>EventStatistics</code> provides a fluent API for asserting statistics
  for <a href="Event.html" title="class in org.junit.platform.testkit.engine">events</a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="EventType.html" title="enum class in org.junit.platform.testkit.engine">EventType</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab3">
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="EventType.html" title="enum class in org.junit.platform.testkit.engine">EventType</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">Enumeration of the different possible <a href="Event.html" title="class in org.junit.platform.testkit.engine"><code>Event</code></a> types.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Execution.html" title="class in org.junit.platform.testkit.engine">Execution</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Execution.html" title="class in org.junit.platform.testkit.engine">Execution</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block"><code>Execution</code> encapsulates metadata for the execution of a single
  <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ExecutionRecorder.html" title="class in org.junit.platform.testkit.engine">ExecutionRecorder</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ExecutionRecorder.html" title="class in org.junit.platform.testkit.engine">ExecutionRecorder</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block"><code>ExecutionRecorder</code> is an <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/EngineExecutionListener.html" title="interface in org.junit.platform.engine"><code>EngineExecutionListener</code></a> that records
  data from every event that occurs during the engine execution lifecycle and
  provides functionality for retrieving execution state via
  <a href="EngineExecutionResults.html" title="class in org.junit.platform.testkit.engine"><code>EngineExecutionResults</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Executions.html" title="class in org.junit.platform.testkit.engine">Executions</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Executions.html" title="class in org.junit.platform.testkit.engine">Executions</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block"><code>Executions</code> is a facade that provides a fluent API for working with
  <a href="Execution.html" title="class in org.junit.platform.testkit.engine">executions</a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="TerminationInfo.html" title="class in org.junit.platform.testkit.engine">TerminationInfo</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="TerminationInfo.html" title="class in org.junit.platform.testkit.engine">TerminationInfo</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block"><code>TerminationInfo</code> is a union type that allows propagation of terminated
  container/test state, supporting either the <em>reason</em> if the container/test
  was skipped or the <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestExecutionResult.html" title="class in org.junit.platform.engine"><code>TestExecutionResult</code></a> if the container/test was executed.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="TestExecutionResultConditions.html" title="class in org.junit.platform.testkit.engine">TestExecutionResultConditions</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="TestExecutionResultConditions.html" title="class in org.junit.platform.testkit.engine">TestExecutionResultConditions</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Collection of AssertJ <a href="https://javadoc.io/doc/org.assertj/assertj-core/3.27.3/org/assertj/core/api/Condition.html" title="class or interface in org.assertj.core.api" class="external-link">conditions</a> for
  <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestExecutionResult.html" title="class in org.junit.platform.engine"><code>TestExecutionResult</code></a>.</div>
 </div>
