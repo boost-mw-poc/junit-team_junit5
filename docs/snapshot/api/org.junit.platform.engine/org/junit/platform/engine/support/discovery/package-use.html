@@ -58,13 +58,31 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Package</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><a href="#org.junit.platform.engine.support.discovery">org.junit.platform.engine.support.discovery</a></div>
+<div class="col-first even-row-color"><a href="#org.junit.jupiter.engine.descriptor">org.junit.jupiter.engine.descriptor</a></div>
 <div class="col-last even-row-color">
+<div class="block">Test descriptors used within the JUnit Jupiter test engine.</div>
+</div>
+<div class="col-first odd-row-color"><a href="#org.junit.platform.engine.support.discovery">org.junit.platform.engine.support.discovery</a></div>
+<div class="col-last odd-row-color">
 <div class="block">Configurable test discovery implementation that can be reused by different test engines.</div>
 </div>
 </div>
 <section class="package-uses">
 <ul class="block-list">
+<li>
+<section class="detail" id="org.junit.jupiter.engine.descriptor">
+<div class="caption"><span>Classes in <a href="package-summary.html">org.junit.platform.engine.support.discovery</a> used by <a href="../../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/package-summary.html">org.junit.jupiter.engine.descriptor</a></span></div>
+<div class="summary-table two-column-summary">
+<div class="table-header col-first">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><a href="class-use/DiscoveryIssueReporter.html#org.junit.jupiter.engine.descriptor">DiscoveryIssueReporter</a></div>
+<div class="col-last even-row-color">
+<div class="block"><code>DiscoveryIssueReporter</code> defines the API for reporting
+ <a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssues</code></a>.</div>
+</div>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="org.junit.platform.engine.support.discovery">
 <div class="caption"><span>Classes in <a href="package-summary.html">org.junit.platform.engine.support.discovery</a> used by <a href="package-summary.html">org.junit.platform.engine.support.discovery</a></span></div>
@@ -76,39 +94,43 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>DiscoveryIssueReporter</code> defines the API for reporting
  <a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssues</code></a>.</div>
 </div>
-<div class="col-first odd-row-color"><a href="class-use/EngineDiscoveryRequestResolver.html#org.junit.platform.engine.support.discovery">EngineDiscoveryRequestResolver</a></div>
+<div class="col-first odd-row-color"><a href="class-use/DiscoveryIssueReporter.Condition.html#org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a></div>
 <div class="col-last odd-row-color">
+<div class="block">A <code>Condition</code> is a union of <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a> and <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
+</div>
+<div class="col-first even-row-color"><a href="class-use/EngineDiscoveryRequestResolver.html#org.junit.platform.engine.support.discovery">EngineDiscoveryRequestResolver</a></div>
+<div class="col-last even-row-color">
 <div class="block">Configurable test discovery implementation based on <a href="SelectorResolver.html" title="interface in org.junit.platform.engine.support.discovery"><code>SelectorResolver</code></a>
  and <a href="../../TestDescriptor.Visitor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor.Visitor</code></a> that can be reused by different
  <a href="../../TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngines</code></a>.</div>
 </div>
-<div class="col-first even-row-color"><a href="class-use/EngineDiscoveryRequestResolver.Builder.html#org.junit.platform.engine.support.discovery">EngineDiscoveryRequestResolver.Builder</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="class-use/EngineDiscoveryRequestResolver.Builder.html#org.junit.platform.engine.support.discovery">EngineDiscoveryRequestResolver.Builder</a></div>
+<div class="col-last odd-row-color">
 <div class="block">Builder for <a href="EngineDiscoveryRequestResolver.html" title="class in org.junit.platform.engine.support.discovery"><code>EngineDiscoveryRequestResolver</code></a>.</div>
 </div>
-<div class="col-first odd-row-color"><a href="class-use/EngineDiscoveryRequestResolver.InitializationContext.html#org.junit.platform.engine.support.discovery">EngineDiscoveryRequestResolver.InitializationContext</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="class-use/EngineDiscoveryRequestResolver.InitializationContext.html#org.junit.platform.engine.support.discovery">EngineDiscoveryRequestResolver.InitializationContext</a></div>
+<div class="col-last even-row-color">
 <div class="block">The initialization context for creating <a href="SelectorResolver.html" title="interface in org.junit.platform.engine.support.discovery">resolvers</a> and <a href="../../TestDescriptor.Visitor.html" title="interface in org.junit.platform.engine">visitors</a> that depend
  on the <a href="../../EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryRequest</code></a> to be resolved or the engine
  descriptor that will be used to collect the results.</div>
 </div>
-<div class="col-first even-row-color"><a href="class-use/SelectorResolver.html#org.junit.platform.engine.support.discovery">SelectorResolver</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="class-use/SelectorResolver.html#org.junit.platform.engine.support.discovery">SelectorResolver</a></div>
+<div class="col-last odd-row-color">
 <div class="block">A resolver that supports resolving one or multiple types of
  <a href="../../DiscoverySelector.html" title="interface in org.junit.platform.engine"><code>DiscoverySelectors</code></a>.</div>
 </div>
-<div class="col-first odd-row-color"><a href="class-use/SelectorResolver.Context.html#org.junit.platform.engine.support.discovery">SelectorResolver.Context</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="class-use/SelectorResolver.Context.html#org.junit.platform.engine.support.discovery">SelectorResolver.Context</a></div>
+<div class="col-last even-row-color">
 <div class="block">The context for resolving a <a href="../../DiscoverySelector.html" title="interface in org.junit.platform.engine"><code>DiscoverySelector</code></a> and adding it to
  the test tree.</div>
 </div>
-<div class="col-first even-row-color"><a href="class-use/SelectorResolver.Match.html#org.junit.platform.engine.support.discovery">SelectorResolver.Match</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="class-use/SelectorResolver.Match.html#org.junit.platform.engine.support.discovery">SelectorResolver.Match</a></div>
+<div class="col-last odd-row-color">
 <div class="block">An exact or partial match for resolving a <a href="../../DiscoverySelector.html" title="interface in org.junit.platform.engine"><code>DiscoverySelector</code></a> into
  a <a href="../../TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a>.</div>
 </div>
-<div class="col-first odd-row-color"><a href="class-use/SelectorResolver.Resolution.html#org.junit.platform.engine.support.discovery">SelectorResolver.Resolution</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="class-use/SelectorResolver.Resolution.html#org.junit.platform.engine.support.discovery">SelectorResolver.Resolution</a></div>
+<div class="col-last even-row-color">
 <div class="block">The result of an attempt to resolve a <a href="../../DiscoverySelector.html" title="interface in org.junit.platform.engine"><code>DiscoverySelector</code></a>.</div>
 </div>
 </div>

@@ -42,7 +42,7 @@ loadScripts(document, 'script');</script>
 <li>
 <p>Summary:</p>
 <ul>
-<li>Nested</li>
+<li><a href="#nested-class-summary">Nested</a></li>
 <li>Field</li>
 <li>Constr</li>
 <li><a href="#method-summary">Method</a></li>
@@ -62,7 +62,7 @@ loadScripts(document, 'script');</script>
 <div id="navbar-sub-list">
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested-class-summary">Nested</a>&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
@@ -95,9 +95,14 @@ loadScripts(document, 'script');</script>
 <dt>All Known Subinterfaces:</dt>
 <dd><code><a href="SelectorResolver.Context.html" title="interface in org.junit.platform.engine.support.discovery">SelectorResolver.Context</a></code></dd>
 </dl>
+<dl class="notes">
+<dt>Functional Interface:</dt>
+<dd>This is a functional interface and can therefore be used as the assignment target for a lambda expression or method reference.</dd>
+</dl>
 <hr>
 <div class="type-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#EXPERIMENTAL" title="class or interface in org.apiguardian.api" class="external-link">EXPERIMENTAL</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.13")
+<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">@FunctionalInterface</a>
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">DiscoveryIssueReporter</span></div>
 <div class="block"><code>DiscoveryIssueReporter</code> defines the API for reporting
  <a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssues</code></a>.</div>
@@ -114,17 +119,48 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<li>
+<section class="nested-class-summary" id="nested-class-summary">
+<h2>Nested Class Summary</h2>
+<div class="caption"><span>Nested Classes</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Interface</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="DiscoveryIssueReporter.Condition.html" class="type-name-link" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a>&lt;<a href="DiscoveryIssueReporter.Condition.html" title="type parameter in DiscoveryIssueReporter.Condition">T</a>&gt;</code></div>
+<div class="col-last even-row-color">
+<div class="block">A <code>Condition</code> is a union of <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a> and <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
+</div>
+</div>
+</section>
+</li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#create(org.junit.platform.engine.EngineDiscoveryListener,org.junit.platform.engine.UniqueId)" class="member-name-link">create</a><wbr>(<a href="../../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine">EngineDiscoveryListener</a>&nbsp;engineDiscoveryListener,
+ <a href="../../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;engineId)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1">
+<div class="block">Create a new <code>DiscoveryIssueReporter</code> that reports issues to the
+ supplied <a href="../../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryListener</code></a> for the specified engine.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;T&gt;&nbsp;<a href="DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#createReportingCondition(java.util.function.Predicate,java.util.function.Function)" class="member-name-link">createReportingCondition</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;T&gt;&nbsp;predicate,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;T,<wbr><a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&gt;&nbsp;issueCreator)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Create a <a href="DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery"><code>DiscoveryIssueReporter.Condition</code></a> that reports a <a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssue</code></a> when the
+ supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a> is not met.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reportIssue(org.junit.platform.engine.DiscoveryIssue)" class="member-name-link">reportIssue</a><wbr>(<a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&nbsp;issue)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -151,6 +187,21 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
+<section class="detail" id="create(org.junit.platform.engine.EngineDiscoveryListener,org.junit.platform.engine.UniqueId)">
+<h3>create</h3>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></span>&nbsp;<span class="element-name">create</span><wbr><span class="parameters">(<a href="../../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine">EngineDiscoveryListener</a>&nbsp;engineDiscoveryListener,
+ <a href="../../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;engineId)</span></div>
+<div class="block">Create a new <code>DiscoveryIssueReporter</code> that reports issues to the
+ supplied <a href="../../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryListener</code></a> for the specified engine.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>engineDiscoveryListener</code> - the listener to report issues to; never
+ <code>null</code></dd>
+<dd><code>engineId</code> - the unique identifier of the engine; never <code>null</code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="reportIssue(org.junit.platform.engine.DiscoveryIssue.Builder)">
 <h3>reportIssue</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">reportIssue</span><wbr><span class="parameters">(<a href="../../DiscoveryIssue.Builder.html" title="interface in org.junit.platform.engine">DiscoveryIssue.Builder</a>&nbsp;builder)</span></div>
@@ -163,6 +214,22 @@ loadScripts(document, 'script');</script>
 <h3>reportIssue</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">reportIssue</span><wbr><span class="parameters">(<a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&nbsp;issue)</span></div>
 <div class="block">Report the supplied <a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssue</code></a>.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="createReportingCondition(java.util.function.Predicate,java.util.function.Function)">
+<h3>createReportingCondition</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a>&lt;T&gt;</span>&nbsp;<span class="element-name">createReportingCondition</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;T&gt;&nbsp;predicate,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;T,<wbr><a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&gt;&nbsp;issueCreator)</span></div>
+<div class="block">Create a <a href="DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery"><code>DiscoveryIssueReporter.Condition</code></a> that reports a <a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssue</code></a> when the
+ supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a> is not met.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>predicate</code> - the predicate to test; never <code>null</code></dd>
+<dd><code>issueCreator</code> - the function to create the issue with; never <code>null</code></dd>
+<dt>Returns:</dt>
+<dd>a new <code>Condition</code>; never <code>null</code></dd>
+</dl>
 </section>
 </li>
 </ul>

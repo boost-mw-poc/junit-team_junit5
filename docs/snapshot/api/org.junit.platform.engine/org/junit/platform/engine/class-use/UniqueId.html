@@ -82,39 +82,43 @@ loadScripts(document, 'script');</script>
  intended to be used by test engine implementations and clients of
  the launcher.</div>
 </div>
-<div class="col-first odd-row-color"><a href="#org.junit.platform.jfr">org.junit.platform.jfr</a></div>
+<div class="col-first odd-row-color"><a href="#org.junit.platform.engine.support.discovery">org.junit.platform.engine.support.discovery</a></div>
 <div class="col-last odd-row-color">
+<div class="block">Configurable test discovery implementation that can be reused by different test engines.</div>
+</div>
+<div class="col-first even-row-color"><a href="#org.junit.platform.jfr">org.junit.platform.jfr</a></div>
+<div class="col-last even-row-color">
 <div class="block">Java Flight Recorder support package.</div>
 </div>
-<div class="col-first even-row-color"><a href="#org.junit.platform.launcher">org.junit.platform.launcher</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="#org.junit.platform.launcher">org.junit.platform.launcher</a></div>
+<div class="col-last odd-row-color">
 <div class="block">Public API for configuring and launching test plans.</div>
 </div>
-<div class="col-first odd-row-color"><a href="#org.junit.platform.launcher.core">org.junit.platform.launcher.core</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="#org.junit.platform.launcher.core">org.junit.platform.launcher.core</a></div>
+<div class="col-last even-row-color">
 <div class="block">Core support classes for the <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/Launcher.html" title="interface in org.junit.platform.launcher"><code>Launcher</code></a>
  including the <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/core/LauncherFactory.html" title="class in org.junit.platform.launcher.core"><code>LauncherFactory</code></a>
  and the <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/core/LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core"><code>LauncherDiscoveryRequestBuilder</code></a>.</div>
 </div>
-<div class="col-first even-row-color"><a href="#org.junit.platform.suite.engine">org.junit.platform.suite.engine</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="#org.junit.platform.suite.engine">org.junit.platform.suite.engine</a></div>
+<div class="col-last odd-row-color">
 <div class="block">Core package for the JUnit Platform Suite test engine.</div>
 </div>
-<div class="col-first odd-row-color"><a href="#org.junit.platform.testkit.engine">org.junit.platform.testkit.engine</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="#org.junit.platform.testkit.engine">org.junit.platform.testkit.engine</a></div>
+<div class="col-last even-row-color">
 <div class="block">Test Kit for testing the execution of a <a href="../TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a>
  running on the JUnit Platform.</div>
 </div>
-<div class="col-first even-row-color"><a href="#org.junit.vintage.engine">org.junit.vintage.engine</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="#org.junit.vintage.engine">org.junit.vintage.engine</a></div>
+<div class="col-last odd-row-color">
 <div class="block">Core package for the JUnit Vintage test engine.</div>
 </div>
-<div class="col-first odd-row-color"><a href="#org.junit.vintage.engine.descriptor">org.junit.vintage.engine.descriptor</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="#org.junit.vintage.engine.descriptor">org.junit.vintage.engine.descriptor</a></div>
+<div class="col-last even-row-color">
 <div class="block">Test descriptors used within the JUnit Vintage test engine.</div>
 </div>
-<div class="col-first even-row-color"><a href="#org.junit.vintage.engine.discovery">org.junit.vintage.engine.discovery</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="#org.junit.vintage.engine.discovery">org.junit.vintage.engine.discovery</a></div>
+<div class="col-last odd-row-color">
 <div class="block">Internal classes for test discovery within the JUnit Vintage test engine.</div>
 </div>
 </div>
@@ -430,6 +434,24 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Create a new <code>EngineDescriptor</code> with the supplied <a href="../UniqueId.html" title="class in org.junit.platform.engine"><code>UniqueId</code></a>
  and display name.</div>
+</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.junit.platform.engine.support.discovery">
+<h2>Uses of <a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a> in <a href="../support/discovery/package-summary.html">org.junit.platform.engine.support.discovery</a></h2>
+<div class="caption"><span>Methods in <a href="../support/discovery/package-summary.html">org.junit.platform.engine.support.discovery</a> with parameters of type <a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static <a href="../support/discovery/DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">DiscoveryIssueReporter.</span><code><a href="../support/discovery/DiscoveryIssueReporter.html#create(org.junit.platform.engine.EngineDiscoveryListener,org.junit.platform.engine.UniqueId)" class="member-name-link">create</a><wbr>(<a href="../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine">EngineDiscoveryListener</a>&nbsp;engineDiscoveryListener,
+ <a href="../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;engineId)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Create a new <code>DiscoveryIssueReporter</code> that reports issues to the
+ supplied <a href="../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryListener</code></a> for the specified engine.</div>
 </div>
 </div>
 </section>
