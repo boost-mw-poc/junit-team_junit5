@@ -240,15 +240,15 @@ implements <a href="Filterable.html" title="interface in org.junit.jupiter.engin
 <div class="block">Remove this descriptor from the hierarchy unless it is a root or contains
  tests.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validate(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)" class="member-name-link">validate</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;reporter)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validateClassTemplateInvocationLifecycleMethods(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)" class="member-name-link">validateClassTemplateInvocationLifecycleMethods</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;reporter)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validateCoreLifecycleMethods(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)" class="member-name-link">validateCoreLifecycleMethods</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;reporter)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="ClassTemplateTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassTemplateTestDescriptor</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withUniqueId(java.util.function.UnaryOperator)" class="member-name-link">withUniqueId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Validate the state of this descriptor and report any issues found to the
- supplied <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery"><code>DiscoveryIssueReporter</code></a>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="ClassTemplateTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassTemplateTestDescriptor</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withUniqueId(java.util.function.UnaryOperator)" class="member-name-link">withUniqueId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/UnaryOperator.html" title="class or interface in java.util.function" class="external-link">UnaryOperator</a>&lt;<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&gt;&nbsp;uniqueIdTransformer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns shallow copy (without children) of this descriptor with the supplied unique ID.</div>
 </div>
 </div>
@@ -256,7 +256,7 @@ implements <a href="Filterable.html" title="interface in org.junit.jupiter.engin
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor">Methods inherited from class&nbsp;org.junit.jupiter.engine.descriptor.<a href="ClassBasedTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassBasedTestDescriptor</a></h3>
-<code><a href="ClassBasedTestDescriptor.html#after(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)">after</a>, <a href="ClassBasedTestDescriptor.html#before(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)">before</a>, <a href="ClassBasedTestDescriptor.html#getDefaultChildExecutionMode()">getDefaultChildExecutionMode</a>, <a href="ClassBasedTestDescriptor.html#getExclusiveResourceCollector()">getExclusiveResourceCollector</a>, <a href="ClassBasedTestDescriptor.html#getExplicitExecutionMode()">getExplicitExecutionMode</a>, <a href="ClassBasedTestDescriptor.html#getLegacyReportingName()">getLegacyReportingName</a>, <a href="ClassBasedTestDescriptor.html#getTestClass()">getTestClass</a>, <a href="ClassBasedTestDescriptor.html#getType()">getType</a>, <a href="ClassBasedTestDescriptor.html#instantiateTestClass(java.util.Optional,org.junit.jupiter.engine.extension.ExtensionRegistry,org.junit.jupiter.engine.execution.ExtensionContextSupplier)">instantiateTestClass</a>, <a href="ClassBasedTestDescriptor.html#prepare(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)">prepare</a>, <a href="ClassBasedTestDescriptor.html#setDefaultChildExecutionMode(org.junit.platform.engine.support.hierarchical.Node.ExecutionMode)">setDefaultChildExecutionMode</a></code></div>
+<code><a href="ClassBasedTestDescriptor.html#after(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)">after</a>, <a href="ClassBasedTestDescriptor.html#before(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)">before</a>, <a href="ClassBasedTestDescriptor.html#getDefaultChildExecutionMode()">getDefaultChildExecutionMode</a>, <a href="ClassBasedTestDescriptor.html#getExclusiveResourceCollector()">getExclusiveResourceCollector</a>, <a href="ClassBasedTestDescriptor.html#getExplicitExecutionMode()">getExplicitExecutionMode</a>, <a href="ClassBasedTestDescriptor.html#getLegacyReportingName()">getLegacyReportingName</a>, <a href="ClassBasedTestDescriptor.html#getTestClass()">getTestClass</a>, <a href="ClassBasedTestDescriptor.html#getType()">getType</a>, <a href="ClassBasedTestDescriptor.html#instantiateTestClass(java.util.Optional,org.junit.jupiter.engine.extension.ExtensionRegistry,org.junit.jupiter.engine.execution.ExtensionContextSupplier)">instantiateTestClass</a>, <a href="ClassBasedTestDescriptor.html#prepare(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)">prepare</a>, <a href="ClassBasedTestDescriptor.html#setDefaultChildExecutionMode(org.junit.platform.engine.support.hierarchical.Node.ExecutionMode)">setDefaultChildExecutionMode</a>, <a href="ClassBasedTestDescriptor.html#validate(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)">validate</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.junit.jupiter.engine.descriptor.JupiterTestDescriptor">Methods inherited from class&nbsp;org.junit.jupiter.engine.descriptor.<a href="JupiterTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">JupiterTestDescriptor</a></h3>
 <code><a href="JupiterTestDescriptor.html#getExecutionMode()">getExecutionMode</a>, <a href="JupiterTestDescriptor.html#shouldBeSkipped(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext)">shouldBeSkipped</a>, <a href="JupiterTestDescriptor.html#toExecutionMode(org.junit.jupiter.api.parallel.ExecutionMode)">toExecutionMode</a></code></div>
@@ -358,17 +358,22 @@ implements <a href="Filterable.html" title="interface in org.junit.jupiter.engin
 </section>
 </li>
 <li>
-<section class="detail" id="validate(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)">
-<h3>validate</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">validate</span><wbr><span class="parameters">(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;reporter)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Validatable.html#validate(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)">Validatable</a></code></span></div>
-<div class="block">Validate the state of this descriptor and report any issues found to the
- supplied <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery"><code>DiscoveryIssueReporter</code></a>.</div>
+<section class="detail" id="validateCoreLifecycleMethods(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)">
+<h3>validateCoreLifecycleMethods</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">validateCoreLifecycleMethods</span><wbr><span class="parameters">(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;reporter)</span></div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Validatable.html#validate(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)">validate</a></code>&nbsp;in interface&nbsp;<code><a href="Validatable.html" title="interface in org.junit.jupiter.engine.descriptor">Validatable</a></code></dd>
 <dt>Overrides:</dt>
-<dd><code><a href="ClassBasedTestDescriptor.html#validate(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)">validate</a></code>&nbsp;in class&nbsp;<code><a href="ClassBasedTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassBasedTestDescriptor</a></code></dd>
+<dd><code><a href="ClassBasedTestDescriptor.html#validateCoreLifecycleMethods(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)">validateCoreLifecycleMethods</a></code>&nbsp;in class&nbsp;<code><a href="ClassBasedTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassBasedTestDescriptor</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="validateClassTemplateInvocationLifecycleMethods(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)">
+<h3>validateClassTemplateInvocationLifecycleMethods</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">validateClassTemplateInvocationLifecycleMethods</span><wbr><span class="parameters">(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;reporter)</span></div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="ClassBasedTestDescriptor.html#validateClassTemplateInvocationLifecycleMethods(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)">validateClassTemplateInvocationLifecycleMethods</a></code>&nbsp;in class&nbsp;<code><a href="ClassBasedTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassBasedTestDescriptor</a></code></dd>
 </dl>
 </section>
 </li>
