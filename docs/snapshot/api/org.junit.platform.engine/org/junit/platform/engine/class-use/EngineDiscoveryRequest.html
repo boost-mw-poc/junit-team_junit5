@@ -174,7 +174,19 @@ loadScripts(document, 'script');</script>
  <a href="../support/discovery/EngineDiscoveryRequestResolver.html" title="type parameter in EngineDiscoveryRequestResolver">T</a>&nbsp;engineDescriptor)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Resolve the supplied <a href="../EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryRequest</code></a> and collect the
- results into the supplied <a href="../TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a>.</div>
+ results into the supplied <a href="../TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a> while forwarding
+ encountered discovery issues to the <a href="../EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryRequest</code></a>'s
+ <a href="../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryListener</code></a>.</div>
+</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">EngineDiscoveryRequestResolver.</span><code><a href="../support/discovery/EngineDiscoveryRequestResolver.html#resolve(org.junit.platform.engine.EngineDiscoveryRequest,T,org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)" class="member-name-link">resolve</a><wbr>(<a href="../EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine">EngineDiscoveryRequest</a>&nbsp;request,
+ <a href="../support/discovery/EngineDiscoveryRequestResolver.html" title="type parameter in EngineDiscoveryRequestResolver">T</a>&nbsp;engineDescriptor,
+ <a href="../support/discovery/DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;issueReporter)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Resolve the supplied <a href="../EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryRequest</code></a> and collect the
+ results into the supplied <a href="../TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a> using the supplied
+ <a href="../support/discovery/DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery"><code>DiscoveryIssueReporter</code></a> to report issues encountered during
+ resolution.</div>
 </div>
 </div>
 </section>

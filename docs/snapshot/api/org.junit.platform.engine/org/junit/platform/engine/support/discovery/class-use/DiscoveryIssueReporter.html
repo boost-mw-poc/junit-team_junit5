@@ -62,8 +62,12 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Test descriptors used within the JUnit Jupiter test engine.</div>
 </div>
-<div class="col-first odd-row-color"><a href="#org.junit.platform.engine.support.discovery">org.junit.platform.engine.support.discovery</a></div>
+<div class="col-first odd-row-color"><a href="#org.junit.jupiter.engine.discovery.predicates">org.junit.jupiter.engine.discovery.predicates</a></div>
 <div class="col-last odd-row-color">
+<div class="block">Internal predicate classes used by test discovery within the JUnit Jupiter test engine.</div>
+</div>
+<div class="col-first even-row-color"><a href="#org.junit.platform.engine.support.discovery">org.junit.platform.engine.support.discovery</a></div>
+<div class="col-last even-row-color">
 <div class="block">Configurable test discovery implementation that can be reused by different test engines.</div>
 </div>
 </div>
@@ -102,6 +106,29 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="org.junit.jupiter.engine.discovery.predicates">
+<h2>Uses of <a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a> in <a href="../../../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/discovery/predicates/package-summary.html">org.junit.jupiter.engine.discovery.predicates</a></h2>
+<div class="caption"><span>Constructors in <a href="../../../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/discovery/predicates/package-summary.html">org.junit.jupiter.engine.discovery.predicates</a> with parameters of type <a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier</div>
+<div class="table-header col-second">Constructor</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/discovery/predicates/IsTestClassWithTests.html#%3Cinit%3E(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)" class="member-name-link">IsTestClassWithTests</a><wbr>(<a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;issueReporter)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/discovery/predicates/IsTestFactoryMethod.html#%3Cinit%3E(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)" class="member-name-link">IsTestFactoryMethod</a><wbr>(<a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;issueReporter)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/discovery/predicates/IsTestMethod.html#%3Cinit%3E(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)" class="member-name-link">IsTestMethod</a><wbr>(<a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;issueReporter)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../../../../../../../../org.junit.jupiter.engine/org/junit/jupiter/engine/discovery/predicates/IsTestTemplateMethod.html#%3Cinit%3E(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)" class="member-name-link">IsTestTemplateMethod</a><wbr>(<a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;issueReporter)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="org.junit.platform.engine.support.discovery">
 <h2>Uses of <a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a> in <a href="../package-summary.html">org.junit.platform.engine.support.discovery</a></h2>
 <div class="caption"><span>Methods in <a href="../package-summary.html">org.junit.platform.engine.support.discovery</a> that return <a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></span></div>
@@ -110,16 +137,44 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static <a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">DiscoveryIssueReporter.</span><code><a href="../DiscoveryIssueReporter.html#create(org.junit.platform.engine.EngineDiscoveryListener,org.junit.platform.engine.UniqueId)" class="member-name-link">create</a><wbr>(<a href="../../../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine">EngineDiscoveryListener</a>&nbsp;engineDiscoveryListener,
- <a href="../../../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;engineId)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">DiscoveryIssueReporter.</span><code><a href="../DiscoveryIssueReporter.html#deduplicating(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)" class="member-name-link">deduplicating</a><wbr>(<a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;delegate)</code></div>
 <div class="col-last even-row-color">
+<div class="block">Create a new <code>DiscoveryIssueReporter</code> that avoids reporting
+ duplicate issues.</div>
+</div>
+<div class="col-first odd-row-color"><code>static <a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DiscoveryIssueReporter.</span><code><a href="../DiscoveryIssueReporter.html#forwarding(org.junit.platform.engine.EngineDiscoveryListener,org.junit.platform.engine.UniqueId)" class="member-name-link">forwarding</a><wbr>(<a href="../../../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine">EngineDiscoveryListener</a>&nbsp;engineDiscoveryListener,
+ <a href="../../../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;engineId)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Create a new <code>DiscoveryIssueReporter</code> that reports issues to the
  supplied <a href="../../../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryListener</code></a> for the specified engine.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">EngineDiscoveryRequestResolver.InitializationContext.</span><code><a href="../EngineDiscoveryRequestResolver.InitializationContext.html#getIssueReporter()" class="member-name-link">getIssueReporter</a>()</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code><a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">EngineDiscoveryRequestResolver.InitializationContext.</span><code><a href="../EngineDiscoveryRequestResolver.InitializationContext.html#getIssueReporter()" class="member-name-link">getIssueReporter</a>()</code></div>
+<div class="col-last even-row-color">
 <div class="block">Returns the <a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery"><code>DiscoveryIssueReporter</code></a> for the current
+ resolution.</div>
+</div>
+</div>
+<div class="caption"><span>Methods in <a href="../package-summary.html">org.junit.platform.engine.support.discovery</a> with parameters of type <a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static <a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">DiscoveryIssueReporter.</span><code><a href="../DiscoveryIssueReporter.html#deduplicating(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)" class="member-name-link">deduplicating</a><wbr>(<a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;delegate)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Create a new <code>DiscoveryIssueReporter</code> that avoids reporting
+ duplicate issues.</div>
+</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">EngineDiscoveryRequestResolver.</span><code><a href="../EngineDiscoveryRequestResolver.html#resolve(org.junit.platform.engine.EngineDiscoveryRequest,T,org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)" class="member-name-link">resolve</a><wbr>(<a href="../../../EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine">EngineDiscoveryRequest</a>&nbsp;request,
+ <a href="../EngineDiscoveryRequestResolver.html" title="type parameter in EngineDiscoveryRequestResolver">T</a>&nbsp;engineDescriptor,
+ <a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;issueReporter)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Resolve the supplied <a href="../../../EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryRequest</code></a> and collect the
+ results into the supplied <a href="../../../TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a> using the supplied
+ <a href="../DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery"><code>DiscoveryIssueReporter</code></a> to report issues encountered during
  resolution.</div>
 </div>
 </div>

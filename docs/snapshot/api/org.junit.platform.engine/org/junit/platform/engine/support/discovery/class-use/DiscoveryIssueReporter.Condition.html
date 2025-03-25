@@ -73,11 +73,11 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static &lt;T&gt;&nbsp;<a href="../DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">DiscoveryIssueReporter.Condition.</span><code><a href="../DiscoveryIssueReporter.Condition.html#allOf(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter.Condition...)" class="member-name-link">allOf</a><wbr>(<a href="../DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a>&lt;? super T&gt;...&nbsp;conditions)</code></div>
+<div class="col-first even-row-color"><code>default <a href="../DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a><wbr>&lt;<a href="../DiscoveryIssueReporter.Condition.html" title="type parameter in DiscoveryIssueReporter.Condition">T</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">DiscoveryIssueReporter.Condition.</span><code><a href="../DiscoveryIssueReporter.Condition.html#and(java.util.function.Predicate)" class="member-name-link">and</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super <a href="../DiscoveryIssueReporter.Condition.html" title="type parameter in DiscoveryIssueReporter.Condition">T</a>&gt;&nbsp;other)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Return a composed condition that represents a logical AND of the
- supplied conditions without short-circuiting.</div>
+<div class="block">Return a composed condition that represents a logical AND of this
+ and the supplied condition.</div>
 </div>
 <div class="col-first odd-row-color"><code>default &lt;T&gt;&nbsp;<a href="../DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a><wbr>&lt;T&gt;</code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">DiscoveryIssueReporter.</span><code><a href="../DiscoveryIssueReporter.html#createReportingCondition(java.util.function.Predicate,java.util.function.Function)" class="member-name-link">createReportingCondition</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;T&gt;&nbsp;predicate,
@@ -85,18 +85,6 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">Create a <a href="../DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery"><code>DiscoveryIssueReporter.Condition</code></a> that reports a <a href="../../../DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssue</code></a> when the
  supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a> is not met.</div>
-</div>
-</div>
-<div class="caption"><span>Methods in <a href="../package-summary.html">org.junit.platform.engine.support.discovery</a> with parameters of type <a href="../DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a></span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static &lt;T&gt;&nbsp;<a href="../DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">DiscoveryIssueReporter.Condition.</span><code><a href="../DiscoveryIssueReporter.Condition.html#allOf(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter.Condition...)" class="member-name-link">allOf</a><wbr>(<a href="../DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a>&lt;? super T&gt;...&nbsp;conditions)</code></div>
-<div class="col-last even-row-color">
-<div class="block">Return a composed condition that represents a logical AND of the
- supplied conditions without short-circuiting.</div>
 </div>
 </div>
 </section>

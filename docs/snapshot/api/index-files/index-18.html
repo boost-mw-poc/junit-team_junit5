@@ -452,7 +452,16 @@ loadScripts(document, 'script');</script>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/discovery/EngineDiscoveryRequestResolver.html#resolve(org.junit.platform.engine.EngineDiscoveryRequest,T)" class="member-name-link">resolve(EngineDiscoveryRequest, T)</a> - Method in class org.junit.platform.engine.support.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/support/discovery/EngineDiscoveryRequestResolver.html" title="class in org.junit.platform.engine.support.discovery">EngineDiscoveryRequestResolver</a></dt>
 <dd>
 <div class="block">Resolve the supplied <a href="../org.junit.platform.engine/org/junit/platform/engine/EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryRequest</code></a> and collect the
- results into the supplied <a href="../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a>.</div>
+ results into the supplied <a href="../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a> while forwarding
+ encountered discovery issues to the <a href="../org.junit.platform.engine/org/junit/platform/engine/EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryRequest</code></a>'s
+ <a href="../org.junit.platform.engine/org/junit/platform/engine/EngineDiscoveryListener.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryListener</code></a>.</div>
+</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/discovery/EngineDiscoveryRequestResolver.html#resolve(org.junit.platform.engine.EngineDiscoveryRequest,T,org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)" class="member-name-link">resolve(EngineDiscoveryRequest, T, DiscoveryIssueReporter)</a> - Method in class org.junit.platform.engine.support.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/support/discovery/EngineDiscoveryRequestResolver.html" title="class in org.junit.platform.engine.support.discovery">EngineDiscoveryRequestResolver</a></dt>
+<dd>
+<div class="block">Resolve the supplied <a href="../org.junit.platform.engine/org/junit/platform/engine/EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryRequest</code></a> and collect the
+ results into the supplied <a href="../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a> using the supplied
+ <a href="../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery"><code>DiscoveryIssueReporter</code></a> to report issues encountered during
+ resolution.</div>
 </dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/SelectorResolutionResult.html#resolved()" class="member-name-link">resolved()</a> - Static method in class org.junit.platform.engine.<a href="../org.junit.platform.engine/org/junit/platform/engine/SelectorResolutionResult.html" title="class in org.junit.platform.engine">SelectorResolutionResult</a></dt>
 <dd>

@@ -169,7 +169,19 @@ loadScripts(document, 'script');</script>
  <a href="EngineDiscoveryRequestResolver.html" title="type parameter in EngineDiscoveryRequestResolver">T</a>&nbsp;engineDescriptor)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Resolve the supplied <a href="../../EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryRequest</code></a> and collect the
- results into the supplied <a href="../../TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a>.</div>
+ results into the supplied <a href="../../TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a> while forwarding
+ encountered discovery issues to the <a href="../../EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryRequest</code></a>'s
+ <a href="../../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryListener</code></a>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolve(org.junit.platform.engine.EngineDiscoveryRequest,T,org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)" class="member-name-link">resolve</a><wbr>(<a href="../../EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine">EngineDiscoveryRequest</a>&nbsp;request,
+ <a href="EngineDiscoveryRequestResolver.html" title="type parameter in EngineDiscoveryRequestResolver">T</a>&nbsp;engineDescriptor,
+ <a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;issueReporter)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Resolve the supplied <a href="../../EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryRequest</code></a> and collect the
+ results into the supplied <a href="../../TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a> using the supplied
+ <a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery"><code>DiscoveryIssueReporter</code></a> to report issues encountered during
+ resolution.</div>
 </div>
 </div>
 </div>
@@ -194,7 +206,9 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">resolve</span><wbr><span class="parameters">(<a href="../../EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine">EngineDiscoveryRequest</a>&nbsp;request,
  <a href="EngineDiscoveryRequestResolver.html" title="type parameter in EngineDiscoveryRequestResolver">T</a>&nbsp;engineDescriptor)</span></div>
 <div class="block">Resolve the supplied <a href="../../EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryRequest</code></a> and collect the
- results into the supplied <a href="../../TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a>.
+ results into the supplied <a href="../../TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a> while forwarding
+ encountered discovery issues to the <a href="../../EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryRequest</code></a>'s
+ <a href="../../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryListener</code></a>.
 
  <p>The algorithm works as follows:
 
@@ -233,6 +247,41 @@ loadScripts(document, 'script');</script>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
+<li><a href="SelectorResolver.html" title="interface in org.junit.platform.engine.support.discovery"><code>SelectorResolver</code></a></li>
+<li><a href="../../TestDescriptor.Visitor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor.Visitor</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="resolve(org.junit.platform.engine.EngineDiscoveryRequest,T,org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)">
+<h3 id="resolve(org.junit.platform.engine.EngineDiscoveryRequest,org.junit.platform.engine.TestDescriptor,org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)">resolve</h3>
+<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#EXPERIMENTAL" title="class or interface in org.apiguardian.api" class="external-link">EXPERIMENTAL</a>,
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.13")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">resolve</span><wbr><span class="parameters">(<a href="../../EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine">EngineDiscoveryRequest</a>&nbsp;request,
+ <a href="EngineDiscoveryRequestResolver.html" title="type parameter in EngineDiscoveryRequestResolver">T</a>&nbsp;engineDescriptor,
+ <a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;issueReporter)</span></div>
+<div class="block">Resolve the supplied <a href="../../EngineDiscoveryRequest.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryRequest</code></a> and collect the
+ results into the supplied <a href="../../TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a> using the supplied
+ <a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery"><code>DiscoveryIssueReporter</code></a> to report issues encountered during
+ resolution.
+
+ <p>The algorithm works as described in
+ <a href="#resolve(org.junit.platform.engine.EngineDiscoveryRequest,T)"><code>resolve(EngineDiscoveryRequest, TestDescriptor)</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>request</code> - the request to be resolved; never <code>null</code></dd>
+<dd><code>engineDescriptor</code> - the engine's <code>TestDescriptor</code> to be used
+ for adding direct children</dd>
+<dd><code>issueReporter</code> - the <a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery"><code>DiscoveryIssueReporter</code></a> to report issues
+ encountered during resolution</dd>
+<dt>Since:</dt>
+<dd>1.13</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="#resolve(org.junit.platform.engine.EngineDiscoveryRequest,T)"><code>resolve(EngineDiscoveryRequest, TestDescriptor)</code></a></li>
 <li><a href="SelectorResolver.html" title="interface in org.junit.platform.engine.support.discovery"><code>SelectorResolver</code></a></li>
 <li><a href="../../TestDescriptor.Visitor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor.Visitor</code></a></li>
 </ul>

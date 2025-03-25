@@ -143,28 +143,34 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;T&gt;&nbsp;<a href="DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#createReportingCondition(java.util.function.Predicate,java.util.function.Function)" class="member-name-link">createReportingCondition</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;T&gt;&nbsp;predicate,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;T,<wbr><a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&gt;&nbsp;issueCreator)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Create a <a href="DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery"><code>DiscoveryIssueReporter.Condition</code></a> that reports a <a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssue</code></a> when the
+ supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a> is not met.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#deduplicating(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)" class="member-name-link">deduplicating</a><wbr>(<a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;delegate)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
+<div class="block">Create a new <code>DiscoveryIssueReporter</code> that avoids reporting
+ duplicate issues.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#create(org.junit.platform.engine.EngineDiscoveryListener,org.junit.platform.engine.UniqueId)" class="member-name-link">create</a><wbr>(<a href="../../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine">EngineDiscoveryListener</a>&nbsp;engineDiscoveryListener,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#forwarding(org.junit.platform.engine.EngineDiscoveryListener,org.junit.platform.engine.UniqueId)" class="member-name-link">forwarding</a><wbr>(<a href="../../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine">EngineDiscoveryListener</a>&nbsp;engineDiscoveryListener,
  <a href="../../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;engineId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Create a new <code>DiscoveryIssueReporter</code> that reports issues to the
  supplied <a href="../../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryListener</code></a> for the specified engine.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;T&gt;&nbsp;<a href="DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#createReportingCondition(java.util.function.Predicate,java.util.function.Function)" class="member-name-link">createReportingCondition</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;T&gt;&nbsp;predicate,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;T,<wbr><a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&gt;&nbsp;issueCreator)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Create a <a href="DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery"><code>DiscoveryIssueReporter.Condition</code></a> that reports a <a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssue</code></a> when the
- supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a> is not met.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reportIssue(org.junit.platform.engine.DiscoveryIssue)" class="member-name-link">reportIssue</a><wbr>(<a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&nbsp;issue)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reportIssue(org.junit.platform.engine.DiscoveryIssue)" class="member-name-link">reportIssue</a><wbr>(<a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&nbsp;issue)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Report the supplied <a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssue</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#reportIssue(org.junit.platform.engine.DiscoveryIssue.Builder)" class="member-name-link">reportIssue</a><wbr>(<a href="../../DiscoveryIssue.Builder.html" title="interface in org.junit.platform.engine">DiscoveryIssue.Builder</a>&nbsp;builder)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#reportIssue(org.junit.platform.engine.DiscoveryIssue.Builder)" class="member-name-link">reportIssue</a><wbr>(<a href="../../DiscoveryIssue.Builder.html" title="interface in org.junit.platform.engine">DiscoveryIssue.Builder</a>&nbsp;builder)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Build the supplied <a href="../../DiscoveryIssue.Builder.html" title="interface in org.junit.platform.engine"><code>Builder</code></a> and report the
  resulting <a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssue</code></a>.</div>
 </div>
@@ -183,9 +189,9 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="create(org.junit.platform.engine.EngineDiscoveryListener,org.junit.platform.engine.UniqueId)">
-<h3>create</h3>
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></span>&nbsp;<span class="element-name">create</span><wbr><span class="parameters">(<a href="../../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine">EngineDiscoveryListener</a>&nbsp;engineDiscoveryListener,
+<section class="detail" id="forwarding(org.junit.platform.engine.EngineDiscoveryListener,org.junit.platform.engine.UniqueId)">
+<h3>forwarding</h3>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></span>&nbsp;<span class="element-name">forwarding</span><wbr><span class="parameters">(<a href="../../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine">EngineDiscoveryListener</a>&nbsp;engineDiscoveryListener,
  <a href="../../UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;engineId)</span></div>
 <div class="block">Create a new <code>DiscoveryIssueReporter</code> that reports issues to the
  supplied <a href="../../EngineDiscoveryListener.html" title="interface in org.junit.platform.engine"><code>EngineDiscoveryListener</code></a> for the specified engine.</div>
@@ -194,6 +200,20 @@ loadScripts(document, 'script');</script>
 <dd><code>engineDiscoveryListener</code> - the listener to report issues to; never
  <code>null</code></dd>
 <dd><code>engineId</code> - the unique identifier of the engine; never <code>null</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="deduplicating(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)">
+<h3>deduplicating</h3>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></span>&nbsp;<span class="element-name">deduplicating</span><wbr><span class="parameters">(<a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;delegate)</span></div>
+<div class="block">Create a new <code>DiscoveryIssueReporter</code> that avoids reporting
+ duplicate issues.
+
+ <p>The implementation returned by this method is not thread-safe.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>delegate</code> - the delegate to forward issues to; never <code>null</code></dd>
 </dl>
 </section>
 </li>
