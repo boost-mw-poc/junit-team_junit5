@@ -591,7 +591,10 @@ repository on GitHub.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>❓</p>
+<p>Return types of <code>@TestFactory</code> methods are now validated during discovery rather than
+during execution. Invalid <code>@TestFactory</code> methods are no longer executed but reported as
+discovery issues for consistency with how <code>@Test</code> and <code>@TestTemplate</code> methods are
+handled.</p>
 </li>
 </ul>
 </div>
