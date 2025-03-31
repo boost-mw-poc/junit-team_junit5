@@ -91,17 +91,14 @@ loadScripts(document, 'script');</script>
 <h1 title="Interface DiscoveryIssueReporter" class="title">Interface DiscoveryIssueReporter</h1>
 </div>
 <section class="class-description" id="class-description">
-<dl class="notes">
-<dt>Functional Interface:</dt>
-<dd>This is a functional interface and can therefore be used as the assignment target for a lambda expression or method reference.</dd>
-</dl>
 <hr>
 <div class="type-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#EXPERIMENTAL" title="class or interface in org.apiguardian.api" class="external-link">EXPERIMENTAL</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.13")
-<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">@FunctionalInterface</a>
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">DiscoveryIssueReporter</span></div>
 <div class="block"><code>DiscoveryIssueReporter</code> defines the API for reporting
- <a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssues</code></a>.</div>
+ <a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssues</code></a>.
+
+ <p>This interface is not intended to be implemented by clients.</div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>1.13</dd>
@@ -143,6 +140,18 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#collecting(java.util.Collection)" class="member-name-link">collecting</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? super <a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&gt;&nbsp;collection)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1">
+<div class="block">Create a new <code>DiscoveryIssueReporter</code> that adds reported issues to
+ the supplied collection.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#consuming(java.util.function.Consumer)" class="member-name-link">consuming</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
+<div class="block">Create a new <code>DiscoveryIssueReporter</code> that adds reported issues to
+ the supplied consumer.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;T&gt;&nbsp;<a href="DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a><wbr>&lt;T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#createReportingCondition(java.util.function.Predicate,java.util.function.Function)" class="member-name-link">createReportingCondition</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;T&gt;&nbsp;predicate,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;T,<wbr><a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&gt;&nbsp;issueCreator)</code></div>
@@ -200,6 +209,30 @@ loadScripts(document, 'script');</script>
 <dd><code>engineDiscoveryListener</code> - the listener to report issues to; never
  <code>null</code></dd>
 <dd><code>engineId</code> - the unique identifier of the engine; never <code>null</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="collecting(java.util.Collection)">
+<h3>collecting</h3>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></span>&nbsp;<span class="element-name">collecting</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? super <a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&gt;&nbsp;collection)</span></div>
+<div class="block">Create a new <code>DiscoveryIssueReporter</code> that adds reported issues to
+ the supplied collection.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>collection</code> - the collection to add issues to; never <code>null</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="consuming(java.util.function.Consumer)">
+<h3>consuming</h3>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a></span>&nbsp;<span class="element-name">consuming</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="../../DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&gt;&nbsp;consumer)</span></div>
+<div class="block">Create a new <code>DiscoveryIssueReporter</code> that adds reported issues to
+ the supplied consumer.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>consumer</code> - the consumer to report issues to; never <code>null</code></dd>
 </dl>
 </section>
 </li>

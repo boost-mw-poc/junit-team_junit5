@@ -145,11 +145,6 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Consume the supplied argument, potentially throwing an exception.</div>
 </dd>
-<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.Condition.html#accept(T)" class="member-name-link">accept(T)</a> - Method in interface org.junit.platform.engine.support.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a></dt>
-<dd>
-<div class="block">Evaluate the <code>#test(Object)</code> method of this condition to
- potentially report an issue.</div>
-</dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/ResourceLock.html#acquire()" class="member-name-link">acquire()</a> - Method in interface org.junit.platform.engine.support.hierarchical.<a href="../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/ResourceLock.html" title="interface in org.junit.platform.engine.support.hierarchical">ResourceLock</a></dt>
 <dd>
 <div class="block">Acquire this resource lock, potentially blocking.</div>
@@ -406,7 +401,11 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Always clean up a temporary directory after the test has completed.</div>
 </dd>
-<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.Condition.html#and(java.util.function.Predicate)" class="member-name-link">and(Predicate&lt;? super T&gt;)</a> - Method in interface org.junit.platform.engine.support.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a></dt>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.Condition.html#alwaysSatisfied()" class="member-name-link">alwaysSatisfied()</a> - Static method in interface org.junit.platform.engine.support.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a></dt>
+<dd>
+<div class="block">Create a <a href="../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery"><code>DiscoveryIssueReporter.Condition</code></a> that is always satisfied.</div>
+</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.Condition.html#and(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter.Condition)" class="member-name-link">and(DiscoveryIssueReporter.Condition&lt;? super T&gt;)</a> - Method in interface org.junit.platform.engine.support.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.Condition.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter.Condition</a></dt>
 <dd>
 <div class="block">Return a composed condition that represents a logical AND of this
  and the supplied condition.</div>
