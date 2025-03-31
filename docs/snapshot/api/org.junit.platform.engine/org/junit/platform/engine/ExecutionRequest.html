@@ -154,14 +154,15 @@ loadScripts(document, 'script');</script>
  <a href="ConfigurationParameters.html" title="interface in org.junit.platform.engine">ConfigurationParameters</a>&nbsp;configurationParameters)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">Use <a href="#create(org.junit.platform.engine.TestDescriptor,org.junit.platform.engine.EngineExecutionListener,org.junit.platform.engine.ConfigurationParameters,org.junit.platform.engine.reporting.OutputDirectoryProvider)"><code>create(TestDescriptor, EngineExecutionListener, ConfigurationParameters, OutputDirectoryProvider)</code></a></div>
+<div class="deprecation-comment">without replacement</div>
 </div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ExecutionRequest.html" title="class in org.junit.platform.engine">ExecutionRequest</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#create(org.junit.platform.engine.TestDescriptor,org.junit.platform.engine.EngineExecutionListener,org.junit.platform.engine.ConfigurationParameters,org.junit.platform.engine.reporting.OutputDirectoryProvider)" class="member-name-link">create</a><wbr>(<a href="TestDescriptor.html" title="interface in org.junit.platform.engine">TestDescriptor</a>&nbsp;rootTestDescriptor,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#create(org.junit.platform.engine.TestDescriptor,org.junit.platform.engine.EngineExecutionListener,org.junit.platform.engine.ConfigurationParameters,org.junit.platform.engine.reporting.OutputDirectoryProvider,org.junit.platform.engine.support.store.NamespacedHierarchicalStore)" class="member-name-link">create</a><wbr>(<a href="TestDescriptor.html" title="interface in org.junit.platform.engine">TestDescriptor</a>&nbsp;rootTestDescriptor,
  <a href="EngineExecutionListener.html" title="interface in org.junit.platform.engine">EngineExecutionListener</a>&nbsp;engineExecutionListener,
  <a href="ConfigurationParameters.html" title="interface in org.junit.platform.engine">ConfigurationParameters</a>&nbsp;configurationParameters,
- <a href="reporting/OutputDirectoryProvider.html" title="interface in org.junit.platform.engine.reporting">OutputDirectoryProvider</a>&nbsp;outputDirectoryProvider)</code></div>
+ <a href="reporting/OutputDirectoryProvider.html" title="interface in org.junit.platform.engine.reporting">OutputDirectoryProvider</a>&nbsp;outputDirectoryProvider,
+ <a href="support/store/NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store">NamespacedHierarchicalStore</a>&lt;<a href="support/store/Namespace.html" title="class in org.junit.platform.engine.support.store">Namespace</a>&gt;&nbsp;requestLevelStore)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Factory for creating an execution request.</div>
 </div>
@@ -188,6 +189,12 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the root <a href="TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptor</code></a> of the engine that processes this
  request.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="support/store/NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store">NamespacedHierarchicalStore</a><wbr>&lt;<a href="support/store/Namespace.html" title="class in org.junit.platform.engine.support.store">Namespace</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStore()" class="member-name-link">getStore</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the <a href="support/store/NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store"><code>NamespacedHierarchicalStore</code></a> for this request for
+ storing request-scoped data.</div>
 </div>
 </div>
 </div>
@@ -236,7 +243,7 @@ loadScripts(document, 'script');</script>
  <a href="EngineExecutionListener.html" title="interface in org.junit.platform.engine">EngineExecutionListener</a>&nbsp;engineExecutionListener,
  <a href="ConfigurationParameters.html" title="interface in org.junit.platform.engine">ConfigurationParameters</a>&nbsp;configurationParameters)</span></div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">Use <a href="#create(org.junit.platform.engine.TestDescriptor,org.junit.platform.engine.EngineExecutionListener,org.junit.platform.engine.ConfigurationParameters,org.junit.platform.engine.reporting.OutputDirectoryProvider)"><code>create(TestDescriptor, EngineExecutionListener, ConfigurationParameters, OutputDirectoryProvider)</code></a></div>
+<div class="deprecation-comment">without replacement</div>
 </div>
 <div class="block">Factory for creating an execution request.</div>
 <dl class="notes">
@@ -254,14 +261,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="create(org.junit.platform.engine.TestDescriptor,org.junit.platform.engine.EngineExecutionListener,org.junit.platform.engine.ConfigurationParameters,org.junit.platform.engine.reporting.OutputDirectoryProvider)">
+<section class="detail" id="create(org.junit.platform.engine.TestDescriptor,org.junit.platform.engine.EngineExecutionListener,org.junit.platform.engine.ConfigurationParameters,org.junit.platform.engine.reporting.OutputDirectoryProvider,org.junit.platform.engine.support.store.NamespacedHierarchicalStore)">
 <h3>create</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#INTERNAL" title="class or interface in org.apiguardian.api" class="external-link">INTERNAL</a>,
-     <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.12")
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.13")
 </span><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ExecutionRequest.html" title="class in org.junit.platform.engine">ExecutionRequest</a></span>&nbsp;<span class="element-name">create</span><wbr><span class="parameters">(<a href="TestDescriptor.html" title="interface in org.junit.platform.engine">TestDescriptor</a>&nbsp;rootTestDescriptor,
  <a href="EngineExecutionListener.html" title="interface in org.junit.platform.engine">EngineExecutionListener</a>&nbsp;engineExecutionListener,
  <a href="ConfigurationParameters.html" title="interface in org.junit.platform.engine">ConfigurationParameters</a>&nbsp;configurationParameters,
- <a href="reporting/OutputDirectoryProvider.html" title="interface in org.junit.platform.engine.reporting">OutputDirectoryProvider</a>&nbsp;outputDirectoryProvider)</span></div>
+ <a href="reporting/OutputDirectoryProvider.html" title="interface in org.junit.platform.engine.reporting">OutputDirectoryProvider</a>&nbsp;outputDirectoryProvider,
+ <a href="support/store/NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store">NamespacedHierarchicalStore</a>&lt;<a href="support/store/Namespace.html" title="class in org.junit.platform.engine.support.store">Namespace</a>&gt;&nbsp;requestLevelStore)</span></div>
 <div class="block">Factory for creating an execution request.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -273,10 +281,12 @@ loadScripts(document, 'script');</script>
  engine may use to influence test execution; never <code>null</code></dd>
 <dd><code>outputDirectoryProvider</code> - <a href="reporting/OutputDirectoryProvider.html" title="interface in org.junit.platform.engine.reporting"><code>OutputDirectoryProvider</code></a> for
  writing reports and other output files; never <code>null</code></dd>
+<dd><code>requestLevelStore</code> - <a href="support/store/NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store"><code>NamespacedHierarchicalStore</code></a> for storing
+ request-scoped data; never <code>null</code></dd>
 <dt>Returns:</dt>
 <dd>a new <code>ExecutionRequest</code>; never <code>null</code></dd>
 <dt>Since:</dt>
-<dd>1.12</dd>
+<dd>1.13</dd>
 </dl>
 </section>
 </li>
@@ -340,6 +350,33 @@ loadScripts(document, 'script');</script>
  is not available</dd>
 <dt>Since:</dt>
 <dd>1.12</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getStore()">
+<h3>getStore</h3>
+<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#EXPERIMENTAL" title="class or interface in org.apiguardian.api" class="external-link">EXPERIMENTAL</a>,
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.13")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="support/store/NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store">NamespacedHierarchicalStore</a>&lt;<a href="support/store/Namespace.html" title="class in org.junit.platform.engine.support.store">Namespace</a>&gt;</span>&nbsp;<span class="element-name">getStore</span>()</div>
+<div class="block">Returns the <a href="support/store/NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store"><code>NamespacedHierarchicalStore</code></a> for this request for
+ storing request-scoped data.
+
+ <p>All stored values that implement <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link"><code>AutoCloseable</code></a> are notified by
+ invoking their <code>close()</code> methods when this request has been
+ executed.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the <a href="support/store/NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store"><code>NamespacedHierarchicalStore</code></a> for this request for
+ storing request-scoped data</dd>
+<dt>Since:</dt>
+<dd>1.13</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="support/store/NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store"><code>NamespacedHierarchicalStore</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>

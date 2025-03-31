@@ -392,6 +392,8 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/ExclusiveResource.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class org.junit.platform.engine.support.hierarchical.<a href="../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/ExclusiveResource.html" title="class in org.junit.platform.engine.support.hierarchical">ExclusiveResource</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/store/Namespace.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class org.junit.platform.engine.support.store.<a href="../org.junit.platform.engine/org/junit/platform/engine/support/store/Namespace.html" title="class in org.junit.platform.engine.support.store">Namespace</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/TestTag.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class org.junit.platform.engine.<a href="../org.junit.platform.engine/org/junit/platform/engine/TestTag.html" title="class in org.junit.platform.engine">TestTag</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class org.junit.platform.engine.<a href="../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a></dt>
@@ -732,11 +734,11 @@ loadScripts(document, 'script');</script>
 <div class="block">Execute tests for the given <a href="../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher"><code>LauncherDiscoveryRequest</code></a> using the
  supplied <a href="../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a>.</div>
 </dd>
-<dt><a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineExecutionOrchestrator.html#execute(org.junit.platform.launcher.core.LauncherDiscoveryResult,org.junit.platform.engine.EngineExecutionListener)" class="member-name-link">execute(LauncherDiscoveryResult, EngineExecutionListener)</a> - Method in class org.junit.platform.launcher.core.<a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineExecutionOrchestrator.html" title="class in org.junit.platform.launcher.core">EngineExecutionOrchestrator</a></dt>
+<dt><a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineExecutionOrchestrator.html#execute(org.junit.platform.launcher.core.LauncherDiscoveryResult,org.junit.platform.engine.EngineExecutionListener,org.junit.platform.engine.support.store.NamespacedHierarchicalStore)" class="member-name-link">execute(LauncherDiscoveryResult, EngineExecutionListener, NamespacedHierarchicalStore&lt;Namespace&gt;)</a> - Method in class org.junit.platform.launcher.core.<a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineExecutionOrchestrator.html" title="class in org.junit.platform.launcher.core">EngineExecutionOrchestrator</a></dt>
 <dd>
 <div class="block">Executes tests for the supplied <a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/LauncherDiscoveryResult.html" title="class in org.junit.platform.launcher.core">discovery results</a> and notifies the supplied <a href="../org.junit.platform.engine/org/junit/platform/engine/EngineExecutionListener.html" title="interface in org.junit.platform.engine">listener</a> of execution events.</div>
 </dd>
-<dt><a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineExecutionOrchestrator.html#execute(org.junit.platform.launcher.core.LauncherDiscoveryResult,org.junit.platform.engine.EngineExecutionListener,org.junit.platform.launcher.TestExecutionListener)" class="member-name-link">execute(LauncherDiscoveryResult, EngineExecutionListener, TestExecutionListener)</a> - Method in class org.junit.platform.launcher.core.<a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineExecutionOrchestrator.html" title="class in org.junit.platform.launcher.core">EngineExecutionOrchestrator</a></dt>
+<dt><a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineExecutionOrchestrator.html#execute(org.junit.platform.launcher.core.LauncherDiscoveryResult,org.junit.platform.engine.EngineExecutionListener,org.junit.platform.launcher.TestExecutionListener,org.junit.platform.engine.support.store.NamespacedHierarchicalStore)" class="member-name-link">execute(LauncherDiscoveryResult, EngineExecutionListener, TestExecutionListener, NamespacedHierarchicalStore&lt;Namespace&gt;)</a> - Method in class org.junit.platform.launcher.core.<a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineExecutionOrchestrator.html" title="class in org.junit.platform.launcher.core">EngineExecutionOrchestrator</a></dt>
 <dd>
 <div class="block">Executes tests for the supplied <a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/LauncherDiscoveryResult.html" title="class in org.junit.platform.launcher.core">discoveryResult</a> and notifies the supplied <a href="../org.junit.platform.engine/org/junit/platform/engine/EngineExecutionListener.html" title="interface in org.junit.platform.engine">engineExecutionListener</a> and
  <a href="../org.junit.platform.launcher/org/junit/platform/launcher/TestExecutionListener.html" title="interface in org.junit.platform.launcher">testExecutionListener</a> of execution
@@ -791,6 +793,11 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineDiscoveryOrchestrator.Phase.html#EXECUTION" class="member-name-link">EXECUTION</a> - Enum constant in enum class org.junit.platform.launcher.core.<a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineDiscoveryOrchestrator.Phase.html" title="enum class in org.junit.platform.launcher.core">EngineDiscoveryOrchestrator.Phase</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.StoreScope.html#EXECUTION_REQUEST" class="member-name-link">EXECUTION_REQUEST</a> - Enum constant in enum class org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.StoreScope.html" title="enum class in org.junit.jupiter.api.extension">ExtensionContext.StoreScope</a></dt>
+<dd>
+<div class="block">The store is scoped to the current <code>ExecutionRequest</code> of the
+ JUnit Platform <code>Launcher</code>.</div>
+</dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExecutionCondition.html" class="type-name-link" title="interface in org.junit.jupiter.api.extension">ExecutionCondition</a> - Interface in <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/package-summary.html">org.junit.jupiter.api.extension</a></dt>
 <dd>
 <div class="block"><code>ExecutionCondition</code> defines the <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extension</code></a> API for
@@ -953,6 +960,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Marker interface for all extensions.</div>
 </dd>
+<dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.StoreScope.html#EXTENSION_CONTEXT" class="member-name-link">EXTENSION_CONTEXT</a> - Enum constant in enum class org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.StoreScope.html" title="enum class in org.junit.jupiter.api.extension">ExtensionContext.StoreScope</a></dt>
+<dd>
+<div class="block">The store is scoped to the current <code>ExtensionContext</code>.</div>
+</dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionConfigurationException.html" class="type-name-link" title="class in org.junit.jupiter.api.extension">ExtensionConfigurationException</a> - Exception Class in <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/package-summary.html">org.junit.jupiter.api.extension</a></dt>
 <dd>
 <div class="block">Thrown if an error is encountered regarding the configuration of an
@@ -981,6 +992,11 @@ loadScripts(document, 'script');</script>
 <div class="block">Classes implementing this interface indicate that they want to <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.Store.CloseableResource.html#close()"><code>ExtensionContext.Store.CloseableResource.close()</code></a>
  some underlying resource or resources when the enclosing <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.Store.html" title="interface in org.junit.jupiter.api.extension"><code>Store</code></a>
  is closed.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.StoreScope.html" class="type-name-link" title="enum class in org.junit.jupiter.api.extension">ExtensionContext.StoreScope</a> - Enum Class in <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/package-summary.html">org.junit.jupiter.api.extension</a></dt>
+<dd>
+<div class="block"><code>StoreScope</code> is an enumeration of the different scopes for
+ <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.Store.html" title="interface in org.junit.jupiter.api.extension"><code>ExtensionContext.Store</code></a> instances.</div>
 </dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContextException.html" class="type-name-link" title="class in org.junit.jupiter.api.extension">ExtensionContextException</a> - Exception Class in <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/package-summary.html">org.junit.jupiter.api.extension</a></dt>
 <dd>

@@ -998,6 +998,7 @@ pre.rouge .gs {
 </li>
 <li><a href="#launcher-api-launcher-config">6.4.11. Configuring the Launcher</a></li>
 <li><a href="#launcher-api-dry-run-mode">6.4.12. Dry-Run Mode</a></li>
+<li><a href="#launcher-api-managing-state-across-test-engines">6.4.13. Managing State Across Test Engines</a></li>
 </ul>
 </li>
 <li><a href="#test-engines">6.5. Test Engines</a>
@@ -9499,11 +9500,11 @@ following.</p>
     <span class="nt">&lt;plugins&gt;</span>
         <span class="nt">&lt;plugin&gt;</span>
             <span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
-            <span class="nt">&lt;version&gt;</span>3.5.2<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;version&gt;</span>3.5.3<span class="nt">&lt;/version&gt;</span>
         <span class="nt">&lt;/plugin&gt;</span>
         <span class="nt">&lt;plugin&gt;</span>
             <span class="nt">&lt;artifactId&gt;</span>maven-failsafe-plugin<span class="nt">&lt;/artifactId&gt;</span>
-            <span class="nt">&lt;version&gt;</span>3.5.2<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;version&gt;</span>3.5.3<span class="nt">&lt;/version&gt;</span>
         <span class="nt">&lt;/plugin&gt;</span>
     <span class="nt">&lt;/plugins&gt;</span>
 <span class="nt">&lt;/build&gt;</span>
@@ -9539,11 +9540,11 @@ long as you configure <code>test</code> scoped dependencies on JUnit 4 and the J
     <span class="nt">&lt;plugins&gt;</span>
         <span class="nt">&lt;plugin&gt;</span>
             <span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
-            <span class="nt">&lt;version&gt;</span>3.5.2<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;version&gt;</span>3.5.3<span class="nt">&lt;/version&gt;</span>
         <span class="nt">&lt;/plugin&gt;</span>
         <span class="nt">&lt;plugin&gt;</span>
             <span class="nt">&lt;artifactId&gt;</span>maven-failsafe-plugin<span class="nt">&lt;/artifactId&gt;</span>
-            <span class="nt">&lt;version&gt;</span>3.5.2<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;version&gt;</span>3.5.3<span class="nt">&lt;/version&gt;</span>
         <span class="nt">&lt;/plugin&gt;</span>
     <span class="nt">&lt;/plugins&gt;</span>
 <span class="nt">&lt;/build&gt;</span>
@@ -9589,7 +9590,7 @@ from excluding static member classes, you can override its exclude rules as foll
     <span class="nt">&lt;plugins&gt;</span>
         <span class="nt">&lt;plugin&gt;</span>
             <span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
-            <span class="nt">&lt;version&gt;</span>3.5.2<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;version&gt;</span>3.5.3<span class="nt">&lt;/version&gt;</span>
             <span class="nt">&lt;configuration&gt;</span>
                 <span class="nt">&lt;excludes&gt;</span>
                     <span class="nt">&lt;exclude/&gt;</span>
@@ -9631,7 +9632,7 @@ properties.</p>
     <span class="nt">&lt;plugins&gt;</span>
         <span class="nt">&lt;plugin&gt;</span>
             <span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
-            <span class="nt">&lt;version&gt;</span>3.5.2<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;version&gt;</span>3.5.3<span class="nt">&lt;/version&gt;</span>
             <span class="nt">&lt;configuration&gt;</span>
                 <span class="nt">&lt;groups&gt;</span>acceptance | !feature-a<span class="nt">&lt;/groups&gt;</span>
                 <span class="nt">&lt;excludedGroups&gt;</span>integration, regression<span class="nt">&lt;/excludedGroups&gt;</span>
@@ -9658,7 +9659,7 @@ below) or via the <code>junit-platform.properties</code> file.</p>
     <span class="nt">&lt;plugins&gt;</span>
         <span class="nt">&lt;plugin&gt;</span>
             <span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
-            <span class="nt">&lt;version&gt;</span>3.5.2<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;version&gt;</span>3.5.3<span class="nt">&lt;/version&gt;</span>
             <span class="nt">&lt;configuration&gt;</span>
                 <span class="nt">&lt;properties&gt;</span>
                     <span class="nt">&lt;configurationParameters&gt;</span>
@@ -13914,7 +13915,7 @@ XML reports as follows:</p>
         <span class="nt">&lt;plugins&gt;</span>
             <span class="nt">&lt;plugin&gt;</span>
                 <span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
-                <span class="nt">&lt;version&gt;</span>3.5.2<span class="nt">&lt;/version&gt;</span>
+                <span class="nt">&lt;version&gt;</span>3.5.3<span class="nt">&lt;/version&gt;</span>
                 <span class="nt">&lt;configuration&gt;</span>
                     <span class="nt">&lt;properties&gt;</span>
                         <span class="nt">&lt;configurationParameters&gt;</span>
@@ -14890,6 +14891,8 @@ executed, could look like this:</p>
 
 <span class="kn">import</span> <span class="nn">com.sun.net.httpserver.HttpServer</span><span class="o">;</span>
 
+<span class="kn">import</span> <span class="nn">org.junit.platform.engine.support.store.Namespace</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.platform.engine.support.store.NamespacedHierarchicalStore</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.junit.platform.launcher.LauncherSession</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.junit.platform.launcher.LauncherSessionListener</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.junit.platform.launcher.TestExecutionListener</span><span class="o">;</span>
@@ -14897,58 +14900,34 @@ executed, could look like this:</p>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">GlobalSetupTeardownListener</span> <span class="kd">implements</span> <span class="nc">LauncherSessionListener</span> <span class="o">{</span>
 
-    <span class="kd">private</span> <span class="nc">Fixture</span> <span class="n">fixture</span><span class="o">;</span>
-
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">launcherSessionOpened</span><span class="o">(</span><span class="nc">LauncherSession</span> <span class="n">session</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// Avoid setup for test discovery by delaying it until tests are about to be executed</span>
         <span class="n">session</span><span class="o">.</span><span class="na">getLauncher</span><span class="o">().</span><span class="na">registerTestExecutionListeners</span><span class="o">(</span><span class="k">new</span> <span class="nc">TestExecutionListener</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
             <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testPlanExecutionStarted</span><span class="o">(</span><span class="nc">TestPlan</span> <span class="n">testPlan</span><span class="o">)</span> <span class="o">{</span>
-                <span class="k">if</span> <span class="o">(</span><span class="n">fixture</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="n">fixture</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Fixture</span><span class="o">();</span>
-                    <span class="n">fixture</span><span class="o">.</span><span class="na">setUp</span><span class="o">();</span>
-                <span class="o">}</span>
+                <span class="nc">NamespacedHierarchicalStore</span><span class="o">&lt;</span><span class="nc">Namespace</span><span class="o">&gt;</span> <span class="n">store</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">getStore</span><span class="o">();</span> <i class="conum" data-value="1"></i><b>(1)</b>
+                <span class="n">store</span><span class="o">.</span><span class="na">getOrComputeIfAbsent</span><span class="o">(</span><span class="nc">Namespace</span><span class="o">.</span><span class="na">GLOBAL</span><span class="o">,</span> <span class="s">"httpServer"</span><span class="o">,</span> <span class="n">key</span> <span class="o">-&gt;</span> <span class="o">{</span> <i class="conum" data-value="2"></i><b>(2)</b>
+                    <span class="nc">InetSocketAddress</span> <span class="n">address</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">InetSocketAddress</span><span class="o">(</span><span class="n">getLoopbackAddress</span><span class="o">(),</span> <span class="mi">0</span><span class="o">);</span>
+                    <span class="nc">HttpServer</span> <span class="n">server</span><span class="o">;</span>
+                    <span class="k">try</span> <span class="o">{</span>
+                        <span class="n">server</span> <span class="o">=</span> <span class="nc">HttpServer</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">address</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+                    <span class="o">}</span>
+                    <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="k">throw</span> <span class="k">new</span> <span class="nf">UncheckedIOException</span><span class="o">(</span><span class="s">"Failed to start HTTP server"</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+                    <span class="o">}</span>
+                    <span class="n">server</span><span class="o">.</span><span class="na">createContext</span><span class="o">(</span><span class="s">"/test"</span><span class="o">,</span> <span class="n">exchange</span> <span class="o">-&gt;</span> <span class="o">{</span>
+                        <span class="n">exchange</span><span class="o">.</span><span class="na">sendResponseHeaders</span><span class="o">(</span><span class="mi">204</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">);</span>
+                        <span class="n">exchange</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+                    <span class="o">});</span>
+                    <span class="nc">ExecutorService</span> <span class="n">executorService</span> <span class="o">=</span> <span class="nc">Executors</span><span class="o">.</span><span class="na">newCachedThreadPool</span><span class="o">();</span>
+                    <span class="n">server</span><span class="o">.</span><span class="na">setExecutor</span><span class="o">(</span><span class="n">executorService</span><span class="o">);</span>
+                    <span class="n">server</span><span class="o">.</span><span class="na">start</span><span class="o">();</span> <i class="conum" data-value="3"></i><b>(3)</b>
+
+                    <span class="k">return</span> <span class="k">new</span> <span class="nf">CloseableHttpServer</span><span class="o">(</span><span class="n">server</span><span class="o">,</span> <span class="n">executorService</span><span class="o">);</span>
+                <span class="o">});</span>
             <span class="o">}</span>
         <span class="o">});</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">launcherSessionClosed</span><span class="o">(</span><span class="nc">LauncherSession</span> <span class="n">session</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">fixture</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">fixture</span><span class="o">.</span><span class="na">tearDown</span><span class="o">();</span>
-            <span class="n">fixture</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Fixture</span> <span class="o">{</span>
-
-        <span class="kd">private</span> <span class="nc">HttpServer</span> <span class="n">server</span><span class="o">;</span>
-        <span class="kd">private</span> <span class="nc">ExecutorService</span> <span class="n">executorService</span><span class="o">;</span>
-
-        <span class="kt">void</span> <span class="nf">setUp</span><span class="o">()</span> <span class="o">{</span>
-            <span class="k">try</span> <span class="o">{</span>
-                <span class="n">server</span> <span class="o">=</span> <span class="nc">HttpServer</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="k">new</span> <span class="nc">InetSocketAddress</span><span class="o">(</span><span class="n">getLoopbackAddress</span><span class="o">(),</span> <span class="mi">0</span><span class="o">),</span> <span class="mi">0</span><span class="o">);</span>
-            <span class="o">}</span>
-            <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                <span class="k">throw</span> <span class="k">new</span> <span class="nf">UncheckedIOException</span><span class="o">(</span><span class="s">"Failed to start HTTP server"</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
-            <span class="o">}</span>
-            <span class="n">server</span><span class="o">.</span><span class="na">createContext</span><span class="o">(</span><span class="s">"/test"</span><span class="o">,</span> <span class="n">exchange</span> <span class="o">-&gt;</span> <span class="o">{</span>
-                <span class="n">exchange</span><span class="o">.</span><span class="na">sendResponseHeaders</span><span class="o">(</span><span class="mi">204</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">);</span>
-                <span class="n">exchange</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-            <span class="o">});</span>
-            <span class="n">executorService</span> <span class="o">=</span> <span class="nc">Executors</span><span class="o">.</span><span class="na">newCachedThreadPool</span><span class="o">();</span>
-            <span class="n">server</span><span class="o">.</span><span class="na">setExecutor</span><span class="o">(</span><span class="n">executorService</span><span class="o">);</span>
-            <span class="n">server</span><span class="o">.</span><span class="na">start</span><span class="o">();</span> <i class="conum" data-value="1"></i><b>(1)</b>
-            <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="na">getAddress</span><span class="o">().</span><span class="na">getPort</span><span class="o">();</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">"http.server.host"</span><span class="o">,</span> <span class="n">getLoopbackAddress</span><span class="o">().</span><span class="na">getHostAddress</span><span class="o">());</span> <i class="conum" data-value="2"></i><b>(2)</b>
-            <span class="nc">System</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">"http.server.port"</span><span class="o">,</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">port</span><span class="o">));</span> <i class="conum" data-value="3"></i><b>(3)</b>
-        <span class="o">}</span>
-
-        <span class="kt">void</span> <span class="nf">tearDown</span><span class="o">()</span> <span class="o">{</span>
-            <span class="n">server</span><span class="o">.</span><span class="na">stop</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span> <i class="conum" data-value="4"></i><b>(4)</b>
-            <span class="n">executorService</span><span class="o">.</span><span class="na">shutdownNow</span><span class="o">();</span>
-        <span class="o">}</span>
     <span class="o">}</span>
 
 <span class="o">}</span></code></pre>
@@ -14958,18 +14937,61 @@ executed, could look like this:</p>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Start the HTTP server</td>
+<td>Get the store from the launcher session</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Export its host address as a system property for consumption by tests</td>
+<td>Lazily create the HTTP server and put it into the store</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Export its port as a system property for consumption by tests</td>
+<td>Start the HTTP server</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>It uses a wrapper class to ensure the server is stopped when the launcher session is
+closed:</p>
+</div>
+<div class="listingblock">
+<div class="title">src/test/java/example/session/CloseableHttpServer.java</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">package</span> <span class="nn">example.session</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.concurrent.ExecutorService</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.sun.net.httpserver.HttpServer</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CloseableHttpServer</span> <span class="kd">implements</span> <span class="nc">AutoCloseable</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">HttpServer</span> <span class="n">server</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">ExecutorService</span> <span class="n">executorService</span><span class="o">;</span>
+
+    <span class="nc">CloseableHttpServer</span><span class="o">(</span><span class="nc">HttpServer</span> <span class="n">server</span><span class="o">,</span> <span class="nc">ExecutorService</span> <span class="n">executorService</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">server</span> <span class="o">=</span> <span class="n">server</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">executorService</span> <span class="o">=</span> <span class="n">executorService</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">HttpServer</span> <span class="nf">getServer</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">server</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">close</span><span class="o">()</span> <span class="o">{</span> <i class="conum" data-value="1"></i><b>(1)</b>
+        <span class="n">server</span><span class="o">.</span><span class="na">stop</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span> <i class="conum" data-value="2"></i><b>(2)</b>
+        <span class="n">executorService</span><span class="o">.</span><span class="na">shutdownNow</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The <code>close()</code> method is called when the launcher session is closed</td>
 </tr>
 <tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
 <td>Stop the HTTP server</td>
 </tr>
 </table>
@@ -14997,25 +15019,48 @@ by adding the file to <code>src/test/resources</code>):</p>
 
 <span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">jupiter</span><span class="o">.</span><span class="na">api</span><span class="o">.</span><span class="na">Assertions</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">;</span>
 
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.net.HttpURLConnection</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.net.URI</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.net.URL</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.sun.net.httpserver.HttpServer</span><span class="o">;</span>
 
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.extension.ExtendWith</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.extension.ExtensionContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.extension.ParameterContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.extension.ParameterResolver</span><span class="o">;</span>
+
+<span class="nd">@ExtendWith</span><span class="o">(</span><span class="nc">HttpServerParameterResolver</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
 <span class="kd">class</span> <span class="nc">HttpTests</span> <span class="o">{</span>
 
     <span class="nd">@Test</span>
-    <span class="kt">void</span> <span class="nf">respondsWith204</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
-        <span class="nc">String</span> <span class="n">host</span> <span class="o">=</span> <span class="nc">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"http.server.host"</span><span class="o">);</span> <i class="conum" data-value="1"></i><b>(1)</b>
-        <span class="nc">String</span> <span class="n">port</span> <span class="o">=</span> <span class="nc">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"http.server.port"</span><span class="o">);</span> <i class="conum" data-value="2"></i><b>(2)</b>
+    <span class="kt">void</span> <span class="nf">respondsWith204</span><span class="o">(</span><span class="nc">HttpServer</span> <span class="n">server</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">host</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="na">getAddress</span><span class="o">().</span><span class="na">getHostString</span><span class="o">();</span> <i class="conum" data-value="2"></i><b>(2)</b>
+        <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="na">getAddress</span><span class="o">().</span><span class="na">getPort</span><span class="o">();</span> <i class="conum" data-value="3"></i><b>(3)</b>
         <span class="no">URL</span> <span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="s">"http://"</span> <span class="o">+</span> <span class="n">host</span> <span class="o">+</span> <span class="s">":"</span> <span class="o">+</span> <span class="n">port</span> <span class="o">+</span> <span class="s">"/test"</span><span class="o">).</span><span class="na">toURL</span><span class="o">();</span>
 
         <span class="nc">HttpURLConnection</span> <span class="n">connection</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">url</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
         <span class="n">connection</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
-        <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span> <i class="conum" data-value="3"></i><b>(3)</b>
+        <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span> <i class="conum" data-value="4"></i><b>(4)</b>
 
-        <span class="n">assertEquals</span><span class="o">(</span><span class="mi">204</span><span class="o">,</span> <span class="n">responseCode</span><span class="o">);</span> <i class="conum" data-value="4"></i><b>(4)</b>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="mi">204</span><span class="o">,</span> <span class="n">responseCode</span><span class="o">);</span> <i class="conum" data-value="5"></i><b>(5)</b>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">HttpServerParameterResolver</span> <span class="kd">implements</span> <span class="nc">ParameterResolver</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">supportsParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nc">HttpServer</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">parameterContext</span><span class="o">.</span><span class="na">getParameter</span><span class="o">().</span><span class="na">getType</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">resolveParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">extensionContext</span>
+                <span class="o">.</span><span class="na">getStore</span><span class="o">(</span><span class="nc">ExtensionContext</span><span class="o">.</span><span class="na">Namespace</span><span class="o">.</span><span class="na">GLOBAL</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"httpServer"</span><span class="o">,</span> <span class="nc">CloseableHttpServer</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <i class="conum" data-value="1"></i><b>(1)</b>
+                <span class="o">.</span><span class="na">getServer</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span></code></pre>
 </div>
@@ -15024,18 +15069,22 @@ by adding the file to <code>src/test/resources</code>):</p>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Read the host address of the server from the system property set by the listener</td>
+<td>Retrieve the HTTP server instance from the store</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Read the port of the server from the system property set by the listener</td>
+<td>Get the host string directly from the injected HTTP server instance</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Send a request to the server</td>
+<td>Get the port number directly from the injected HTTP server instance</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Send a request to the server</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
 <td>Check the status code of the response</td>
 </tr>
 </table>
@@ -15249,6 +15298,184 @@ execute any tests but will notify registered <code><a href="../api/org.junit.pla
 tests had been skipped and their containers had been successful. This can be useful to
 test changes in the configuration of a build or to verify a listener is called as expected
 without having to wait for all tests to be executed.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="launcher-api-managing-state-across-test-engines"><a class="anchor" href="#launcher-api-managing-state-across-test-engines"></a>6.4.13. Managing State Across Test Engines</h4>
+<div class="paragraph">
+<p>When running tests on the JUnit Platform, multiple test engines may need to access shared
+resources. Rather than initializing these resources multiple times, JUnit Platform
+provides mechanisms to share state across test engines efficiently. Test engines can use
+the Platform&#8217;s <code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/support/store/NamespacedHierarchicalStore.html">NamespacedHierarchicalStore</a></code> API to lazily initialize and share
+resources, ensuring they are created only once regardless of execution order. Any resource
+that is put into the store and implements <code>AutoCloseable</code> will be closed automatically when
+the execution is finished.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The Jupiter engine allows read and write access to such resources via its
+<code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.Store.html">Store</a></code> API.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following example demonstrates two custom test engines sharing a <code>ServerSocket</code>
+resource. <code>FirstCustomEngine</code> attempts to retrieve an existing <code>ServerSocket</code> from the
+global store or creates a new one if it doesn&#8217;t exist:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">import</span> <span class="nn">static</span> <span class="n">java</span><span class="o">.</span><span class="na">net</span><span class="o">.</span><span class="na">InetAddress</span><span class="o">.</span><span class="na">getLoopbackAddress</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">platform</span><span class="o">.</span><span class="na">engine</span><span class="o">.</span><span class="na">TestExecutionResult</span><span class="o">.</span><span class="na">successful</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.UncheckedIOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.ServerSocket</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.junit.platform.engine.EngineDiscoveryRequest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.platform.engine.ExecutionRequest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.platform.engine.TestDescriptor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.platform.engine.TestEngine</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.platform.engine.UniqueId</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.platform.engine.support.descriptor.EngineDescriptor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.platform.engine.support.store.Namespace</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.platform.engine.support.store.NamespacedHierarchicalStore</span><span class="o">;</span>
+
+<span class="cm">/**
+ * First custom test engine implementation.
+ */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FirstCustomEngine</span> <span class="kd">implements</span> <span class="nc">TestEngine</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="nc">ServerSocket</span> <span class="n">socket</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"first-custom-test-engine"</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">TestDescriptor</span> <span class="nf">discover</span><span class="o">(</span><span class="nc">EngineDiscoveryRequest</span> <span class="n">discoveryRequest</span><span class="o">,</span> <span class="nc">UniqueId</span> <span class="n">uniqueId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">EngineDescriptor</span><span class="o">(</span><span class="n">uniqueId</span><span class="o">,</span> <span class="s">"First Custom Test Engine"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">(</span><span class="nc">ExecutionRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">request</span><span class="o">.</span><span class="na">getEngineExecutionListener</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">executionStarted</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getRootTestDescriptor</span><span class="o">());</span>
+
+        <span class="nc">NamespacedHierarchicalStore</span><span class="o">&lt;</span><span class="nc">Namespace</span><span class="o">&gt;</span> <span class="n">store</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getStore</span><span class="o">();</span>
+        <span class="n">socket</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="na">getOrComputeIfAbsent</span><span class="o">(</span><span class="nc">Namespace</span><span class="o">.</span><span class="na">GLOBAL</span><span class="o">,</span> <span class="s">"serverSocket"</span><span class="o">,</span> <span class="n">key</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="nf">ServerSocket</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="n">getLoopbackAddress</span><span class="o">());</span>
+            <span class="o">}</span>
+            <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="nf">UncheckedIOException</span><span class="o">(</span><span class="s">"Failed to start ServerSocket"</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">},</span> <span class="nc">ServerSocket</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+        <span class="n">request</span><span class="o">.</span><span class="na">getEngineExecutionListener</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">executionFinished</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getRootTestDescriptor</span><span class="o">(),</span> <span class="n">successful</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>SecondCustomEngine</code> follows the same pattern, ensuring that regardless whether it runs
+before or after <code>FirstCustomEngine</code>, it will use the same socket instance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="cm">/**
+ * Second custom test engine implementation.
+ */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SecondCustomEngine</span> <span class="kd">implements</span> <span class="nc">TestEngine</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="nc">ServerSocket</span> <span class="n">socket</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"second-custom-test-engine"</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">TestDescriptor</span> <span class="nf">discover</span><span class="o">(</span><span class="nc">EngineDiscoveryRequest</span> <span class="n">discoveryRequest</span><span class="o">,</span> <span class="nc">UniqueId</span> <span class="n">uniqueId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">EngineDescriptor</span><span class="o">(</span><span class="n">uniqueId</span><span class="o">,</span> <span class="s">"Second Custom Test Engine"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">(</span><span class="nc">ExecutionRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">request</span><span class="o">.</span><span class="na">getEngineExecutionListener</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">executionStarted</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getRootTestDescriptor</span><span class="o">());</span>
+
+        <span class="nc">NamespacedHierarchicalStore</span><span class="o">&lt;</span><span class="nc">Namespace</span><span class="o">&gt;</span> <span class="n">store</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getStore</span><span class="o">();</span>
+        <span class="n">socket</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="na">getOrComputeIfAbsent</span><span class="o">(</span><span class="nc">Namespace</span><span class="o">.</span><span class="na">GLOBAL</span><span class="o">,</span> <span class="s">"serverSocket"</span><span class="o">,</span> <span class="n">key</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="nf">ServerSocket</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="n">getLoopbackAddress</span><span class="o">());</span>
+            <span class="o">}</span>
+            <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="nf">UncheckedIOException</span><span class="o">(</span><span class="s">"Failed to start ServerSocket"</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">},</span> <span class="nc">ServerSocket</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+        <span class="n">request</span><span class="o">.</span><span class="na">getEngineExecutionListener</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">executionFinished</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getRootTestDescriptor</span><span class="o">(),</span> <span class="n">successful</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+In this case, the <code>ServerSocket</code> can be stored directly in the global store while
+ensuring since it gets closed because it implements <code>AutoCloseable</code>. If you need to use a
+type that does not do so, you can wrap it in a custom class that implements
+<code>AutoCloseable</code> and delegates to the original type. This is important to ensure that the
+resource is closed properly when the test run is finished.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For illustration, the following test verifies that both engines are sharing the same
+<code>ServerSocket</code> instance and that it&#8217;s closed after <code>Launcher.execute()</code> returns:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">runBothCustomEnginesTest</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nc">FirstCustomEngine</span> <span class="n">firstCustomEngine</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FirstCustomEngine</span><span class="o">();</span>
+    <span class="nc">SecondCustomEngine</span> <span class="n">secondCustomEngine</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SecondCustomEngine</span><span class="o">();</span>
+
+    <span class="nc">Launcher</span> <span class="n">launcher</span> <span class="o">=</span> <span class="nc">LauncherFactory</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="nc">LauncherConfig</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">addTestEngines</span><span class="o">(</span><span class="n">firstCustomEngine</span><span class="o">,</span> <span class="n">secondCustomEngine</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">enableTestEngineAutoRegistration</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">build</span><span class="o">());</span>
+
+    <span class="n">launcher</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">request</span><span class="o">().</span><span class="na">build</span><span class="o">());</span>
+
+    <span class="n">assertSame</span><span class="o">(</span><span class="n">firstCustomEngine</span><span class="o">.</span><span class="na">socket</span><span class="o">,</span> <span class="n">secondCustomEngine</span><span class="o">.</span><span class="na">socket</span><span class="o">);</span>
+    <span class="n">assertTrue</span><span class="o">(</span><span class="n">firstCustomEngine</span><span class="o">.</span><span class="na">socket</span><span class="o">.</span><span class="na">isClosed</span><span class="o">(),</span> <span class="s">"socket should be closed"</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By using the Platform&#8217;s <code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/support/store/NamespacedHierarchicalStore.html">NamespacedHierarchicalStore</a></code> API with shared namespaces in this
+way, test engines can coordinate resource creation and sharing without direct dependencies
+between them.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, it&#8217;s possible to inject resources into test engines by
+<a href="#launcher-api-launcher-session-listeners-custom">registering a <code>LauncherSessionListener</code></a>.</p>
 </div>
 </div>
 </div>
@@ -15721,8 +15948,16 @@ value of lower stability.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ExtensionContext.&ZeroWidthSpace;StoreScope</code> <em>(enum)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ExtensionContext.&ZeroWidthSpace;getEnclosingTestClasses()</code> <em>(method)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.12.1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ExtensionContext.&ZeroWidthSpace;getStore(StoreScope, Namespace)</code> <em>(method)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ExtensionContext.&ZeroWidthSpace;publishDirectory(String, ThrowingConsumer&lt;Path&gt;)</code> <em>(method)</em></p></td>
@@ -15985,6 +16220,10 @@ value of lower stability.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.12</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ExecutionRequest.&ZeroWidthSpace;getStore()</code> <em>(method)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.13</code></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>TestDescriptor.&ZeroWidthSpace;Visitor.&ZeroWidthSpace;composite(Visitor[])</code> <em>(method)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.13</code></p></td>
 </tr>
@@ -16193,8 +16432,16 @@ value of lower stability.</p>
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Namespace</code> <em>(class)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.13</code></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>NamespacedHierarchicalStore</code> <em>(class)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.10</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>NamespacedHierarchicalStore.&ZeroWidthSpace;CloseAction.&ZeroWidthSpace;closeAutoCloseables()</code> <em>(method)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.13</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>NamespacedHierarchicalStoreException</code> <em>(class)</em></p></td>
@@ -16219,6 +16466,10 @@ value of lower stability.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>LauncherInterceptor</code> <em>(interface)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.10</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>LauncherSession.&ZeroWidthSpace;getStore()</code> <em>(method)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.13</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MethodFilter</code> <em>(interface)</em></p></td>

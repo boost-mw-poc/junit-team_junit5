@@ -1083,6 +1083,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Get the <a href="../org.junit.platform.launcher/org/junit/platform/launcher/Launcher.html" title="interface in org.junit.platform.launcher"><code>Launcher</code></a> associated with this session.</div>
 </dd>
+<dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/execution/JupiterEngineExecutionContext.html#getLauncherStoreFacade()" class="member-name-link">getLauncherStoreFacade()</a> - Method in class org.junit.jupiter.engine.execution.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/execution/JupiterEngineExecutionContext.html" title="class in org.junit.jupiter.engine.execution">JupiterEngineExecutionContext</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassBasedTestDescriptor.html#getLegacyReportingName()" class="member-name-link">getLegacyReportingName()</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassBasedTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassBasedTestDescriptor</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassTemplateInvocationTestDescriptor.html#getLegacyReportingName()" class="member-name-link">getLegacyReportingName()</a> - Method in class org.junit.jupiter.engine.descriptor.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/descriptor/ClassTemplateInvocationTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">ClassTemplateInvocationTestDescriptor</a></dt>
@@ -1380,6 +1382,10 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/descriptor/AbstractTestDescriptor.html#getParent()" class="member-name-link">getParent()</a> - Method in class org.junit.platform.engine.support.descriptor.<a href="../org.junit.platform.engine/org/junit/platform/engine/support/descriptor/AbstractTestDescriptor.html" title="class in org.junit.platform.engine.support.descriptor">AbstractTestDescriptor</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/store/NamespacedHierarchicalStore.html#getParent()" class="member-name-link">getParent()</a> - Method in class org.junit.platform.engine.support.store.<a href="../org.junit.platform.engine/org/junit/platform/engine/support/store/NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store">NamespacedHierarchicalStore</a></dt>
+<dd>
+<div class="block">Returns the parent store of this <code>NamespacedHierarchicalStore</code>.</div>
+</dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html#getParent()" class="member-name-link">getParent()</a> - Method in interface org.junit.platform.engine.<a href="../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html" title="interface in org.junit.platform.engine">TestDescriptor</a></dt>
 <dd>
 <div class="block">Get the <em>parent</em> of this descriptor, if available.</div>
@@ -1402,6 +1408,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Get the selected parent <a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelector.html" title="interface in org.junit.platform.engine"><code>DiscoverySelector</code></a>.</div>
 </dd>
+<dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.Namespace.html#getParts()" class="member-name-link">getParts()</a> - Method in class org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.Namespace.html" title="class in org.junit.jupiter.api.extension">ExtensionContext.Namespace</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/DirectorySelector.html#getPath()" class="member-name-link">getPath()</a> - Method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/DirectorySelector.html" title="class in org.junit.platform.engine.discovery">DirectorySelector</a></dt>
 <dd>
 <div class="block">Get the selected directory as a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link"><code>Path</code></a> using the
@@ -1690,9 +1698,22 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.platform.console/org/junit/platform/console/options/TestConsoleOutputOptions.html#getStdoutPath()" class="member-name-link">getStdoutPath()</a> - Method in class org.junit.platform.console.options.<a href="../org.junit.platform.console/org/junit/platform/console/options/TestConsoleOutputOptions.html" title="class in org.junit.platform.console.options">TestConsoleOutputOptions</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/ExecutionRequest.html#getStore()" class="member-name-link">getStore()</a> - Method in class org.junit.platform.engine.<a href="../org.junit.platform.engine/org/junit/platform/engine/ExecutionRequest.html" title="class in org.junit.platform.engine">ExecutionRequest</a></dt>
+<dd>
+<div class="block">Returns the <a href="../org.junit.platform.engine/org/junit/platform/engine/support/store/NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store"><code>NamespacedHierarchicalStore</code></a> for this request for
+ storing request-scoped data.</div>
+</dd>
+<dt><a href="../org.junit.platform.launcher/org/junit/platform/launcher/LauncherSession.html#getStore()" class="member-name-link">getStore()</a> - Method in interface org.junit.platform.launcher.<a href="../org.junit.platform.launcher/org/junit/platform/launcher/LauncherSession.html" title="interface in org.junit.platform.launcher">LauncherSession</a></dt>
+<dd>
+<div class="block">Get the <a href="../org.junit.platform.engine/org/junit/platform/engine/support/store/NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store"><code>NamespacedHierarchicalStore</code></a> associated with this session.</div>
+</dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.html#getStore(org.junit.jupiter.api.extension.ExtensionContext.Namespace)" class="member-name-link">getStore(ExtensionContext.Namespace)</a> - Method in interface org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a></dt>
 <dd>
 <div class="block">Get the <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.Store.html" title="interface in org.junit.jupiter.api.extension"><code>ExtensionContext.Store</code></a> for the supplied <a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.Namespace.html" title="class in org.junit.jupiter.api.extension"><code>ExtensionContext.Namespace</code></a>.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.html#getStore(org.junit.jupiter.api.extension.ExtensionContext.StoreScope,org.junit.jupiter.api.extension.ExtensionContext.Namespace)" class="member-name-link">getStore(ExtensionContext.StoreScope, ExtensionContext.Namespace)</a> - Method in interface org.junit.jupiter.api.extension.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a></dt>
+<dd>
+<div class="block">Returns the store for supplied scope and namespace.</div>
 </dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAccessor.html#getString(int)" class="member-name-link">getString(int)</a> - Method in interface org.junit.jupiter.params.aggregator.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAccessor.html" title="interface in org.junit.jupiter.params.aggregator">ArgumentsAccessor</a></dt>
 <dd>
@@ -2038,6 +2059,11 @@ loadScripts(document, 'script');</script>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/parallel/Resources.html#GLOBAL" class="member-name-link">GLOBAL</a> - Static variable in class org.junit.jupiter.api.parallel.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/parallel/Resources.html" title="class in org.junit.jupiter.api.parallel">Resources</a></dt>
 <dd>
 <div class="block">Represents the global resource lock: "org.junit.platform.engine.support.hierarchical.ExclusiveResource.GLOBAL_KEY"</div>
+</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/store/Namespace.html#GLOBAL" class="member-name-link">GLOBAL</a> - Static variable in class org.junit.platform.engine.support.store.<a href="../org.junit.platform.engine/org/junit/platform/engine/support/store/Namespace.html" title="class in org.junit.platform.engine.support.store">Namespace</a></dt>
+<dd>
+<div class="block">The default, global namespace which allows access to stored data from
+ all extensions.</div>
 </dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/ExclusiveResource.html#GLOBAL_KEY" class="member-name-link">GLOBAL_KEY</a> - Static variable in class org.junit.platform.engine.support.hierarchical.<a href="../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/ExclusiveResource.html" title="class in org.junit.platform.engine.support.hierarchical">ExclusiveResource</a></dt>
 <dd>

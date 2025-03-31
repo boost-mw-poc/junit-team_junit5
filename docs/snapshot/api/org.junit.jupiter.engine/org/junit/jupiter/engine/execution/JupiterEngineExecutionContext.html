@@ -134,8 +134,9 @@ implements <a href="../../../../../../org.junit.platform.engine/org/junit/platfo
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.junit.platform.engine.EngineExecutionListener,org.junit.jupiter.engine.config.JupiterConfiguration)" class="member-name-link">JupiterEngineExecutionContext</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/EngineExecutionListener.html" title="interface in org.junit.platform.engine">EngineExecutionListener</a>&nbsp;executionListener,
- <a href="../config/JupiterConfiguration.html" title="interface in org.junit.jupiter.engine.config">JupiterConfiguration</a>&nbsp;configuration)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.junit.platform.engine.EngineExecutionListener,org.junit.jupiter.engine.config.JupiterConfiguration,org.junit.jupiter.engine.descriptor.LauncherStoreFacade)" class="member-name-link">JupiterEngineExecutionContext</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/EngineExecutionListener.html" title="interface in org.junit.platform.engine">EngineExecutionListener</a>&nbsp;executionListener,
+ <a href="../config/JupiterConfiguration.html" title="interface in org.junit.jupiter.engine.config">JupiterConfiguration</a>&nbsp;configuration,
+ <a href="../descriptor/LauncherStoreFacade.html" title="class in org.junit.jupiter.engine.descriptor">LauncherStoreFacade</a>&nbsp;launcherStoreFacade)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -185,12 +186,15 @@ implements <a href="../../../../../../org.junit.platform.engine/org/junit/platfo
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../extension/MutableExtensionRegistry.html" title="class in org.junit.jupiter.engine.extension">MutableExtensionRegistry</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getExtensionRegistry()" class="member-name-link">getExtensionRegistry</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TestInstancesProvider.html" title="interface in org.junit.jupiter.engine.execution">TestInstancesProvider</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTestInstancesProvider()" class="member-name-link">getTestInstancesProvider</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../descriptor/LauncherStoreFacade.html" title="class in org.junit.jupiter.engine.descriptor">LauncherStoreFacade</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLauncherStoreFacade()" class="member-name-link">getLauncherStoreFacade</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/ThrowableCollector.html" title="class in org.junit.platform.engine.support.hierarchical">ThrowableCollector</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getThrowableCollector()" class="member-name-link">getThrowableCollector</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TestInstancesProvider.html" title="interface in org.junit.jupiter.engine.execution">TestInstancesProvider</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTestInstancesProvider()" class="member-name-link">getTestInstancesProvider</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/ThrowableCollector.html" title="class in org.junit.platform.engine.support.hierarchical">ThrowableCollector</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getThrowableCollector()" class="member-name-link">getThrowableCollector</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -209,10 +213,11 @@ implements <a href="../../../../../../org.junit.platform.engine/org/junit/platfo
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(org.junit.platform.engine.EngineExecutionListener,org.junit.jupiter.engine.config.JupiterConfiguration)">
+<section class="detail" id="&lt;init&gt;(org.junit.platform.engine.EngineExecutionListener,org.junit.jupiter.engine.config.JupiterConfiguration,org.junit.jupiter.engine.descriptor.LauncherStoreFacade)">
 <h3>JupiterEngineExecutionContext</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">JupiterEngineExecutionContext</span><wbr><span class="parameters">(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/EngineExecutionListener.html" title="interface in org.junit.platform.engine">EngineExecutionListener</a>&nbsp;executionListener,
- <a href="../config/JupiterConfiguration.html" title="interface in org.junit.jupiter.engine.config">JupiterConfiguration</a>&nbsp;configuration)</span></div>
+ <a href="../config/JupiterConfiguration.html" title="interface in org.junit.jupiter.engine.config">JupiterConfiguration</a>&nbsp;configuration,
+ <a href="../descriptor/LauncherStoreFacade.html" title="class in org.junit.jupiter.engine.descriptor">LauncherStoreFacade</a>&nbsp;launcherStoreFacade)</span></div>
 </section>
 </li>
 </ul>
@@ -244,6 +249,12 @@ implements <a href="../../../../../../org.junit.platform.engine/org/junit/platfo
 <section class="detail" id="getConfiguration()">
 <h3>getConfiguration</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../config/JupiterConfiguration.html" title="interface in org.junit.jupiter.engine.config">JupiterConfiguration</a></span>&nbsp;<span class="element-name">getConfiguration</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getLauncherStoreFacade()">
+<h3>getLauncherStoreFacade</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../descriptor/LauncherStoreFacade.html" title="class in org.junit.jupiter.engine.descriptor">LauncherStoreFacade</a></span>&nbsp;<span class="element-name">getLauncherStoreFacade</span>()</div>
 </section>
 </li>
 <li>

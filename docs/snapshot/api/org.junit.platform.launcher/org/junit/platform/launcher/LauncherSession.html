@@ -140,6 +140,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/ja
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Get the <a href="Launcher.html" title="interface in org.junit.platform.launcher"><code>Launcher</code></a> associated with this session.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/support/store/NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store">NamespacedHierarchicalStore</a><wbr>&lt;<a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/support/store/Namespace.html" title="class in org.junit.platform.engine.support.store">Namespace</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getStore()" class="member-name-link">getStore</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Get the <a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/support/store/NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store"><code>NamespacedHierarchicalStore</code></a> associated with this session.</div>
+</div>
 </div>
 </div>
 </div>
@@ -177,6 +182,31 @@ extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/ja
 <dd>The behavior of calling this method concurrently with any call
  to the <a href="Launcher.html" title="interface in org.junit.platform.launcher"><code>Launcher</code></a> returned by <a href="#getLauncher()"><code>getLauncher()</code></a> is currently
  undefined.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getStore()">
+<h3>getStore</h3>
+<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#EXPERIMENTAL" title="class or interface in org.apiguardian.api" class="external-link">EXPERIMENTAL</a>,
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.13")
+</span><span class="return-type"><a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/support/store/NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store">NamespacedHierarchicalStore</a>&lt;<a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/support/store/Namespace.html" title="class in org.junit.platform.engine.support.store">Namespace</a>&gt;</span>&nbsp;<span class="element-name">getStore</span>()</div>
+<div class="block">Get the <a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/support/store/NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store"><code>NamespacedHierarchicalStore</code></a> associated with this session.
+
+ <p>All stored values that implement <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link"><code>AutoCloseable</code></a> are notified by
+ invoking their <code>close()</code> methods when this session is closed.
+
+ <p>Any call to the store returned by this method after the session has
+ been closed will throw an exception.</div>
+<dl class="notes">
+<dt>Since:</dt>
+<dd>1.13</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/support/store/NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store"><code>NamespacedHierarchicalStore</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>

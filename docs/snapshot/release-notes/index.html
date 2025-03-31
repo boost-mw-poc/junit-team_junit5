@@ -558,7 +558,15 @@ repository on GitHub.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>❓</p>
+<p>Introduce resource management mechanism that allows preparing and sharing state across
+executions or test engines via stores that are scoped to a <code>LauncherSession</code> or
+<code>ExecutionRequest</code>. The Jupiter API uses these stores as ancestors to the <code>Store</code>
+instances accessible via <code>ExtensionContext</code> and provides a new method to access them
+directly. Please refer to the User Guide for examples of managing
+<a href="../user-guide/index.html#launcher-api-launcher-session-listeners-tool-example-usage">session-scoped</a>
+and
+<a href="../user-guide/index.html#launcher-api-managing-state-across-test-engines">request-scoped</a>
+resources.</p>
 </li>
 </ul>
 </div>
