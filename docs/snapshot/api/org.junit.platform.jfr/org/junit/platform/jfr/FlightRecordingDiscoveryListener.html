@@ -164,13 +164,20 @@ implements <a href="../../../../../org.junit.platform.launcher/org/junit/platfor
 <div class="block">Called when test discovery is about to be started for an engine.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#launcherDiscoveryFinished(org.junit.platform.launcher.LauncherDiscoveryRequest)" class="member-name-link">launcherDiscoveryFinished</a><wbr>(<a href="../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a>&nbsp;request)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#issueEncountered(org.junit.platform.engine.UniqueId,org.junit.platform.engine.DiscoveryIssue)" class="member-name-link">issueEncountered</a><wbr>(<a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;engineId,
+ <a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&nbsp;issue)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Called when test discovery has finished.</div>
+<div class="block">Called when the engine with the supplied <code>engineId</code> encountered an
+ issue during test discovery.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#launcherDiscoveryStarted(org.junit.platform.launcher.LauncherDiscoveryRequest)" class="member-name-link">launcherDiscoveryStarted</a><wbr>(<a href="../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a>&nbsp;request)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#launcherDiscoveryFinished(org.junit.platform.launcher.LauncherDiscoveryRequest)" class="member-name-link">launcherDiscoveryFinished</a><wbr>(<a href="../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a>&nbsp;request)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Called when test discovery has finished.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#launcherDiscoveryStarted(org.junit.platform.launcher.LauncherDiscoveryRequest)" class="member-name-link">launcherDiscoveryStarted</a><wbr>(<a href="../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a>&nbsp;request)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Called when test discovery is about to be started.</div>
 </div>
 </div>
@@ -181,7 +188,7 @@ implements <a href="../../../../../org.junit.platform.launcher/org/junit/platfor
 <code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.junit.platform.engine.EngineDiscoveryListener">Methods inherited from interface&nbsp;org.junit.platform.engine.<a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/EngineDiscoveryListener.html" title="interface in org.junit.platform.engine">EngineDiscoveryListener</a></h3>
-<code><a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/EngineDiscoveryListener.html#issueEncountered(org.junit.platform.engine.UniqueId,org.junit.platform.engine.DiscoveryIssue)">issueEncountered</a>, <a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/EngineDiscoveryListener.html#selectorProcessed(org.junit.platform.engine.UniqueId,org.junit.platform.engine.DiscoverySelector,org.junit.platform.engine.SelectorResolutionResult)">selectorProcessed</a></code></div>
+<code><a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/EngineDiscoveryListener.html#selectorProcessed(org.junit.platform.engine.UniqueId,org.junit.platform.engine.DiscoverySelector,org.junit.platform.engine.SelectorResolutionResult)">selectorProcessed</a></code></div>
 </section>
 </li>
 </ul>
@@ -269,6 +276,29 @@ implements <a href="../../../../../org.junit.platform.launcher/org/junit/platfor
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../../org.junit.platform.launcher/org/junit/platform/launcher/EngineDiscoveryResult.html" title="class in org.junit.platform.launcher"><code>EngineDiscoveryResult</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="issueEncountered(org.junit.platform.engine.UniqueId,org.junit.platform.engine.DiscoveryIssue)">
+<h3>issueEncountered</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">issueEncountered</span><wbr><span class="parameters">(<a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;engineId,
+ <a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.html" title="interface in org.junit.platform.engine">DiscoveryIssue</a>&nbsp;issue)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/EngineDiscoveryListener.html#issueEncountered(org.junit.platform.engine.UniqueId,org.junit.platform.engine.DiscoveryIssue)">EngineDiscoveryListener</a></code></span></div>
+<div class="block">Called when the engine with the supplied <code>engineId</code> encountered an
+ issue during test discovery.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/EngineDiscoveryListener.html#issueEncountered(org.junit.platform.engine.UniqueId,org.junit.platform.engine.DiscoveryIssue)">issueEncountered</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/EngineDiscoveryListener.html" title="interface in org.junit.platform.engine">EngineDiscoveryListener</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>engineId</code> - the unique ID of the engine descriptor</dd>
+<dd><code>issue</code> - the encountered issue</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.html" title="interface in org.junit.platform.engine"><code>DiscoveryIssue</code></a></li>
 </ul>
 </dd>
 </dl>

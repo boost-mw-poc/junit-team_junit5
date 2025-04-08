@@ -100,7 +100,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="TestClassAware.html" title="interface in org.junit.jupiter.engine.descriptor">TestClassAware</a></code>, <code><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.html" title="interface in org.junit.platform.engine.support.hierarchical">Node</a>&lt;<a href="../execution/JupiterEngineExecutionContext.html" title="class in org.junit.jupiter.engine.execution">JupiterEngineExecutionContext</a>&gt;</code>, <code><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html" title="interface in org.junit.platform.engine">TestDescriptor</a></code></dd>
+<dd><code><a href="TestClassAware.html" title="interface in org.junit.jupiter.engine.descriptor">TestClassAware</a></code>, <code><a href="Validatable.html" title="interface in org.junit.jupiter.engine.descriptor">Validatable</a></code>, <code><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.html" title="interface in org.junit.platform.engine.support.hierarchical">Node</a>&lt;<a href="../execution/JupiterEngineExecutionContext.html" title="class in org.junit.jupiter.engine.execution">JupiterEngineExecutionContext</a>&gt;</code>, <code><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html" title="interface in org.junit.platform.engine">TestDescriptor</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
@@ -111,7 +111,7 @@ loadScripts(document, 'script');</script>
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="5.0")
 </span><span class="modifiers">public abstract class </span><span class="element-name type-name-label">MethodBasedTestDescriptor</span>
 <span class="extends-implements">extends <a href="JupiterTestDescriptor.html" title="class in org.junit.jupiter.engine.descriptor">JupiterTestDescriptor</a>
-implements <a href="TestClassAware.html" title="interface in org.junit.jupiter.engine.descriptor">TestClassAware</a></span></div>
+implements <a href="TestClassAware.html" title="interface in org.junit.jupiter.engine.descriptor">TestClassAware</a>, <a href="Validatable.html" title="interface in org.junit.jupiter.engine.descriptor">Validatable</a></span></div>
 <div class="block">Base class for <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestDescriptor.html" title="interface in org.junit.platform.engine"><code>TestDescriptors</code></a> based on Java methods.</div>
 <dl class="notes">
 <dt>Since:</dt>
@@ -201,6 +201,12 @@ implements <a href="TestClassAware.html" title="interface in org.junit.jupiter.e
 <div class="block">Invoke <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/TestWatcher.html#testDisabled(org.junit.jupiter.api.extension.ExtensionContext,java.util.Optional)"><code>TestWatcher.testDisabled(ExtensionContext, Optional)</code></a> on each
  registered <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/TestWatcher.html" title="interface in org.junit.jupiter.api.extension"><code>TestWatcher</code></a>, in registration order.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validate(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)" class="member-name-link">validate</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;reporter)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Validate the state of this descriptor and report any issues found to the
+ supplied <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery"><code>DiscoveryIssueReporter</code></a>.</div>
+</div>
 </div>
 </div>
 </div>
@@ -231,6 +237,12 @@ implements <a href="TestClassAware.html" title="interface in org.junit.jupiter.e
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
+<section class="detail" id="getTestMethod()">
+<h3>getTestMethod</h3>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a></span>&nbsp;<span class="element-name">getTestMethod</span>()</div>
+</section>
+</li>
+<li>
 <section class="detail" id="getTags()">
 <h3>getTags</h3>
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/TestTag.html" title="class in org.junit.platform.engine">TestTag</a>&gt;</span>&nbsp;<span class="element-name">getTags</span>()</div>
@@ -254,50 +266,6 @@ implements <a href="TestClassAware.html" title="interface in org.junit.jupiter.e
 </section>
 </li>
 <li>
-<section class="detail" id="getExclusiveResourceCollector()">
-<h3>getExclusiveResourceCollector</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.junit.jupiter.engine.descriptor.ExclusiveResourceCollector</span>&nbsp;<span class="element-name">getExclusiveResourceCollector</span>()</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getResourceLocksProviderEvaluator()">
-<h3>getResourceLocksProviderEvaluator</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/parallel/ResourceLocksProvider.html" title="interface in org.junit.jupiter.api.parallel">ResourceLocksProvider</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/parallel/ResourceLocksProvider.Lock.html" title="class in org.junit.jupiter.api.parallel">ResourceLocksProvider.Lock</a>&gt;&gt;</span>&nbsp;<span class="element-name">getResourceLocksProviderEvaluator</span>()</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getEnclosingTestClasses()">
-<h3>getEnclosingTestClasses</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">getEnclosingTestClasses</span>()</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="TestClassAware.html#getEnclosingTestClasses()">getEnclosingTestClasses</a></code>&nbsp;in interface&nbsp;<code><a href="TestClassAware.html" title="interface in org.junit.jupiter.engine.descriptor">TestClassAware</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="getExplicitExecutionMode()">
-<h3>getExplicitExecutionMode</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.ExecutionMode.html" title="enum class in org.junit.platform.engine.support.hierarchical">Node.ExecutionMode</a>&gt;</span>&nbsp;<span class="element-name">getExplicitExecutionMode</span>()</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getTestClass()">
-<h3>getTestClass</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">getTestClass</span>()</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="TestClassAware.html#getTestClass()">getTestClass</a></code>&nbsp;in interface&nbsp;<code><a href="TestClassAware.html" title="interface in org.junit.jupiter.engine.descriptor">TestClassAware</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="getTestMethod()">
-<h3>getTestMethod</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a></span>&nbsp;<span class="element-name">getTestMethod</span>()</div>
-</section>
-</li>
-<li>
 <section class="detail" id="getLegacyReportingName()">
 <h3>getLegacyReportingName</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getLegacyReportingName</span>()</div>
@@ -313,6 +281,57 @@ implements <a href="TestClassAware.html" title="interface in org.junit.jupiter.e
 <dt>Returns:</dt>
 <dd>the legacy reporting name; never <code>null</code> or blank</dd>
 </dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getTestClass()">
+<h3>getTestClass</h3>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">getTestClass</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="TestClassAware.html#getTestClass()">getTestClass</a></code>&nbsp;in interface&nbsp;<code><a href="TestClassAware.html" title="interface in org.junit.jupiter.engine.descriptor">TestClassAware</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getEnclosingTestClasses()">
+<h3>getEnclosingTestClasses</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">getEnclosingTestClasses</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="TestClassAware.html#getEnclosingTestClasses()">getEnclosingTestClasses</a></code>&nbsp;in interface&nbsp;<code><a href="TestClassAware.html" title="interface in org.junit.jupiter.engine.descriptor">TestClassAware</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="validate(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)">
+<h3>validate</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">validate</span><wbr><span class="parameters">(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery">DiscoveryIssueReporter</a>&nbsp;reporter)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Validatable.html#validate(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)">Validatable</a></code></span></div>
+<div class="block">Validate the state of this descriptor and report any issues found to the
+ supplied <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.html" title="interface in org.junit.platform.engine.support.discovery"><code>DiscoveryIssueReporter</code></a>.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="Validatable.html#validate(org.junit.platform.engine.support.discovery.DiscoveryIssueReporter)">validate</a></code>&nbsp;in interface&nbsp;<code><a href="Validatable.html" title="interface in org.junit.jupiter.engine.descriptor">Validatable</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getExclusiveResourceCollector()">
+<h3>getExclusiveResourceCollector</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.junit.jupiter.engine.descriptor.ExclusiveResourceCollector</span>&nbsp;<span class="element-name">getExclusiveResourceCollector</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getResourceLocksProviderEvaluator()">
+<h3>getResourceLocksProviderEvaluator</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/parallel/ResourceLocksProvider.html" title="interface in org.junit.jupiter.api.parallel">ResourceLocksProvider</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/parallel/ResourceLocksProvider.Lock.html" title="class in org.junit.jupiter.api.parallel">ResourceLocksProvider.Lock</a>&gt;&gt;</span>&nbsp;<span class="element-name">getResourceLocksProviderEvaluator</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getExplicitExecutionMode()">
+<h3>getExplicitExecutionMode</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/Node.ExecutionMode.html" title="enum class in org.junit.platform.engine.support.hierarchical">Node.ExecutionMode</a>&gt;</span>&nbsp;<span class="element-name">getExplicitExecutionMode</span>()</div>
 </section>
 </li>
 <li>
