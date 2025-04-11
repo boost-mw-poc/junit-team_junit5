@@ -575,6 +575,38 @@ and
 <a href="../user-guide/index.html#launcher-api-managing-state-across-test-engines">request-scoped</a>
 resources.</p>
 </li>
+<li>
+<p>Introduce a mechanism for <code>TestEngine</code> implementations to report issues encountered
+during test discovery. If an engine reports a <code>DiscoveryIssue</code> with a <code>Severity</code> equal
+to or higher than a configurable critical severity, its tests will not be executed.
+Instead, the engine will be reported as failed during execution with a failure message
+listing all critical issues. Non-critical issues will be logged but will not prevent the
+engine from executing its tests. The critical severity can be configured via a new
+configuration parameter and, currently, defaults to <code>ERROR</code>. Please refer to the
+<a href="../user-guide/index.html#running-tests-discovery-issues">User Guide</a> for details.</p>
+<div class="paragraph">
+<p>If you&#8217;re a test engine maintainer, please see the
+<a href="../user-guide/index.html#test-engines-discovery-issues">User Guide</a> for details on how
+to start reporting discovery issues.</p>
+</div>
+</li>
+<li>
+<p>Start reporting discovery issues for problematic <code>@Suite</code> classes:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Invalid <code>@Suite</code> class declarations (for example, when <code>private</code>)</p>
+</li>
+<li>
+<p>Invalid <code>@BeforeSuite</code>/<code>@AfterSuite</code> method declarations (for example, when not
+<code>static</code>)</p>
+</li>
+<li>
+<p>Cyclic dependencies between <code>@Suite</code> classes</p>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 </div>
@@ -606,10 +638,45 @@ resources.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Return types of <code>@TestFactory</code> methods are now validated during discovery rather than
-during execution. Invalid <code>@TestFactory</code> methods are no longer executed but reported as
-discovery issues for consistency with how <code>@Test</code> and <code>@TestTemplate</code> methods are
-handled.</p>
+<p>Start reporting discovery issues for potentially problematic test classes:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Invalid <code>@Test</code> and <code>@TestTemplate</code> method declarations (for example, when return
+type is not <code>void</code>)</p>
+</li>
+<li>
+<p>Invalid <code>@TestFactory</code> methods (for example, when return type is invalid)</p>
+</li>
+<li>
+<p>Multiple method-level annotations (for example, <code>@Test</code> and <code>@TestTemplate</code>)</p>
+</li>
+<li>
+<p>Invalid test class and <code>@Nested</code> class declarations (for example, <code>static</code> <code>@Nested</code>
+classes)</p>
+</li>
+<li>
+<p>Potentially missing <code>@Nested</code> annotations (for example, non-abstract inner classes
+that contain test methods)</p>
+</li>
+<li>
+<p>Invalid lifecycle method declarations (for example, when <code>private</code>)</p>
+</li>
+<li>
+<p>Invalid <code>@Tag</code> syntax</p>
+</li>
+<li>
+<p>Blank <code>@DisplayName</code> declarations</p>
+</li>
+<li>
+<p>Blank <code>@SentenceFragment</code> declarations</p>
+</li>
+<li>
+<p><code>@BeforeParameterizedClassInvocation</code> and <code>@AfterParameterizedClassInvocation</code>
+methods declared in non-parameterized test classes</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>

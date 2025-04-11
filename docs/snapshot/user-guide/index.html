@@ -869,6 +869,7 @@ pre.rouge .gs {
 </ul>
 </li>
 <li><a href="#stacktrace-pruning">4.10. Stack Trace Pruning</a></li>
+<li><a href="#running-tests-discovery-issues">4.11. Discovery Issues</a></li>
 </ul>
 </li>
 <li><a href="#extensions">5. Extension Model</a>
@@ -1012,6 +1013,7 @@ pre.rouge .gs {
 <li><a href="#test-engines-requirements-enhanced-compatibility">Enhanced compatibility</a></li>
 </ul>
 </li>
+<li><a href="#test-engines-discovery-issues">6.5.5. Reporting Discovery Issues</a></li>
 </ul>
 </li>
 </ul>
@@ -11219,6 +11221,63 @@ never be excluded.</p>
 Launcher will be removed.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="running-tests-discovery-issues"><a class="anchor" href="#running-tests-discovery-issues"></a>4.11. Discovery Issues</h3>
+<div class="paragraph">
+<p>Test engines may encounter issues during test discovery. For example, the declaration of a
+test class or method may be invalid. To avoid such issues from going unnoticed, the JUnit
+Platform provides a <a href="#test-engines-discovery-issues">mechanism for test engines</a> to
+report them with different severity levels:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">INFO</dt>
+<dd>
+<p>Indicates that the engine encountered something that could be potentially problematic, but
+could also happen due to a valid setup or configuration.</p>
+</dd>
+<dt class="hdlist1">WARNING</dt>
+<dd>
+<p>Indicates that the engine encountered something that is problematic and might lead to
+unexpected behavior or will be removed or changed in a future release.</p>
+</dd>
+<dt class="hdlist1">ERROR</dt>
+<dd>
+<p>Indicates that the engine encountered something that is definitely problematic and will
+lead to unexpected behavior.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>If an engine reports an issue with a severity equal to or higher than a configurable
+<em>critical</em> severity, its tests will not be executed. Instead, the engine will be reported
+as failed during execution with a <code><a href="../api/org.junit.platform.launcher/org/junit/platform/launcher/core/DiscoveryIssueException.html">DiscoveryIssueException</a></code> listing all critical issues.
+Non-critical issues will be logged but will not prevent the engine from executing its
+tests. The <code>junit.platform.discovery.issue.severity.critical</code>
+<a href="#running-tests-config-params">configuration parameter</a> can be used to set the critical
+severity level. Currently, the default value is <code>ERROR</code> but it may be changed in a future
+release.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+To surface all discovery issues in your project, it is recommended to set the
+<code>junit.platform.discovery.issue.severity.critical</code> configuration parameter to <code>INFO</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In addition, registered <code><a href="../api/org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryListener.html">LauncherDiscoveryListener</a></code> implementations can receive
+discovery issues via the <code>issueEncountered()</code> method. This allows IDEs and build tools to
+report issues to the user in a more user-friendly way. For example, IDEs may choose to
+display all issues in a list or table.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -15674,6 +15733,28 @@ that tag filters can be applied when discovering tests.</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="test-engines-discovery-issues"><a class="anchor" href="#test-engines-discovery-issues"></a>6.5.5. Reporting Discovery Issues</h4>
+<div class="paragraph">
+<p>Test engines should report <a href="#running-tests-discovery-issues">discovery issues</a> if they
+encounter any problems or potential misconfigurations during test discovery. This is
+especially important if the issue could lead to tests not being executed at all or only
+partially.</p>
+</div>
+<div class="paragraph">
+<p>In order to report a <code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/DiscoveryIssue.html">DiscoveryIssue</a></code>, a test engine should call the
+<code>issueEncountered()</code> method on the <code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/EngineDiscoveryListener.html">EngineDiscoveryListener</a></code> available via the
+<code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/EngineDiscoveryRequest.html">EngineDiscoveryRequest</a></code> passed to its <code>discover()</code> method. Rather than passing the
+listener around, the <code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/support/discovery/DiscoveryIssueReporter.html">DiscoveryIssueReporter</a></code> interface should be used. It also provides
+a way to create a <code>Condition</code> that reports a discovery issue if its check fails and may
+be used as a <code>Predicate</code> or <code>Consumer</code>. Please refer to the implementations of the
+<a href="#test-engines-junit">test engines provided by JUnit</a> for examples.</p>
+</div>
+<div class="paragraph">
+<p>Moreover, <a href="#testkit-engine-discovery">Engine Test Kit</a> provides a way to write tests for
+reported discovery issues.</p>
 </div>
 </div>
 </div>
