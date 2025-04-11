@@ -493,6 +493,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#release-notes-5.13.0-M1-junit-vintage">JUnit Vintage</a></li>
 </ul>
 </li>
+<li><a href="#release-notes-5.12.2">5.12.2</a>
+<ul class="sectlevel2">
+<li><a href="#release-notes-5.12.2-junit-platform">JUnit Platform</a></li>
+<li><a href="#release-notes-5.12.2-junit-jupiter">JUnit Jupiter</a></li>
+<li><a href="#release-notes-5.12.2-junit-vintage">JUnit Vintage</a></li>
+</ul>
+</li>
 <li><a href="#release-notes-5.12.1">5.12.1</a>
 <ul class="sectlevel2">
 <li><a href="#release-notes-5.12.1-junit-platform">JUnit Platform</a></li>
@@ -841,6 +848,49 @@ extensions.</p>
 </div>
 <div class="sect2">
 <h3 id="release-notes-5.13.0-M1-junit-vintage"><a class="anchor" href="#release-notes-5.13.0-M1-junit-vintage"></a>JUnit Vintage</h3>
+<div class="paragraph">
+<p>No changes.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="release-notes-5.12.2"><a class="anchor" href="#release-notes-5.12.2"></a>5.12.2</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Date of Release:</strong> April 11, 2025</p>
+</div>
+<div class="paragraph">
+<p><strong>Scope:</strong> Bug fixes and enhancements since 5.12.1</p>
+</div>
+<div class="paragraph">
+<p>For a complete list of all <em>closed</em> issues and pull requests for this release, consult the
+<a href="https://github.com/junit-team/junit5/milestone/95?closed=1">5.12.2</a> milestone page in the JUnit repository
+on GitHub.</p>
+</div>
+<div class="sect2">
+<h3 id="release-notes-5.12.2-junit-platform"><a class="anchor" href="#release-notes-5.12.2-junit-platform"></a>JUnit Platform</h3>
+<div class="paragraph">
+<p>No changes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="release-notes-5.12.2-junit-jupiter"><a class="anchor" href="#release-notes-5.12.2-junit-jupiter"></a>JUnit Jupiter</h3>
+<div class="sect3">
+<h4 id="release-notes-5.12.2-junit-jupiter-bug-fixes"><a class="anchor" href="#release-notes-5.12.2-junit-jupiter-bug-fixes"></a>Bug Fixes</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Fix handling of <code>CleanupMode.ON_SUCCESS</code> with <code>@TempDir</code> that caused no temporary
+directories (using that mode) to be deleted after the first failure even if the
+corresponding tests passed.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="release-notes-5.12.2-junit-vintage"><a class="anchor" href="#release-notes-5.12.2-junit-vintage"></a>JUnit Vintage</h3>
 <div class="paragraph">
 <p>No changes.</p>
 </div>
