@@ -135,6 +135,12 @@ loadScripts(document, 'script');</script>
  use one of these types, you can wrap it in a <code>Supplier</code> &mdash; for
  example, <code>Supplier&lt;IntStream&gt;</code>.
 
+ <p>If the <code>Supplier</code> return type is <code>Stream</code> or
+ one of the primitive streams, JUnit will properly close it by calling
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/BaseStream.html#close()" title="class or interface in java.util.stream" class="external-link"><code>BaseStream.close()</code></a>,
+ making it safe to use a resource such as
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Files.html#lines(java.nio.file.Path)" title="class or interface in java.nio.file" class="external-link"><code>Files.lines()</code></a>.
+
  <p>Please note that a one-dimensional array of objects supplied as a set of
  "arguments" will be handled differently than other types of arguments.
  Specifically, all of the elements of a one-dimensional array of objects will

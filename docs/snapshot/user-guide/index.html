@@ -5187,6 +5187,11 @@ of <code>Arguments</code>, an array of objects (e.g., <code>Object[]</code>), or
 parameterized class or test method accepts a single argument.</p>
 </div>
 <div class="paragraph">
+<p>If the return type is <code>Stream</code> or one of the primitive streams,
+JUnit will properly close it by calling <code>BaseStream.close()</code>,
+making it safe to use a resource such as <code>Files.lines()</code>.</p>
+</div>
+<div class="paragraph">
 <p>If you only need a single parameter, you can return a <code>Stream</code> of instances of the
 parameter type as demonstrated in the following example.</p>
 </div>
@@ -5387,6 +5392,11 @@ these types, you can wrap it in a <code>Supplier</code> — for example, <code>S
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>If the <code>Supplier</code> return type is <code>Stream</code> or one of the primitive streams,
+JUnit will properly close it by calling <code>BaseStream.close()</code>,
+making it safe to use a resource such as <code>Files.lines()</code>.</p>
 </div>
 <div class="paragraph">
 <p>Please note that a one-dimensional array of objects supplied as a set of "arguments" will
