@@ -215,9 +215,11 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
  <li><a href="ExtensionContext.html#getTestMethod()"><code>getTestMethod()</code></a> is no longer
  empty, unless the <a href="../TestInstance.Lifecycle.html#PER_CLASS"><code>PER_CLASS</code></a>
  lifecycle is used.</li>
- <li>If the callback adds a new <a href="ExtensionContext.Store.CloseableResource.html" title="interface in org.junit.jupiter.api.extension"><code>ExtensionContext.Store.CloseableResource</code></a> to the
- <a href="ExtensionContext.Store.html" title="interface in org.junit.jupiter.api.extension"><code>Store</code></a>, the resource is closed just after the instance is
- destroyed.</li>
+ <li>If the callback adds a new <a href="ExtensionContext.Store.CloseableResource.html" title="interface in org.junit.jupiter.api.extension"><code>ExtensionContext.Store.CloseableResource</code></a> or
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link"><code>AutoCloseable</code></a> to the <a href="ExtensionContext.Store.html" title="interface in org.junit.jupiter.api.extension"><code>Store</code></a> (unless the
+ <code>junit.jupiter.extensions.store.close.autocloseable.enabled</code>
+ configuration parameter is set to <code>false</code>), then
+ the resource is closed just after the instance is destroyed.</li>
  <li>The callbacks can now access data previously stored by
  <a href="TestTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension"><code>TestTemplateInvocationContext</code></a>, unless the
  <a href="../TestInstance.Lifecycle.html#PER_CLASS"><code>PER_CLASS</code></a> lifecycle is used.</li>

@@ -697,6 +697,15 @@ methods declared in non-parameterized test classes</p>
 </div>
 </li>
 <li>
+<p>By default, <code>AutoCloseable</code> objects put into <code>ExtensionContext.Store</code> are now treated
+like instances of <code>CloseableResource</code> (which has been deprecated) and are closed
+automatically when the store is closed at the end of the test lifecycle. It&#8217;s possible
+to <a href="../user-guide/index.html#extensions-keeping-state-autocloseable-support">revert to the old behavior</a>
+via a configuration parameter. Please also see the
+<a href="../user-guide/index.html#extensions-keeping-state-autocloseable-migration">migration note</a>
+for third-party extensions wanting to support both JUnit 5.13 and earlier versions.</p>
+</li>
+<li>
 <p><code>java.util.Locale</code> arguments are now converted according to the IETF BCP 47 language tag
 format. See the
 <a href="../user-guide/index.html#writing-tests-parameterized-tests-argument-conversion-implicit">User Guide</a>

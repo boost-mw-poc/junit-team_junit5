@@ -13043,30 +13043,34 @@ surrounding <code>ExtensionContext</code>. Since <code>ExtensionContexts</code> 
 inner contexts may also be limited. Consult the corresponding Javadoc for details on the
 methods available for storing and retrieving values via the <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtensionContext.Store.html">Store</a></code>.</p>
 </div>
-<div class="admonitionblock note">
+<div id="extensions-keeping-state-autocloseable-support" class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="title"><code>ExtensionContext.Store.CloseableResource</code></div>
+<div class="title">Resource management via <code><em>AutoCloseable</em></code></div>
 An extension context store is bound to its extension context lifecycle. When an
-extension context lifecycle ends it closes its associated store. All stored values
-that are instances of <code>CloseableResource</code> are notified by an invocation of their <code>close()</code>
-method in the inverse order they were added in.
+extension context lifecycle ends it closes its associated store. As of JUnit 5.13,
+all stored values that are instances of <code>AutoCloseable</code> are notified by an invocation of
+their <code>close()</code> method in the inverse order they were added in (unless the
+<code>junit.jupiter.extensions.store.close.autocloseable.enabled</code>
+<a href="#running-tests-config-params">configuration parameter</a> is set to <code>false</code>). Older
+versions only supported <code>CloseableResource</code>, which is deprecated but still available for
+backward compatibility.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>An example implementation of <code>CloseableResource</code> is shown below, using an <code>HttpServer</code>
+<p>An example implementation of <code>AutoCloseable</code> is shown below, using an <code>HttpServer</code>
 resource.</p>
 </div>
 <div class="listingblock">
-<div class="title"><code>HttpServer</code> resource implementing <code>CloseableResource</code></div>
+<div class="title"><code>HttpServer</code> resource implementing <code>AutoCloseable</code></div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">HttpServerResource</span> <span class="kd">implements</span> <span class="nc">CloseableResource</span> <span class="o">{</span>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">HttpServerResource</span> <span class="kd">implements</span> <span class="nc">AutoCloseable</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="nc">HttpServer</span> <span class="n">httpServer</span><span class="o">;</span>
 
@@ -13166,6 +13170,42 @@ classes and methods.</p>
     <span class="o">}</span>
 <span class="o">}</span></code></pre>
 </div>
+</div>
+<div id="extensions-keeping-state-autocloseable-migration" class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Migration Note for Resource Cleanup</div>
+<div class="paragraph">
+<p>Starting with JUnit Jupiter 5.13, the framework automatically closes resources stored in
+the <code>ExtensionContext.Store</code> that implement <code>AutoCloseable</code>. In earlier versions, only
+resources implementing <code>Store.CloseableResource</code> were automatically closed.</p>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re developing an extension that needs to support both JUnit Jupiter 5.13+ and
+earlier versions and your extension stores resources that need to be cleaned up, you
+should implement both interfaces:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyResource</span> <span class="kd">implements</span> <span class="nc">Store</span><span class="o">.</span><span class="na">CloseableResource</span><span class="o">,</span> <span class="nc">AutoCloseable</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">close</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+        <span class="c1">// Resource cleanup code</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This ensures that your resource will be properly closed regardless of which JUnit Jupiter
+version is being used.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
