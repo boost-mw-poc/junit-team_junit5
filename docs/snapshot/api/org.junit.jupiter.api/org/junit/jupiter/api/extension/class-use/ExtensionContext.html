@@ -92,6 +92,18 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">Extensions which provide (limited) support for JUnit 4 rules within JUnit Jupiter.</div>
 </div>
+<div class="col-first even-row-color"><a href="#org.junit.jupiter.params.aggregator">org.junit.jupiter.params.aggregator</a></div>
+<div class="col-last even-row-color">
+<div class="block">The <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAggregator.html" title="interface in org.junit.jupiter.params.aggregator"><code>ArgumentsAggregator</code></a> and
+ <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAccessor.html" title="interface in org.junit.jupiter.params.aggregator"><code>ArgumentsAccessor</code></a> interfaces and the
+ <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/AggregateWith.html" title="annotation interface in org.junit.jupiter.params.aggregator"><code>AggregateWith</code></a> annotation.</div>
+</div>
+<div class="col-first odd-row-color"><a href="#org.junit.jupiter.params.converter">org.junit.jupiter.params.converter</a></div>
+<div class="col-last odd-row-color">
+<div class="block"><a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/converter/ArgumentConverter.html" title="interface in org.junit.jupiter.params.converter"><code>ArgumentConverter</code></a>
+ implementations and the corresponding
+ <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/converter/ConvertWith.html" title="annotation interface in org.junit.jupiter.params.converter"><code>@ConvertWith</code></a> annotation.</div>
+</div>
 <div class="col-first even-row-color"><a href="#org.junit.jupiter.params.provider">org.junit.jupiter.params.provider</a></div>
 <div class="col-last even-row-color">
 <div class="block"><a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html" title="interface in org.junit.jupiter.params.provider"><code>ArgumentsProvider</code></a>
@@ -647,6 +659,37 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>void</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">ExpectedExceptionSupport.</span><code><a href="../../../../../../../org.junit.jupiter.migrationsupport/org/junit/jupiter/migrationsupport/rules/ExpectedExceptionSupport.html#handleTestExecutionException(org.junit.jupiter.api.extension.ExtensionContext,java.lang.Throwable)" class="member-name-link">handleTestExecutionException</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;throwable)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.junit.jupiter.params.aggregator">
+<h2>Uses of <a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a> in <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/package-summary.html">org.junit.jupiter.params.aggregator</a></h2>
+<div class="caption"><span>Methods in <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/package-summary.html">org.junit.jupiter.params.aggregator</a> with parameters of type <a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/DefaultArgumentsAccessor.html" title="class in org.junit.jupiter.params.aggregator">DefaultArgumentsAccessor</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">DefaultArgumentsAccessor.</span><code><a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/DefaultArgumentsAccessor.html#create(org.junit.jupiter.api.extension.ExtensionContext,int,java.lang.ClassLoader,java.lang.Object%5B%5D)" class="member-name-link">create</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context,
+ int&nbsp;invocationIndex,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/ClassLoader.html" title="class or interface in java.lang" class="external-link">ClassLoader</a>&nbsp;classLoader,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;arguments)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.junit.jupiter.params.converter">
+<h2>Uses of <a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a> in <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/converter/package-summary.html">org.junit.jupiter.params.converter</a></h2>
+<div class="caption"><span>Constructors in <a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/converter/package-summary.html">org.junit.jupiter.params.converter</a> with parameters of type <a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier</div>
+<div class="table-header col-second">Constructor</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../../../../../../../org.junit.jupiter.params/org/junit/jupiter/params/converter/DefaultArgumentConverter.html#%3Cinit%3E(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">DefaultArgumentConverter</a><wbr>(<a href="../ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>

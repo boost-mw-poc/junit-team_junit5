@@ -6215,7 +6215,7 @@ integral types: <code>byte</code>, <code>short</code>, <code>int</code>, <code>l
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.util.Locale</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>"en"</code>                                   &#8594; <code>new Locale("en")</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>"en-US"</code>                                &#8594; <code>Locale.forLanguageTag("en-US")</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.util.UUID</code></p></td>
@@ -6223,6 +6223,22 @@ integral types: <code>byte</code>, <code>short</code>, <code>int</code>, <code>l
 </tr>
 </tbody>
 </table>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+To revert to the old <code>java.util.Locale</code> conversion behavior of version 5.12 and
+earlier (which called the deprecated <code>Locale(String)</code> constructor), you can set the
+<code>junit.jupiter.params.arguments.conversion.locale.format</code>
+<a href="#running-tests-config-params">configuration parameter</a> to <code>iso_639</code>. However, please
+note that this parameter is deprecated and will be removed in a future release.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect5">
 <h6 id="writing-tests-parameterized-tests-argument-conversion-implicit-fallback"><a class="anchor" href="#writing-tests-parameterized-tests-argument-conversion-implicit-fallback"></a>Fallback String-to-Object Conversion</h6>
 <div class="paragraph">
@@ -6298,7 +6314,7 @@ as the title of the book.</p>
 <div class="sect4">
 <h5 id="writing-tests-parameterized-tests-argument-conversion-explicit"><a class="anchor" href="#writing-tests-parameterized-tests-argument-conversion-explicit"></a>Explicit Conversion</h5>
 <div class="paragraph">
-<p>Instead of relying on implicit argument conversion you may explicitly specify an
+<p>Instead of relying on implicit argument conversion, you may explicitly specify an
 <code>ArgumentConverter</code> to use for a certain parameter using the <code>@ConvertWith</code> annotation
 like in the following example. Note that an implementation of <code>ArgumentConverter</code> must be
 declared as either a top-level class or as a <code>static</code> nested class.</p>
