@@ -386,6 +386,12 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Close the supplied <code>value</code>.</div>
 </dd>
+<dt><a href="../org.junit.platform.console/org/junit/platform/console/tasks/CustomClassLoaderCloseStrategy.html#CLOSE_AFTER_CALLING_LAUNCHER" class="member-name-link">CLOSE_AFTER_CALLING_LAUNCHER</a> - Enum constant in enum class org.junit.platform.console.tasks.<a href="../org.junit.platform.console/org/junit/platform/console/tasks/CustomClassLoaderCloseStrategy.html" title="enum class in org.junit.platform.console.tasks">CustomClassLoaderCloseStrategy</a></dt>
+<dd>
+<div class="block">Close the custom class loader after calling the
+ <a href="../org.junit.platform.launcher/org/junit/platform/launcher/Launcher.html" title="interface in org.junit.platform.launcher"><code>Launcher</code></a> for test discovery or
+ execution.</div>
+</dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/store/NamespacedHierarchicalStore.CloseAction.html#closeAutoCloseables()" class="member-name-link">closeAutoCloseables()</a> - Static method in interface org.junit.platform.engine.support.store.<a href="../org.junit.platform.engine/org/junit/platform/engine/support/store/NamespacedHierarchicalStore.CloseAction.html" title="interface in org.junit.platform.engine.support.store">NamespacedHierarchicalStore.CloseAction</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/config/JupiterConfiguration.html#CLOSING_STORED_AUTO_CLOSEABLE_ENABLED_PROPERTY_NAME" class="member-name-link">CLOSING_STORED_AUTO_CLOSEABLE_ENABLED_PROPERTY_NAME</a> - Static variable in interface org.junit.jupiter.engine.config.<a href="../org.junit.jupiter.engine/org/junit/jupiter/engine/config/JupiterConfiguration.html" title="interface in org.junit.jupiter.engine.config">JupiterConfiguration</a></dt>
@@ -625,6 +631,8 @@ loadScripts(document, 'script');</script>
 <dt><a href="../org.junit.platform.console/org/junit/platform/console/tasks/ConsoleTestExecutor.html" class="type-name-link" title="class in org.junit.platform.console.tasks">ConsoleTestExecutor</a> - Class in <a href="../org.junit.platform.console/org/junit/platform/console/tasks/package-summary.html">org.junit.platform.console.tasks</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.platform.console/org/junit/platform/console/tasks/ConsoleTestExecutor.html#%3Cinit%3E(org.junit.platform.console.options.TestDiscoveryOptions,org.junit.platform.console.options.TestConsoleOutputOptions)" class="member-name-link">ConsoleTestExecutor(TestDiscoveryOptions, TestConsoleOutputOptions)</a> - Constructor for class org.junit.platform.console.tasks.<a href="../org.junit.platform.console/org/junit/platform/console/tasks/ConsoleTestExecutor.html" title="class in org.junit.platform.console.tasks">ConsoleTestExecutor</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.console/org/junit/platform/console/tasks/ConsoleTestExecutor.html#%3Cinit%3E(org.junit.platform.console.options.TestDiscoveryOptions,org.junit.platform.console.options.TestConsoleOutputOptions,org.junit.platform.console.tasks.CustomClassLoaderCloseStrategy)" class="member-name-link">ConsoleTestExecutor(TestDiscoveryOptions, TestConsoleOutputOptions, CustomClassLoaderCloseStrategy)</a> - Constructor for class org.junit.platform.console.tasks.<a href="../org.junit.platform.console/org/junit/platform/console/tasks/ConsoleTestExecutor.html" title="class in org.junit.platform.console.tasks">ConsoleTestExecutor</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org.junit.platform.console/org/junit/platform/console/tasks/ConsoleTestExecutor.Factory.html" class="type-name-link" title="interface in org.junit.platform.console.tasks">ConsoleTestExecutor.Factory</a> - Interface in <a href="../org.junit.platform.console/org/junit/platform/console/tasks/package-summary.html">org.junit.platform.console.tasks</a></dt>
 <dd>&nbsp;</dd>
@@ -1070,6 +1078,11 @@ loadScripts(document, 'script');</script>
 <div class="block">Allows the specification of a custom <a href="../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/ParallelExecutionConfigurationStrategy.html" title="interface in org.junit.platform.engine.support.hierarchical"><code>ParallelExecutionConfigurationStrategy</code></a>
  implementation via the mandatory <a href="../org.junit.platform.engine/org/junit/platform/engine/support/hierarchical/DefaultParallelExecutionConfigurationStrategy.html#CONFIG_CUSTOM_CLASS_PROPERTY_NAME">"custom.class"</a>
  configuration parameter to determine the desired configuration.</div>
+</dd>
+<dt><a href="../org.junit.platform.console/org/junit/platform/console/tasks/CustomClassLoaderCloseStrategy.html" class="type-name-link" title="enum class in org.junit.platform.console.tasks">CustomClassLoaderCloseStrategy</a> - Enum Class in <a href="../org.junit.platform.console/org/junit/platform/console/tasks/package-summary.html">org.junit.platform.console.tasks</a></dt>
+<dd>
+<div class="block">Defines the strategy for closing custom class loaders created for test
+ discovery and execution.</div>
 </dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/ClassOrderer.Random.html#custom-seed-heading" class="search-tag-link">Custom Seed</a> - Search tag in class org.junit.jupiter.api.ClassOrderer.Random</dt>
 <dd>Section</dd>

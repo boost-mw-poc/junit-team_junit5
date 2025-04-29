@@ -563,7 +563,10 @@ Tools prior to upgrading to this version of JUnit.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>❓</p>
+<p>Reintroduce support for JVM shutdown hooks when using the <code>-cp</code>/<code>--classpath</code> option of
+the <code>ConsoleLauncher</code>. Prior to this release, the created class loader was closed prior
+to JVM shutdown hooks being invoked, which caused hooks to fail with a
+<code>ClassNotFoundException</code> when loading classes during shutdown.</p>
 </li>
 </ul>
 </div>
