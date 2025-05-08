@@ -5181,10 +5181,11 @@ of the annotated <code>@ParameterizedClass</code> or <code>@ParameterizedTest</c
 translates to a <code>Stream</code> of <code>Arguments</code> (i.e., <code>Stream&lt;Arguments&gt;</code>); however, the actual
 concrete return type can take on many forms. In this context, a "stream" is anything that
 JUnit can reliably convert into a <code>Stream</code>, such as <code>Stream</code>, <code>DoubleStream</code>,
-<code>LongStream</code>, <code>IntStream</code>, <code>Collection</code>, <code>Iterator</code>, <code>Iterable</code>, an array of objects, or
-an array of primitives. The "arguments" within the stream can be supplied as an instance
-of <code>Arguments</code>, an array of objects (e.g., <code>Object[]</code>), or a single value if the
-parameterized class or test method accepts a single argument.</p>
+<code>LongStream</code>, <code>IntStream</code>, <code>Collection</code>, <code>Iterator</code>, <code>Iterable</code>, an array of objects or
+primitives, or any type that provides an <code>iterator(): Iterator</code> method (such as, for
+example, a <code>kotlin.sequences.Sequence</code>). The "arguments" within the stream can be supplied
+as an instance of <code>Arguments</code>, an array of objects (e.g., <code>Object[]</code>), or a single value
+if the parameterized class or test method accepts a single argument.</p>
 </div>
 <div class="paragraph">
 <p>If the return type is <code>Stream</code> or one of the primitive streams,
@@ -5369,10 +5370,11 @@ of the annotated <code>@ParameterizedClass</code> or <code>@ParameterizedTest</c
 however, the actual concrete field type can take on many forms. Generally speaking this
 translates to a <code>Collection</code>, an <code>Iterable</code>, a <code>Supplier</code> of a stream (<code>Stream</code>,
 <code>DoubleStream</code>, <code>LongStream</code>, or <code>IntStream</code>), a <code>Supplier</code> of an <code>Iterator</code>, an array of
-objects, or an array of primitives. Each set of "arguments" within the "stream" can be
-supplied as an instance of <code>Arguments</code>, an array of objects (for example, <code>Object[]</code>,
-<code>String[]</code>, etc.), or a single value if the parameterized class or test method accepts a
-single argument.</p>
+objects or primitives, or any type that provides an <code>iterator(): Iterator</code> method (such
+as, for example, a <code>kotlin.sequences.Sequence</code>). Each set of "arguments" within the
+"stream" can be supplied as an instance of <code>Arguments</code>, an array of objects (for example,
+<code>Object[]</code>, <code>String[]</code>, etc.), or a single value if the parameterized class ortest method accepts
+a single argument.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -6979,8 +6981,13 @@ generated at runtime by a factory method that is annotated with <code>@TestFacto
 <p>In contrast to <code>@Test</code> methods, a <code>@TestFactory</code> method is not itself a test case but
 rather a factory for test cases. Thus, a dynamic test is the product of a factory.
 Technically speaking, a <code>@TestFactory</code> method must return a single <code>DynamicNode</code> or a
-<code>Stream</code>, <code>Collection</code>, <code>Iterable</code>, <code>Iterator</code>, or array of <code>DynamicNode</code> instances.
-Instantiable subclasses of <code>DynamicNode</code> are <code>DynamicContainer</code> and <code>DynamicTest</code>.
+<em>stream</em> of <code>DynamicNode</code> instances or any of its subclasses. In this context, a "stream"
+is anything that JUnit can reliably convert into a <code>Stream</code>, such as <code>Stream</code>,
+<code>Collection</code>, <code>Iterator</code>, <code>Iterable</code>, an array of objects, or any type that provides an
+<code>iterator(): Iterator</code> method (such as, for example, a <code>kotlin.sequences.Sequence</code>).</p>
+</div>
+<div class="paragraph">
+<p>Instantiable subclasses of <code>DynamicNode</code> are <code>DynamicContainer</code> and <code>DynamicTest</code>.
 <code>DynamicContainer</code> instances are composed of a <em>display name</em> and a list of dynamic child
 nodes, enabling the creation of arbitrarily nested hierarchies of dynamic nodes.
 <code>DynamicTest</code> instances will be executed lazily, enabling dynamic and even

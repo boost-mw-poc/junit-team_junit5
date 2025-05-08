@@ -103,7 +103,9 @@ loadScripts(document, 'script');</script>
 
  <p><code>@TestFactory</code> methods must not be <code>private</code> or <code>static</code>
  and must return a <code>Stream</code>, <code>Collection</code>, <code>Iterable</code>,
- <code>Iterator</code>, or array of <a href="DynamicNode.html" title="class in org.junit.jupiter.api"><code>DynamicNode</code></a> instances. Supported
+ <code>Iterator</code>, array of <a href="DynamicNode.html" title="class in org.junit.jupiter.api"><code>DynamicNode</code></a> instances, or any type that
+ provides an <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link"><code>Iterator</code></a>-returning <code>iterator()</code>
+ method (such as, for example, a <code>kotlin.sequences.Sequence</code>). Supported
  subclasses of <code>DynamicNode</code> include <a href="DynamicContainer.html" title="class in org.junit.jupiter.api"><code>DynamicContainer</code></a> and
  <a href="DynamicTest.html" title="class in org.junit.jupiter.api"><code>DynamicTest</code></a>. <em>Dynamic tests</em> will be executed lazily,
  enabling dynamic and even non-deterministic generation of test cases.

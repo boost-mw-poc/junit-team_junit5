@@ -244,7 +244,7 @@ loadScripts(document, 'script');</script>
  returned, so if more control over the returned list is required,
  consider creating a new <code>Collector</code> implementation like the
  following:
-
+ <p>
  <pre class="code">
  public static &lt;T&gt; Collector&lt;T, ?, List&lt;T&gt;&gt; toUnmodifiableList(Supplier&lt;List&lt;T&gt;&gt; listSupplier) {
      return Collectors.collectingAndThen(Collectors.toCollection(listSupplier), Collections::unmodifiableList);
@@ -302,6 +302,9 @@ loadScripts(document, 'script');</script>
  <li><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link"><code>Iterator</code></a></li>
  <li><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a> array</li>
  <li>primitive array</li>
+ <li>any type that provides an
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link"><code>Iterator</code></a>-returning <code>iterator()</code> method
+ (such as, for example, a <code>kotlin.sequences.Sequence</code>)</li>
  </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
