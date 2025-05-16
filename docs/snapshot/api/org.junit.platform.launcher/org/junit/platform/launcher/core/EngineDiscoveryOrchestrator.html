@@ -42,7 +42,7 @@ loadScripts(document, 'script');</script>
 <li>
 <p>Summary:</p>
 <ul>
-<li><a href="#nested-class-summary">Nested</a></li>
+<li>Nested</li>
 <li>Field</li>
 <li><a href="#constructor-summary">Constr</a></li>
 <li><a href="#method-summary">Method</a></li>
@@ -62,7 +62,7 @@ loadScripts(document, 'script');</script>
 <div id="navbar-sub-list">
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
-<li><a href="#nested-class-summary">Nested</a>&nbsp;|&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor-summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
@@ -108,21 +108,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<li>
-<section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="EngineDiscoveryOrchestrator.Phase.html" class="type-name-link" title="enum class in org.junit.platform.launcher.core">EngineDiscoveryOrchestrator.Phase</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -149,15 +134,13 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LauncherDiscoveryResult.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#discover(org.junit.platform.launcher.LauncherDiscoveryRequest,org.junit.platform.launcher.core.EngineDiscoveryOrchestrator.Phase)" class="member-name-link">discover</a><wbr>(<a href="../LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a>&nbsp;request,
- <a href="EngineDiscoveryOrchestrator.Phase.html" title="enum class in org.junit.platform.launcher.core">EngineDiscoveryOrchestrator.Phase</a>&nbsp;phase)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#discover(org.junit.platform.launcher.LauncherDiscoveryRequest)" class="member-name-link">discover</a><wbr>(<a href="../LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a>&nbsp;request)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Discovers tests for the supplied request in the supplied phase using the
- configured test engines.</div>
+<div class="block">Discovers tests for the supplied request using the configured test
+ engines.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LauncherDiscoveryResult.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#discover(org.junit.platform.launcher.LauncherDiscoveryRequest,org.junit.platform.launcher.core.EngineDiscoveryOrchestrator.Phase,org.junit.platform.engine.UniqueId)" class="member-name-link">discover</a><wbr>(<a href="../LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a>&nbsp;request,
- <a href="EngineDiscoveryOrchestrator.Phase.html" title="enum class in org.junit.platform.launcher.core">EngineDiscoveryOrchestrator.Phase</a>&nbsp;phase,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#discover(org.junit.platform.launcher.LauncherDiscoveryRequest,org.junit.platform.engine.UniqueId)" class="member-name-link">discover</a><wbr>(<a href="../LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a>&nbsp;request,
  <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;parentId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Discovers tests for the supplied request in the supplied phase using the
@@ -196,12 +179,11 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="discover(org.junit.platform.launcher.LauncherDiscoveryRequest,org.junit.platform.launcher.core.EngineDiscoveryOrchestrator.Phase)">
+<section class="detail" id="discover(org.junit.platform.launcher.LauncherDiscoveryRequest)">
 <h3>discover</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LauncherDiscoveryResult.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryResult</a></span>&nbsp;<span class="element-name">discover</span><wbr><span class="parameters">(<a href="../LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a>&nbsp;request,
- <a href="EngineDiscoveryOrchestrator.Phase.html" title="enum class in org.junit.platform.launcher.core">EngineDiscoveryOrchestrator.Phase</a>&nbsp;phase)</span></div>
-<div class="block">Discovers tests for the supplied request in the supplied phase using the
- configured test engines.
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LauncherDiscoveryResult.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryResult</a></span>&nbsp;<span class="element-name">discover</span><wbr><span class="parameters">(<a href="../LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a>&nbsp;request)</span></div>
+<div class="block">Discovers tests for the supplied request using the configured test
+ engines.
 
  <p>Applies <a href="../EngineFilter.html" title="class in org.junit.platform.launcher">engine
  filters</a> and <a href="../PostDiscoveryFilter.html" title="interface in org.junit.platform.launcher">post-discovery filters</a> and
@@ -209,10 +191,9 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="discover(org.junit.platform.launcher.LauncherDiscoveryRequest,org.junit.platform.launcher.core.EngineDiscoveryOrchestrator.Phase,org.junit.platform.engine.UniqueId)">
+<section class="detail" id="discover(org.junit.platform.launcher.LauncherDiscoveryRequest,org.junit.platform.engine.UniqueId)">
 <h3>discover</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LauncherDiscoveryResult.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryResult</a></span>&nbsp;<span class="element-name">discover</span><wbr><span class="parameters">(<a href="../LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a>&nbsp;request,
- <a href="EngineDiscoveryOrchestrator.Phase.html" title="enum class in org.junit.platform.launcher.core">EngineDiscoveryOrchestrator.Phase</a>&nbsp;phase,
  <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a>&nbsp;parentId)</span></div>
 <div class="block">Discovers tests for the supplied request in the supplied phase using the
  configured test engines to be used by the suite engine.

@@ -714,24 +714,27 @@ loadScripts(document, 'script');</script>
 <div class="block">Discover tests for the given <a href="../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher"><code>LauncherDiscoveryRequest</code></a> using the
  supplied <a href="../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngine</code></a>.</div>
 </dd>
+<dt><a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineDiscoveryOrchestrator.html#discover(org.junit.platform.launcher.LauncherDiscoveryRequest)" class="member-name-link">discover(LauncherDiscoveryRequest)</a> - Method in class org.junit.platform.launcher.core.<a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineDiscoveryOrchestrator.html" title="class in org.junit.platform.launcher.core">EngineDiscoveryOrchestrator</a></dt>
+<dd>
+<div class="block">Discovers tests for the supplied request using the configured test
+ engines.</div>
+</dd>
 <dt><a href="../org.junit.platform.launcher/org/junit/platform/launcher/Launcher.html#discover(org.junit.platform.launcher.LauncherDiscoveryRequest)" class="member-name-link">discover(LauncherDiscoveryRequest)</a> - Method in interface org.junit.platform.launcher.<a href="../org.junit.platform.launcher/org/junit/platform/launcher/Launcher.html" title="interface in org.junit.platform.launcher">Launcher</a></dt>
 <dd>
 <div class="block">Discover tests and build a <a href="../org.junit.platform.launcher/org/junit/platform/launcher/TestPlan.html" title="class in org.junit.platform.launcher"><code>TestPlan</code></a> according to the supplied
  <a href="../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher"><code>LauncherDiscoveryRequest</code></a> by querying all registered engines and
  collecting their results.</div>
 </dd>
-<dt><a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineDiscoveryOrchestrator.html#discover(org.junit.platform.launcher.LauncherDiscoveryRequest,org.junit.platform.launcher.core.EngineDiscoveryOrchestrator.Phase)" class="member-name-link">discover(LauncherDiscoveryRequest, EngineDiscoveryOrchestrator.Phase)</a> - Method in class org.junit.platform.launcher.core.<a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineDiscoveryOrchestrator.html" title="class in org.junit.platform.launcher.core">EngineDiscoveryOrchestrator</a></dt>
-<dd>
-<div class="block">Discovers tests for the supplied request in the supplied phase using the
- configured test engines.</div>
-</dd>
-<dt><a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineDiscoveryOrchestrator.html#discover(org.junit.platform.launcher.LauncherDiscoveryRequest,org.junit.platform.launcher.core.EngineDiscoveryOrchestrator.Phase,org.junit.platform.engine.UniqueId)" class="member-name-link">discover(LauncherDiscoveryRequest, EngineDiscoveryOrchestrator.Phase, UniqueId)</a> - Method in class org.junit.platform.launcher.core.<a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineDiscoveryOrchestrator.html" title="class in org.junit.platform.launcher.core">EngineDiscoveryOrchestrator</a></dt>
+<dt><a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineDiscoveryOrchestrator.html#discover(org.junit.platform.launcher.LauncherDiscoveryRequest,org.junit.platform.engine.UniqueId)" class="member-name-link">discover(LauncherDiscoveryRequest, UniqueId)</a> - Method in class org.junit.platform.launcher.core.<a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineDiscoveryOrchestrator.html" title="class in org.junit.platform.launcher.core">EngineDiscoveryOrchestrator</a></dt>
 <dd>
 <div class="block">Discovers tests for the supplied request in the supplied phase using the
  configured test engines to be used by the suite engine.</div>
 </dd>
-<dt><a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineDiscoveryOrchestrator.Phase.html#DISCOVERY" class="member-name-link">DISCOVERY</a> - Enum constant in enum class org.junit.platform.launcher.core.<a href="../org.junit.platform.launcher/org/junit/platform/launcher/core/EngineDiscoveryOrchestrator.Phase.html" title="enum class in org.junit.platform.launcher.core">EngineDiscoveryOrchestrator.Phase</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.launcher/org/junit/platform/launcher/LauncherConstants.html#DISCOVERY_ISSUE_FAILURE_PHASE_PROPERTY_NAME" class="member-name-link">DISCOVERY_ISSUE_FAILURE_PHASE_PROPERTY_NAME</a> - Static variable in class org.junit.platform.launcher.<a href="../org.junit.platform.launcher/org/junit/platform/launcher/LauncherConstants.html" title="class in org.junit.platform.launcher">LauncherConstants</a></dt>
+<dd>
+<div class="block">Property name used to configure the phase that critical discovery issues
+ should cause a failure</div>
+</dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryFilter.html" class="type-name-link" title="interface in org.junit.platform.engine">DiscoveryFilter&lt;T&gt;</a> - Interface in <a href="../org.junit.platform.engine/org/junit/platform/engine/package-summary.html">org.junit.platform.engine</a></dt>
 <dd>
 <div class="block">A <a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoveryFilter.html" title="interface in org.junit.platform.engine"><code>DiscoveryFilter</code></a> is applied during test discovery to determine if
