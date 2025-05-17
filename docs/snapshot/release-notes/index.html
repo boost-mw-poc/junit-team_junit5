@@ -474,38 +474,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#release-notes-5.13.0">5.13.0</a>
 <ul class="sectlevel2">
+<li><a href="#release-notes-5.13.0-overall-improvements">Overall Changes</a></li>
 <li><a href="#release-notes-5.13.0-junit-platform">JUnit Platform</a></li>
 <li><a href="#release-notes-5.13.0-junit-jupiter">JUnit Jupiter</a></li>
 <li><a href="#release-notes-5.13.0-junit-vintage">JUnit Vintage</a></li>
-</ul>
-</li>
-<li><a href="#release-notes-5.13.0-RC1">5.13.0-RC1</a>
-<ul class="sectlevel2">
-<li><a href="#release-notes-5.13.0-RC1-junit-platform">JUnit Platform</a></li>
-<li><a href="#release-notes-5.13.0-RC1-junit-jupiter">JUnit Jupiter</a></li>
-<li><a href="#release-notes-5.13.0-RC1-junit-vintage">JUnit Vintage</a></li>
-</ul>
-</li>
-<li><a href="#release-notes-5.13.0-M3">5.13.0-M3</a>
-<ul class="sectlevel2">
-<li><a href="#release-notes-5.13.0-M3-overall-improvements">Overall Changes</a></li>
-<li><a href="#release-notes-5.13.0-M3-junit-platform">JUnit Platform</a></li>
-<li><a href="#release-notes-5.13.0-M3-junit-jupiter">JUnit Jupiter</a></li>
-<li><a href="#release-notes-5.13.0-M3-junit-vintage">JUnit Vintage</a></li>
-</ul>
-</li>
-<li><a href="#release-notes-5.13.0-M2">5.13.0-M2</a>
-<ul class="sectlevel2">
-<li><a href="#release-notes-5.13.0-M2-junit-platform">JUnit Platform</a></li>
-<li><a href="#release-notes-5.13.0-M2-junit-jupiter">JUnit Jupiter</a></li>
-<li><a href="#release-notes-5.13.0-M2-junit-vintage">JUnit Vintage</a></li>
-</ul>
-</li>
-<li><a href="#release-notes-5.13.0-M1">5.13.0-M1</a>
-<ul class="sectlevel2">
-<li><a href="#release-notes-5.13.0-M1-junit-platform">JUnit Platform</a></li>
-<li><a href="#release-notes-5.13.0-M1-junit-jupiter">JUnit Jupiter</a></li>
-<li><a href="#release-notes-5.13.0-M1-junit-vintage">JUnit Vintage</a></li>
 </ul>
 </li>
 <li><a href="#release-notes-5.12.2">5.12.2</a>
@@ -546,12 +518,64 @@ authors as well as build tool and IDE vendors.</p>
 <p><strong>Date of Release:</strong> May 30, 2025</p>
 </div>
 <div class="paragraph">
-<p><strong>Scope:</strong> ❓</p>
+<p><strong>Scope:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Introduce <code>@ClassTemplate</code> and <code>@ParameterizedClass</code> support in JUnit Jupiter</p>
+</li>
+<li>
+<p>Access to <code>ParameterInfo</code> for JUnit Jupiter extensions</p>
+</li>
+<li>
+<p>New <code>@SentenceFragment</code> annotation for use with <code>IndicativeSentences</code> display name generator</p>
+</li>
+<li>
+<p>Add <code>--redirect-stdout</code> and <code>--redirect-stderr</code> options to <code>ConsoleLauncher</code></p>
+</li>
+<li>
+<p>Introduce test <em>discovery</em> support in <code>EngineTestKit</code></p>
+</li>
+<li>
+<p>Reporting of discovery issues for test engines</p>
+</li>
+<li>
+<p>Resource management for launcher sessions and execution requests</p>
+</li>
+<li>
+<p>GraalVM: removal of <code>native-image.properties</code> files from JARs</p>
+</li>
+<li>
+<p>Bug fixes and other minor improvements</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>For a complete list of all <em>closed</em> issues and pull requests for this release, consult the
-<a href="https://github.com/junit-team/junit5/milestone/94?closed=1">5.13.0</a> milestone page in the JUnit
+<a href="https://github.com/junit-team/junit5/milestone/85?closed=1">5.13.0-M1</a>,
+<a href="https://github.com/junit-team/junit5/milestone/92?closed=1">5.13.0-M2</a>,
+<a href="https://github.com/junit-team/junit5/milestone/93?closed=1">5.13.0-M3</a>,
+<a href="https://github.com/junit-team/junit5/milestone/96?closed=1">5.13.0-RC1</a>,
+and <a href="https://github.com/junit-team/junit5/milestone/94?closed=1">5.13.0</a> milestone pages in the JUnit
 repository on GitHub.</p>
+</div>
+<div class="sect2">
+<h3 id="release-notes-5.13.0-overall-improvements"><a class="anchor" href="#release-notes-5.13.0-overall-improvements"></a>Overall Changes</h3>
+<div class="sect3">
+<h4 id="release-notes-5.13.0-overall-new-features-and-improvements"><a class="anchor" href="#release-notes-5.13.0-overall-new-features-and-improvements"></a>Deprecations and Breaking Changes</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>The JUnit feature in GraalVM Native Build Tools has been rewritten to no longer require
+JUnit classes to be initialized at build time. Therefore, JUnit&#8217;s JARs no longer ship
+with <code>native-image.properties</code> files that contain <code>--initialize-at-build-time</code> options
+(introduced in 5.12.0). Please update to the most recent version of GraalVM Native Build
+Tools prior to upgrading to this version of JUnit.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="release-notes-5.13.0-junit-platform"><a class="anchor" href="#release-notes-5.13.0-junit-platform"></a>JUnit Platform</h3>
@@ -560,7 +584,14 @@ repository on GitHub.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>❓</p>
+<p>Notify <code>LauncherDiscoveryListener</code> implementation registered via <code>LaucherConfig</code> or on
+the <code>Launcher</code> of <code>selectorProcessed</code> events.</p>
+</li>
+<li>
+<p>Reintroduce support for JVM shutdown hooks when using the <code>-cp</code>/<code>--classpath</code> option of
+the <code>ConsoleLauncher</code>. Prior to this release, the created class loader was closed prior
+to JVM shutdown hooks being invoked, which caused hooks to fail with a
+<code>ClassNotFoundException</code> when loading classes during shutdown.</p>
 </li>
 </ul>
 </div>
@@ -579,207 +610,6 @@ repository on GitHub.</p>
 <h4 id="release-notes-5.13.0-junit-platform-new-features-and-improvements"><a class="anchor" href="#release-notes-5.13.0-junit-platform-new-features-and-improvements"></a>New Features and Improvements</h4>
 <div class="ulist">
 <ul>
-<li>
-<p>❓</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="release-notes-5.13.0-junit-jupiter"><a class="anchor" href="#release-notes-5.13.0-junit-jupiter"></a>JUnit Jupiter</h3>
-<div class="sect3">
-<h4 id="release-notes-5.13.0-junit-jupiter-bug-fixes"><a class="anchor" href="#release-notes-5.13.0-junit-jupiter-bug-fixes"></a>Bug Fixes</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>❓</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="release-notes-5.13.0-junit-jupiter-deprecations-and-breaking-changes"><a class="anchor" href="#release-notes-5.13.0-junit-jupiter-deprecations-and-breaking-changes"></a>Deprecations and Breaking Changes</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>❓</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="release-notes-5.13.0-junit-jupiter-new-features-and-improvements"><a class="anchor" href="#release-notes-5.13.0-junit-jupiter-new-features-and-improvements"></a>New Features and Improvements</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>❓</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="release-notes-5.13.0-junit-vintage"><a class="anchor" href="#release-notes-5.13.0-junit-vintage"></a>JUnit Vintage</h3>
-<div class="sect3">
-<h4 id="release-notes-5.13.0-junit-vintage-bug-fixes"><a class="anchor" href="#release-notes-5.13.0-junit-vintage-bug-fixes"></a>Bug Fixes</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>❓</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="release-notes-5.13.0-junit-vintage-deprecations-and-breaking-changes"><a class="anchor" href="#release-notes-5.13.0-junit-vintage-deprecations-and-breaking-changes"></a>Deprecations and Breaking Changes</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>❓</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="release-notes-5.13.0-junit-vintage-new-features-and-improvements"><a class="anchor" href="#release-notes-5.13.0-junit-vintage-new-features-and-improvements"></a>New Features and Improvements</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>❓</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="release-notes-5.13.0-RC1"><a class="anchor" href="#release-notes-5.13.0-RC1"></a>5.13.0-RC1</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Date of Release:</strong> May 16, 2025</p>
-</div>
-<div class="paragraph">
-<p><strong>Scope:</strong> Minor bug fixes and enhancements since 5.13.0-M1</p>
-</div>
-<div class="paragraph">
-<p>For a complete list of all <em>closed</em> issues and pull requests for this release, consult the
-<a href="https://github.com/junit-team/junit5/milestone/96?closed=1">5.13.0-RC1</a> milestone page in the JUnit
-repository on GitHub.</p>
-</div>
-<div class="sect2">
-<h3 id="release-notes-5.13.0-RC1-junit-platform"><a class="anchor" href="#release-notes-5.13.0-RC1-junit-platform"></a>JUnit Platform</h3>
-<div class="paragraph">
-<p>No changes.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="release-notes-5.13.0-RC1-junit-jupiter"><a class="anchor" href="#release-notes-5.13.0-RC1-junit-jupiter"></a>JUnit Jupiter</h3>
-<div class="sect3">
-<h4 id="release-notes-5.13.0-RC1-junit-jupiter-bug-fixes"><a class="anchor" href="#release-notes-5.13.0-RC1-junit-jupiter-bug-fixes"></a>Bug Fixes</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Validate <em>all</em> versions specified in <code>@EnabledOnJre</code> and <code>@DisabledOnJre</code> annotations.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="release-notes-5.13.0-RC1-junit-jupiter-new-features-and-improvements"><a class="anchor" href="#release-notes-5.13.0-RC1-junit-jupiter-new-features-and-improvements"></a>New Features and Improvements</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Add support for Kotlin <code>Sequence</code> to <code>@MethodSource</code>, <code>@FieldSource</code>, and
-<code>@TestFactory</code>.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="release-notes-5.13.0-RC1-junit-vintage"><a class="anchor" href="#release-notes-5.13.0-RC1-junit-vintage"></a>JUnit Vintage</h3>
-<div class="paragraph">
-<p>No changes.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="release-notes-5.13.0-M3"><a class="anchor" href="#release-notes-5.13.0-M3"></a>5.13.0-M3</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Date of Release:</strong> May 2, 2025</p>
-</div>
-<div class="paragraph">
-<p><strong>Scope:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Reporting of discovery issues for test engines</p>
-</li>
-<li>
-<p>Resource management for launcher sessions and execution requests</p>
-</li>
-<li>
-<p>GraalVM: removal of <code>native-image.properties</code> files from JARs</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For a complete list of all <em>closed</em> issues and pull requests for this release, consult the
-<a href="https://github.com/junit-team/junit5/milestone/93?closed=1">5.13.0-M3</a> milestone page in the JUnit
-repository on GitHub.</p>
-</div>
-<div class="sect2">
-<h3 id="release-notes-5.13.0-M3-overall-improvements"><a class="anchor" href="#release-notes-5.13.0-M3-overall-improvements"></a>Overall Changes</h3>
-<div class="sect3">
-<h4 id="release-notes-5.13.0-M3-overall-new-features-and-improvements"><a class="anchor" href="#release-notes-5.13.0-M3-overall-new-features-and-improvements"></a>Deprecations and Breaking Changes</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>The JUnit feature in GraalVM Native Build Tools has been rewritten to no longer require
-JUnit classes to be initialized at build time. Therefore, JUnit&#8217;s JARs no longer ship
-with <code>native-image.properties</code> files that contain <code>--initialize-at-build-time</code> options
-(introduced in 5.12.0). Please update to the most recent version of GraalVM Native Build
-Tools prior to upgrading to this version of JUnit.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="release-notes-5.13.0-M3-junit-platform"><a class="anchor" href="#release-notes-5.13.0-M3-junit-platform"></a>JUnit Platform</h3>
-<div class="sect3">
-<h4 id="release-notes-5.13.0-M3-junit-platform-bug-fixes"><a class="anchor" href="#release-notes-5.13.0-M3-junit-platform-bug-fixes"></a>Bug Fixes</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Reintroduce support for JVM shutdown hooks when using the <code>-cp</code>/<code>--classpath</code> option of
-the <code>ConsoleLauncher</code>. Prior to this release, the created class loader was closed prior
-to JVM shutdown hooks being invoked, which caused hooks to fail with a
-<code>ClassNotFoundException</code> when loading classes during shutdown.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="release-notes-5.13.0-M3-junit-platform-new-features-and-improvements"><a class="anchor" href="#release-notes-5.13.0-M3-junit-platform-new-features-and-improvements"></a>New Features and Improvements</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Introduce resource management mechanism that allows preparing and sharing state across
-executions or test engines via stores that are scoped to a <code>LauncherSession</code> or
-<code>ExecutionRequest</code>. The Jupiter API uses these stores as ancestors to the <code>Store</code>
-instances accessible via <code>ExtensionContext</code> and provides a new method to access them
-directly. Please refer to the User Guide for examples of managing
-<a href="../user-guide/index.html#launcher-api-launcher-session-listeners-tool-example-usage">session-scoped</a>
-and
-<a href="../user-guide/index.html#launcher-api-managing-state-across-test-engines">request-scoped</a>
-resources.</p>
-</li>
 <li>
 <p>Introduce a mechanism for <code>TestEngine</code> implementations to report issues encountered
 during test discovery. If an engine reports a <code>DiscoveryIssue</code> with a <code>Severity</code> equal
@@ -813,6 +643,30 @@ to start reporting discovery issues.</p>
 </div>
 </li>
 <li>
+<p>Introduce resource management mechanism that allows preparing and sharing state across
+executions or test engines via stores that are scoped to a <code>LauncherSession</code> or
+<code>ExecutionRequest</code>. The Jupiter API uses these stores as ancestors to the <code>Store</code>
+instances accessible via <code>ExtensionContext</code> and provides a new method to access them
+directly. Please refer to the User Guide for examples of managing
+<a href="../user-guide/index.html#launcher-api-launcher-session-listeners-tool-example-usage">session-scoped</a>
+and
+<a href="../user-guide/index.html#launcher-api-managing-state-across-test-engines">request-scoped</a>
+resources.</p>
+</li>
+<li>
+<p>New <code>ConsoleLauncher</code> options <code>--redirect-stdout</code> and <code>--redirect-stderr</code> for
+redirecting <code>stdout</code> and <code>stderr</code> output streams to files.</p>
+</li>
+<li>
+<p>Add <code>TestDescriptor.Visitor.composite(List)</code> factory method for creating a composite
+visitor that delegates to the given visitors in order.</p>
+</li>
+<li>
+<p>Introduce test <em>discovery</em> support in <code>EngineTestKit</code> to ease testing for discovery
+issues produced by a <code>TestEngine</code>. Please refer to the
+<a href="../user-guide/index.html#testkit-engine">User Guide</a> for details.</p>
+</li>
+<li>
 <p>Make validation of including <code>EngineFilters</code> more strict to avoid misconfiguration, for
 example, due to typos. Prior to this release, an exception was only thrown when <em>none</em>
 of a filter&#8217;s included IDs matched any engine. Now, an exception is thrown if at least
@@ -823,11 +677,91 @@ one included ID across all filters did not match any engine.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="release-notes-5.13.0-M3-junit-jupiter"><a class="anchor" href="#release-notes-5.13.0-M3-junit-jupiter"></a>JUnit Jupiter</h3>
+<h3 id="release-notes-5.13.0-junit-jupiter"><a class="anchor" href="#release-notes-5.13.0-junit-jupiter"></a>JUnit Jupiter</h3>
 <div class="sect3">
-<h4 id="release-notes-5.13.0-M3-junit-jupiter-new-features-and-improvements"><a class="anchor" href="#release-notes-5.13.0-M3-junit-jupiter-new-features-and-improvements"></a>New Features and Improvements</h4>
+<h4 id="release-notes-5.13.0-junit-jupiter-bug-fixes"><a class="anchor" href="#release-notes-5.13.0-junit-jupiter-bug-fixes"></a>Bug Fixes</h4>
 <div class="ulist">
 <ul>
+<li>
+<p>If the <code>autoCloseArguments</code> attribute in <code>@ParameterizedTest</code> is set to <code>true</code>, all
+arguments returned by registered <code>ArgumentsProvider</code> implementations are now closed even
+if the test method declares fewer parameters.</p>
+</li>
+<li>
+<p><code>AutoCloseable</code> arguments returned by an <code>ArgumentsProvider</code> are now closed even if they
+are wrapped with <code>Named</code>.</p>
+</li>
+<li>
+<p><code>AutoCloseable</code> arguments returned by an <code>ArgumentsProvider</code> are now closed even if a
+failure happens prior to invoking the parameterized method.</p>
+</li>
+<li>
+<p>Validate <em>all</em> versions specified in <code>@EnabledOnJre</code> and <code>@DisabledOnJre</code> annotations.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="release-notes-5.13.0-junit-jupiter-deprecations-and-breaking-changes"><a class="anchor" href="#release-notes-5.13.0-junit-jupiter-deprecations-and-breaking-changes"></a>Deprecations and Breaking Changes</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>❓</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="release-notes-5.13.0-junit-jupiter-new-features-and-improvements"><a class="anchor" href="#release-notes-5.13.0-junit-jupiter-new-features-and-improvements"></a>New Features and Improvements</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>New <code>@ClassTemplate</code> annotation and <code>ClassTemplateInvocationContextProvider</code> API that
+allow declaring a top-level or <code>@Nested</code> test class as a template to be invoked multiple
+times. This may be used, for example, to inject different parameters to be used by all
+tests in the class template or to set up each invocation of the class template
+differently. Please refer to the
+<a href="../user-guide/index.html#writing-tests-class-templates">User Guide</a> for details.</p>
+</li>
+<li>
+<p>New <code>BeforeClassTemplateInvocationCallback</code> and <code>AfterClassTemplateInvocationCallback</code>
+extension callback interfaces allow implementing extensions that are invoked before and
+after each invocation of a class template.</p>
+</li>
+<li>
+<p>New <code>@ParameterizedClass</code> support that builds on <code>@ClassTemplate</code> and allows declaring a
+top-level or <code>@Nested</code> test class as a parameterized test class to be invoked multiple
+times with different arguments. The same <code>@&#8230;&#8203;Source</code> annotations supported with
+<code>@ParameterizedTest</code> may be used to provide arguments via constructor or field
+injection. Please refer to the
+<a href="../user-guide/index.html#writing-tests-parameterized-tests">User Guide</a> for details.</p>
+</li>
+<li>
+<p>New <code>@ParameterizedClass</code>-specific
+<code>@BeforeParameterizedClassInvocation</code>/<code>@AfterParameterizedClassInvocation</code> lifecycle
+methods that are invoked once before/after each invocation of the parameterized class.</p>
+</li>
+<li>
+<p>Provide access to the parameters and resolved arguments of a <code>@ParameterizedTest</code> or
+<code>@ParameterizedClass</code> by storing <code>ParameterInfo</code> in the <code>ExtensionContext.Store</code> for
+retrieval by other extensions. Please refer to the
+<a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterInfo.html">Javadoc</a>
+for details.</p>
+</li>
+<li>
+<p>New <code>@SentenceFragment</code> annotation which allows one to supply custom text for individual
+sentence fragments when using the <code>IndicativeSentences</code> <code>DisplayNameGenerator</code>. See the
+updated documentation in the
+<a href="../user-guide/index.html#writing-tests-display-name-generator">User Guide</a> for an
+example.</p>
+</li>
+<li>
+<p>New <code>TestTemplateInvocationContext.prepareInvocation(ExtensionContext)</code> callback method
+which allows extensions to prepare the <code>ExtensionContext</code> before the test template
+method is invoked. This may be used, for example, to store entries in the
+<code>ExtensionContext.Store</code> to benefit from its cleanup support or for retrieval by other
+extensions.</p>
+</li>
 <li>
 <p>Start reporting discovery issues for potentially problematic test classes:</p>
 <div class="ulist">
@@ -889,216 +823,16 @@ for details.</p>
 test classes and <code>@ParameterizedTest</code> methods as suppressed exception for earlier
 failures.</p>
 </li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="release-notes-5.13.0-M3-junit-vintage"><a class="anchor" href="#release-notes-5.13.0-M3-junit-vintage"></a>JUnit Vintage</h3>
-<div class="paragraph">
-<p>No changes.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="release-notes-5.13.0-M2"><a class="anchor" href="#release-notes-5.13.0-M2"></a>5.13.0-M2</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Date of Release:</strong> March 24, 2025</p>
-</div>
-<div class="paragraph">
-<p><strong>Scope:</strong> Fix regression in 5.13.0-M1</p>
-</div>
-<div class="paragraph">
-<p>For a complete list of all <em>closed</em> issues and pull requests for this release, consult the
-<a href="https://github.com/junit-team/junit5/milestone/92?closed=1">5.13.0-M2</a> milestone page in the JUnit
-repository on GitHub.</p>
-</div>
-<div class="sect2">
-<h3 id="release-notes-5.13.0-M2-junit-platform"><a class="anchor" href="#release-notes-5.13.0-M2-junit-platform"></a>JUnit Platform</h3>
-<div class="paragraph">
-<p>No changes.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="release-notes-5.13.0-M2-junit-jupiter"><a class="anchor" href="#release-notes-5.13.0-M2-junit-jupiter"></a>JUnit Jupiter</h3>
-<div class="sect3">
-<h4 id="release-notes-5.13.0-M2-junit-jupiter-bug-fixes"><a class="anchor" href="#release-notes-5.13.0-M2-junit-jupiter-bug-fixes"></a>Bug Fixes</h4>
-<div class="ulist">
-<ul>
 <li>
-<p>Fix regression when executing <code>@Nested</code> classes compiled without <code>-parameters</code> in
-versions of Java prior to 21.</p>
+<p>Add support for Kotlin <code>Sequence</code> to <code>@MethodSource</code>, <code>@FieldSource</code>, and
+<code>@TestFactory</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="release-notes-5.13.0-M2-junit-vintage"><a class="anchor" href="#release-notes-5.13.0-M2-junit-vintage"></a>JUnit Vintage</h3>
-<div class="paragraph">
-<p>No changes.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="release-notes-5.13.0-M1"><a class="anchor" href="#release-notes-5.13.0-M1"></a>5.13.0-M1</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Date of Release:</strong> March 21, 2025</p>
-</div>
-<div class="paragraph">
-<p><strong>Scope:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Introduce <code>@ClassTemplate</code> and <code>@ParameterizedClass</code> support in JUnit Jupiter</p>
-</li>
-<li>
-<p>Access to <code>ParameterInfo</code> for JUnit Jupiter extensions</p>
-</li>
-<li>
-<p>New <code>@SentenceFragment</code> annotation for use with <code>IndicativeSentences</code> display name generator</p>
-</li>
-<li>
-<p>Add <code>--redirect-stdout</code> and <code>--redirect-stderr</code> options to <code>ConsoleLauncher</code></p>
-</li>
-<li>
-<p>Introduce test <em>discovery</em> support in <code>EngineTestKit</code></p>
-</li>
-<li>
-<p>Bug fixes and other minor improvements</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For a complete list of all <em>closed</em> issues and pull requests for this release, consult the
-<a href="https://github.com/junit-team/junit5/milestone/85?closed=1">5.13.0-M1</a> milestone page in the JUnit
-repository on GitHub.</p>
-</div>
-<div class="sect2">
-<h3 id="release-notes-5.13.0-M1-junit-platform"><a class="anchor" href="#release-notes-5.13.0-M1-junit-platform"></a>JUnit Platform</h3>
-<div class="sect3">
-<h4 id="release-notes-5.13.0-M1-junit-platform-bug-fixes"><a class="anchor" href="#release-notes-5.13.0-M1-junit-platform-bug-fixes"></a>Bug Fixes</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Notify <code>LauncherDiscoveryListener</code> implementation registered via <code>LaucherConfig</code> or on
-the <code>Launcher</code> of <code>selectorProcessed</code> events.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="release-notes-5.13.0-M1-junit-platform-new-features-and-improvements"><a class="anchor" href="#release-notes-5.13.0-M1-junit-platform-new-features-and-improvements"></a>New Features and Improvements</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>New <code>ConsoleLauncher</code> options <code>--redirect-stdout</code> and <code>--redirect-stderr</code> for
-redirecting <code>stdout</code> and <code>stderr</code> output streams to files.</p>
-</li>
-<li>
-<p>Add <code>TestDescriptor.Visitor.composite(List)</code> factory method for creating a composite
-visitor that delegates to the given visitors in order.</p>
-</li>
-<li>
-<p>Introduce test <em>discovery</em> support in <code>EngineTestKit</code> to ease testing for discovery
-issues produced by a <code>TestEngine</code>. Please refer to the
-<a href="../user-guide/index.html#testkit-engine">User Guide</a> for details.</p>
-</li>
-<li>
-<p>This milestone contains preliminary APIs for reporting issues encountered by test
-engines during test discovery. However, these are still under active development and not
-yet ready for general use. If you&#8217;re a maintainer of a test engine, please wait for the
-next milestone before adopting these new APIs. If you&#8217;re interested, you can follow
-along our progress in <a href="https://github.com/junit-team/junit5/issues/242">#242</a>.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="release-notes-5.13.0-M1-junit-jupiter"><a class="anchor" href="#release-notes-5.13.0-M1-junit-jupiter"></a>JUnit Jupiter</h3>
-<div class="sect3">
-<h4 id="release-notes-5.13.0-M1-junit-jupiter-bug-fixes"><a class="anchor" href="#release-notes-5.13.0-M1-junit-jupiter-bug-fixes"></a>Bug Fixes</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>If the <code>autoCloseArguments</code> attribute in <code>@ParameterizedTest</code> is set to <code>true</code>, all
-arguments returned by registered <code>ArgumentsProvider</code> implementations are now closed even
-if the test method declares fewer parameters.</p>
-</li>
-<li>
-<p><code>AutoCloseable</code> arguments returned by an <code>ArgumentsProvider</code> are now closed even if they
-are wrapped with <code>Named</code>.</p>
-</li>
-<li>
-<p><code>AutoCloseable</code> arguments returned by an <code>ArgumentsProvider</code> are now closed even if a
-failure happens prior to invoking the parameterized method.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="release-notes-5.13.0-M1-junit-jupiter-new-features-and-improvements"><a class="anchor" href="#release-notes-5.13.0-M1-junit-jupiter-new-features-and-improvements"></a>New Features and Improvements</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>New <code>@ClassTemplate</code> annotation and <code>ClassTemplateInvocationContextProvider</code> API that
-allow declaring a top-level or <code>@Nested</code> test class as a template to be invoked multiple
-times. This may be used, for example, to inject different parameters to be used by all
-tests in the class template or to set up each invocation of the class template
-differently. Please refer to the
-<a href="../user-guide/index.html#writing-tests-class-templates">User Guide</a> for details.</p>
-</li>
-<li>
-<p>New <code>BeforeClassTemplateInvocationCallback</code> and <code>AfterClassTemplateInvocationCallback</code>
-extension callback interfaces allow implementing extensions that are invoked before and
-after each invocation of a class template.</p>
-</li>
-<li>
-<p>New <code>@ParameterizedClass</code> support that builds on <code>@ClassTemplate</code> and allows declaring a
-top-level or <code>@Nested</code> test class as a parameterized test class to be invoked multiple
-times with different arguments. The same <code>@&#8230;&#8203;Source</code> annotations supported with
-<code>@ParameterizedTest</code> may be used to provide arguments via constructor or field
-injection. Please refer to the
-<a href="../user-guide/index.html#writing-tests-parameterized-tests">User Guide</a> for details.</p>
-</li>
-<li>
-<p>New <code>@ParameterizedClass</code>-specific
-<code>@BeforeParameterizedClassInvocation</code>/<code>@AfterParameterizedClassInvocation</code> lifecycle
-methods that are invoked once before/after each invocation of the parameterized class.</p>
-</li>
-<li>
-<p>Provide access to the parameters and resolved arguments of a <code>@ParameterizedTest</code> or
-<code>@ParameterizedClass</code> by storing <code>ParameterInfo</code> in the <code>ExtensionContext.Store</code> for
-retrieval by other extensions. Please refer to the
-<a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/support/ParameterInfo.html">Javadoc</a>
-for details.</p>
-</li>
-<li>
-<p>New <code>@SentenceFragment</code> annotation which allows one to supply custom text for individual
-sentence fragments when using the <code>IndicativeSentences</code> <code>DisplayNameGenerator</code>. See the
-updated documentation in the
-<a href="../user-guide/index.html#writing-tests-display-name-generator">User Guide</a> for an
-example.</p>
-</li>
-<li>
-<p>New <code>TestTemplateInvocationContext.prepareInvocation(ExtensionContext)</code> callback method
-which allows extensions to prepare the <code>ExtensionContext</code> before the test template
-method is invoked. This may be used, for example, to store entries in the
-<code>ExtensionContext.Store</code> to benefit from its cleanup support or for retrieval by other
-extensions.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="release-notes-5.13.0-M1-junit-vintage"><a class="anchor" href="#release-notes-5.13.0-M1-junit-vintage"></a>JUnit Vintage</h3>
+<h3 id="release-notes-5.13.0-junit-vintage"><a class="anchor" href="#release-notes-5.13.0-junit-vintage"></a>JUnit Vintage</h3>
 <div class="paragraph">
 <p>No changes.</p>
 </div>
