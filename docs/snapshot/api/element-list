@@ -48,7 +48,6 @@ org.junit.platform.engine.reporting
 org.junit.platform.engine.support.config
 org.junit.platform.engine.support.descriptor
 org.junit.platform.engine.support.discovery
-org.junit.platform.engine.support.filter
 org.junit.platform.engine.support.hierarchical
 org.junit.platform.engine.support.store
 module:org.junit.platform.jfr
@@ -64,8 +63,6 @@ module:org.junit.platform.reporting
 org.junit.platform.reporting.legacy
 org.junit.platform.reporting.legacy.xml
 org.junit.platform.reporting.open.xml
-module:org.junit.platform.runner
-org.junit.platform.runner
 module:org.junit.platform.suite
 module:org.junit.platform.suite.api
 org.junit.platform.suite.api

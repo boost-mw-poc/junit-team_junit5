@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.18">
 <meta name="author" content="Stefan Bechtold, Sam Brannen, Johannes Link, Matthias Merdes, Marc Philipp, Juliette de Rancourt, Christian Stein">
-<title>JUnit 5 User Guide</title>
+<title>JUnit User Guide</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -572,7 +572,7 @@ pre.rouge .gs {
 </head>
 <body id="user-guide" class="article toc2 toc-left">
 <div id="header">
-<h1>JUnit 5 User Guide</h1>
+<h1>JUnit User Guide</h1>
 <div class="details">
 <span id="author" class="author">Stefan Bechtold</span><br>
 <span id="author2" class="author">Sam Brannen</span><br>
@@ -581,20 +581,20 @@ pre.rouge .gs {
 <span id="author5" class="author">Marc Philipp</span><br>
 <span id="author6" class="author">Juliette de Rancourt</span><br>
 <span id="author7" class="author">Christian Stein</span><br>
-<span id="revnumber">version 5.13.0-SNAPSHOT</span>
+<span id="revnumber">version 6.0.0-SNAPSHOT</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#overview">1. Overview</a>
 <ul class="sectlevel2">
-<li><a href="#overview-what-is-junit-5">1.1. What is JUnit 5?</a></li>
+<li><a href="#overview-what-is-junit-5">1.1. What is JUnit?</a></li>
 <li><a href="#overview-java-versions">1.2. Supported Java Versions</a></li>
 <li><a href="#overview-getting-help">1.3. Getting Help</a></li>
 <li><a href="#overview-getting-started">1.4. Getting Started</a>
 <ul class="sectlevel3">
 <li><a href="#overview-getting-started-junit-artifacts">1.4.1. Downloading JUnit Artifacts</a></li>
-<li><a href="#overview-getting-started-features">1.4.2. JUnit 5 Features</a></li>
+<li><a href="#overview-getting-started-features">1.4.2. JUnit Features</a></li>
 <li><a href="#overview-getting-started-example-projects">1.4.3. Example Projects</a></li>
 </ul>
 </li>
@@ -837,39 +837,26 @@ pre.rouge .gs {
 <li><a href="#running-tests-console-launcher-color-customization">4.3.4. Color Customization</a></li>
 </ul>
 </li>
-<li><a href="#running-tests-junit-platform-runner">4.4. Using JUnit 4 to run the JUnit Platform</a>
+<li><a href="#running-tests-discovery-selectors">4.4. Discovery Selectors</a></li>
+<li><a href="#running-tests-config-params">4.5. Configuration Parameters</a>
 <ul class="sectlevel3">
-<li><a href="#running-tests-junit-platform-runner-setup">4.4.1. Setup</a>
-<ul class="sectlevel4">
-<li><a href="#running-tests-junit-platform-runner-setup-explicit-dependencies">Explicit Dependencies</a></li>
-<li><a href="#running-tests-junit-platform-runner-setup-transitive-dependencies">Transitive Dependencies</a></li>
+<li><a href="#running-tests-config-params-deactivation-pattern">4.5.1. Pattern Matching Syntax</a></li>
 </ul>
 </li>
-<li><a href="#running-tests-junit-platform-runner-technical-names">4.4.2. Display Names vs. Technical Names</a></li>
-<li><a href="#running-tests-junit-platform-runner-single-test">4.4.3. Single Test Class</a></li>
-<li><a href="#running-tests-junit-platform-runner-test-suite">4.4.4. Test Suite</a></li>
-</ul>
-</li>
-<li><a href="#running-tests-discovery-selectors">4.5. Discovery Selectors</a></li>
-<li><a href="#running-tests-config-params">4.6. Configuration Parameters</a>
+<li><a href="#running-tests-tags">4.6. Tags</a>
 <ul class="sectlevel3">
-<li><a href="#running-tests-config-params-deactivation-pattern">4.6.1. Pattern Matching Syntax</a></li>
+<li><a href="#running-tests-tag-syntax-rules">4.6.1. Syntax Rules for Tags</a></li>
+<li><a href="#running-tests-tag-expressions">4.6.2. Tag Expressions</a></li>
 </ul>
 </li>
-<li><a href="#running-tests-tags">4.7. Tags</a>
+<li><a href="#running-tests-capturing-output">4.7. Capturing Standard Output/Error</a></li>
+<li><a href="#running-tests-listeners">4.8. Using Listeners and Interceptors</a>
 <ul class="sectlevel3">
-<li><a href="#running-tests-tag-syntax-rules">4.7.1. Syntax Rules for Tags</a></li>
-<li><a href="#running-tests-tag-expressions">4.7.2. Tag Expressions</a></li>
+<li><a href="#running-tests-listeners-flight-recorder">4.8.1. Flight Recorder Support</a></li>
 </ul>
 </li>
-<li><a href="#running-tests-capturing-output">4.8. Capturing Standard Output/Error</a></li>
-<li><a href="#running-tests-listeners">4.9. Using Listeners and Interceptors</a>
-<ul class="sectlevel3">
-<li><a href="#running-tests-listeners-flight-recorder">4.9.1. Flight Recorder Support</a></li>
-</ul>
-</li>
-<li><a href="#stacktrace-pruning">4.10. Stack Trace Pruning</a></li>
-<li><a href="#running-tests-discovery-issues">4.11. Discovery Issues</a></li>
+<li><a href="#stacktrace-pruning">4.9. Stack Trace Pruning</a></li>
+<li><a href="#running-tests-discovery-issues">4.10. Discovery Issues</a></li>
 </ul>
 </li>
 <li><a href="#extensions">5. Extension Model</a>
@@ -1056,13 +1043,13 @@ programmers writing tests, extension authors, and engine authors as well as buil
 and IDE vendors.</p>
 </div>
 <div class="sect2">
-<h3 id="overview-what-is-junit-5"><a class="anchor" href="#overview-what-is-junit-5"></a>1.1. What is JUnit 5?</h3>
+<h3 id="overview-what-is-junit-5"><a class="anchor" href="#overview-what-is-junit-5"></a>1.1. What is JUnit?</h3>
 <div class="paragraph">
-<p>Unlike previous versions of JUnit, JUnit 5 is composed of several different modules from
-three different sub-projects.</p>
+<p>Unlike previous versions of JUnit, JUnit 5 and later is composed of several different
+modules from three different sub-projects.</p>
 </div>
 <div class="paragraph">
-<p><strong>JUnit 5 = <em>JUnit Platform</em> + <em>JUnit Jupiter</em> + <em>JUnit Vintage</em></strong></p>
+<p><strong>JUnit 6.0.0-SNAPSHOT = <em>JUnit Platform</em> + <em>JUnit Jupiter</em> + <em>JUnit Vintage</em></strong></p>
 </div>
 <div class="paragraph">
 <p>The <strong>JUnit Platform</strong> serves as a foundation for <a href="#launcher-api">launching testing
@@ -1078,7 +1065,7 @@ exists in popular IDEs (see <a href="#running-tests-ide-intellij-idea">IntelliJ 
 </div>
 <div class="paragraph">
 <p><strong>JUnit Jupiter</strong> is the combination of the <a href="#writing-tests">programming model</a> and
-<a href="#extensions">extension model</a> for writing tests and extensions in JUnit 5. The Jupiter
+<a href="#extensions">extension model</a> for writing JUnit tests and extensions. The Jupiter
 sub-project provides a <code>TestEngine</code> for running Jupiter based tests on the platform.</p>
 </div>
 <div class="paragraph">
@@ -1090,14 +1077,14 @@ path.</p>
 <div class="sect2">
 <h3 id="overview-java-versions"><a class="anchor" href="#overview-java-versions"></a>1.2. Supported Java Versions</h3>
 <div class="paragraph">
-<p>JUnit 5 requires Java 8 (or higher) at runtime. However, you can still test code that
+<p>JUnit requires Java 17 (or higher) at runtime. However, you can still test code that
 has been compiled with previous versions of the JDK.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="overview-getting-help"><a class="anchor" href="#overview-getting-help"></a>1.3. Getting Help</h3>
 <div class="paragraph">
-<p>Ask JUnit 5 related questions on <a href="https://stackoverflow.com/questions/tagged/junit5">Stack Overflow</a> or chat with the community on <a href="https://gitter.im/junit-team/junit5">Gitter</a>.</p>
+<p>Ask JUnit-related questions on <a href="https://stackoverflow.com/questions/tagged/junit5">Stack Overflow</a> or chat with the community on <a href="https://gitter.im/junit-team/junit5">Gitter</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1111,9 +1098,9 @@ to <a href="#dependency-metadata">Dependency Metadata</a>. To set up dependency 
 </div>
 </div>
 <div class="sect3">
-<h4 id="overview-getting-started-features"><a class="anchor" href="#overview-getting-started-features"></a>1.4.2. JUnit 5 Features</h4>
+<h4 id="overview-getting-started-features"><a class="anchor" href="#overview-getting-started-features"></a>1.4.2. JUnit Features</h4>
 <div class="paragraph">
-<p>To find out what features are available in JUnit 5 and how to use them, read the
+<p>To find out what features are available in JUnit 6.0.0-SNAPSHOT and how to use them, read the
 corresponding sections of this User Guide, organized by topic.</p>
 </div>
 <div class="ulist">
@@ -1598,7 +1585,7 @@ lifecycle methods. For further information on runtime semantics, see
 <a href="#extensions-execution-order-wrapping-behavior">Wrapping Behavior of Callbacks</a>.</p>
 </div>
 <div class="listingblock">
-<div class="title">A standard test class</div>
+<div class="title">A standard Java test class</div>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="java"><span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">jupiter</span><span class="o">.</span><span class="na">api</span><span class="o">.</span><span class="na">Assertions</span><span class="o">.</span><span class="na">fail</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">jupiter</span><span class="o">.</span><span class="na">api</span><span class="o">.</span><span class="na">Assumptions</span><span class="o">.</span><span class="na">assumeTrue</span><span class="o">;</span>
@@ -1674,6 +1661,53 @@ following example.</p>
 
 <span class="o">}</span></code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Test and lifecycle methods may be written in Kotlin and may optionally use the <code>suspend</code>
+keyword for testing code using coroutines.</p>
+</div>
+<div class="listingblock">
+<div class="title">A test class written in Kotlin</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="kotlin"><span class="k">import</span> <span class="nn">org.junit.jupiter.api.BeforeEach</span>
+<span class="k">import</span> <span class="nn">org.junit.jupiter.api.Test</span>
+
+<span class="nd">@Suppress</span><span class="p">(</span><span class="s">"JUnitMalformedDeclaration"</span><span class="p">)</span>
+<span class="kd">class</span> <span class="nc">KotlinCoroutinesDemo</span> <span class="p">{</span>
+    <span class="nd">@BeforeEach</span>
+    <span class="k">fun</span> <span class="nf">regularSetUp</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="nd">@BeforeEach</span>
+    <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">coroutineSetUp</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Test</span>
+    <span class="k">fun</span> <span class="nf">regularTest</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Test</span>
+    <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">coroutineTest</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Using suspending functions as test or lifecycle methods requires
+<a href="https://central.sonatype.com/artifact/org.jetbrains.kotlin/kotlin-stdlib"><code>kotlin-stdlib</code></a>,
+<a href="https://central.sonatype.com/artifact/org.jetbrains.kotlin/kotlin-reflect"><code>kotlin-reflect</code></a>,
+and
+<a href="https://central.sonatype.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-core"><code>kotlinx-coroutines-core</code></a>
+to be present on the classpath or module path.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -2894,44 +2928,44 @@ constants.</p>
 <span class="o">}</span>
 
 <span class="nd">@Test</span>
-<span class="nd">@EnabledForJreRange</span><span class="o">(</span><span class="n">min</span> <span class="o">=</span> <span class="no">JAVA_9</span><span class="o">,</span> <span class="n">max</span> <span class="o">=</span> <span class="no">JAVA_11</span><span class="o">)</span>
-<span class="kt">void</span> <span class="nf">fromJava9To11</span><span class="o">()</span> <span class="o">{</span>
+<span class="nd">@EnabledForJreRange</span><span class="o">(</span><span class="n">min</span> <span class="o">=</span> <span class="no">JAVA_21</span><span class="o">,</span> <span class="n">max</span> <span class="o">=</span> <span class="no">JAVA_25</span><span class="o">)</span>
+<span class="kt">void</span> <span class="nf">fromJava21To25</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// ...</span>
 <span class="o">}</span>
 
 <span class="nd">@Test</span>
-<span class="nd">@EnabledForJreRange</span><span class="o">(</span><span class="n">min</span> <span class="o">=</span> <span class="no">JAVA_9</span><span class="o">)</span>
-<span class="kt">void</span> <span class="nf">onJava9AndHigher</span><span class="o">()</span> <span class="o">{</span>
+<span class="nd">@EnabledForJreRange</span><span class="o">(</span><span class="n">min</span> <span class="o">=</span> <span class="no">JAVA_21</span><span class="o">)</span>
+<span class="kt">void</span> <span class="nf">onJava21ndHigher</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// ...</span>
 <span class="o">}</span>
 
 <span class="nd">@Test</span>
-<span class="nd">@EnabledForJreRange</span><span class="o">(</span><span class="n">max</span> <span class="o">=</span> <span class="no">JAVA_11</span><span class="o">)</span>
-<span class="kt">void</span> <span class="nf">fromJava8To11</span><span class="o">()</span> <span class="o">{</span>
+<span class="nd">@EnabledForJreRange</span><span class="o">(</span><span class="n">max</span> <span class="o">=</span> <span class="no">JAVA_18</span><span class="o">)</span>
+<span class="kt">void</span> <span class="nf">fromJava17To18</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// ...</span>
 <span class="o">}</span>
 
 <span class="nd">@Test</span>
-<span class="nd">@DisabledOnJre</span><span class="o">(</span><span class="no">JAVA_9</span><span class="o">)</span>
-<span class="kt">void</span> <span class="nf">notOnJava9</span><span class="o">()</span> <span class="o">{</span>
+<span class="nd">@DisabledOnJre</span><span class="o">(</span><span class="no">JAVA_19</span><span class="o">)</span>
+<span class="kt">void</span> <span class="nf">notOnJava19</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// ...</span>
 <span class="o">}</span>
 
 <span class="nd">@Test</span>
-<span class="nd">@DisabledForJreRange</span><span class="o">(</span><span class="n">min</span> <span class="o">=</span> <span class="no">JAVA_9</span><span class="o">,</span> <span class="n">max</span> <span class="o">=</span> <span class="no">JAVA_11</span><span class="o">)</span>
-<span class="kt">void</span> <span class="nf">notFromJava9To11</span><span class="o">()</span> <span class="o">{</span>
+<span class="nd">@DisabledForJreRange</span><span class="o">(</span><span class="n">min</span> <span class="o">=</span> <span class="no">JAVA_17</span><span class="o">,</span> <span class="n">max</span> <span class="o">=</span> <span class="no">JAVA_17</span><span class="o">)</span>
+<span class="kt">void</span> <span class="nf">notFromJava17To19</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// ...</span>
 <span class="o">}</span>
 
 <span class="nd">@Test</span>
-<span class="nd">@DisabledForJreRange</span><span class="o">(</span><span class="n">min</span> <span class="o">=</span> <span class="no">JAVA_9</span><span class="o">)</span>
-<span class="kt">void</span> <span class="nf">notOnJava9AndHigher</span><span class="o">()</span> <span class="o">{</span>
+<span class="nd">@DisabledForJreRange</span><span class="o">(</span><span class="n">min</span> <span class="o">=</span> <span class="no">JAVA_19</span><span class="o">)</span>
+<span class="kt">void</span> <span class="nf">notOnJava19AndHigher</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// ...</span>
 <span class="o">}</span>
 
 <span class="nd">@Test</span>
-<span class="nd">@DisabledForJreRange</span><span class="o">(</span><span class="n">max</span> <span class="o">=</span> <span class="no">JAVA_11</span><span class="o">)</span>
-<span class="kt">void</span> <span class="nf">notFromJava8To11</span><span class="o">()</span> <span class="o">{</span>
+<span class="nd">@DisabledForJreRange</span><span class="o">(</span><span class="n">max</span> <span class="o">=</span> <span class="no">JAVA_18</span><span class="o">)</span>
+<span class="kt">void</span> <span class="nf">notFromJava17To18</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// ...</span>
 <span class="o">}</span></code></pre>
 </div>
@@ -3333,11 +3367,6 @@ specified via the <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/
 <li>
 <p><code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/MethodOrderer.Random.html">MethodOrderer.Random</a></code>: orders test methods <em>pseudo-randomly</em> and supports
 configuration of a custom <em>seed</em></p>
-</li>
-<li>
-<p><code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/MethodOrderer.Alphanumeric.html">MethodOrderer.Alphanumeric</a></code>: sorts test methods <em>alphanumerically</em> based on their
-names and formal parameter lists; <strong>deprecated in favor of <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/MethodOrderer.MethodName.html">MethodOrderer.MethodName</a></code>,
-to be removed in 6.0</strong></p>
 </li>
 </ul>
 </div>
@@ -3964,9 +3993,8 @@ current test run or attach files to it. The data can be consumed in a
 method, respectively. This allows them to be viewed in IDEs or included in reports.</p>
 <div class="paragraph">
 <p>In JUnit Jupiter you should use <code>TestReporter</code> where you used to print information to
-<code>stdout</code> or <code>stderr</code> in JUnit 4. Using <code>@RunWith(JUnitPlatform.class)</code> will output all
-reported entries to <code>stdout</code>. In addition, some IDEs print report entries to <code>stdout</code> or
-display them in the user interface for test results.</p>
+<code>stdout</code> or <code>stderr</code> in JUnit 4. Some IDEs print report entries to <code>stdout</code> or display
+them in the user interface for test results.</p>
 </div>
 </li>
 </ul>
@@ -8195,21 +8223,6 @@ its content.</p>
 <span class="o">}</span></code></pre>
 </div>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-To revert to the old behavior of using a single temporary directory for the
-entire test class or method (depending on which level the annotation is used), you can set
-the <code>junit.jupiter.tempdir.scope</code> configuration parameter to <code>per_context</code>. However,
-please note that this option is deprecated and will be removed in a future release.
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>The following example stores a <em>shared</em> temporary directory in a <code>static</code> field. This
 allows the same <code>sharedTempDir</code> to be used in all lifecycle methods and test methods of
@@ -9088,14 +9101,14 @@ IDEA download the following JARs automatically based on the API version used in 
 project: <code>junit-platform-launcher</code>, <code>junit-jupiter-engine</code>, and <code>junit-vintage-engine</code>.</p>
 </div>
 <div class="paragraph">
-<p>In order to use a different JUnit 5 version (e.g., 5.13.0-SNAPSHOT), you may need to
+<p>In order to use a different JUnit version (e.g., 6.0.0-SNAPSHOT), you may need to
 include the corresponding versions of the <code>junit-platform-launcher</code>,
 <code>junit-jupiter-engine</code>, and <code>junit-vintage-engine</code> JARs in the classpath.</p>
 </div>
 <div class="listingblock">
 <div class="title">Additional Gradle Dependencies</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="groovy"><span class="n">testImplementation</span><span class="o">(</span><span class="n">platform</span><span class="o">(</span><span class="s2">"org.junit:junit-bom:5.13.0-SNAPSHOT"</span><span class="o">))</span>
+<pre class="rouge highlight"><code data-lang="groovy"><span class="n">testImplementation</span><span class="o">(</span><span class="n">platform</span><span class="o">(</span><span class="s2">"org.junit:junit-bom:6.0.0-SNAPSHOT"</span><span class="o">))</span>
 <span class="n">testRuntimeOnly</span><span class="o">(</span><span class="s2">"org.junit.platform:junit-platform-launcher"</span><span class="o">)</span>
 <span class="n">testRuntimeOnly</span><span class="o">(</span><span class="s2">"org.junit.jupiter:junit-jupiter-engine"</span><span class="o">)</span>
 <span class="n">testRuntimeOnly</span><span class="o">(</span><span class="s2">"org.junit.vintage:junit-vintage-engine"</span><span class="o">)</span></code></pre>
@@ -9127,7 +9140,7 @@ include the corresponding versions of the <code>junit-platform-launcher</code>,
         <span class="nt">&lt;dependency&gt;</span>
             <span class="nt">&lt;groupId&gt;</span>org.junit<span class="nt">&lt;/groupId&gt;</span>
             <span class="nt">&lt;artifactId&gt;</span>junit-bom<span class="nt">&lt;/artifactId&gt;</span>
-            <span class="nt">&lt;version&gt;</span>5.13.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;version&gt;</span>6.0.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
             <span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span>
             <span class="nt">&lt;scope&gt;</span>import<span class="nt">&lt;/scope&gt;</span>
         <span class="nt">&lt;/dependency&gt;</span>
@@ -9143,8 +9156,8 @@ include the corresponding versions of the <code>junit-platform-launcher</code>,
 release.</p>
 </div>
 <div class="paragraph">
-<p>For more information on using JUnit 5 in Eclipse consult the official <em>Eclipse support
-for JUnit 5</em> section of the
+<p>For more information on using JUnit Platform in Eclipse consult the official <em>Eclipse
+support for JUnit 5</em> section of the
 <a href="https://www.eclipse.org/eclipse/news/4.7.1a/#junit-5-support">Eclipse Project Oxygen.1a
 (4.7.1a) - New and Noteworthy</a> documentation.</p>
 </div>
@@ -9181,9 +9194,8 @@ documentation.</p>
 <h4 id="running-tests-ide-other"><a class="anchor" href="#running-tests-ide-other"></a>4.1.5. Other IDEs</h4>
 <div class="paragraph">
 <p>If you are using an editor or IDE other than one of those listed in the previous sections,
-the JUnit team provides two alternative solutions to assist you in using JUnit 5. You can
-use the <a href="#running-tests-console-launcher">Console Launcher</a> manually&#8201;&#8212;&#8201;for example, from the command line&#8201;&#8212;&#8201;or execute tests with a <a href="#running-tests-junit-platform-runner">JUnit 4 based Runner</a> if
-your IDE has built-in support for JUnit 4.</p>
+and it doesn&#8217;t support running tests on the JUnit Platform, you can use the
+<a href="#running-tests-console-launcher">Console Launcher</a> to run them from the command line.</p>
 </div>
 </div>
 </div>
@@ -9243,13 +9255,13 @@ of JUnit used in your Spring Boot application.
 <div class="paragraph">
 <p>Unless you&#8217;re using Spring Boot which defines its own way of managing dependencies, it is
 recommended to use the JUnit Platform <a href="#dependency-metadata-junit-bom">Bill of Materials (BOM)</a> to align the
-versions of all JUnit 5 artifacts.</p>
+versions of all JUnit artifacts.</p>
 </div>
 <div class="listingblock">
 <div class="title">Explicit platform dependency on the BOM</div>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="groovy"><span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">testImplementation</span><span class="o">(</span><span class="n">platform</span><span class="o">(</span><span class="s2">"org.junit:junit-bom:5.13.0-SNAPSHOT"</span><span class="o">))</span>
+    <span class="n">testImplementation</span><span class="o">(</span><span class="n">platform</span><span class="o">(</span><span class="s2">"org.junit:junit-bom:6.0.0-SNAPSHOT"</span><span class="o">))</span>
     <span class="n">testImplementation</span><span class="o">(</span><span class="s2">"org.junit.jupiter:junit-jupiter"</span><span class="o">)</span>
     <span class="n">testRuntimeOnly</span><span class="o">(</span><span class="s2">"org.junit.platform:junit-platform-launcher"</span><span class="o">)</span>
 <span class="o">}</span></code></pre>
@@ -9264,14 +9276,14 @@ with the <code>org.junit.platform</code>, <code>org.junit.jupiter</code>, and <c
 <a href="https://docs.gradle.org/current/userguide/platforms.html">platform</a> dependency on the BOM,
 you usually don&#8217;t need to declare an explicit dependency on it yourself. Instead, it&#8217;s
 sufficient to declare <em>one</em> regular dependency that includes a version number. Gradle will
-then pull in the BOM automatically so you can omit the version for all other JUnit 5
+then pull in the BOM automatically so you can omit the version for all other JUnit
 artifacts.</p>
 </div>
 <div class="listingblock">
 <div class="title">Implicit platform dependency on the BOM</div>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="groovy"><span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">testImplementation</span><span class="o">(</span><span class="s2">"org.junit.jupiter:junit-jupiter:5.13.0-SNAPSHOT"</span><span class="o">)</span> <i class="conum" data-value="1"></i><b>(1)</b>
+    <span class="n">testImplementation</span><span class="o">(</span><span class="s2">"org.junit.jupiter:junit-jupiter:6.0.0-SNAPSHOT"</span><span class="o">)</span> <i class="conum" data-value="1"></i><b>(1)</b>
     <span class="n">testRuntimeOnly</span><span class="o">(</span><span class="s2">"org.junit.platform:junit-platform-launcher"</span><span class="o">)</span> <i class="conum" data-value="2"></i><b>(2)</b>
 <span class="o">}</span></code></pre>
 </div>
@@ -9323,7 +9335,7 @@ on the dependency-aggregating JUnit Jupiter artifact similar to the following.</
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="groovy"><span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">testImplementation</span><span class="o">(</span><span class="s2">"org.junit.jupiter:junit-jupiter:5.13.0-SNAPSHOT"</span><span class="o">)</span>
+    <span class="n">testImplementation</span><span class="o">(</span><span class="s2">"org.junit.jupiter:junit-jupiter:6.0.0-SNAPSHOT"</span><span class="o">)</span>
     <span class="n">testRuntimeOnly</span><span class="o">(</span><span class="s2">"org.junit.platform:junit-platform-launcher"</span><span class="o">)</span>
 <span class="o">}</span></code></pre>
 </div>
@@ -9339,7 +9351,7 @@ support.</p>
 <pre class="rouge highlight"><code data-lang="kotlin"><span class="nf">testing</span> <span class="p">{</span>
     <span class="nf">suites</span> <span class="p">{</span>
         <span class="n">named</span><span class="p">&lt;</span><span class="nc">JvmTestSuite</span><span class="p">&gt;(</span><span class="s">"test"</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nf">useJUnitJupiter</span><span class="p">(</span><span class="s">"5.13.0-SNAPSHOT"</span><span class="p">)</span>
+            <span class="nf">useJUnitJupiter</span><span class="p">(</span><span class="s">"6.0.0-SNAPSHOT"</span><span class="p">)</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre>
@@ -9351,7 +9363,7 @@ support.</p>
 <pre class="rouge highlight"><code data-lang="groovy"><span class="n">testing</span> <span class="o">{</span>
     <span class="n">suites</span> <span class="o">{</span>
         <span class="n">test</span> <span class="o">{</span>
-            <span class="n">useJUnitJupiter</span><span class="o">(</span><span class="s2">"5.13.0-SNAPSHOT"</span><span class="o">)</span>
+            <span class="n">useJUnitJupiter</span><span class="o">(</span><span class="s2">"6.0.0-SNAPSHOT"</span><span class="o">)</span>
         <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">}</span></code></pre>
@@ -9366,7 +9378,7 @@ implementation similar to the following.</p>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="groovy"><span class="n">dependencies</span> <span class="o">{</span>
     <span class="n">testImplementation</span><span class="o">(</span><span class="s2">"junit:junit:4.13.2"</span><span class="o">)</span>
-    <span class="n">testRuntimeOnly</span><span class="o">(</span><span class="s2">"org.junit.vintage:junit-vintage-engine:5.13.0-SNAPSHOT"</span><span class="o">)</span>
+    <span class="n">testRuntimeOnly</span><span class="o">(</span><span class="s2">"org.junit.vintage:junit-vintage-engine:6.0.0-SNAPSHOT"</span><span class="o">)</span>
     <span class="n">testRuntimeOnly</span><span class="o">(</span><span class="s2">"org.junit.platform:junit-platform-launcher"</span><span class="o">)</span>
 <span class="o">}</span></code></pre>
 </div>
@@ -9441,27 +9453,9 @@ and can serve as a starting point for configuring your Maven build.</p>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-<div class="title">Use recent version of Maven Surefire/Failsafe to avoid interoperability issues</div>
+<div class="title">Minimum required version of Maven Surefire/Failsafe</div>
 <div class="paragraph">
-<p>To avoid interoperability issues, it is recommended to use a recent version of Maven
-Surefire/Failsafe (3.0.0 or later) because it automatically aligns the version of the
-JUnit Platform Launcher that is used with the JUnit Platform version found on the test
-runtime classpath.</p>
-</div>
-<div class="paragraph">
-<p>If you are using a version older than 3.0.0-M4, you can work around the missing alignment
-by adding a test dependency on the matching version of the JUnit Platform Launcher to your
-Maven build as follows.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
-    <span class="nt">&lt;groupId&gt;</span>org.junit.platform<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;artifactId&gt;</span>junit-platform-launcher<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version&gt;</span>1.13.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
-    <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span></code></pre>
-</div>
+<p>As of JUnit 6.0, the minimum required version of Maven Surefire/Failsafe is 3.0.0.</p>
 </div>
 </td>
 </tr>
@@ -9472,7 +9466,7 @@ Maven build as follows.</p>
 <div class="paragraph">
 <p>Unless you&#8217;re using Spring Boot which defines its own way of managing dependencies, it is
 recommended to use the JUnit Platform <a href="#dependency-metadata-junit-bom">Bill of Materials (BOM)</a> to align the
-versions of all JUnit 5 artifacts.</p>
+versions of all JUnit artifacts.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -9481,7 +9475,7 @@ versions of all JUnit 5 artifacts.</p>
         <span class="nt">&lt;dependency&gt;</span>
             <span class="nt">&lt;groupId&gt;</span>org.junit<span class="nt">&lt;/groupId&gt;</span>
             <span class="nt">&lt;artifactId&gt;</span>junit-bom<span class="nt">&lt;/artifactId&gt;</span>
-            <span class="nt">&lt;version&gt;</span>5.13.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;version&gt;</span>6.0.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
             <span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span>
             <span class="nt">&lt;scope&gt;</span>import<span class="nt">&lt;/scope&gt;</span>
         <span class="nt">&lt;/dependency&gt;</span>
@@ -9526,7 +9520,7 @@ following.</p>
     <span class="nt">&lt;dependency&gt;</span>
         <span class="nt">&lt;groupId&gt;</span>org.junit.jupiter<span class="nt">&lt;/groupId&gt;</span>
         <span class="nt">&lt;artifactId&gt;</span>junit-jupiter<span class="nt">&lt;/artifactId&gt;</span>
-        <span class="nt">&lt;version&gt;</span>5.13.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span> <span class="c">&lt;!-- can be omitted when using the BOM --&gt;</span>
+        <span class="nt">&lt;version&gt;</span>6.0.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span> <span class="c">&lt;!-- can be omitted when using the BOM --&gt;</span>
         <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
     <span class="nt">&lt;/dependency&gt;</span>
     <span class="c">&lt;!-- ... --&gt;</span>
@@ -9565,7 +9559,7 @@ long as you configure <code>test</code> scoped dependencies on JUnit 4 and the J
     <span class="nt">&lt;dependency&gt;</span>
         <span class="nt">&lt;groupId&gt;</span>org.junit.vintage<span class="nt">&lt;/groupId&gt;</span>
         <span class="nt">&lt;artifactId&gt;</span>junit-vintage-engine<span class="nt">&lt;/artifactId&gt;</span>
-        <span class="nt">&lt;version&gt;</span>5.13.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span> <span class="c">&lt;!-- can be omitted when using the BOM --&gt;</span>
+        <span class="nt">&lt;version&gt;</span>6.0.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span> <span class="c">&lt;!-- can be omitted when using the BOM --&gt;</span>
         <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
     <span class="nt">&lt;/dependency&gt;</span>
     <span class="c">&lt;!-- ... --&gt;</span>
@@ -9829,7 +9823,7 @@ and
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="groovy"><span class="n">ext</span><span class="o">[</span><span class="s1">'junit-jupiter.version'</span><span class="o">]</span> <span class="o">=</span> <span class="s1">'5.13.0-SNAPSHOT'</span></code></pre>
+<pre class="rouge highlight"><code data-lang="groovy"><span class="n">ext</span><span class="o">[</span><span class="s1">'junit-jupiter.version'</span><span class="o">]</span> <span class="o">=</span> <span class="s1">'6.0.0-SNAPSHOT'</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -9839,7 +9833,7 @@ and
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;properties&gt;</span>
-    <span class="nt">&lt;junit-jupiter.version&gt;</span>5.13.0-SNAPSHOT<span class="nt">&lt;/junit-jupiter.version&gt;</span>
+    <span class="nt">&lt;junit-jupiter.version&gt;</span>6.0.0-SNAPSHOT<span class="nt">&lt;/junit-jupiter.version&gt;</span>
 <span class="nt">&lt;/properties&gt;</span></code></pre>
 </div>
 </div>
@@ -9853,7 +9847,7 @@ Platform from the console. For example, it can be used to run JUnit Vintage and 
 Jupiter tests and print test execution results to the console.</p>
 </div>
 <div class="paragraph">
-<p>An executable <em>Fat JAR</em> (<code>junit-platform-console-standalone-1.13.0-SNAPSHOT.jar</code>) that
+<p>An executable <em>Fat JAR</em> (<code>junit-platform-console-standalone-6.0.0-SNAPSHOT.jar</code>) that
 contains the contents of all of its dependencies is published in the <a href="https://central.sonatype.com/">Maven Central</a>
 repository under the
 <a href="https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone">junit-platform-console-standalone</a>
@@ -9871,40 +9865,40 @@ directory. It contains the contents of the following artifacts:</p>
 <p><code>org.hamcrest:hamcrest-core:1.3</code></p>
 </li>
 <li>
-<p><code>org.junit.jupiter:junit-jupiter-api:5.13.0-SNAPSHOT</code></p>
+<p><code>org.junit.jupiter:junit-jupiter-api:6.0.0-SNAPSHOT</code></p>
 </li>
 <li>
-<p><code>org.junit.jupiter:junit-jupiter-engine:5.13.0-SNAPSHOT</code></p>
+<p><code>org.junit.jupiter:junit-jupiter-engine:6.0.0-SNAPSHOT</code></p>
 </li>
 <li>
-<p><code>org.junit.jupiter:junit-jupiter-params:5.13.0-SNAPSHOT</code></p>
+<p><code>org.junit.jupiter:junit-jupiter-params:6.0.0-SNAPSHOT</code></p>
 </li>
 <li>
-<p><code>org.junit.platform:junit-platform-commons:1.13.0-SNAPSHOT</code></p>
+<p><code>org.junit.platform:junit-platform-commons:6.0.0-SNAPSHOT</code></p>
 </li>
 <li>
-<p><code>org.junit.platform:junit-platform-console:1.13.0-SNAPSHOT</code></p>
+<p><code>org.junit.platform:junit-platform-console:6.0.0-SNAPSHOT</code></p>
 </li>
 <li>
-<p><code>org.junit.platform:junit-platform-engine:1.13.0-SNAPSHOT</code></p>
+<p><code>org.junit.platform:junit-platform-engine:6.0.0-SNAPSHOT</code></p>
 </li>
 <li>
-<p><code>org.junit.platform:junit-platform-launcher:1.13.0-SNAPSHOT</code></p>
+<p><code>org.junit.platform:junit-platform-launcher:6.0.0-SNAPSHOT</code></p>
 </li>
 <li>
-<p><code>org.junit.platform:junit-platform-reporting:1.13.0-SNAPSHOT</code></p>
+<p><code>org.junit.platform:junit-platform-reporting:6.0.0-SNAPSHOT</code></p>
 </li>
 <li>
-<p><code>org.junit.platform:junit-platform-suite-api:1.13.0-SNAPSHOT</code></p>
+<p><code>org.junit.platform:junit-platform-suite-api:6.0.0-SNAPSHOT</code></p>
 </li>
 <li>
-<p><code>org.junit.platform:junit-platform-suite-commons:1.13.0-SNAPSHOT</code></p>
+<p><code>org.junit.platform:junit-platform-suite-commons:6.0.0-SNAPSHOT</code></p>
 </li>
 <li>
-<p><code>org.junit.platform:junit-platform-suite-engine:1.13.0-SNAPSHOT</code></p>
+<p><code>org.junit.platform:junit-platform-suite-engine:6.0.0-SNAPSHOT</code></p>
 </li>
 <li>
-<p><code>org.junit.vintage:junit-vintage-engine:5.13.0-SNAPSHOT</code></p>
+<p><code>org.junit.vintage:junit-vintage-engine:6.0.0-SNAPSHOT</code></p>
 </li>
 <li>
 <p><code>org.opentest4j:opentest4j:1.3.0</code></p>
@@ -9946,7 +9940,7 @@ standalone <code>ConsoleLauncher</code> as shown below.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>java <span class="nt">-jar</span> junit-platform-console-standalone-1.13.0-SNAPSHOT.jar execute &lt;OPTIONS&gt;
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>java <span class="nt">-jar</span> junit-platform-console-standalone-6.0.0-SNAPSHOT.jar execute &lt;OPTIONS&gt;
 <span class="go">
 ├─ JUnit Vintage
 │  └─ example.JUnit4Tests
@@ -9984,22 +9978,6 @@ all jars in a directory):</p>
 <pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>java <span class="nt">-cp</span> classes:testlib/<span class="k">*</span> org.junit.platform.console.ConsoleLauncher &lt;OPTIONS&gt;</code></pre>
 </div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="title">Exit Code</div>
-The <code><a href="../api/org.junit.platform.console/org/junit/platform/console/ConsoleLauncher.html">ConsoleLauncher</a></code> exits with a status code of <code>1</code> if any containers or tests
-failed. If no tests are discovered and the <code>--fail-if-no-tests</code> command-line option is
-supplied, the <code>ConsoleLauncher</code> exits with a status code of <code>2</code>. Otherwise, the exit code
-is <code>0</code>.
-</td>
-</tr>
-</table>
-</div>
 <div class="sect3">
 <h4 id="running-tests-console-launcher-options"><a class="anchor" href="#running-tests-console-launcher-options"></a>4.3.1. Subcommands and Options</h4>
 <div class="paragraph">
@@ -10007,7 +9985,7 @@ is <code>0</code>.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>Usage: junit [OPTIONS] [COMMAND]
+<pre>Usage: junit [OPTIONS] COMMAND
 Launches the JUnit Platform for test discovery and execution.
       [@&lt;filename&gt;...]   One or more argument files containing options.
   -h, --help             Display help information.
@@ -10149,6 +10127,22 @@ https://junit.org/junit5/docs/snapshot/user-guide/</pre>
 </div>
 <div class="sect4">
 <h5 id="running-tests-console-launcher-options-executing-tests"><a class="anchor" href="#running-tests-console-launcher-options-executing-tests"></a>Executing tests</h5>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Exit Code</div>
+The <code><a href="../api/org.junit.platform.console/org/junit/platform/console/ConsoleLauncher.html">ConsoleLauncher</a></code> exits with a status code of <code>1</code> if any containers or tests
+failed. If no tests are discovered and the <code>--fail-if-no-tests</code> command-line option is
+supplied, the <code>ConsoleLauncher</code> exits with a status code of <code>2</code>. Otherwise, the exit code
+is <code>0</code>.
+</td>
+</tr>
+</table>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre>Usage: junit execute [OPTIONS]
@@ -10338,7 +10332,7 @@ files using the <code>--redirect-stdout</code> and <code>--redirect-stderr</code
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>java <span class="nt">-jar</span> junit-platform-console-standalone-1.13.0-SNAPSHOT.jar &lt;OPTIONS&gt; <span class="se">\</span>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>java <span class="nt">-jar</span> junit-platform-console-standalone-6.0.0-SNAPSHOT.jar &lt;OPTIONS&gt; <span class="se">\</span>
 <span class="go">  --redirect-stdout=stdout.txt \
   --redirect-stderr=stderr.txt</span></code></pre>
 </div>
@@ -10386,225 +10380,7 @@ The properties file below demonstrates the default style:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="running-tests-junit-platform-runner"><a class="anchor" href="#running-tests-junit-platform-runner"></a>4.4. Using JUnit 4 to run the JUnit Platform</h3>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="title">The <code>JUnitPlatform</code> runner has been deprecated</div>
-<div class="paragraph">
-<p>The <code>JUnitPlatform</code> runner was developed by the JUnit team as an interim solution for
-running test suites and tests on the JUnit Platform in a JUnit 4 environment.</p>
-</div>
-<div class="paragraph">
-<p>In recent years, all mainstream build tools and IDEs provide built-in support for running
-tests directly on the JUnit Platform.</p>
-</div>
-<div class="paragraph">
-<p>In addition, the introduction of <code>@Suite</code> support provided by the
-<code>junit-platform-suite-engine</code> module makes the <code>JUnitPlatform</code> runner obsolete. See
-<a href="#junit-platform-suite-engine">JUnit Platform Suite Engine</a> for details.</p>
-</div>
-<div class="paragraph">
-<p>The <code>JUnitPlatform</code> runner and <code>@UseTechnicalNames</code> annotation have therefore been
-deprecated in JUnit Platform 1.8 and will be removed in JUnit Platform 2.0.</p>
-</div>
-<div class="paragraph">
-<p>If you are using the <code>JUnitPlatform</code> runner, please migrate to the <code>@Suite</code> support.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The <code>JUnitPlatform</code> runner is a JUnit 4 based <code>Runner</code> which enables you to run any test
-whose programming model is supported on the JUnit Platform in a JUnit 4 environment&#8201;&#8212;&#8201;for example, a JUnit Jupiter test class.</p>
-</div>
-<div class="paragraph">
-<p>Annotating a class with <code>@RunWith(JUnitPlatform.class)</code> allows it to be run with IDEs and
-build systems that support JUnit 4 but do not yet support the JUnit Platform directly.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Since the JUnit Platform has features that JUnit 4 does not have, the runner is
-only able to support a subset of the JUnit Platform functionality, especially with regard
-to reporting (see <a href="#running-tests-junit-platform-runner-technical-names">Display Names vs. Technical Names</a>).
-</td>
-</tr>
-</table>
-</div>
-<div class="sect3">
-<h4 id="running-tests-junit-platform-runner-setup"><a class="anchor" href="#running-tests-junit-platform-runner-setup"></a>4.4.1. Setup</h4>
-<div class="paragraph">
-<p>You need the following artifacts and their dependencies on the classpath. See
-<a href="#dependency-metadata">Dependency Metadata</a> for details regarding group IDs, artifact IDs, and versions.</p>
-</div>
-<div class="sect4">
-<h5 id="running-tests-junit-platform-runner-setup-explicit-dependencies"><a class="anchor" href="#running-tests-junit-platform-runner-setup-explicit-dependencies"></a>Explicit Dependencies</h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>junit-platform-runner</code> in <em>test</em> scope: location of the <code>JUnitPlatform</code> runner</p>
-</li>
-<li>
-<p><code>junit-4.13.2.jar</code> in <em>test</em> scope: to run tests using JUnit 4</p>
-</li>
-<li>
-<p><code>junit-jupiter-api</code> in <em>test</em> scope: API for writing tests using JUnit Jupiter,
-including <code>@Test</code>, etc.</p>
-</li>
-<li>
-<p><code>junit-jupiter-engine</code> in <em>test runtime</em> scope: implementation of the <code>TestEngine</code> API
-for JUnit Jupiter</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="running-tests-junit-platform-runner-setup-transitive-dependencies"><a class="anchor" href="#running-tests-junit-platform-runner-setup-transitive-dependencies"></a>Transitive Dependencies</h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>junit-platform-suite-api</code> in <em>test</em> scope</p>
-</li>
-<li>
-<p><code>junit-platform-suite-commons</code> in <em>test</em> scope</p>
-</li>
-<li>
-<p><code>junit-platform-launcher</code> in <em>test</em> scope</p>
-</li>
-<li>
-<p><code>junit-platform-engine</code> in <em>test</em> scope</p>
-</li>
-<li>
-<p><code>junit-platform-commons</code> in <em>test</em> scope</p>
-</li>
-<li>
-<p><code>opentest4j</code> in <em>test</em> scope</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="running-tests-junit-platform-runner-technical-names"><a class="anchor" href="#running-tests-junit-platform-runner-technical-names"></a>4.4.2. Display Names vs. Technical Names</h4>
-<div class="paragraph">
-<p>To define a custom <em>display name</em> for the class run via <code>@RunWith(JUnitPlatform.class)</code>
-annotate the class with <code>@SuiteDisplayName</code> and provide a custom value.</p>
-</div>
-<div class="paragraph">
-<p>By default, <em>display names</em> will be used for test artifacts; however, when the
-<code>JUnitPlatform</code> runner is used to execute tests with a build tool such as Gradle or
-Maven, the generated test report often needs to include the <em>technical names</em> of test
-artifacts — for example, fully qualified class names — instead of shorter display names
-like the simple name of a test class or a custom display name containing special
-characters. To enable technical names for reporting purposes, declare the
-<code>@UseTechnicalNames</code> annotation alongside <code>@RunWith(JUnitPlatform.class)</code>.</p>
-</div>
-<div class="paragraph">
-<p>Note that the presence of <code>@UseTechnicalNames</code> overrides any custom display name
-configured via <code>@SuiteDisplayName</code>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="running-tests-junit-platform-runner-single-test"><a class="anchor" href="#running-tests-junit-platform-runner-single-test"></a>4.4.3. Single Test Class</h4>
-<div class="paragraph">
-<p>One way to use the <code>JUnitPlatform</code> runner is to annotate a test class with
-<code>@RunWith(JUnitPlatform.class)</code> directly. Please note that the test methods in the
-following example are annotated with <code>org.junit.jupiter.api.Test</code> (JUnit Jupiter), not
-<code>org.junit.Test</code> (JUnit 4). Moreover, in this case the test class must be <code>public</code>;
-otherwise, some IDEs and build tools might not recognize it as a JUnit 4 test class.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="java"><span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">jupiter</span><span class="o">.</span><span class="na">api</span><span class="o">.</span><span class="na">Assertions</span><span class="o">.</span><span class="na">fail</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.junit.runner.RunWith</span><span class="o">;</span>
-
-<span class="nd">@RunWith</span><span class="o">(</span><span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">platform</span><span class="o">.</span><span class="na">runner</span><span class="o">.</span><span class="na">JUnitPlatform</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JUnitPlatformClassDemo</span> <span class="o">{</span>
-
-    <span class="nd">@Test</span>
-    <span class="kt">void</span> <span class="nf">succeedingTest</span><span class="o">()</span> <span class="o">{</span>
-        <span class="cm">/* no-op */</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Test</span>
-    <span class="kt">void</span> <span class="nf">failingTest</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">fail</span><span class="o">(</span><span class="s">"Failing for failing's sake."</span><span class="o">);</span>
-    <span class="o">}</span>
-
-<span class="o">}</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="running-tests-junit-platform-runner-test-suite"><a class="anchor" href="#running-tests-junit-platform-runner-test-suite"></a>4.4.4. Test Suite</h4>
-<div class="paragraph">
-<p>If you have multiple test classes you can create a test suite as can be seen in the
-following example.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="java"><span class="kn">import</span> <span class="nn">org.junit.platform.suite.api.SelectPackages</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.junit.platform.suite.api.SuiteDisplayName</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.junit.runner.RunWith</span><span class="o">;</span>
-
-<span class="nd">@RunWith</span><span class="o">(</span><span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">platform</span><span class="o">.</span><span class="na">runner</span><span class="o">.</span><span class="na">JUnitPlatform</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
-<span class="nd">@SuiteDisplayName</span><span class="o">(</span><span class="s">"JUnit Platform Suite Demo"</span><span class="o">)</span>
-<span class="nd">@SelectPackages</span><span class="o">(</span><span class="s">"example"</span><span class="o">)</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JUnitPlatformSuiteDemo</span> <span class="o">{</span>
-<span class="o">}</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The <code>JUnitPlatformSuiteDemo</code> will discover and run all tests in the <code>example</code> package and
-its subpackages. By default, it will only include test classes whose names either begin
-with <code>Test</code> or end with <code>Test</code> or <code>Tests</code>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="title">Additional Configuration Options</div>
-There are more configuration options for discovering and filtering tests than just
-<code>@SelectPackages</code>. Please consult the Javadoc of the <code><a href="../api/org.junit.platform.suite.api/org/junit/platform/suite/api/package-summary.html">org.junit.platform.suite.api</a></code> package for
-further details.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Test classes and suites annotated with <code>@RunWith(JUnitPlatform.class)</code>
-<strong>cannot</strong> be executed directly on the JUnit Platform (or as a "JUnit 5" test as
-documented in some IDEs). Such classes and suites can only be executed using JUnit 4
-infrastructure.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="running-tests-discovery-selectors"><a class="anchor" href="#running-tests-discovery-selectors"></a>4.5. Discovery Selectors</h3>
+<h3 id="running-tests-discovery-selectors"><a class="anchor" href="#running-tests-discovery-selectors"></a>4.4. Discovery Selectors</h3>
 <div class="paragraph">
 <p>The JUnit Platform provides a rich set of discovery selectors that can be used to specify
 which tests should be discovered or executed.</p>
@@ -10731,7 +10507,7 @@ generically as strings via their identifiers.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="running-tests-config-params"><a class="anchor" href="#running-tests-config-params"></a>4.6. Configuration Parameters</h3>
+<h3 id="running-tests-config-params"><a class="anchor" href="#running-tests-config-params"></a>4.5. Configuration Parameters</h3>
 <div class="paragraph">
 <p>In addition to instructing the platform which test classes and test engines to include,
 which packages to scan, etc., it is sometimes necessary to provide additional custom
@@ -10818,7 +10594,7 @@ properties take precedence over those supplied via the default configuration fil
 </table>
 </div>
 <div class="sect3">
-<h4 id="running-tests-config-params-deactivation-pattern"><a class="anchor" href="#running-tests-config-params-deactivation-pattern"></a>4.6.1. Pattern Matching Syntax</h4>
+<h4 id="running-tests-config-params-deactivation-pattern"><a class="anchor" href="#running-tests-config-params-deactivation-pattern"></a>4.5.1. Pattern Matching Syntax</h4>
 <div class="paragraph">
 <p>This section describes the pattern matching syntax that is applied to the <em>configuration
 parameters</em> used for the following features.</p>
@@ -10884,7 +10660,7 @@ FQCN is exactly <code>org.example.MyCustomImpl</code> or <code>org.example.Their
 </div>
 </div>
 <div class="sect2">
-<h3 id="running-tests-tags"><a class="anchor" href="#running-tests-tags"></a>4.7. Tags</h3>
+<h3 id="running-tests-tags"><a class="anchor" href="#running-tests-tags"></a>4.6. Tags</h3>
 <div class="paragraph">
 <p>Tags are a JUnit Platform concept for marking and filtering tests. The programming model
 for adding tags to containers and tests is defined by the testing framework. For example,
@@ -10895,7 +10671,7 @@ Vintage engine maps <code>@Category</code> annotations to tags (see
 own annotation or other means for users to specify tags.</p>
 </div>
 <div class="sect3">
-<h4 id="running-tests-tag-syntax-rules"><a class="anchor" href="#running-tests-tag-syntax-rules"></a>4.7.1. Syntax Rules for Tags</h4>
+<h4 id="running-tests-tag-syntax-rules"><a class="anchor" href="#running-tests-tag-syntax-rules"></a>4.6.1. Syntax Rules for Tags</h4>
 <div class="paragraph">
 <p>Regardless how a tag is specified, the JUnit Platform enforces the following rules:</p>
 </div>
@@ -10952,7 +10728,7 @@ characters have been removed.
 </div>
 </div>
 <div class="sect3">
-<h4 id="running-tests-tag-expressions"><a class="anchor" href="#running-tests-tag-expressions"></a>4.7.2. Tag Expressions</h4>
+<h4 id="running-tests-tag-expressions"><a class="anchor" href="#running-tests-tag-expressions"></a>4.6.2. Tag Expressions</h4>
 <div class="paragraph">
 <p>Tag expressions are boolean expressions with the operators <code>!</code>, <code>&amp;</code> and <code>|</code>. In addition,
 <code>(</code> and <code>)</code> can be used to adjust for operator precedence.</p>
@@ -11037,7 +10813,7 @@ expressions can be useful.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="running-tests-capturing-output"><a class="anchor" href="#running-tests-capturing-output"></a>4.8. Capturing Standard Output/Error</h3>
+<h3 id="running-tests-capturing-output"><a class="anchor" href="#running-tests-capturing-output"></a>4.7. Capturing Standard Output/Error</h3>
 <div class="paragraph">
 <p>Since version 1.3, the JUnit Platform provides opt-in support for capturing output
 printed to <code>System.out</code> and <code>System.err</code>. To enable it, set the
@@ -11061,7 +10837,7 @@ to attribute it to a specific test or container.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="running-tests-listeners"><a class="anchor" href="#running-tests-listeners"></a>4.9. Using Listeners and Interceptors</h3>
+<h3 id="running-tests-listeners"><a class="anchor" href="#running-tests-listeners"></a>4.8. Using Listeners and Interceptors</h3>
 <div class="paragraph">
 <p>The JUnit Platform provides the following listener APIs that allow JUnit, third parties,
 and custom user code to react to events fired at various points during the discovery and
@@ -11166,7 +10942,7 @@ unique IDs once execution of the <code>TestPlan</code> has finished.</p>
 </dl>
 </div>
 <div class="sect3">
-<h4 id="running-tests-listeners-flight-recorder"><a class="anchor" href="#running-tests-listeners-flight-recorder"></a>4.9.1. Flight Recorder Support</h4>
+<h4 id="running-tests-listeners-flight-recorder"><a class="anchor" href="#running-tests-listeners-flight-recorder"></a>4.8.1. Flight Recorder Support</h4>
 <div class="paragraph">
 <p>Since version 1.7, the JUnit Platform provides opt-in support for generating Flight
 Recorder events. <a href="https://openjdk.java.net/jeps/328">JEP 328</a> describes the Java Flight
@@ -11196,7 +10972,7 @@ to a problem.
 <p>Ensure that you are using either Java 8 Update 262 or higher or Java 11 or later.</p>
 </li>
 <li>
-<p>Provide the <code>org.junit.platform.jfr</code> module (<code>junit-platform-jfr-1.13.0-SNAPSHOT.jar</code>)
+<p>Provide the <code>org.junit.platform.jfr</code> module (<code>junit-platform-jfr-6.0.0-SNAPSHOT.jar</code>)
 on the class-path or module-path at test runtime.</p>
 </li>
 <li>
@@ -11236,7 +11012,7 @@ give it a try and provide feedback to the JUnit team so they can improve and eve
 </div>
 </div>
 <div class="sect2">
-<h3 id="stacktrace-pruning"><a class="anchor" href="#stacktrace-pruning"></a>4.10. Stack Trace Pruning</h3>
+<h3 id="stacktrace-pruning"><a class="anchor" href="#stacktrace-pruning"></a>4.9. Stack Trace Pruning</h3>
 <div class="paragraph">
 <p>Since version 1.10, the JUnit Platform provides built-in support for pruning stack traces
 produced by failing tests. This feature is enabled by default but can be disabled by
@@ -11255,7 +11031,7 @@ Launcher will be removed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="running-tests-discovery-issues"><a class="anchor" href="#running-tests-discovery-issues"></a>4.11. Discovery Issues</h3>
+<h3 id="running-tests-discovery-issues"><a class="anchor" href="#running-tests-discovery-issues"></a>4.10. Discovery Issues</h3>
 <div class="paragraph">
 <p>Test engines may encounter issues during test discovery. For example, the declaration of a
 test class or method may be invalid. To avoid such issues from going unnoticed, the JUnit
@@ -13993,7 +13769,7 @@ using Gradle&#8217;s Build Cache.</p>
 <div class="title">Groovy DSL</div>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="groovy"><span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">testRuntimeOnly</span><span class="o">(</span><span class="s2">"org.junit.platform:junit-platform-reporting:1.13.0-SNAPSHOT"</span><span class="o">)</span>
+    <span class="n">testRuntimeOnly</span><span class="o">(</span><span class="s2">"org.junit.platform:junit-platform-reporting:6.0.0-SNAPSHOT"</span><span class="o">)</span>
 <span class="o">}</span>
 <span class="n">tasks</span><span class="o">.</span><span class="na">withType</span><span class="o">(</span><span class="n">Test</span><span class="o">).</span><span class="na">configureEach</span> <span class="o">{</span>
     <span class="kt">def</span> <span class="n">outputDir</span> <span class="o">=</span> <span class="n">reports</span><span class="o">.</span><span class="na">junitXml</span><span class="o">.</span><span class="na">outputLocation</span>
@@ -14010,7 +13786,7 @@ using Gradle&#8217;s Build Cache.</p>
 <div class="title">Kotlin DSL</div>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="kotlin"><span class="nf">dependencies</span> <span class="p">{</span>
-    <span class="nf">testRuntimeOnly</span><span class="p">(</span><span class="s">"org.junit.platform:junit-platform-reporting:1.13.0-SNAPSHOT"</span><span class="p">)</span>
+    <span class="nf">testRuntimeOnly</span><span class="p">(</span><span class="s">"org.junit.platform:junit-platform-reporting:6.0.0-SNAPSHOT"</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="n">tasks</span><span class="p">.</span><span class="n">withType</span><span class="p">&lt;</span><span class="nc">Test</span><span class="p">&gt;().</span><span class="nf">configureEach</span> <span class="p">{</span>
     <span class="kd">val</span> <span class="py">outputDir</span> <span class="p">=</span> <span class="n">reports</span><span class="p">.</span><span class="n">junitXml</span><span class="p">.</span><span class="n">outputLocation</span>
@@ -14039,7 +13815,7 @@ XML reports as follows:</p>
         <span class="nt">&lt;dependency&gt;</span>
             <span class="nt">&lt;groupId&gt;</span>org.junit.platform<span class="nt">&lt;/groupId&gt;</span>
             <span class="nt">&lt;artifactId&gt;</span>junit-platform-reporting<span class="nt">&lt;/artifactId&gt;</span>
-            <span class="nt">&lt;version&gt;</span>1.13.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;version&gt;</span>6.0.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
             <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
         <span class="nt">&lt;/dependency&gt;</span>
     <span class="nt">&lt;/dependencies&gt;</span>
@@ -14072,7 +13848,7 @@ output by setting the configuration parameters via <code>--config</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>java <span class="nt">-jar</span> junit-platform-console-standalone-1.13.0-SNAPSHOT.jar &lt;OPTIONS&gt; <span class="se">\</span>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>java <span class="nt">-jar</span> junit-platform-console-standalone-6.0.0-SNAPSHOT.jar &lt;OPTIONS&gt; <span class="se">\</span>
 <span class="go">  --config=junit.platform.reporting.open.xml.enabled=true \
   --config=junit.platform.reporting.output.dir=reports</span></code></pre>
 </div>
@@ -14083,7 +13859,7 @@ classpath resource via the <code>--config-resource</code> option:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>java <span class="nt">-jar</span> junit-platform-console-standalone-1.13.0-SNAPSHOT.jar &lt;OPTIONS&gt; <span class="se">\</span>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>java <span class="nt">-jar</span> junit-platform-console-standalone-6.0.0-SNAPSHOT.jar &lt;OPTIONS&gt; <span class="se">\</span>
 <span class="go">  --config-resource=configuration.properties</span></code></pre>
 </div>
 </div>
@@ -14238,7 +14014,7 @@ all tests of the test suite.</p>
 <div class="paragraph">
 <p>The <code>junit-platform-testkit</code> artifact provides support for executing a test plan on the
 JUnit Platform and then verifying the expected results. As of JUnit Platform
-1.13.0-SNAPSHOT, this support is limited to the execution of a single <code>TestEngine</code> (see
+6.0.0-SNAPSHOT, this support is limited to the execution of a single <code>TestEngine</code> (see
 <a href="#testkit-engine">Engine Test Kit</a>).</p>
 </div>
 <div class="sect3">
@@ -14788,14 +14564,14 @@ following.</p>
 <div class="sect2">
 <h3 id="launcher-api"><a class="anchor" href="#launcher-api"></a>6.4. JUnit Platform Launcher API</h3>
 <div class="paragraph">
-<p>One of the prominent goals of JUnit 5 is to make the interface between JUnit and its
-programmatic clients – build tools and IDEs – more powerful and stable. The purpose is to
-decouple the internals of discovering and executing tests from all the filtering and
-configuration that&#8217;s necessary from the outside.</p>
+<p>One of the prominent goals of the JUnit Platform is to make the interface between JUnit
+and its programmatic clients – build tools and IDEs – more powerful and stable. The
+purpose is to decouple the internals of discovering and executing tests from all the
+filtering and configuration that&#8217;s necessary from the outside.</p>
 </div>
 <div class="paragraph">
-<p>JUnit 5 introduces the concept of a <code>Launcher</code> that can be used to discover, filter, and
-execute tests. Moreover, third party test libraries – like Spock, Cucumber, and FitNesse
+<p>JUnit Platform introduces the concept of a <code>Launcher</code> that can be used to discover,
+filter, and execute tests. Moreover, third party test libraries – like Spock or Cucumber
 – can plug into the JUnit Platform&#8217;s launching infrastructure by providing a custom
 <a href="#test-engines">TestEngine</a>.</p>
 </div>
@@ -15704,7 +15480,7 @@ configuration parameters.</p>
 <p>Although there is currently no official guide on how to implement a custom <code>TestEngine</code>,
 you can consult the implementation of <a href="#test-engines-junit">JUnit Test Engines</a> or the implementation of
 third-party test engines listed in the
-<a href="https://github.com/junit-team/junit5/wiki/Third-party-Extensions#junit-platform-test-engines">JUnit 5 wiki</a>.
+<a href="https://github.com/junit-team/junit5/wiki/Third-party-Extensions#junit-platform-test-engines">JUnit wiki</a>.
 You will also find various tutorials and blogs on the Internet that demonstrate how to
 write a custom <code>TestEngine</code>.</p>
 </div>
@@ -15837,13 +15613,14 @@ reported discovery issues.</p>
 <h2 id="api-evolution"><a class="anchor" href="#api-evolution"></a>7. API Evolution</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>One of the major goals of JUnit 5 is to improve maintainers' capabilities to evolve JUnit
-despite its being used in many projects. With JUnit 4 a lot of stuff that was originally
-added as an internal construct only got used by external extension writers and tool
-builders. That made changing JUnit 4 especially difficult and sometimes impossible.</p>
+<p>One of the major goals of the JUnit Platform architecture is to improve maintainers'
+capabilities to evolve JUnit despite its being used in many projects. With JUnit 4 a lot
+of stuff that was originally added as an internal construct only got used by external
+extension writers and tool builders. That made changing JUnit 4 especially difficult and
+sometimes impossible.</p>
 </div>
 <div class="paragraph">
-<p>That&#8217;s why JUnit 5 introduces a defined lifecycle for all publicly available interfaces,
+<p>That&#8217;s why JUnit now uses a defined lifecycle for all publicly available interfaces,
 classes, and methods.</p>
 </div>
 <div class="sect2">
@@ -17024,10 +16801,6 @@ since such APIs will likely be removed in an upcoming release.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>DisplayNameGenerator.&ZeroWidthSpace;generateDisplayNameForNestedClass(Class&lt;?&gt;)</code> <em>(method)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.12</code></p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MethodOrderer.&ZeroWidthSpace;Alphanumeric</code> <em>(class)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.7</code></p></td>
-</tr>
 </tbody>
 </table>
 <h5 id="package-org-junit-jupiter-api-condition-2" class="discrete">Package org.junit.jupiter.api.condition</h5>
@@ -17065,10 +16838,6 @@ since such APIs will likely be removed in an upcoming release.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ExtensionContext.&ZeroWidthSpace;Store.&ZeroWidthSpace;CloseableResource</code> <em>(interface)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.13</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>InvocationInterceptor.&ZeroWidthSpace;interceptDynamicTest(Invocation&lt;Void&gt;, ExtensionContext)</code> <em>(method)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.8</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -17111,10 +16880,6 @@ since such APIs will likely be removed in an upcoming release.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.12</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ReflectionSupport.&ZeroWidthSpace;loadClass(String)</code> <em>(method)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.4</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>SearchOption</code> <em>(enum)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.12</code></p></td>
 </tr>
@@ -17135,96 +16900,12 @@ since such APIs will likely be removed in an upcoming release.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ConfigurationParameters.&ZeroWidthSpace;size()</code> <em>(method)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.9</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ExecutionRequest(TestDescriptor, EngineExecutionListener, ConfigurationParameters)</code> <em>(constructor)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.11</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ExecutionRequest.&ZeroWidthSpace;create(TestDescriptor, EngineExecutionListener, ConfigurationParameters)</code> <em>(method)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.11</code></p></td>
-</tr>
-</tbody>
-</table>
-<h5 id="package-org-junit-platform-engine-discovery-2" class="discrete">Package org.junit.platform.engine.discovery</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 99%;">
-<col style="width: 1%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Since</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MethodSelector.&ZeroWidthSpace;getMethodParameterTypes()</code> <em>(method)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.10</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>NestedMethodSelector.&ZeroWidthSpace;getMethodParameterTypes()</code> <em>(method)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.10</code></p></td>
-</tr>
-</tbody>
-</table>
-<h5 id="package-org-junit-platform-engine-reporting-2" class="discrete">Package org.junit.platform.engine.reporting</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 99%;">
-<col style="width: 1%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Since</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ReportEntry()</code> <em>(constructor)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.8</code></p></td>
-</tr>
-</tbody>
-</table>
-<h5 id="package-org-junit-platform-engine-support-filter" class="discrete">Package org.junit.platform.engine.support.filter</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 99%;">
-<col style="width: 1%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Since</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ClasspathScanningSupport</code> <em>(class)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.5</code></p></td>
-</tr>
-</tbody>
-</table>
-<h5 id="package-org-junit-platform-engine-support-hierarchical" class="discrete">Package org.junit.platform.engine.support.hierarchical</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 99%;">
-<col style="width: 1%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Since</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SingleTestExecutor</code> <em>(class)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.2</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -17243,94 +16924,8 @@ since such APIs will likely be removed in an upcoming release.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TestPlan.&ZeroWidthSpace;add(TestIdentifier)</code> <em>(method)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.4</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TestPlan.&ZeroWidthSpace;getChildren(String)</code> <em>(method)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.10</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>TestPlan.&ZeroWidthSpace;getTestIdentifier(String)</code> <em>(method)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.10</code></p></td>
-</tr>
-</tbody>
-</table>
-<h5 id="package-org-junit-platform-launcher-core-2" class="discrete">Package org.junit.platform.launcher.core</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 99%;">
-<col style="width: 1%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Since</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>LauncherDiscoveryRequestBuilder()</code> <em>(constructor)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.8</code></p></td>
-</tr>
-</tbody>
-</table>
-<h5 id="package-org-junit-platform-launcher-listeners" class="discrete">Package org.junit.platform.launcher.listeners</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 99%;">
-<col style="width: 1%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Since</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>LegacyReportingUtils</code> <em>(class)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.6</code></p></td>
-</tr>
-</tbody>
-</table>
-<h4 id="module-org-junit-platform-runner" class="discrete">Module org.junit.platform.runner</h4>
-<h5 id="package-org-junit-platform-runner" class="discrete">Package org.junit.platform.runner</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 99%;">
-<col style="width: 1%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Since</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>JUnitPlatform</code> <em>(class)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.8</code></p></td>
-</tr>
-</tbody>
-</table>
-<h4 id="module-org-junit-platform-suite-api-2" class="discrete">Module org.junit.platform.suite.api</h4>
-<h5 id="package-org-junit-platform-suite-api-2" class="discrete">Package org.junit.platform.suite.api</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 99%;">
-<col style="width: 1%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Since</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@UseTechnicalNames</code> <em>(annotation)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.8</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -17351,34 +16946,6 @@ since such APIs will likely be removed in an upcoming release.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>SuiteLauncherDiscoveryRequestBuilder.&ZeroWidthSpace;suite(Class&lt;?&gt;)</code> <em>(method)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.11</code></p></td>
-</tr>
-</tbody>
-</table>
-<h4 id="module-org-junit-platform-testkit-2" class="discrete">Module org.junit.platform.testkit</h4>
-<h5 id="package-org-junit-platform-testkit-engine-2" class="discrete">Package org.junit.platform.testkit.engine</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 99%;">
-<col style="width: 1%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Since</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>EngineTestKit.&ZeroWidthSpace;Builder.&ZeroWidthSpace;filters(DiscoveryFilter&lt;?&gt;[])</code> <em>(method)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.7</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>EngineTestKit.&ZeroWidthSpace;execute(String, EngineDiscoveryRequest)</code> <em>(method)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.7</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>EngineTestKit.&ZeroWidthSpace;execute(TestEngine, EngineDiscoveryRequest)</code> <em>(method)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.7</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -17416,7 +16983,7 @@ declarations.</p>
 <div class="sect2">
 <h3 id="reproducible-builds"><a class="anchor" href="#reproducible-builds"></a>10.1. Reproducible Builds</h3>
 <div class="paragraph">
-<p>Starting with version 5.7, JUnit 5 aims for its non-javadoc JARs to be
+<p>Starting with version 5.7, JUnit aims for its non-javadoc JARs to be
 <a href="https://reproducible-builds.org/">reproducible</a>.</p>
 </div>
 <div class="paragraph">
@@ -17474,7 +17041,7 @@ Please refer to the corresponding sections for <a href="#running-tests-build-mav
 <p><strong>Group ID</strong>: <code>org.junit.platform</code></p>
 </li>
 <li>
-<p><strong>Version</strong>: <code>1.13.0-SNAPSHOT</code></p>
+<p><strong>Version</strong>: <code>6.0.0-SNAPSHOT</code></p>
 </li>
 <li>
 <p><strong>Artifact IDs</strong>:</p>
@@ -17517,11 +17084,6 @@ build tools. See <a href="#launcher-api">JUnit Platform Launcher API</a> for det
 <p><code>TestExecutionListener</code> implementations that generate test reports&#8201;&#8212;&#8201;typically used
 by IDEs and build tools. See <a href="#junit-platform-reporting">JUnit Platform Reporting</a> for details.</p>
 </dd>
-<dt class="hdlist1"><code>junit-platform-runner</code></dt>
-<dd>
-<p>Runner for executing tests and test suites on the JUnit Platform in a JUnit 4
-environment. See <a href="#running-tests-junit-platform-runner">Using JUnit 4 to run the JUnit Platform</a> for details.</p>
-</dd>
 <dt class="hdlist1"><code>junit-platform-suite</code></dt>
 <dd>
 <p>   JUnit Platform Suite artifact that transitively pulls in dependencies on
@@ -17531,8 +17093,7 @@ management in build tools such as Gradle and Maven.</p>
 <dt class="hdlist1"><code>junit-platform-suite-api</code></dt>
 <dd>
 <p>Annotations for configuring test suites on the JUnit Platform. Supported by the
-<a href="#junit-platform-suite-engine">JUnit Platform Suite Engine</a> and the
-<a href="#running-tests-junit-platform-runner">JUnitPlatform runner</a>.</p>
+<a href="#junit-platform-suite-engine">JUnit Platform Suite Engine</a>.</p>
 </dd>
 <dt class="hdlist1"><code>junit-platform-suite-commons</code></dt>
 <dd>
@@ -17562,7 +17123,7 @@ accessing the results via a fluent API to verify the expected results.</p>
 <p><strong>Group ID</strong>: <code>org.junit.jupiter</code></p>
 </li>
 <li>
-<p><strong>Version</strong>: <code>5.13.0-SNAPSHOT</code></p>
+<p><strong>Version</strong>: <code>6.0.0-SNAPSHOT</code></p>
 </li>
 <li>
 <p><strong>Artifact IDs</strong>:</p>
@@ -17605,7 +17166,7 @@ JUnit 4&#8217;s <code>@Ignore</code> annotation and for running selected JUnit 4
 <p><strong>Group ID</strong>: <code>org.junit.vintage</code></p>
 </li>
 <li>
-<p><strong>Version</strong>: <code>5.13.0-SNAPSHOT</code></p>
+<p><strong>Version</strong>: <code>6.0.0-SNAPSHOT</code></p>
 </li>
 <li>
 <p><strong>Artifact ID</strong>:</p>
@@ -17640,7 +17201,7 @@ or <a href="https://docs.gradle.org/current/userguide/platforms.html#sub:bom_imp
 <p><strong>Artifact ID</strong>: <code>junit-bom</code></p>
 </li>
 <li>
-<p><strong>Version</strong>: <code>5.13.0-SNAPSHOT</code></p>
+<p><strong>Version</strong>: <code>6.0.0-SNAPSHOT</code></p>
 </li>
 </ul>
 </div>
@@ -17696,7 +17257,7 @@ following <em>OpenTest4J</em> JAR.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 5.13.0-SNAPSHOT<br>
+Version 6.0.0-SNAPSHOT<br>
 </div>
 </div>
 <script src="../tocbot-3.0.2/tocbot.min.js"></script>
