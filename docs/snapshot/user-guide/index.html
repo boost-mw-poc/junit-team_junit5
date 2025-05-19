@@ -7677,6 +7677,48 @@ concurrently if the <code>@Execution(CONCURRENT)</code> annotation is present on
 method.</p>
 </div>
 <div class="paragraph">
+<p>You can use the <code>@Execution</code> annotation to explicitly configure the execution mode for a
+test class or method:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="cm">/*
+ * Copyright 2015-2025 the original author or authors.
+ *
+ * All rights reserved. This program and the accompanying materials are
+ * made available under the terms of the Eclipse Public License v2.0 which
+ * accompanies this distribution and is available at
+ *
+ * https://www.eclipse.org/legal/epl-v20.html
+ */</span>
+
+<span class="kn">package</span> <span class="nn">example</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.parallel.Execution</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.parallel.ExecutionMode</span><span class="o">;</span>
+
+<span class="nd">@Execution</span><span class="o">(</span><span class="nc">ExecutionMode</span><span class="o">.</span><span class="na">CONCURRENT</span><span class="o">)</span>
+<span class="kd">class</span> <span class="nc">ExplicitExecutionModeDemo</span> <span class="o">{</span>
+
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">testA</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// concurrent</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Test</span>
+    <span class="nd">@Execution</span><span class="o">(</span><span class="nc">ExecutionMode</span><span class="o">.</span><span class="na">SAME_THREAD</span><span class="o">)</span>
+    <span class="kt">void</span> <span class="nf">testB</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// overrides to same_thread</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This allows test classes or methods to opt in or out of concurrent execution regardless of
+the globally configured default.</p>
+</div>
+<div class="paragraph">
 <p>When parallel execution is enabled and a default <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/ClassOrderer.html">ClassOrderer</a></code> is registered (see
 <a href="#writing-tests-test-execution-order-classes">Class Order</a> for details), top-level test classes will
 initially be sorted accordingly and scheduled in that order. However, they are not
