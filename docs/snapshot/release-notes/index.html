@@ -704,6 +704,11 @@ values less than 17 used with the <code>minVersion</code> and <code>maxVersion</
 <p><code>@EnabledForJreRange</code> and <code>@DisabledForJreRange</code> now use <code>JAVA_17</code> as their default
 <code>min</code> value.</p>
 </li>
+<li>
+<p>The contracts for the <code>Executable</code> parameter of Kotlin-specific <code>assertTimeout</code>
+functions was changed from <code>callsInPlace(executable, EXACTLY_ONCE)</code> to
+<code>callsInPlace(executable, AT_MOST_ONCE)</code> which might result in compile errors.</p>
+</li>
 </ul>
 </div>
 </div>
