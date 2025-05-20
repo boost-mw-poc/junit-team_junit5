@@ -13,6 +13,7 @@ package org.junit.platform.engine.support.hierarchical;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 
+import org.jspecify.annotations.Nullable;
 import org.junit.platform.engine.EngineDiscoveryRequest;
 import org.junit.platform.engine.ExecutionRequest;
 import org.junit.platform.engine.TestDescriptor;
@@ -69,8 +70,8 @@ public final class DemoHierarchicalTestEngine extends HierarchicalTestEngine<Dem
 		return addContainer(uniqueName, uniqueName, null, beforeBlock);
 	}
 
-	public DemoHierarchicalContainerDescriptor addContainer(String uniqueName, String displayName, TestSource source,
-			Runnable beforeBlock) {
+	public DemoHierarchicalContainerDescriptor addContainer(String uniqueName, String displayName,
+			@Nullable TestSource source, @Nullable Runnable beforeBlock) {
 
 		return addChild(uniqueName,
 			uniqueId -> new DemoHierarchicalContainerDescriptor(uniqueId, displayName, source, beforeBlock),
