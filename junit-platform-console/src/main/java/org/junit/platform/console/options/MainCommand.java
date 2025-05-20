@@ -10,14 +10,16 @@
 
 package org.junit.platform.console.options;
 
+import static java.util.Objects.requireNonNull;
+
 import java.util.Optional;
 
+import org.jspecify.annotations.Nullable;
 import org.junit.platform.console.tasks.ConsoleTestExecutor;
 
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.IExitCodeGenerator;
-import picocli.CommandLine.Mixin;
 import picocli.CommandLine.Model.CommandSpec;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.ParameterException;
@@ -50,12 +52,10 @@ class MainCommand implements Runnable, IExitCodeGenerator {
 	@Option(names = "--version", versionHelp = true, description = "Display version information.")
 	private boolean versionRequested;
 
-	@Mixin
-	AnsiColorOptionMixin ansiColorOption;
-
 	@Spec
 	CommandSpec commandSpec;
 
+	@Nullable
 	CommandResult<?> commandResult;
 
 	MainCommand(ConsoleTestExecutor.Factory consoleTestExecutorFactory) {
@@ -79,7 +79,7 @@ class MainCommand implements Runnable, IExitCodeGenerator {
 
 	@Override
 	public int getExitCode() {
-		return commandResult.getExitCode();
+		return requireNonNull(commandResult).getExitCode();
 	}
 
 	CommandResult<?> run(String[] args,
