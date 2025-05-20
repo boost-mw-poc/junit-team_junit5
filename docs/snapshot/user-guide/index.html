@@ -4122,13 +4122,13 @@ annotated with <code>@TestInstance(Lifecycle.PER_CLASS)</code> (see
 
     <span class="nd">@BeforeEach</span>
     <span class="k">default</span> <span class="kt">void</span> <span class="nf">beforeEachTest</span><span class="o">(</span><span class="nc">TestInfo</span> <span class="n">testInfo</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"About to execute [%s]"</span><span class="o">,</span>
+        <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="s">"About to execute [%s]"</span><span class="o">.</span><span class="na">formatted</span><span class="o">(</span>
             <span class="n">testInfo</span><span class="o">.</span><span class="na">getDisplayName</span><span class="o">()));</span>
     <span class="o">}</span>
 
     <span class="nd">@AfterEach</span>
     <span class="k">default</span> <span class="kt">void</span> <span class="nf">afterEachTest</span><span class="o">(</span><span class="nc">TestInfo</span> <span class="n">testInfo</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"Finished executing [%s]"</span><span class="o">,</span>
+        <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="s">"Finished executing [%s]"</span><span class="o">.</span><span class="na">formatted</span><span class="o">(</span>
             <span class="n">testInfo</span><span class="o">.</span><span class="na">getDisplayName</span><span class="o">()));</span>
     <span class="o">}</span>
 
@@ -4486,7 +4486,7 @@ INFO: About to execute repetition 5 of 5 for repeatedTestInGerman</pre>
         <span class="kt">int</span> <span class="n">currentRepetition</span> <span class="o">=</span> <span class="n">repetitionInfo</span><span class="o">.</span><span class="na">getCurrentRepetition</span><span class="o">();</span>
         <span class="kt">int</span> <span class="n">totalRepetitions</span> <span class="o">=</span> <span class="n">repetitionInfo</span><span class="o">.</span><span class="na">getTotalRepetitions</span><span class="o">();</span>
         <span class="nc">String</span> <span class="n">methodName</span> <span class="o">=</span> <span class="n">testInfo</span><span class="o">.</span><span class="na">getTestMethod</span><span class="o">().</span><span class="na">get</span><span class="o">().</span><span class="na">getName</span><span class="o">();</span>
-        <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"About to execute repetition %d of %d for %s"</span><span class="o">,</span> <span class="c1">//</span>
+        <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"About to execute repetition %d of %d for %s"</span><span class="o">.</span><span class="na">formatted</span><span class="o">(</span> <span class="c1">//</span>
             <span class="n">currentRepetition</span><span class="o">,</span> <span class="n">totalRepetitions</span><span class="o">,</span> <span class="n">methodName</span><span class="o">));</span>
     <span class="o">}</span>
 
@@ -6367,8 +6367,8 @@ declared as either a top-level class or as a <code>static</code> nested class.</
     <span class="nd">@Override</span>
     <span class="kd">protected</span> <span class="nc">Object</span> <span class="nf">convert</span><span class="o">(</span><span class="nc">Object</span> <span class="n">source</span><span class="o">,</span> <span class="nc">Class</span><span class="o">&lt;?&gt;</span> <span class="n">targetType</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">assertEquals</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">targetType</span><span class="o">,</span> <span class="s">"Can only convert to String"</span><span class="o">);</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">source</span> <span class="k">instanceof</span> <span class="nc">Enum</span><span class="o">&lt;?&gt;)</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="o">((</span><span class="nc">Enum</span><span class="o">&lt;?&gt;)</span> <span class="n">source</span><span class="o">).</span><span class="na">name</span><span class="o">();</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">source</span> <span class="k">instanceof</span> <span class="nc">Enum</span><span class="o">&lt;?&gt;</span> <span class="n">constant</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">constant</span><span class="o">.</span><span class="na">name</span><span class="o">();</span>
         <span class="o">}</span>
         <span class="k">return</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">source</span><span class="o">);</span>
     <span class="o">}</span>
@@ -7298,7 +7298,7 @@ interface along with <code>Named</code> via the <code>NamedExecutable</code> bas
 
         <span class="nd">@Override</span>
         <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"'%s' is a palindrome"</span><span class="o">,</span> <span class="n">text</span><span class="o">);</span>
+            <span class="k">return</span> <span class="s">"'%s' is a palindrome"</span><span class="o">.</span><span class="na">formatted</span><span class="o">(</span><span class="n">text</span><span class="o">);</span>
         <span class="o">}</span>
 
         <span class="nd">@Override</span>
@@ -12447,7 +12447,7 @@ and <code>AfterTestExecutionCallback</code> in order to time and log the test ex
         <span class="kt">long</span> <span class="n">duration</span> <span class="o">=</span> <span class="nc">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">()</span> <span class="o">-</span> <span class="n">startTime</span><span class="o">;</span>
 
         <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(()</span> <span class="o">-&gt;</span>
-            <span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"Method [%s] took %s ms."</span><span class="o">,</span> <span class="n">testMethod</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">duration</span><span class="o">));</span>
+            <span class="s">"Method [%s] took %s ms."</span><span class="o">.</span><span class="na">formatted</span><span class="o">(</span><span class="n">testMethod</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">duration</span><span class="o">));</span>
     <span class="o">}</span>
 
     <span class="kd">private</span> <span class="nc">Store</span> <span class="nf">getStore</span><span class="o">(</span><span class="nc">ExtensionContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
@@ -12976,7 +12976,7 @@ classes and methods.</p>
     <span class="kt">void</span> <span class="nf">httpCall</span><span class="o">(</span><span class="nc">HttpServer</span> <span class="n">server</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
         <span class="nc">String</span> <span class="n">hostName</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="na">getAddress</span><span class="o">().</span><span class="na">getHostName</span><span class="o">();</span>
         <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="na">getAddress</span><span class="o">().</span><span class="na">getPort</span><span class="o">();</span>
-        <span class="nc">String</span> <span class="n">rawUrl</span> <span class="o">=</span> <span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"http://%s:%d/example"</span><span class="o">,</span> <span class="n">hostName</span><span class="o">,</span> <span class="n">port</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">rawUrl</span> <span class="o">=</span> <span class="s">"http://%s:%d/example"</span><span class="o">.</span><span class="na">formatted</span><span class="o">(</span><span class="n">hostName</span><span class="o">,</span> <span class="n">port</span><span class="o">);</span>
         <span class="no">URL</span> <span class="n">requestUrl</span> <span class="o">=</span> <span class="no">URI</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">rawUrl</span><span class="o">).</span><span class="na">toURL</span><span class="o">();</span>
 
         <span class="nc">String</span> <span class="n">responseBody</span> <span class="o">=</span> <span class="n">sendRequest</span><span class="o">(</span><span class="n">requestUrl</span><span class="o">);</span>
@@ -14642,7 +14642,6 @@ test methods in previous versions of JUnit.</p>
 
 <span class="kn">import</span> <span class="nn">java.io.PrintWriter</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.nio.file.Path</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.nio.file.Paths</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">org.junit.platform.engine.FilterResult</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.junit.platform.engine.TestDescriptor</span><span class="o">;</span>
