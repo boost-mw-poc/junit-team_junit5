@@ -20,6 +20,7 @@ import org.junit.platform.console.tasks.ConsoleTestExecutor;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.IExitCodeGenerator;
+import picocli.CommandLine.Mixin;
 import picocli.CommandLine.Model.CommandSpec;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.ParameterException;
@@ -51,6 +52,9 @@ class MainCommand implements Runnable, IExitCodeGenerator {
 
 	@Option(names = "--version", versionHelp = true, description = "Display version information.")
 	private boolean versionRequested;
+
+	@Mixin
+	AnsiColorOptionMixin ansiColorOption;
 
 	@Spec
 	CommandSpec commandSpec;
