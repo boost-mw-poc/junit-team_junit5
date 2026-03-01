@@ -63,4 +63,3 @@
 * xref:api-evolution.adoc[]
 * xref:release-notes.adoc[]
 * xref:appendix.adoc[]
-* {javadoc-root}/index.html[Javadoc]
